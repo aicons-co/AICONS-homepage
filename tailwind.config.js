@@ -8,7 +8,8 @@ export default {
     extend: {
       colors: {
         alice: {
-          primary: '#6878FF',
+          // primary: '#6878FF',
+          primary: '#037be1',
           secondary: '#8B5CF6',
           dark: '#0A1623',
           navy: '#1E293B',

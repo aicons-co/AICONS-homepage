@@ -102,15 +102,13 @@ function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center z-10">
-            <motion.span
+            <motion.img
+              src="/logo-main.svg"
+              alt="AICONS"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className={`text-2xl font-bold transition-colors ${
-                isScrolled ? 'text-alice-dark' : 'text-white'
-              }`}
-            >
-              <span className="text-alice-primary">AICONS</span>
-            </motion.span>
+              className="h-8 md:h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
