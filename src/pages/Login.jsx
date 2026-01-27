@@ -2,14 +2,10 @@ import { useState } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Eye, EyeOff, Mail, Lock, Globe } from 'lucide-react'
-
-const regions = [
-  { id: 'us', name: 'United States', flag: '🇺🇸' },
-  { id: 'eu', name: 'UK / Europe', flag: '🇪🇺' },
-  { id: 'au', name: 'Australia', flag: '🇦🇺' },
-]
+import useTranslation from '../hooks/useTranslation'
 
 function Login() {
+  const { t } = useTranslation()
   const [searchParams] = useSearchParams()
   const regionParam = searchParams.get('region') || 'us'
 
@@ -19,10 +15,16 @@ function Login() {
   const [password, setPassword] = useState('')
   const [rememberMe, setRememberMe] = useState(false)
 
+  const regions = [
+    { id: 'us', name: t('loginPage.regions.us'), flag: '🇺🇸' },
+    { id: 'eu', name: t('loginPage.regions.eu'), flag: '🇪🇺' },
+    { id: 'au', name: t('loginPage.regions.au'), flag: '🇦🇺' },
+  ]
+
   const handleSubmit = (e) => {
     e.preventDefault()
     // Demo only - no actual authentication
-    alert('This is a demo. Login functionality is not implemented.')
+    alert(t('loginPage.demoAlert'))
   }
 
   return (
@@ -40,14 +42,14 @@ function Login() {
               <span className="text-alice-primary">AICONS</span>
             </span>
           </Link>
-          <p className="text-gray-400 mt-2">Sign in to your account</p>
+          <p className="text-gray-400 mt-2">{t('loginPage.signIn')}</p>
         </div>
 
         {/* Region Selector */}
         <div className="bg-white/5 rounded-xl p-4 mb-6">
           <div className="flex items-center gap-2 mb-3">
             <Globe className="w-4 h-4 text-gray-400" />
-            <span className="text-sm text-gray-400">Select your region</span>
+            <span className="text-sm text-gray-400">{t('loginPage.selectRegion')}</span>
           </div>
           <div className="grid grid-cols-3 gap-2">
             {regions.map((region) => (
@@ -72,7 +74,7 @@ function Login() {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Email Address
+                {t('loginPage.emailAddress')}
               </label>
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -80,7 +82,7 @@ function Login() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@company.com"
+                  placeholder={t('loginPage.emailPlaceholder')}
                   className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:border-alice-primary focus:ring-2 focus:ring-alice-primary/20 outline-none transition-colors"
                 />
               </div>
@@ -88,7 +90,7 @@ function Login() {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Password
+                {t('loginPage.password')}
               </label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -117,10 +119,10 @@ function Login() {
                   onChange={(e) => setRememberMe(e.target.checked)}
                   className="w-4 h-4 rounded border-gray-300 text-alice-primary focus:ring-alice-primary"
                 />
-                <span className="text-sm text-gray-600">Remember me</span>
+                <span className="text-sm text-gray-600">{t('loginPage.rememberMe')}</span>
               </label>
               <a href="#" className="text-sm text-alice-primary hover:underline">
-                Forgot password?
+                {t('loginPage.forgotPassword')}
               </a>
             </div>
 
@@ -130,7 +132,7 @@ function Login() {
               type="submit"
               className="btn-primary w-full"
             >
-              Sign In
+              {t('loginPage.signInButton')}
             </motion.button>
           </form>
 
@@ -140,7 +142,7 @@ function Login() {
                 <div className="w-full border-t border-gray-200" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">Or continue with</span>
+                <span className="px-2 bg-white text-gray-500">{t('loginPage.orContinueWith')}</span>
               </div>
             </div>
 
@@ -176,18 +178,19 @@ function Login() {
           </div>
 
           <p className="mt-8 text-center text-sm text-gray-600">
-            Don&apos;t have an account?{' '}
+            {t('loginPage.dontHaveAccount')}{' '}
             <Link to="/demo" className="text-alice-primary font-semibold hover:underline">
-              Request access
+              {t('loginPage.requestAccess')}
             </Link>
           </p>
         </div>
 
         <p className="mt-6 text-center text-xs text-gray-500">
-          By signing in, you agree to our{' '}
-          <a href="#" className="text-gray-400 hover:text-white">Terms of Service</a>
-          {' '}and{' '}
-          <a href="#" className="text-gray-400 hover:text-white">Privacy Policy</a>
+          {t('loginPage.termsAgreement')}{' '}
+          <a href="#" className="text-gray-400 hover:text-white">{t('loginPage.termsOfService')}</a>
+          {' '}{t('loginPage.and')}{' '}
+          <a href="#" className="text-gray-400 hover:text-white">{t('loginPage.privacyPolicy')}</a>
+          {t('loginPage.agreeEnd')}
         </p>
       </motion.div>
     </div>

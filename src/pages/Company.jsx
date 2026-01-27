@@ -1,33 +1,44 @@
 import { motion } from 'framer-motion'
 import { MapPin, Linkedin, Twitter, Globe } from 'lucide-react'
-
-const team = [
-  { name: 'René Morkos', role: 'Founder & CEO', bio: 'PhD in AI and Construction Management from Stanford' },
-  { name: 'Leadership Team', role: 'Executive Team', bio: 'Experienced leaders from construction and technology' },
-]
-
-const values = [
-  { title: 'Innovation', description: 'Pushing the boundaries of what\'s possible in construction technology' },
-  { title: 'Customer Success', description: 'Your success is our success - we\'re partners in your journey' },
-  { title: 'Integrity', description: 'Honest, transparent, and trustworthy in everything we do' },
-  { title: 'Excellence', description: 'Delivering the highest quality solutions and support' },
-]
-
-const offices = [
-  { city: 'San Francisco', country: 'USA', type: 'Headquarters' },
-  { city: 'London', country: 'UK', type: 'Europe Office' },
-  { city: 'Sydney', country: 'Australia', type: 'APAC Office' },
-]
+import useTranslation from '../hooks/useTranslation'
 
 function Company() {
+  const { t } = useTranslation()
+
+  const team = [
+    {
+      name: t('companyPage.team.rene.name'),
+      role: t('companyPage.team.rene.role'),
+      bio: t('companyPage.team.rene.bio')
+    },
+    {
+      name: t('companyPage.team.leadership.name'),
+      role: t('companyPage.team.leadership.role'),
+      bio: t('companyPage.team.leadership.bio')
+    },
+  ]
+
+  const values = [
+    { title: t('companyPage.values.innovation.title'), description: t('companyPage.values.innovation.description') },
+    { title: t('companyPage.values.customerSuccess.title'), description: t('companyPage.values.customerSuccess.description') },
+    { title: t('companyPage.values.integrity.title'), description: t('companyPage.values.integrity.description') },
+    { title: t('companyPage.values.excellence.title'), description: t('companyPage.values.excellence.description') },
+  ]
+
+  const offices = [
+    { city: t('companyPage.offices.sanFrancisco.city'), country: t('companyPage.offices.sanFrancisco.country'), type: t('companyPage.offices.sanFrancisco.type') },
+    { city: t('companyPage.offices.london.city'), country: t('companyPage.offices.london.country'), type: t('companyPage.offices.london.type') },
+    { city: t('companyPage.offices.sydney.city'), country: t('companyPage.offices.sydney.country'), type: t('companyPage.offices.sydney.type') },
+  ]
+
   return (
     <div>
       {/* Hero */}
       <section className="py-20 bg-gradient-to-br from-alice-dark to-alice-navy">
         <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">About AICONS</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{t('companyPage.title')}</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            We&apos;re on a mission to transform how construction projects are planned and executed through the power of AI.
+            {t('companyPage.subtitle')}
           </p>
         </div>
       </section>
@@ -41,21 +52,11 @@ function Company() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="section-title mb-6">Our Story</h2>
+              <h2 className="section-title mb-6">{t('companyPage.ourStory')}</h2>
               <div className="space-y-4 text-gray-600">
-                <p>
-                  AICONS Technologies was founded with a simple but ambitious goal: to bring the power of
-                  artificial intelligence to construction scheduling and optimization.
-                </p>
-                <p>
-                  Construction is one of the largest industries in the world, yet it has been slow to adopt
-                  new technologies. We believe that AI can transform how projects are planned, scheduled,
-                  and executed.
-                </p>
-                <p>
-                  Today, AICONS is trusted by leading construction companies around the world to optimize
-                  their projects, reduce costs, and deliver on time.
-                </p>
+                <p>{t('companyPage.storyP1')}</p>
+                <p>{t('companyPage.storyP2')}</p>
+                <p>{t('companyPage.storyP3')}</p>
               </div>
             </motion.div>
             <motion.div
@@ -66,7 +67,7 @@ function Company() {
             >
               <div className="text-center p-8">
                 <p className="text-6xl font-bold text-alice-primary mb-2">2015</p>
-                <p className="text-gray-600">Founded in Silicon Valley</p>
+                <p className="text-gray-600">{t('companyPage.foundedIn')}</p>
               </div>
             </motion.div>
           </div>
@@ -76,7 +77,7 @@ function Company() {
       {/* Values */}
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
-          <h2 className="section-title text-center mb-12">Our Values</h2>
+          <h2 className="section-title text-center mb-12">{t('companyPage.ourValues')}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <motion.div
@@ -98,9 +99,9 @@ function Company() {
       {/* Team */}
       <section id="careers" className="py-20 bg-white">
         <div className="container-custom">
-          <h2 className="section-title text-center mb-4">Leadership</h2>
+          <h2 className="section-title text-center mb-4">{t('companyPage.leadership')}</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Our team brings together expertise in AI, construction management, and enterprise software.
+            {t('companyPage.leadershipSubtitle')}
           </p>
           <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {team.map((member, index) => (
@@ -125,9 +126,9 @@ function Company() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-gray-600 mb-4">Interested in joining our team?</p>
+            <p className="text-gray-600 mb-4">{t('companyPage.interestedInJoining')}</p>
             <button className="btn-primary">
-              View Open Positions
+              {t('companyPage.viewOpenPositions')}
             </button>
           </div>
         </div>
@@ -136,7 +137,7 @@ function Company() {
       {/* Contact */}
       <section id="contact" className="py-20 bg-gray-50">
         <div className="container-custom">
-          <h2 className="section-title text-center mb-12">Global Offices</h2>
+          <h2 className="section-title text-center mb-12">{t('companyPage.globalOffices')}</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {offices.map((office, index) => (
               <motion.div
@@ -163,22 +164,22 @@ function Company() {
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="max-w-2xl mx-auto">
-            <h2 className="section-title text-center mb-4">Get in Touch</h2>
+            <h2 className="section-title text-center mb-4">{t('companyPage.getInTouch')}</h2>
             <p className="text-center text-gray-600 mb-8">
-              Have questions? We&apos;d love to hear from you.
+              {t('companyPage.getInTouchSubtitle')}
             </p>
 
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">{t('companyPage.form.firstName')}</label>
                   <input
                     type="text"
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-alice-primary focus:ring-2 focus:ring-alice-primary/20 outline-none transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">{t('companyPage.form.lastName')}</label>
                   <input
                     type="text"
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-alice-primary focus:ring-2 focus:ring-alice-primary/20 outline-none transition-colors"
@@ -187,7 +188,7 @@ function Company() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t('companyPage.form.email')}</label>
                 <input
                   type="email"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-alice-primary focus:ring-2 focus:ring-alice-primary/20 outline-none transition-colors"
@@ -195,7 +196,7 @@ function Company() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t('companyPage.form.company')}</label>
                 <input
                   type="text"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-alice-primary focus:ring-2 focus:ring-alice-primary/20 outline-none transition-colors"
@@ -203,7 +204,7 @@ function Company() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t('companyPage.form.message')}</label>
                 <textarea
                   rows={4}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-alice-primary focus:ring-2 focus:ring-alice-primary/20 outline-none transition-colors resize-none"
@@ -211,7 +212,7 @@ function Company() {
               </div>
 
               <button type="submit" className="btn-primary w-full">
-                Send Message
+                {t('companyPage.form.sendMessage')}
               </button>
             </form>
 

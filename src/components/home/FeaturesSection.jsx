@@ -1,34 +1,37 @@
 import { motion } from 'framer-motion'
 import { Cpu, Shield, Zap, GitMerge } from 'lucide-react'
-
-const features = [
-  {
-    icon: Cpu,
-    title: 'Automate Optimization',
-    description: 'Simulate millions of possibilities to find the optimal schedule for your project.',
-    color: 'from-blue-500 to-cyan-500',
-  },
-  {
-    icon: Shield,
-    title: 'Identify and Mitigate Risks',
-    description: 'Proactively identify potential risks and develop mitigation strategies.',
-    color: 'from-purple-500 to-pink-500',
-  },
-  {
-    icon: Zap,
-    title: 'Recover or Accelerate',
-    description: 'Find ways to recover delayed projects or accelerate on-track ones.',
-    color: 'from-orange-500 to-red-500',
-  },
-  {
-    icon: GitMerge,
-    title: 'Integrate Project Controls',
-    description: 'Seamlessly integrate with your existing project management tools.',
-    color: 'from-green-500 to-teal-500',
-  },
-]
+import useTranslation from '../../hooks/useTranslation'
 
 function FeaturesSection() {
+  const { t } = useTranslation()
+
+  const features = [
+    {
+      icon: Cpu,
+      title: t('features.automateOptimization.title'),
+      description: t('features.automateOptimization.description'),
+      color: 'from-blue-500 to-cyan-500',
+    },
+    {
+      icon: Shield,
+      title: t('features.identifyRisks.title'),
+      description: t('features.identifyRisks.description'),
+      color: 'from-purple-500 to-pink-500',
+    },
+    {
+      icon: Zap,
+      title: t('features.recoverAccelerate.title'),
+      description: t('features.recoverAccelerate.description'),
+      color: 'from-orange-500 to-red-500',
+    },
+    {
+      icon: GitMerge,
+      title: t('features.integrateControls.title'),
+      description: t('features.integrateControls.description'),
+      color: 'from-green-500 to-teal-500',
+    },
+  ]
+
   return (
     <section className="py-20 bg-white">
       <div className="container-custom">
@@ -39,10 +42,10 @@ function FeaturesSection() {
           className="text-center mb-16"
         >
           <h2 className="section-title mb-4">
-            Why Choose <span className="text-alice-primary">AICONS</span>?
+            {t('features.title')} <span className="text-alice-primary">{t('features.titleHighlight')}</span>{t('features.titleEnd')}
           </h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            Our AI-powered platform transforms how construction projects are planned and executed.
+            {t('features.subtitle')}
           </p>
         </motion.div>
 

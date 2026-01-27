@@ -1,52 +1,54 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
-
-const testimonials = [
-  {
-    id: 1,
-    company: 'Align JV',
-    project: 'HS2 High Speed Rail',
-    quote: 'AICONS helped us reduce project duration by 17% while optimizing resource allocation across complex construction sequences.',
-    author: 'Project Director',
-    image: null,
-  },
-  {
-    id: 2,
-    company: 'Reta Engenharia',
-    project: 'Industrial Facility',
-    quote: 'The AI-powered scheduling gave us insights we never had before. We saved millions in labor costs alone.',
-    author: 'Construction Manager',
-    image: null,
-  },
-  {
-    id: 3,
-    company: 'SCS Construction',
-    project: 'Data Center',
-    quote: 'AICONS transformed our approach to schedule optimization. The simulation capabilities are game-changing.',
-    author: 'VP of Operations',
-    image: null,
-  },
-  {
-    id: 4,
-    company: 'Parsons',
-    project: 'Infrastructure',
-    quote: 'We integrated AICONS into our workflow and immediately saw improvements in how we plan and execute projects.',
-    author: 'Senior Project Manager',
-    image: null,
-  },
-  {
-    id: 5,
-    company: 'HDCC',
-    project: 'Commercial Building',
-    quote: 'The ability to simulate millions of scenarios and find the optimal path forward is invaluable.',
-    author: 'Chief Operations Officer',
-    image: null,
-  },
-]
+import useTranslation from '../../hooks/useTranslation'
 
 function TestimonialsSection() {
+  const { t } = useTranslation()
   const [currentIndex, setCurrentIndex] = useState(0)
+
+  const testimonials = [
+    {
+      id: 1,
+      company: 'Align JV',
+      project: 'HS2 High Speed Rail',
+      quote: t('testimonials.quotes.alignJV'),
+      author: t('testimonials.projectDirector'),
+      image: null,
+    },
+    {
+      id: 2,
+      company: 'Reta Engenharia',
+      project: 'Industrial Facility',
+      quote: t('testimonials.quotes.reta'),
+      author: t('testimonials.constructionManager'),
+      image: null,
+    },
+    {
+      id: 3,
+      company: 'SCS Construction',
+      project: 'Data Center',
+      quote: t('testimonials.quotes.scs'),
+      author: t('testimonials.vpOperations'),
+      image: null,
+    },
+    {
+      id: 4,
+      company: 'Parsons',
+      project: 'Infrastructure',
+      quote: t('testimonials.quotes.parsons'),
+      author: t('testimonials.seniorPM'),
+      image: null,
+    },
+    {
+      id: 5,
+      company: 'HDCC',
+      project: 'Commercial Building',
+      quote: t('testimonials.quotes.hdcc'),
+      author: t('testimonials.coo'),
+      image: null,
+    },
+  ]
 
   const nextTestimonial = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length)
@@ -65,9 +67,9 @@ function TestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="section-title mb-4">Customer Stories</h2>
+          <h2 className="section-title mb-4">{t('testimonials.title')}</h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            See how industry leaders are transforming their projects with AICONS
+            {t('testimonials.subtitle')}
           </p>
         </motion.div>
 

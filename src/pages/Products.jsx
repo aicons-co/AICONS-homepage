@@ -1,76 +1,58 @@
 import { Routes, Route, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Calendar, BarChart3, Box, ArrowRight, Check } from 'lucide-react'
-
-const productPages = {
-  plan: {
-    name: 'AICONS Plan',
-    icon: Calendar,
-    tagline: 'Schedule Visualization & Planning',
-    description: 'Transform your project timeline with intelligent scheduling visualization. AICONS Plan provides powerful 4D visualization tools that bring your construction schedule to life.',
-    features: [
-      'Interactive 4D schedule visualization',
-      'Real-time schedule updates',
-      'Resource conflict detection',
-      'Progress tracking and reporting',
-      'Integration with P6 and MSP',
-      'Collaborative planning tools',
-    ],
-    benefits: [
-      { title: 'Better Communication', description: 'Visual schedules everyone can understand' },
-      { title: 'Faster Decisions', description: 'Identify issues before they become problems' },
-      { title: 'Improved Coordination', description: 'Keep all stakeholders aligned' },
-    ],
-  },
-  optimize: {
-    name: 'AICONS Optimize',
-    icon: BarChart3,
-    tagline: 'AI-Powered Schedule Optimization',
-    description: 'Leverage artificial intelligence to automatically optimize your construction schedules. Simulate millions of scenarios to find the best path forward.',
-    features: [
-      'AI-powered schedule optimization',
-      'Millions of simulation scenarios',
-      'Resource leveling automation',
-      'What-if scenario analysis',
-      'Cost optimization algorithms',
-      'Risk-adjusted scheduling',
-    ],
-    benefits: [
-      { title: '17% Duration Reduction', description: 'Average project timeline improvement' },
-      { title: '14% Labor Savings', description: 'Optimized resource allocation' },
-      { title: 'Better Risk Management', description: 'Identify risks before they occur' },
-    ],
-  },
-  model: {
-    name: 'AICONS Model',
-    icon: Box,
-    tagline: 'BIM-Based Schedule Generation',
-    description: 'Generate optimized schedules directly from your BIM models. AICONS Model extracts work packages and creates intelligent construction sequences automatically.',
-    features: [
-      'Automatic BIM model analysis',
-      'Work package extraction',
-      'Sequence generation',
-      'Constraint detection',
-      'Multiple model formats (Revit, IFC)',
-      'Direct P6/MSP export',
-    ],
-    benefits: [
-      { title: 'Faster Planning', description: 'Generate schedules in hours, not weeks' },
-      { title: 'Model-Based Accuracy', description: 'Schedules based on actual quantities' },
-      { title: 'Multiple Options', description: 'Explore different construction strategies' },
-    ],
-  },
-}
+import useTranslation from '../hooks/useTranslation'
 
 function ProductPage({ productKey }) {
+  const { t } = useTranslation()
+
+  const productPages = {
+    plan: {
+      name: 'AICONS Plan',
+      icon: Calendar,
+      tagline: t('productsPage.plan.tagline'),
+      description: t('productsPage.plan.description'),
+      features: t('productsPage.plan.features'),
+      benefits: [
+        { title: t('productsPage.plan.benefits.betterCommunication.title'), description: t('productsPage.plan.benefits.betterCommunication.description') },
+        { title: t('productsPage.plan.benefits.fasterDecisions.title'), description: t('productsPage.plan.benefits.fasterDecisions.description') },
+        { title: t('productsPage.plan.benefits.improvedCoordination.title'), description: t('productsPage.plan.benefits.improvedCoordination.description') },
+      ],
+    },
+    optimize: {
+      name: 'AICONS Optimize',
+      icon: BarChart3,
+      tagline: t('productsPage.optimize.tagline'),
+      description: t('productsPage.optimize.description'),
+      features: t('productsPage.optimize.features'),
+      benefits: [
+        { title: t('productsPage.optimize.benefits.durationReduction.title'), description: t('productsPage.optimize.benefits.durationReduction.description') },
+        { title: t('productsPage.optimize.benefits.laborSavings.title'), description: t('productsPage.optimize.benefits.laborSavings.description') },
+        { title: t('productsPage.optimize.benefits.riskManagement.title'), description: t('productsPage.optimize.benefits.riskManagement.description') },
+      ],
+    },
+    model: {
+      name: 'AICONS Model',
+      icon: Box,
+      tagline: t('productsPage.model.tagline'),
+      description: t('productsPage.model.description'),
+      features: t('productsPage.model.features'),
+      benefits: [
+        { title: t('productsPage.model.benefits.fasterPlanning.title'), description: t('productsPage.model.benefits.fasterPlanning.description') },
+        { title: t('productsPage.model.benefits.modelBasedAccuracy.title'), description: t('productsPage.model.benefits.modelBasedAccuracy.description') },
+        { title: t('productsPage.model.benefits.multipleOptions.title'), description: t('productsPage.model.benefits.multipleOptions.description') },
+      ],
+    },
+  }
+
   const product = productPages[productKey]
 
   if (!product) {
     return (
       <div className="container-custom py-20 text-center">
-        <h1 className="text-2xl font-bold">Product not found</h1>
+        <h1 className="text-2xl font-bold">{t('productsPage.productNotFound')}</h1>
         <Link to="/products/plan" className="text-alice-primary hover:underline">
-          View AICONS Plan
+          {t('productsPage.viewPlan')}
         </Link>
       </div>
     )
@@ -94,10 +76,10 @@ function ProductPage({ productKey }) {
             <p className="text-xl text-gray-300 mb-8">{product.description}</p>
             <div className="flex gap-4">
               <Link to="/demo" className="btn-primary">
-                Request Demo
+                {t('productsPage.requestDemo')}
               </Link>
               <button className="btn-secondary">
-                Download Brochure
+                {t('productsPage.downloadBrochure')}
               </button>
             </div>
           </div>
@@ -107,7 +89,7 @@ function ProductPage({ productKey }) {
       {/* Features */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <h2 className="section-title text-center mb-12">Key Features</h2>
+          <h2 className="section-title text-center mb-12">{t('productsPage.keyFeatures')}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {product.features.map((feature, index) => (
               <motion.div
@@ -129,7 +111,7 @@ function ProductPage({ productKey }) {
       {/* Benefits */}
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
-          <h2 className="section-title text-center mb-12">Benefits</h2>
+          <h2 className="section-title text-center mb-12">{t('productsPage.benefits')}</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {product.benefits.map((benefit, index) => (
               <motion.div
@@ -152,13 +134,13 @@ function ProductPage({ productKey }) {
       <section className="py-20 bg-alice-primary">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Get Started with {product.name}?
+            {t('productsPage.readyToStart', { name: product.name })}
           </h2>
           <Link
             to="/demo"
             className="inline-flex items-center gap-2 bg-white text-alice-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
           >
-            Schedule a Demo
+            {t('productsPage.scheduleDemo')}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
@@ -168,13 +150,36 @@ function ProductPage({ productKey }) {
 }
 
 function ProductsIndex() {
+  const { t } = useTranslation()
+
+  const productPages = {
+    plan: {
+      name: 'AICONS Plan',
+      icon: Calendar,
+      tagline: t('productsPage.plan.tagline'),
+      description: t('productsPage.plan.description'),
+    },
+    optimize: {
+      name: 'AICONS Optimize',
+      icon: BarChart3,
+      tagline: t('productsPage.optimize.tagline'),
+      description: t('productsPage.optimize.description'),
+    },
+    model: {
+      name: 'AICONS Model',
+      icon: Box,
+      tagline: t('productsPage.model.tagline'),
+      description: t('productsPage.model.description'),
+    },
+  }
+
   return (
     <div>
       <section className="py-20 bg-gradient-to-br from-alice-dark to-alice-navy">
         <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Products</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{t('productsPage.title')}</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Choose the right AICONS solution for your construction project needs
+            {t('productsPage.subtitle')}
           </p>
         </div>
       </section>
@@ -201,7 +206,7 @@ function ProductsIndex() {
                   <p className="text-alice-primary mb-4">{product.tagline}</p>
                   <p className="text-gray-600 mb-6 line-clamp-3">{product.description}</p>
                   <span className="inline-flex items-center gap-2 text-alice-primary font-semibold group-hover:gap-3 transition-all">
-                    Learn More <ArrowRight className="w-4 h-4" />
+                    {t('common.learnMore')} <ArrowRight className="w-4 h-4" />
                   </span>
                 </Link>
               </motion.div>

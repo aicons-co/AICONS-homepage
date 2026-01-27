@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import useTranslation from '../../hooks/useTranslation'
 
 const clients = [
   'Cranborne',
@@ -18,6 +19,8 @@ const clients = [
 ]
 
 function TrustSection() {
+  const { t } = useTranslation()
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="container-custom">
@@ -27,7 +30,7 @@ function TrustSection() {
           viewport={{ once: true }}
           className="text-center text-gray-500 text-sm uppercase tracking-wider mb-8"
         >
-          Trusted by industry leaders
+          {t('trust.title')}
         </motion.p>
 
         <motion.div

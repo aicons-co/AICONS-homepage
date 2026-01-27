@@ -1,28 +1,31 @@
 import { motion } from 'framer-motion'
 import { TrendingDown, Users, Truck } from 'lucide-react'
-
-const metrics = [
-  {
-    icon: TrendingDown,
-    value: '17%',
-    label: 'Project Duration Reduction',
-    description: 'Average reduction in overall project timeline',
-  },
-  {
-    icon: Users,
-    value: '14%',
-    label: 'Labor Cost Savings',
-    description: 'Reduced labor costs through optimization',
-  },
-  {
-    icon: Truck,
-    value: '12%',
-    label: 'Equipment Cost Savings',
-    description: 'More efficient equipment utilization',
-  },
-]
+import useTranslation from '../../hooks/useTranslation'
 
 function MetricsSection() {
+  const { t } = useTranslation()
+
+  const metrics = [
+    {
+      icon: TrendingDown,
+      value: '17%',
+      label: t('metrics.durationReduction.label'),
+      description: t('metrics.durationReduction.description'),
+    },
+    {
+      icon: Users,
+      value: '14%',
+      label: t('metrics.laborSavings.label'),
+      description: t('metrics.laborSavings.description'),
+    },
+    {
+      icon: Truck,
+      value: '12%',
+      label: t('metrics.equipmentSavings.label'),
+      description: t('metrics.equipmentSavings.description'),
+    },
+  ]
+
   return (
     <section className="py-20 bg-gradient-to-br from-alice-primary to-alice-secondary">
       <div className="container-custom">
@@ -33,10 +36,10 @@ function MetricsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Proven Results
+            {t('metrics.title')}
           </h2>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Our customers consistently achieve measurable improvements
+            {t('metrics.subtitle')}
           </p>
         </motion.div>
 

@@ -1,109 +1,67 @@
 import { Routes, Route, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Building2, Users, Briefcase, Factory, Train, Store, ArrowRight, Check } from 'lucide-react'
-
-const solutionPages = {
-  gc: {
-    name: 'General Contractors',
-    icon: Building2,
-    tagline: 'Optimize Your Construction Operations',
-    description: 'AICONS helps general contractors deliver projects on time and under budget through AI-powered schedule optimization.',
-    challenges: [
-      'Complex schedule coordination',
-      'Resource allocation conflicts',
-      'Risk management',
-      'Client reporting demands',
-    ],
-    solutions: [
-      'Automated schedule optimization',
-      'Real-time resource leveling',
-      'Risk scenario modeling',
-      'Visual progress reporting',
-    ],
-  },
-  owners: {
-    name: 'Owners',
-    icon: Briefcase,
-    tagline: 'Maximize Your Investment Value',
-    description: 'AICONS gives owners visibility and control over their construction projects with data-driven insights.',
-    challenges: [
-      'Limited project visibility',
-      'Schedule reliability concerns',
-      'Cost overrun risks',
-      'Stakeholder communication',
-    ],
-    solutions: [
-      'Real-time project dashboards',
-      'Schedule confidence metrics',
-      'Scenario comparison tools',
-      'Automated reporting',
-    ],
-  },
-  consultants: {
-    name: 'Consultants',
-    icon: Users,
-    tagline: 'Deliver Superior Advisory Services',
-    description: 'AICONS empowers consultants to provide more accurate scheduling advice and project controls services.',
-    challenges: [
-      'Manual scheduling processes',
-      'Limited optimization capabilities',
-      'Time-consuming analysis',
-      'Competitive differentiation',
-    ],
-    solutions: [
-      'AI-powered optimization tools',
-      'Rapid scenario analysis',
-      'Data-driven recommendations',
-      'Advanced analytics platform',
-    ],
-  },
-  industrial: {
-    name: 'Industrial Projects',
-    icon: Factory,
-    tagline: 'Complex Industrial Construction',
-    description: 'AICONS handles the complexity of industrial construction with advanced sequencing and optimization.',
-    features: [
-      'Module installation sequencing',
-      'Equipment coordination',
-      'Shutdown planning',
-      'Safety integration',
-    ],
-  },
-  infrastructure: {
-    name: 'Infrastructure Projects',
-    icon: Train,
-    tagline: 'Large-Scale Infrastructure',
-    description: 'AICONS manages the scale and complexity of infrastructure projects across multiple work fronts.',
-    features: [
-      'Multi-front coordination',
-      'Linear project scheduling',
-      'Stakeholder management',
-      'Phased delivery planning',
-    ],
-  },
-  commercial: {
-    name: 'Commercial Projects',
-    icon: Store,
-    tagline: 'Commercial Building Construction',
-    description: 'AICONS optimizes commercial construction projects for speed to market and cost efficiency.',
-    features: [
-      'Fast-track scheduling',
-      'Tenant coordination',
-      'Finish optimization',
-      'Turnover planning',
-    ],
-  },
-}
+import useTranslation from '../hooks/useTranslation'
 
 function SolutionPage({ solutionKey }) {
+  const { t } = useTranslation()
+
+  const solutionPages = {
+    gc: {
+      name: t('solutionsPage.gc.name'),
+      icon: Building2,
+      tagline: t('solutionsPage.gc.tagline'),
+      description: t('solutionsPage.gc.description'),
+      challenges: t('solutionsPage.gc.challenges'),
+      solutions: t('solutionsPage.gc.solutions'),
+    },
+    owners: {
+      name: t('solutionsPage.owners.name'),
+      icon: Briefcase,
+      tagline: t('solutionsPage.owners.tagline'),
+      description: t('solutionsPage.owners.description'),
+      challenges: t('solutionsPage.owners.challenges'),
+      solutions: t('solutionsPage.owners.solutions'),
+    },
+    consultants: {
+      name: t('solutionsPage.consultants.name'),
+      icon: Users,
+      tagline: t('solutionsPage.consultants.tagline'),
+      description: t('solutionsPage.consultants.description'),
+      challenges: t('solutionsPage.consultants.challenges'),
+      solutions: t('solutionsPage.consultants.solutions'),
+    },
+    industrial: {
+      name: t('solutionsPage.industrial.name'),
+      icon: Factory,
+      tagline: t('solutionsPage.industrial.tagline'),
+      description: t('solutionsPage.industrial.description'),
+      features: t('solutionsPage.industrial.features'),
+    },
+    infrastructure: {
+      name: t('solutionsPage.infrastructure.name'),
+      icon: Train,
+      tagline: t('solutionsPage.infrastructure.tagline'),
+      description: t('solutionsPage.infrastructure.description'),
+      features: t('solutionsPage.infrastructure.features'),
+    },
+    commercial: {
+      name: t('solutionsPage.commercial.name'),
+      icon: Store,
+      tagline: t('solutionsPage.commercial.tagline'),
+      description: t('solutionsPage.commercial.description'),
+      features: t('solutionsPage.commercial.features'),
+    },
+  }
+
   const solution = solutionPages[solutionKey]
 
   if (!solution) {
     return (
       <div className="container-custom py-20 text-center">
-        <h1 className="text-2xl font-bold">Solution not found</h1>
+        <h1 className="text-2xl font-bold">{t('solutionsPage.solutionNotFound')}</h1>
         <Link to="/solutions/gc" className="text-alice-primary hover:underline">
-          View Solutions for General Contractors
+          {t('solutionsPage.viewGC')}
         </Link>
       </div>
     )
@@ -129,7 +87,7 @@ function SolutionPage({ solutionKey }) {
             <p className="text-xl text-gray-300 mb-8">{solution.description}</p>
             <div className="flex gap-4">
               <Link to="/demo" className="btn-primary">
-                Request Demo
+                {t('solutionsPage.requestDemo')}
               </Link>
             </div>
           </div>
@@ -143,7 +101,7 @@ function SolutionPage({ solutionKey }) {
             <div className="container-custom">
               <div className="grid md:grid-cols-2 gap-16">
                 <div>
-                  <h2 className="text-2xl font-bold text-alice-dark mb-6">Your Challenges</h2>
+                  <h2 className="text-2xl font-bold text-alice-dark mb-6">{t('solutionsPage.yourChallenges')}</h2>
                   <div className="space-y-4">
                     {solution.challenges.map((challenge, index) => (
                       <motion.div
@@ -161,7 +119,7 @@ function SolutionPage({ solutionKey }) {
                   </div>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-alice-dark mb-6">Our Solutions</h2>
+                  <h2 className="text-2xl font-bold text-alice-dark mb-6">{t('solutionsPage.ourSolutions')}</h2>
                   <div className="space-y-4">
                     {solution.solutions.map((sol, index) => (
                       <motion.div
@@ -185,7 +143,7 @@ function SolutionPage({ solutionKey }) {
       ) : (
         <section className="py-20 bg-white">
           <div className="container-custom">
-            <h2 className="section-title text-center mb-12">Key Capabilities</h2>
+            <h2 className="section-title text-center mb-12">{t('solutionsPage.keyCapabilities')}</h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               {solution.features.map((feature, index) => (
                 <motion.div
@@ -209,13 +167,13 @@ function SolutionPage({ solutionKey }) {
       <section className="py-20 bg-alice-primary">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Projects?
+            {t('solutionsPage.readyToTransform')}
           </h2>
           <Link
             to="/demo"
             className="inline-flex items-center gap-2 bg-white text-alice-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
           >
-            Schedule a Demo
+            {t('solutionsPage.scheduleDemo')}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
@@ -225,26 +183,36 @@ function SolutionPage({ solutionKey }) {
 }
 
 function SolutionsIndex() {
+  const { t } = useTranslation()
   const stakeholders = ['gc', 'owners', 'consultants']
   const projectTypes = ['industrial', 'infrastructure', 'commercial']
+
+  const solutionData = {
+    gc: { name: t('solutionsPage.gc.name'), tagline: t('solutionsPage.gc.tagline'), icon: Building2 },
+    owners: { name: t('solutionsPage.owners.name'), tagline: t('solutionsPage.owners.tagline'), icon: Briefcase },
+    consultants: { name: t('solutionsPage.consultants.name'), tagline: t('solutionsPage.consultants.tagline'), icon: Users },
+    industrial: { name: t('solutionsPage.industrial.name'), tagline: t('solutionsPage.industrial.tagline'), icon: Factory },
+    infrastructure: { name: t('solutionsPage.infrastructure.name'), tagline: t('solutionsPage.infrastructure.tagline'), icon: Train },
+    commercial: { name: t('solutionsPage.commercial.name'), tagline: t('solutionsPage.commercial.tagline'), icon: Store },
+  }
 
   return (
     <div>
       <section className="py-20 bg-gradient-to-br from-alice-dark to-alice-navy">
         <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Solutions</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{t('solutionsPage.title')}</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            AICONS provides tailored solutions for every stakeholder and project type
+            {t('solutionsPage.subtitle')}
           </p>
         </div>
       </section>
 
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold text-alice-dark mb-8">By Stakeholder</h2>
+          <h2 className="text-2xl font-bold text-alice-dark mb-8">{t('solutionsPage.byStakeholder')}</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {stakeholders.map((key, index) => {
-              const solution = solutionPages[key]
+              const solution = solutionData[key]
               return (
                 <motion.div
                   key={key}
@@ -263,7 +231,7 @@ function SolutionsIndex() {
                     <h3 className="text-2xl font-bold text-alice-dark mb-2">{solution.name}</h3>
                     <p className="text-gray-600 mb-6">{solution.tagline}</p>
                     <span className="inline-flex items-center gap-2 text-alice-primary font-semibold">
-                      Learn More <ArrowRight className="w-4 h-4" />
+                      {t('solutionsPage.learnMore')} <ArrowRight className="w-4 h-4" />
                     </span>
                   </Link>
                 </motion.div>
@@ -271,10 +239,10 @@ function SolutionsIndex() {
             })}
           </div>
 
-          <h2 className="text-2xl font-bold text-alice-dark mb-8">By Project Type</h2>
+          <h2 className="text-2xl font-bold text-alice-dark mb-8">{t('solutionsPage.byProjectType')}</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {projectTypes.map((key, index) => {
-              const solution = solutionPages[key]
+              const solution = solutionData[key]
               return (
                 <motion.div
                   key={key}
@@ -293,7 +261,7 @@ function SolutionsIndex() {
                     <h3 className="text-2xl font-bold text-alice-dark mb-2">{solution.name}</h3>
                     <p className="text-gray-600 mb-6">{solution.tagline}</p>
                     <span className="inline-flex items-center gap-2 text-alice-secondary font-semibold">
-                      Learn More <ArrowRight className="w-4 h-4" />
+                      {t('solutionsPage.learnMore')} <ArrowRight className="w-4 h-4" />
                     </span>
                   </Link>
                 </motion.div>

@@ -2,71 +2,74 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
-
-const menuItems = {
-  products: {
-    title: 'Products',
-    items: [
-      {
-        name: 'AISIMS Plan',
-        href: '/products/plan',
-        description: 'Schedule visualization and planning',
-      },
-      {
-        name: 'AISIMS Optimize',
-        href: '/products/optimize',
-        description: 'AI-powered schedule optimization',
-      },
-      {
-        name: 'AISIMS Model',
-        href: '/products/model',
-        description: 'BIM-based modeling and scheduling',
-      },
-    ],
-  },
-  solutions: {
-    title: 'Solutions',
-    sections: [
-      {
-        title: 'By Stakeholder',
-        items: [
-          { name: 'General Contractors', href: '/solutions/gc' },
-          { name: 'Owners', href: '/solutions/owners' },
-          { name: 'Consultants', href: '/solutions/consultants' },
-        ],
-      },
-      {
-        title: 'By Project Type',
-        items: [
-          { name: 'Industrial', href: '/solutions/industrial' },
-          { name: 'Infrastructure', href: '/solutions/infrastructure' },
-          { name: 'Commercial', href: '/solutions/commercial' },
-        ],
-      },
-    ],
-  },
-  resources: {
-    title: 'Resources',
-    items: [
-      { name: 'Projects', href: '/resources#case-studies' },
-      { name: 'Webinars', href: '/resources#webinars' },
-      { name: 'Blog', href: '/resources#blog' },
-      { name: 'Whitepapers', href: '/resources#whitepapers' },
-    ],
-  },
-}
-
-const loginRegions = [
-  { name: 'US', flag: '🇺🇸', href: '/login?region=us' },
-  { name: 'UK/EU', flag: '🇪🇺', href: '/login?region=eu' },
-  { name: 'AU', flag: '🇦🇺', href: '/login?region=au' },
-]
+import useTranslation from '../hooks/useTranslation'
+import LanguageSwitcher from './LanguageSwitcher'
 
 function Navbar() {
+  const { t } = useTranslation()
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [mobileSubmenu, setMobileSubmenu] = useState(null)
+
+  const menuItems = {
+    products: {
+      title: 'Products',
+      items: [
+        {
+          name: t('products.plan.name'),
+          href: '/products/plan',
+          description: t('products.plan.description'),
+        },
+        {
+          name: t('products.optimize.name'),
+          href: '/products/optimize',
+          description: t('products.optimize.description'),
+        },
+        {
+          name: t('products.model.name'),
+          href: '/products/model',
+          description: t('products.model.description'),
+        },
+      ],
+    },
+    solutions: {
+      title: 'Solutions',
+      sections: [
+        {
+          title: t('nav.byStakeholder'),
+          items: [
+            { name: t('solutions.gc'), href: '/solutions/gc' },
+            { name: t('solutions.owners'), href: '/solutions/owners' },
+            { name: t('solutions.consultants'), href: '/solutions/consultants' },
+          ],
+        },
+        {
+          title: t('nav.byProjectType'),
+          items: [
+            { name: t('solutions.industrial'), href: '/solutions/industrial' },
+            { name: t('solutions.infrastructure'), href: '/solutions/infrastructure' },
+            { name: t('solutions.commercial'), href: '/solutions/commercial' },
+          ],
+        },
+      ],
+    },
+    resources: {
+      title: 'Resources',
+      items: [
+        { name: t('nav.caseStudies'), href: '/resources#case-studies' },
+        { name: t('nav.webinars'), href: '/resources#webinars' },
+        { name: t('nav.blog'), href: '/resources#blog' },
+        { name: t('nav.whitepapers'), href: '/resources#whitepapers' },
+      ],
+    },
+  }
+
+  const loginRegions = [
+    { name: 'US', flag: '🇺🇸', href: '/login?region=us' },
+    { name: 'UK/EU', flag: '🇪🇺', href: '/login?region=eu' },
+    { name: 'AU', flag: '🇦🇺', href: '/login?region=au' },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,11 +95,12 @@ function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white shadow-lg py-2'
-          : 'bg-transparent py-4'
-      }`}
+      // className={`fixed top-0 left-0 right-0 transition-all duration-300 z-50 ${
+      //   isScrolled
+      //     ? 'bg-white shadow-lg py-2'
+      //     : 'bg-transparent py-4'
+      // }`}
+      className='fixed top-0 left-0 right-0 z-50 bg-white shadow-lg py-2'
     >
       <nav className="container-custom">
         <div className="flex items-center justify-between">
@@ -107,12 +111,26 @@ function Navbar() {
               alt="AICONS"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="h-8 md:h-10 w-auto"
+              className="h-10 md:h-14 w-auto"
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-4 text-[15px]">
+
+            {/* Company */}
+              <Link
+                to="/company"
+                // className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                //   isScrolled
+                //     ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
+                //     : 'text-white/90 hover:text-white hover:bg-white/10'
+                //   }`}
+                className='px-4 py-2 rounded-lg font-medium text-black'
+              >
+              Company
+              </Link>
+
             {/* Products Dropdown */}
             <div
               className="relative"
@@ -120,13 +138,14 @@ function Navbar() {
               onMouseLeave={handleDropdownLeave}
             >
               <button
-                className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
-                  isScrolled
-                    ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
-                    : 'text-white/90 hover:text-white hover:bg-white/10'
-                }`}
+                // className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
+                //   isScrolled
+                //     ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
+                //     : 'text-white/90 hover:text-white hover:bg-white/10'
+                // }`}
+                className='flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-black'
               >
-                Products
+                {menuItems.products.title}
                 <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'products' ? 'rotate-180' : ''}`} />
               </button>
 
@@ -165,7 +184,7 @@ function Navbar() {
                         to="/products"
                         className="text-sm text-alice-primary font-medium hover:underline flex items-center gap-1"
                       >
-                        View all products <ChevronRight className="w-4 h-4" />
+                        {t('nav.viewAllProducts')} <ChevronRight className="w-4 h-4" />
                       </Link>
                     </div>
                   </motion.div>
@@ -180,13 +199,14 @@ function Navbar() {
               onMouseLeave={handleDropdownLeave}
             >
               <button
-                className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
-                  isScrolled
-                    ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
-                    : 'text-white/90 hover:text-white hover:bg-white/10'
-                }`}
+                // className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
+                //   isScrolled
+                //     ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
+                //     : 'text-white/90 hover:text-white hover:bg-white/10'
+                // }`}
+                className='flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-black'
               >
-                Solutions
+                {menuItems.solutions.title}
                 <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'solutions' ? 'rotate-180' : ''}`} />
               </button>
 
@@ -228,11 +248,12 @@ function Navbar() {
             {/* Case Studies */}
             <Link
               to="/resources#case-studies"
-              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                isScrolled
-                  ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
-                  : 'text-white/90 hover:text-white hover:bg-white/10'
-              }`}
+              // className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              //   isScrolled
+              //     ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
+              //     : 'text-white/90 hover:text-white hover:bg-white/10'
+              // }`}
+              className='px-4 py-2 rounded-lg font-medium text-black'
             >
               Projects
             </Link>
@@ -244,13 +265,14 @@ function Navbar() {
               onMouseLeave={handleDropdownLeave}
             >
               <button
-                className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
-                  isScrolled
-                    ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
-                    : 'text-white/90 hover:text-white hover:bg-white/10'
-                }`}
+                // className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
+                //   isScrolled
+                //     ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
+                //     : 'text-white/90 hover:text-white hover:bg-white/10'
+                // }`}
+                className='flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-black'
               >
-                Resources
+                {menuItems.resources.title}
                 <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'resources' ? 'rotate-180' : ''}`} />
               </button>
 
@@ -279,18 +301,6 @@ function Navbar() {
               </AnimatePresence>
             </div>
 
-            {/* Company */}
-            <Link
-              to="/company"
-              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                isScrolled
-                  ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
-                  : 'text-white/90 hover:text-white hover:bg-white/10'
-              }`}
-            >
-              Company
-            </Link>
-
             {/* Login Dropdown */}
             <div
               className="relative"
@@ -298,11 +308,12 @@ function Navbar() {
               onMouseLeave={handleDropdownLeave}
             >
               <button
-                className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
-                  isScrolled
-                    ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
-                    : 'text-white/90 hover:text-white hover:bg-white/10'
-                }`}
+                // className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
+                //   isScrolled
+                //     ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
+                //     : 'text-white/90 hover:text-white hover:bg-white/10'
+                // }`}
+                className='flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-black'
               >
                 Login
                 <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'login' ? 'rotate-180' : ''}`} />
@@ -333,9 +344,13 @@ function Navbar() {
                 )}
               </AnimatePresence>
             </div>
+
+            {/* Language Switcher */}
+            <LanguageSwitcher isScrolled={isScrolled} />
           </div>
 
           {/* CTA Button */}
+          {/* ✅ AISIMS 링크 버튼 */}
           <div className="hidden lg:block">
             <motion.a
               href="https://www.aicons.co.kr/"
@@ -343,7 +358,9 @@ function Navbar() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-block px-6 py-2.5 bg-alice-primary text-white font-semibold rounded-lg hover:bg-alice-primary/90 transition-colors shadow-lg shadow-alice-primary/25"
+              className="inline-block px-6 py-2.5
+                bg-alice-primary text-white font-semibold rounded-lg
+                hover:bg-alice-primary/90 transition-colors shadow-lg shadow-alice-primary/10"
             >
               AISIMS<sup className="text-xs">®</sup>
             </motion.a>
@@ -380,7 +397,7 @@ function Navbar() {
                       onClick={() => setMobileSubmenu(mobileSubmenu === 'products' ? null : 'products')}
                       className="flex items-center justify-between w-full px-4 py-3 text-gray-900 font-medium rounded-lg hover:bg-gray-50"
                     >
-                      Products
+                      {menuItems.products.title}
                       <ChevronDown className={`w-5 h-5 transition-transform ${mobileSubmenu === 'products' ? 'rotate-180' : ''}`} />
                     </button>
                     <AnimatePresence>
@@ -414,7 +431,7 @@ function Navbar() {
                       onClick={() => setMobileSubmenu(mobileSubmenu === 'solutions' ? null : 'solutions')}
                       className="flex items-center justify-between w-full px-4 py-3 text-gray-900 font-medium rounded-lg hover:bg-gray-50"
                     >
-                      Solutions
+                      {menuItems.solutions.title}
                       <ChevronDown className={`w-5 h-5 transition-transform ${mobileSubmenu === 'solutions' ? 'rotate-180' : ''}`} />
                     </button>
                     <AnimatePresence>
@@ -455,7 +472,7 @@ function Navbar() {
                     onClick={closeMobileMenu}
                     className="block px-4 py-3 text-gray-900 font-medium rounded-lg hover:bg-gray-50"
                   >
-                    Case Studies
+                    {t('nav.caseStudies')}
                   </Link>
                   <Link
                     to="/resources"
@@ -506,6 +523,9 @@ function Navbar() {
                       )}
                     </AnimatePresence>
                   </div>
+
+                  {/* Mobile Language Switcher */}
+                  <LanguageSwitcher isMobile={true} />
 
                   {/* Mobile CTA */}
                   <div className="pt-4 px-4">

@@ -1,30 +1,33 @@
 import { Link } from 'react-router-dom'
 import { Mail, Linkedin, Twitter, Youtube } from 'lucide-react'
-
-const footerLinks = {
-  company: [
-    { name: 'About Us', href: '/company' },
-    { name: 'Careers', href: '/company#careers' },
-    { name: 'Contact', href: '/company#contact' },
-  ],
-  products: [
-    { name: 'AICONS Plan', href: '/products/plan' },
-    { name: 'AICONS Optimize', href: '/products/optimize' },
-    { name: 'AICONS Model', href: '/products/model' },
-  ],
-  solutions: [
-    { name: 'General Contractors', href: '/solutions/gc' },
-    { name: 'Owners', href: '/solutions/owners' },
-    { name: 'Consultants', href: '/solutions/consultants' },
-  ],
-  resources: [
-    { name: 'Case Studies', href: '/resources#case-studies' },
-    { name: 'Blog', href: '/resources#blog' },
-    { name: 'Webinars', href: '/resources#webinars' },
-  ],
-}
+import useTranslation from '../hooks/useTranslation'
 
 function Footer() {
+  const { t } = useTranslation()
+
+  const footerLinks = {
+    company: [
+      { name: t('footer.aboutUs'), href: '/company' },
+      { name: t('footer.careers'), href: '/company#careers' },
+      { name: t('footer.contact'), href: '/company#contact' },
+    ],
+    products: [
+      { name: 'AICONS Plan', href: '/products/plan' },
+      { name: 'AICONS Optimize', href: '/products/optimize' },
+      { name: 'AICONS Model', href: '/products/model' },
+    ],
+    solutions: [
+      { name: t('solutions.gc'), href: '/solutions/gc' },
+      { name: t('solutions.owners'), href: '/solutions/owners' },
+      { name: t('solutions.consultants'), href: '/solutions/consultants' },
+    ],
+    resources: [
+      { name: t('footer.caseStudies'), href: '/resources#case-studies' },
+      { name: t('footer.blog'), href: '/resources#blog' },
+      { name: t('footer.webinars'), href: '/resources#webinars' },
+    ],
+  }
+
   return (
     <footer className="bg-alice-dark text-white">
       {/* Newsletter Section */}
@@ -32,19 +35,19 @@ function Footer() {
         <div className="container-custom py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-xl font-semibold mb-2">Stay Updated</h3>
+              <h3 className="text-xl font-semibold mb-2">{t('footer.stayUpdated')}</h3>
               <p className="text-gray-400">
-                Get the latest news and updates from AICONS Technologies
+                {t('footer.newsletterDesc')}
               </p>
             </div>
             <form className="flex w-full md:w-auto gap-2">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t('footer.enterEmail')}
                 className="px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-alice-primary flex-grow md:w-64"
               />
               <button type="submit" className="btn-primary whitespace-nowrap">
-                Subscribe
+                {t('footer.subscribe')}
               </button>
             </form>
           </div>
@@ -62,7 +65,7 @@ function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 text-sm mb-4">
-              AI-powered construction scheduling and optimization platform
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-alice-primary transition-colors">
@@ -82,7 +85,7 @@ function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold mb-4">{t('footer.company')}</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -99,7 +102,7 @@ function Footer() {
 
           {/* Products Links */}
           <div>
-            <h4 className="font-semibold mb-4">Products</h4>
+            <h4 className="font-semibold mb-4">{t('footer.products')}</h4>
             <ul className="space-y-3">
               {footerLinks.products.map((link) => (
                 <li key={link.name}>
@@ -116,7 +119,7 @@ function Footer() {
 
           {/* Solutions Links */}
           <div>
-            <h4 className="font-semibold mb-4">Solutions</h4>
+            <h4 className="font-semibold mb-4">{t('footer.solutions')}</h4>
             <ul className="space-y-3">
               {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
@@ -133,7 +136,7 @@ function Footer() {
 
           {/* Resources Links */}
           <div>
-            <h4 className="font-semibold mb-4">Resources</h4>
+            <h4 className="font-semibold mb-4">{t('footer.resources')}</h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
@@ -155,14 +158,14 @@ function Footer() {
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} AICONS Technologies. All rights reserved.
+              © {new Date().getFullYear()} {t('footer.copyright')}
             </p>
             <div className="flex items-center space-x-6">
               <Link to="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Privacy Policy
+                {t('footer.privacyPolicy')}
               </Link>
               <Link to="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Terms of Service
+                {t('footer.termsOfService')}
               </Link>
               <div className="flex items-center space-x-2">
                 <span className="text-xs text-gray-500">SOC II</span>

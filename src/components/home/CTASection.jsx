@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Calendar } from 'lucide-react'
+import useTranslation from '../../hooks/useTranslation'
 
 function CTASection() {
+  const { t } = useTranslation()
 
   return (
     <section className="py-20 bg-white">
@@ -18,11 +20,10 @@ function CTASection() {
 
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Projects?
+              {t('cta.title')}
             </h2>
             <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-              Join hundreds of construction teams already using AISIMS to optimize
-              their schedules and reduce costs.
+              {t('cta.subtitle')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -43,7 +44,7 @@ function CTASection() {
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
               >
-                Contact Sales
+                {t('cta.contactSales')}
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
             </div>

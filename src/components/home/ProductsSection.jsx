@@ -1,51 +1,53 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Calendar, BarChart3, Box } from 'lucide-react'
-
-const products = [
-  {
-    id: 'plan',
-    name: 'AISIMS Plan',
-    icon: Calendar,
-    tagline: 'Schedule Visualization & Planning',
-    description: 'Transform your project timeline with intelligent scheduling visualization.',
-    steps: [
-      { title: 'Import', description: 'Import your existing schedules from P6 or MSP' },
-      { title: 'Visualize', description: 'See your schedule in an interactive 4D view' },
-      { title: 'Analyze', description: 'Identify bottlenecks and optimization opportunities' },
-      { title: 'Export', description: 'Export optimized schedules back to your tools' },
-    ],
-  },
-  {
-    id: 'optimize',
-    name: 'AISIMS Optimize',
-    icon: BarChart3,
-    tagline: 'P6/MSP-based Optimization',
-    description: 'Leverage AI to optimize your construction schedules automatically.',
-    steps: [
-      { title: 'Connect', description: 'Connect to your P6 or Microsoft Project files' },
-      { title: 'Simulate', description: 'Run millions of schedule simulations' },
-      { title: 'Optimize', description: 'AI finds the optimal resource allocation' },
-      { title: 'Compare', description: 'Compare scenarios side-by-side' },
-    ],
-  },
-  {
-    id: 'model',
-    name: 'AISIMS Model',
-    icon: Box,
-    tagline: 'BIM-based Modeling',
-    description: 'Generate optimized schedules directly from your BIM models.',
-    steps: [
-      { title: 'Upload', description: 'Upload your BIM model (Revit, IFC, etc.)' },
-      { title: 'Extract', description: 'Automatically extract work packages' },
-      { title: 'Generate', description: 'AI generates multiple schedule options' },
-      { title: 'Refine', description: 'Fine-tune with construction constraints' },
-    ],
-  },
-]
+import useTranslation from '../../hooks/useTranslation'
 
 function ProductsSection() {
+  const { t } = useTranslation()
   const [activeProduct, setActiveProduct] = useState('plan')
+
+  const products = [
+    {
+      id: 'plan',
+      name: 'AISIMS Plan',
+      icon: Calendar,
+      tagline: t('productsSection.plan.tagline'),
+      description: t('productsSection.plan.description'),
+      steps: [
+        { title: t('productsSection.plan.steps.import.title'), description: t('productsSection.plan.steps.import.description') },
+        { title: t('productsSection.plan.steps.visualize.title'), description: t('productsSection.plan.steps.visualize.description') },
+        { title: t('productsSection.plan.steps.analyze.title'), description: t('productsSection.plan.steps.analyze.description') },
+        { title: t('productsSection.plan.steps.export.title'), description: t('productsSection.plan.steps.export.description') },
+      ],
+    },
+    {
+      id: 'optimize',
+      name: 'AISIMS Optimize',
+      icon: BarChart3,
+      tagline: t('productsSection.optimize.tagline'),
+      description: t('productsSection.optimize.description'),
+      steps: [
+        { title: t('productsSection.optimize.steps.connect.title'), description: t('productsSection.optimize.steps.connect.description') },
+        { title: t('productsSection.optimize.steps.simulate.title'), description: t('productsSection.optimize.steps.simulate.description') },
+        { title: t('productsSection.optimize.steps.optimize.title'), description: t('productsSection.optimize.steps.optimize.description') },
+        { title: t('productsSection.optimize.steps.compare.title'), description: t('productsSection.optimize.steps.compare.description') },
+      ],
+    },
+    {
+      id: 'model',
+      name: 'AISIMS Model',
+      icon: Box,
+      tagline: t('productsSection.model.tagline'),
+      description: t('productsSection.model.description'),
+      steps: [
+        { title: t('productsSection.model.steps.upload.title'), description: t('productsSection.model.steps.upload.description') },
+        { title: t('productsSection.model.steps.extract.title'), description: t('productsSection.model.steps.extract.description') },
+        { title: t('productsSection.model.steps.generate.title'), description: t('productsSection.model.steps.generate.description') },
+        { title: t('productsSection.model.steps.refine.title'), description: t('productsSection.model.steps.refine.description') },
+      ],
+    },
+  ]
 
   const currentProduct = products.find((p) => p.id === activeProduct)
 
@@ -58,9 +60,9 @@ function ProductsSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="section-title mb-4">Our Products</h2>
+          <h2 className="section-title mb-4">{t('productsSection.title')}</h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            Choose the right solution for your project needs
+            {t('productsSection.subtitle')}
           </p>
         </motion.div>
 
@@ -117,7 +119,7 @@ function ProductsSection() {
                   whileTap={{ scale: 0.95 }}
                   className="btn-primary"
                 >
-                  Learn More
+                  {t('productsSection.learnMore')}
                 </motion.button>
               </div>
 
