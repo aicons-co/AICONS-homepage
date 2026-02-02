@@ -65,12 +65,6 @@ function Navbar() {
     },
   }
 
-  const loginRegions = [
-    { name: 'US', flag: '🇺🇸', href: '/login?region=us' },
-    { name: 'UK/EU', flag: '🇪🇺', href: '/login?region=eu' },
-    { name: 'AU', flag: '🇦🇺', href: '/login?region=au' },
-  ]
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
@@ -245,19 +239,6 @@ function Navbar() {
               </AnimatePresence>
             </div>
 
-            {/* Case Studies */}
-            <Link
-              to="/resources#case-studies"
-              // className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              //   isScrolled
-              //     ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
-              //     : 'text-white/90 hover:text-white hover:bg-white/10'
-              // }`}
-              className='px-4 py-2 rounded-lg font-medium text-black'
-            >
-              Projects
-            </Link>
-
             {/* Resources Dropdown */}
             <div
               className="relative"
@@ -293,50 +274,6 @@ function Navbar() {
                           className="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-alice-primary transition-colors"
                         >
                           {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Login Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleDropdownEnter('login')}
-              onMouseLeave={handleDropdownLeave}
-            >
-              <button
-                // className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
-                //   isScrolled
-                //     ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
-                //     : 'text-white/90 hover:text-white hover:bg-white/10'
-                // }`}
-                className='flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-black'
-              >
-                Login
-                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'login' ? 'rotate-180' : ''}`} />
-              </button>
-
-              <AnimatePresence>
-                {activeDropdown === 'login' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    transition={{ duration: 0.15 }}
-                    className="absolute top-full right-0 mt-2 w-40 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden"
-                  >
-                    <div className="py-2">
-                      {loginRegions.map((region) => (
-                        <Link
-                          key={region.name}
-                          to={region.href}
-                          className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-alice-primary transition-colors"
-                        >
-                          <span>{region.flag}</span>
-                          <span>{region.name}</span>
                         </Link>
                       ))}
                     </div>
@@ -468,13 +405,6 @@ function Navbar() {
 
                   {/* Other Links */}
                   <Link
-                    to="/resources#case-studies"
-                    onClick={closeMobileMenu}
-                    className="block px-4 py-3 text-gray-900 font-medium rounded-lg hover:bg-gray-50"
-                  >
-                    {t('nav.caseStudies')}
-                  </Link>
-                  <Link
                     to="/resources"
                     onClick={closeMobileMenu}
                     className="block px-4 py-3 text-gray-900 font-medium rounded-lg hover:bg-gray-50"
@@ -488,41 +418,6 @@ function Navbar() {
                   >
                     Company
                   </Link>
-
-                  {/* Login */}
-                  <div>
-                    <button
-                      onClick={() => setMobileSubmenu(mobileSubmenu === 'login' ? null : 'login')}
-                      className="flex items-center justify-between w-full px-4 py-3 text-gray-900 font-medium rounded-lg hover:bg-gray-50"
-                    >
-                      Login
-                      <ChevronDown className={`w-5 h-5 transition-transform ${mobileSubmenu === 'login' ? 'rotate-180' : ''}`} />
-                    </button>
-                    <AnimatePresence>
-                      {mobileSubmenu === 'login' && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
-                          className="overflow-hidden"
-                        >
-                          <div className="pl-4 py-2 flex gap-4">
-                            {loginRegions.map((region) => (
-                              <Link
-                                key={region.name}
-                                to={region.href}
-                                onClick={closeMobileMenu}
-                                className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-alice-primary bg-gray-50 rounded-lg"
-                              >
-                                <span>{region.flag}</span>
-                                <span>{region.name}</span>
-                              </Link>
-                            ))}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
 
                   {/* Mobile Language Switcher */}
                   <LanguageSwitcher isMobile={true} />

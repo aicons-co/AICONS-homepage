@@ -3,14 +3,12 @@ export default {
   nav: {
     products: '제품',
     solutions: '솔루션',
-    projects: '프로젝트',
     resources: '리소스',
     company: '회사소개',
-    login: '로그인',
     viewAllProducts: '모든 제품 보기',
     byStakeholder: '이해관계자별',
     byProjectType: '프로젝트 유형별',
-    caseStudies: '프로젝트',
+    caseStudies: '사례 연구',
     webinars: '웨비나',
     blog: '블로그',
     whitepapers: '백서',
@@ -697,32 +695,6 @@ export default {
         pages: '18페이지',
       },
     },
-  },
-
-  // Login Page
-  loginPage: {
-    signIn: '계정에 로그인',
-    selectRegion: '지역 선택',
-    regions: {
-      us: '미국',
-      eu: '영국 / 유럽',
-      au: '호주',
-    },
-    emailAddress: '이메일 주소',
-    emailPlaceholder: 'you@company.com',
-    password: '비밀번호',
-    rememberMe: '로그인 상태 유지',
-    forgotPassword: '비밀번호 찾기',
-    signInButton: '로그인',
-    orContinueWith: '또는 다음으로 계속',
-    dontHaveAccount: '계정이 없으신가요?',
-    requestAccess: '액세스 요청',
-    termsAgreement: '로그인하면 우리의',
-    termsOfService: '이용약관',
-    and: '및',
-    privacyPolicy: '개인정보처리방침',
-    agreeEnd: '에 동의하게 됩니다',
-    demoAlert: '이것은 데모입니다. 로그인 기능은 구현되지 않았습니다.',
   },
 
   // Common

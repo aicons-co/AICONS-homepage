@@ -3,14 +3,12 @@ export default {
   nav: {
     products: 'Products',
     solutions: 'Solutions',
-    projects: 'Projects',
     resources: 'Resources',
     company: 'Company',
-    login: 'Login',
     viewAllProducts: 'View all products',
     byStakeholder: 'By Stakeholder',
     byProjectType: 'By Project Type',
-    caseStudies: 'Projects',
+    caseStudies: 'Case Studies',
     webinars: 'Webinars',
     blog: 'Blog',
     whitepapers: 'Whitepapers',
@@ -694,32 +692,6 @@ export default {
         pages: '18 pages',
       },
     },
-  },
-
-  // Login Page
-  loginPage: {
-    signIn: 'Sign in to your account',
-    selectRegion: 'Select your region',
-    regions: {
-      us: 'United States',
-      eu: 'UK / Europe',
-      au: 'Australia',
-    },
-    emailAddress: 'Email Address',
-    emailPlaceholder: 'you@company.com',
-    password: 'Password',
-    rememberMe: 'Remember me',
-    forgotPassword: 'Forgot password?',
-    signInButton: 'Sign In',
-    orContinueWith: 'Or continue with',
-    dontHaveAccount: "Don't have an account?",
-    requestAccess: 'Request access',
-    termsAgreement: 'By signing in, you agree to our',
-    termsOfService: 'Terms of Service',
-    and: 'and',
-    privacyPolicy: 'Privacy Policy',
-    agreeEnd: '',
-    demoAlert: 'This is a demo. Login functionality is not implemented.',
   },
 
   // Common

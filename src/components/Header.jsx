@@ -22,12 +22,6 @@ const solutionsMenu = {
   ],
 }
 
-const loginRegions = [
-  { name: 'US', href: '/login?region=us' },
-  { name: 'UK/EU', href: '/login?region=eu' },
-  { name: 'AU', href: '/login?region=au' },
-]
-
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
@@ -148,39 +142,6 @@ function Header() {
             <Link to="/company" className="nav-link">
               Company
             </Link>
-
-            {/* Login Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleDropdownEnter('login')}
-              onMouseLeave={handleDropdownLeave}
-            >
-              <button className="nav-link flex items-center gap-1">
-                Login
-                <ChevronDown className="w-4 h-4" />
-              </button>
-              <AnimatePresence>
-                {activeDropdown === 'login' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full right-0 mt-2 w-32 bg-white rounded-lg shadow-lg py-2 border"
-                  >
-                    {loginRegions.map((region) => (
-                      <Link
-                        key={region.name}
-                        to={region.href}
-                        className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-alice-primary"
-                      >
-                        {region.name}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
           </div>
 
           {/* CTA Buttons */}
@@ -258,22 +219,6 @@ function Header() {
                 >
                   Company
                 </Link>
-
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-gray-900">Login</h4>
-                  <div className="flex space-x-4 pl-4">
-                    {loginRegions.map((region) => (
-                      <Link
-                        key={region.name}
-                        to={region.href}
-                        className="text-gray-600 hover:text-alice-primary"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {region.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
 
                 <div className="pt-4">
                   <button

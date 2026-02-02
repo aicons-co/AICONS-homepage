@@ -6,8 +6,6 @@ import Products from './pages/Products'
 import Solutions from './pages/Solutions'
 import Resources from './pages/Resources'
 import Company from './pages/Company'
-import Login from './pages/Login'
-
 function App() {
   return (
     <Router>
@@ -19,7 +17,6 @@ function App() {
           <Route path="solutions/*" element={<Solutions />} />
           <Route path="resources" element={<Resources />} />
           <Route path="company" element={<Company />} />
-          <Route path="login" element={<Login />} />
         </Route>
       </Routes>
     </Router>
