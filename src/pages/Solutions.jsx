@@ -1,7 +1,18 @@
 import { Routes, Route, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Building2, Users, Briefcase, Factory, Train, Store, ArrowRight, Check } from 'lucide-react'
+import {
+  Building2, Users, Briefcase, Factory, Train, Store, ArrowRight, Check,
+  AlertTriangle, TrendingUp, Package, Truck, Clock, Shield, PlayCircle,
+  GitBranch, Layers, FileCheck, Zap, Layout, Paintbrush, Calendar, Building,
+  Target, Lightbulb, ChevronRight
+} from 'lucide-react'
 import useTranslation from '../hooks/useTranslation'
+
+// Icon mapping for dynamic icon rendering
+const iconMap = {
+  Package, Truck, Clock, Shield, PlayCircle, GitBranch, TrendingUp, Users,
+  Layers, FileCheck, Zap, Layout, Paintbrush, Calendar, Building
+}
 
 function SolutionPage({ solutionKey }) {
   const { t } = useTranslation()
@@ -14,6 +25,11 @@ function SolutionPage({ solutionKey }) {
       description: t('solutionsPage.gc.description'),
       challenges: t('solutionsPage.gc.challenges'),
       solutions: t('solutionsPage.gc.solutions'),
+      metrics: t('solutionsPage.gc.metrics'),
+      useCases: t('solutionsPage.gc.useCases'),
+      workflow: t('solutionsPage.gc.workflow'),
+      recommendedProducts: t('solutionsPage.gc.recommendedProducts'),
+      relatedCaseStudy: t('solutionsPage.gc.relatedCaseStudy'),
     },
     owners: {
       name: t('solutionsPage.owners.name'),
@@ -22,6 +38,11 @@ function SolutionPage({ solutionKey }) {
       description: t('solutionsPage.owners.description'),
       challenges: t('solutionsPage.owners.challenges'),
       solutions: t('solutionsPage.owners.solutions'),
+      metrics: t('solutionsPage.owners.metrics'),
+      useCases: t('solutionsPage.owners.useCases'),
+      workflow: t('solutionsPage.owners.workflow'),
+      recommendedProducts: t('solutionsPage.owners.recommendedProducts'),
+      relatedCaseStudy: t('solutionsPage.owners.relatedCaseStudy'),
     },
     consultants: {
       name: t('solutionsPage.consultants.name'),
@@ -30,6 +51,11 @@ function SolutionPage({ solutionKey }) {
       description: t('solutionsPage.consultants.description'),
       challenges: t('solutionsPage.consultants.challenges'),
       solutions: t('solutionsPage.consultants.solutions'),
+      metrics: t('solutionsPage.consultants.metrics'),
+      useCases: t('solutionsPage.consultants.useCases'),
+      workflow: t('solutionsPage.consultants.workflow'),
+      recommendedProducts: t('solutionsPage.consultants.recommendedProducts'),
+      relatedCaseStudy: t('solutionsPage.consultants.relatedCaseStudy'),
     },
     industrial: {
       name: t('solutionsPage.industrial.name'),
@@ -37,6 +63,11 @@ function SolutionPage({ solutionKey }) {
       tagline: t('solutionsPage.industrial.tagline'),
       description: t('solutionsPage.industrial.description'),
       features: t('solutionsPage.industrial.features'),
+      metrics: t('solutionsPage.industrial.metrics'),
+      projectExamples: t('solutionsPage.industrial.projectExamples'),
+      uniqueCapabilities: t('solutionsPage.industrial.uniqueCapabilities'),
+      integratedProducts: t('solutionsPage.industrial.integratedProducts'),
+      relatedCaseStudy: t('solutionsPage.industrial.relatedCaseStudy'),
     },
     infrastructure: {
       name: t('solutionsPage.infrastructure.name'),
@@ -44,6 +75,11 @@ function SolutionPage({ solutionKey }) {
       tagline: t('solutionsPage.infrastructure.tagline'),
       description: t('solutionsPage.infrastructure.description'),
       features: t('solutionsPage.infrastructure.features'),
+      metrics: t('solutionsPage.infrastructure.metrics'),
+      projectExamples: t('solutionsPage.infrastructure.projectExamples'),
+      uniqueCapabilities: t('solutionsPage.infrastructure.uniqueCapabilities'),
+      integratedProducts: t('solutionsPage.infrastructure.integratedProducts'),
+      relatedCaseStudy: t('solutionsPage.infrastructure.relatedCaseStudy'),
     },
     commercial: {
       name: t('solutionsPage.commercial.name'),
@@ -51,7 +87,18 @@ function SolutionPage({ solutionKey }) {
       tagline: t('solutionsPage.commercial.tagline'),
       description: t('solutionsPage.commercial.description'),
       features: t('solutionsPage.commercial.features'),
+      metrics: t('solutionsPage.commercial.metrics'),
+      projectExamples: t('solutionsPage.commercial.projectExamples'),
+      uniqueCapabilities: t('solutionsPage.commercial.uniqueCapabilities'),
+      integratedProducts: t('solutionsPage.commercial.integratedProducts'),
+      relatedCaseStudy: t('solutionsPage.commercial.relatedCaseStudy'),
     },
+  }
+
+  const productNames = {
+    plan: t('products.plan.name'),
+    optimize: t('products.optimize.name'),
+    model: t('products.model.name'),
   }
 
   const solution = solutionPages[solutionKey]
@@ -94,44 +141,90 @@ function SolutionPage({ solutionKey }) {
         </div>
       </section>
 
-      {/* Content */}
+      {/* Metrics Section */}
+      {solution.metrics && (
+        <section className="py-16 bg-gray-50">
+          <div className="container-custom">
+            <h2 className="text-2xl font-bold text-alice-dark text-center mb-10">{t('solutionsPage.keyMetrics')}</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {Object.entries(solution.metrics).map(([key, metric], index) => (
+                <motion.div
+                  key={key}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-xl p-6 text-center shadow-sm"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-alice-primary mb-2">{metric.value}</div>
+                  <div className="text-gray-600 text-sm">{metric.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Content - Stakeholder Type */}
       {isStakeholder ? (
         <>
+          {/* Challenges & Solutions */}
           <section className="py-20 bg-white">
             <div className="container-custom">
-              <div className="grid md:grid-cols-2 gap-16">
+              <div className="grid lg:grid-cols-2 gap-16">
+                {/* Challenges */}
                 <div>
-                  <h2 className="text-2xl font-bold text-alice-dark mb-6">{t('solutionsPage.yourChallenges')}</h2>
+                  <h2 className="text-2xl font-bold text-alice-dark mb-8 flex items-center gap-3">
+                    <AlertTriangle className="w-6 h-6 text-red-500" />
+                    {t('solutionsPage.yourChallenges')}
+                  </h2>
                   <div className="space-y-4">
                     {solution.challenges.map((challenge, index) => (
                       <motion.div
-                        key={challenge}
+                        key={challenge.title}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="flex items-start gap-3 p-4 bg-red-50 rounded-lg"
+                        className="bg-red-50 rounded-xl p-5 border border-red-100"
                       >
-                        <div className="w-2 h-2 rounded-full bg-red-500 mt-2" />
-                        <span className="text-gray-700">{challenge}</span>
+                        <h3 className="font-semibold text-gray-900 mb-2">{challenge.title}</h3>
+                        <p className="text-gray-600 text-sm mb-2">{challenge.description}</p>
+                        <div className="text-red-600 text-xs font-medium">{challenge.impact}</div>
                       </motion.div>
                     ))}
                   </div>
                 </div>
+
+                {/* Solutions */}
                 <div>
-                  <h2 className="text-2xl font-bold text-alice-dark mb-6">{t('solutionsPage.ourSolutions')}</h2>
+                  <h2 className="text-2xl font-bold text-alice-dark mb-8 flex items-center gap-3">
+                    <Lightbulb className="w-6 h-6 text-green-500" />
+                    {t('solutionsPage.ourSolutions')}
+                  </h2>
                   <div className="space-y-4">
                     {solution.solutions.map((sol, index) => (
                       <motion.div
-                        key={sol}
+                        key={sol.title}
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="flex items-start gap-3 p-4 bg-green-50 rounded-lg"
+                        className="bg-green-50 rounded-xl p-5 border border-green-100"
                       >
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{sol}</span>
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="flex-1">
+                            <h3 className="font-semibold text-gray-900 mb-2">{sol.title}</h3>
+                            <p className="text-gray-600 text-sm mb-2">{sol.description}</p>
+                            <div className="flex items-center gap-2 text-xs">
+                              <span className="bg-alice-primary/10 text-alice-primary px-2 py-1 rounded">
+                                {productNames[sol.product]}
+                              </span>
+                              <span className="text-green-600 font-medium">{sol.benefit}</span>
+                            </div>
+                          </div>
+                          <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        </div>
                       </motion.div>
                     ))}
                   </div>
@@ -139,28 +232,217 @@ function SolutionPage({ solutionKey }) {
               </div>
             </div>
           </section>
+
+          {/* Use Cases Section */}
+          {solution.useCases && (
+            <section className="py-20 bg-gray-50">
+              <div className="container-custom">
+                <h2 className="text-2xl font-bold text-alice-dark text-center mb-4">{t('solutionsPage.useCases')}</h2>
+                <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+                  {solution.name}를 위한 실제 적용 사례를 확인하세요
+                </p>
+                <div className="grid md:grid-cols-3 gap-8">
+                  {solution.useCases.map((useCase, index) => (
+                    <motion.div
+                      key={useCase.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-white rounded-2xl p-6 shadow-sm"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-alice-primary/10 flex items-center justify-center mb-4">
+                        <Target className="w-6 h-6 text-alice-primary" />
+                      </div>
+                      <h3 className="text-lg font-bold text-alice-dark mb-3">{useCase.title}</h3>
+                      <div className="space-y-3 text-sm">
+                        <div>
+                          <span className="font-semibold text-gray-700">시나리오:</span>
+                          <p className="text-gray-600 mt-1">{useCase.scenario}</p>
+                        </div>
+                        <div>
+                          <span className="font-semibold text-gray-700">솔루션:</span>
+                          <p className="text-gray-600 mt-1">{useCase.solution}</p>
+                        </div>
+                        <div className="bg-green-50 rounded-lg p-3 border border-green-100">
+                          <span className="font-semibold text-green-700">결과:</span>
+                          <p className="text-green-600 mt-1">{useCase.result}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Workflow Section */}
+          {solution.workflow && (
+            <section className="py-20 bg-white">
+              <div className="container-custom">
+                <h2 className="text-2xl font-bold text-alice-dark text-center mb-12">{t('solutionsPage.workflow')}</h2>
+                <div className="max-w-4xl mx-auto">
+                  <div className="relative">
+                    {/* Timeline line */}
+                    <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-alice-primary/20 hidden md:block" />
+
+                    <div className="space-y-6">
+                      {solution.workflow.map((step, index) => (
+                        <motion.div
+                          key={step.step}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: index * 0.1 }}
+                          className="flex items-start gap-6"
+                        >
+                          <div className="w-12 h-12 rounded-full bg-alice-primary text-white flex items-center justify-center font-bold flex-shrink-0 z-10">
+                            {step.step}
+                          </div>
+                          <div className="flex-1 bg-gray-50 rounded-xl p-5 -mt-1">
+                            <h3 className="font-semibold text-alice-dark mb-2">{step.title}</h3>
+                            <p className="text-gray-600 text-sm">{step.description}</p>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Recommended Products */}
+          {solution.recommendedProducts && (
+            <section className="py-16 bg-gray-50">
+              <div className="container-custom">
+                <h2 className="text-2xl font-bold text-alice-dark text-center mb-8">{t('solutionsPage.recommendedProducts')}</h2>
+                <div className="flex flex-wrap justify-center gap-4">
+                  {solution.recommendedProducts.map((productKey) => (
+                    <Link
+                      key={productKey}
+                      to={`/products/${productKey}`}
+                      className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                    >
+                      <span className="font-semibold text-alice-dark">{productNames[productKey]}</span>
+                      <ChevronRight className="w-4 h-4 text-alice-primary" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
         </>
       ) : (
-        <section className="py-20 bg-white">
-          <div className="container-custom">
-            <h2 className="section-title text-center mb-12">{t('solutionsPage.keyCapabilities')}</h2>
-            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-              {solution.features.map((feature, index) => (
-                <motion.div
-                  key={feature}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-3 p-6 bg-gray-50 rounded-xl"
-                >
-                  <Check className="w-6 h-6 text-alice-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">{feature}</span>
-                </motion.div>
-              ))}
+        <>
+          {/* Features Section - Project Type */}
+          <section className="py-20 bg-white">
+            <div className="container-custom">
+              <h2 className="section-title text-center mb-12">{t('solutionsPage.keyCapabilities')}</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {solution.features.map((feature, index) => {
+                  const IconComponent = iconMap[feature.icon] || Check
+                  return (
+                    <motion.div
+                      key={feature.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-gray-50 rounded-xl p-6"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-alice-secondary/10 flex items-center justify-center mb-4">
+                        <IconComponent className="w-6 h-6 text-alice-secondary" />
+                      </div>
+                      <h3 className="font-semibold text-alice-dark mb-2">{feature.title}</h3>
+                      <p className="text-gray-600 text-sm">{feature.description}</p>
+                    </motion.div>
+                  )
+                })}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+
+          {/* Project Examples Section */}
+          {solution.projectExamples && (
+            <section className="py-20 bg-gray-50">
+              <div className="container-custom">
+                <h2 className="text-2xl font-bold text-alice-dark text-center mb-12">{t('solutionsPage.projectExamples')}</h2>
+                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                  {solution.projectExamples.map((project, index) => (
+                    <motion.div
+                      key={project.type}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-white rounded-2xl p-6 shadow-sm"
+                    >
+                      <h3 className="text-lg font-bold text-alice-dark mb-2">{project.type}</h3>
+                      <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                      <div className="space-y-2">
+                        {project.keyFeatures.map((feature, idx) => (
+                          <div key={idx} className="flex items-center gap-2 text-sm">
+                            <Check className="w-4 h-4 text-alice-secondary flex-shrink-0" />
+                            <span className="text-gray-700">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Unique Capabilities Section */}
+          {solution.uniqueCapabilities && (
+            <section className="py-20 bg-white">
+              <div className="container-custom">
+                <h2 className="text-2xl font-bold text-alice-dark text-center mb-12">{t('solutionsPage.uniqueCapabilities')}</h2>
+                <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                  {solution.uniqueCapabilities.map((capability, index) => (
+                    <motion.div
+                      key={capability.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-gradient-to-br from-alice-secondary/5 to-alice-primary/5 rounded-xl p-6 border border-alice-secondary/20"
+                    >
+                      <h3 className="font-semibold text-alice-dark mb-2">{capability.title}</h3>
+                      <p className="text-gray-600 text-sm mb-3">{capability.description}</p>
+                      <div className="inline-block bg-alice-secondary/10 text-alice-secondary px-3 py-1 rounded-full text-sm font-medium">
+                        {capability.benefit}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Integrated Products */}
+          {solution.integratedProducts && (
+            <section className="py-16 bg-gray-50">
+              <div className="container-custom">
+                <h2 className="text-2xl font-bold text-alice-dark text-center mb-8">{t('solutionsPage.recommendedProducts')}</h2>
+                <div className="flex flex-wrap justify-center gap-4">
+                  {solution.integratedProducts.map((productKey) => (
+                    <Link
+                      key={productKey}
+                      to={`/products/${productKey}`}
+                      className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                    >
+                      <span className="font-semibold text-alice-dark">{productNames[productKey]}</span>
+                      <ChevronRight className="w-4 h-4 text-alice-secondary" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+        </>
       )}
 
       {/* CTA */}

@@ -137,14 +137,17 @@ function HeroSection() {
                     {heroWords[currentWordIndex]}
                   </motion.span>
                 </AnimatePresence> */}
-                Optimize
+                {/* Optimize */}
+                Orchestrating
               </div>
 
               <span className="block">
-                project with{' '}
+                {/* project with{' '} */}
+                End-to-End{' '}
                 <span className="relative inline-block">
                   {/* <span className="text-alice-primary">AICONS</span> */}
-                  <span className="text-white">AICONS</span>
+                  {/* <span className="text-white">AICONS</span> */}
+                  <span className="text-white">Optimization</span>
                   <motion.span
                     // className="absolute -bottom-2 left-0 right-0 h-1 bg-alice-primary rounded-full"
                     className="absolute -bottom-2 left-0 right-0 h-1 bg-white rounded-full"
@@ -162,7 +165,7 @@ function HeroSection() {
             variants={itemVariants}
             // className="text-sm md:text-base text-gray-300 mb-10 leading-relaxed max-w-3xl"
             // className="text-sm md:text-base text-gray-200 mb-10 leading-relaxed max-w-3xl"
-            className="text-base md:text-[18px] text-white mb-10 leading-relaxed max-w-3xl"
+            className="text-base md:text-lg text-white mb-10 leading-relaxed max-w-3xl"
           >
             {t('hero.subtitle')}
           </motion.p>
