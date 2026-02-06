@@ -1,55 +1,19 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Calendar, BarChart3, Box } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { Building2, Landmark, Factory, ArrowRight, Clock } from 'lucide-react'
 import useTranslation from '../../hooks/useTranslation'
 
+const iconMap = {
+  Building2,
+  Landmark,
+  Factory
+}
+
 function ProductsSection() {
-  const { t } = useTranslation()
-  const [activeProduct, setActiveProduct] = useState('plan')
+  const { t, locale } = useTranslation()
 
-  const products = [
-    {
-      id: 'plan',
-      name: 'AISIMS Plan',
-      icon: Calendar,
-      tagline: t('productsSection.plan.tagline'),
-      description: t('productsSection.plan.description'),
-      steps: [
-        { title: t('productsSection.plan.steps.import.title'), description: t('productsSection.plan.steps.import.description') },
-        { title: t('productsSection.plan.steps.visualize.title'), description: t('productsSection.plan.steps.visualize.description') },
-        { title: t('productsSection.plan.steps.analyze.title'), description: t('productsSection.plan.steps.analyze.description') },
-        { title: t('productsSection.plan.steps.export.title'), description: t('productsSection.plan.steps.export.description') },
-      ],
-    },
-    {
-      id: 'optimize',
-      name: 'AISIMS Optimize',
-      icon: BarChart3,
-      tagline: t('productsSection.optimize.tagline'),
-      description: t('productsSection.optimize.description'),
-      steps: [
-        { title: t('productsSection.optimize.steps.connect.title'), description: t('productsSection.optimize.steps.connect.description') },
-        { title: t('productsSection.optimize.steps.simulate.title'), description: t('productsSection.optimize.steps.simulate.description') },
-        { title: t('productsSection.optimize.steps.optimize.title'), description: t('productsSection.optimize.steps.optimize.description') },
-        { title: t('productsSection.optimize.steps.compare.title'), description: t('productsSection.optimize.steps.compare.description') },
-      ],
-    },
-    {
-      id: 'model',
-      name: 'AISIMS Model',
-      icon: Box,
-      tagline: t('productsSection.model.tagline'),
-      description: t('productsSection.model.description'),
-      steps: [
-        { title: t('productsSection.model.steps.upload.title'), description: t('productsSection.model.steps.upload.description') },
-        { title: t('productsSection.model.steps.extract.title'), description: t('productsSection.model.steps.extract.description') },
-        { title: t('productsSection.model.steps.generate.title'), description: t('productsSection.model.steps.generate.description') },
-        { title: t('productsSection.model.steps.refine.title'), description: t('productsSection.model.steps.refine.description') },
-      ],
-    },
-  ]
-
-  const currentProduct = products.find((p) => p.id === activeProduct)
+  const categories = t('products.categories')
+  const categoryOrder = ['building', 'civil', 'plant']
 
   return (
     <section className="py-20 bg-gray-50">
@@ -66,90 +30,88 @@ function ProductsSection() {
           </p>
         </motion.div>
 
-        {/* Product Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {products.map((product) => (
-            <motion.button
-              key={product.id}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => setActiveProduct(product.id)}
-              className={`flex items-center gap-3 px-6 py-4 rounded-xl transition-all duration-300 ${
-                activeProduct === product.id
-                  ? 'bg-alice-primary text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:shadow-md'
-              }`}
-            >
-              <product.icon className="w-5 h-5" />
-              <span className="font-semibold">{product.name}</span>
-            </motion.button>
-          ))}
-        </div>
+        {/* Categories Grid */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {categoryOrder.map((categoryKey, index) => {
+            const category = categories[categoryKey]
+            if (!category) return null
 
-        {/* Product Content */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeProduct}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="bg-white rounded-2xl p-8 md:p-12 shadow-lg"
-          >
-            <div className="grid lg:grid-cols-2 gap-12">
-              {/* Product Info */}
-              <div>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-alice-primary/10 flex items-center justify-center">
-                    <currentProduct.icon className="w-8 h-8 text-alice-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-alice-dark">
-                      {currentProduct.name}
-                    </h3>
-                    <p className="text-alice-primary">{currentProduct.tagline}</p>
-                  </div>
-                </div>
-                <p className="text-lg text-gray-600 mb-8">
-                  {currentProduct.description}
-                </p>
+            const Icon = iconMap[category.icon] || Building2
+            const isComingSoon = category.status === 'coming_soon'
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-primary"
+            return (
+              <motion.div
+                key={categoryKey}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Link
+                  to={`/products/${categoryKey}`}
+                  className={`block bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group h-full relative overflow-hidden ${
+                    isComingSoon ? 'opacity-90' : ''
+                  }`}
                 >
-                  {t('productsSection.learnMore')}
-                </motion.button>
-              </div>
+                  {/* Background gradient on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-alice-primary/5 to-alice-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-              {/* Steps */}
-              <div className="space-y-6">
-                {currentProduct.steps.map((step, index) => (
-                  <motion.div
-                    key={step.title}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex gap-4"
-                  >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-alice-primary/10 flex items-center justify-center">
-                      <span className="text-alice-primary font-semibold">
-                        {index + 1}
+                  {/* Coming Soon Badge */}
+                  {isComingSoon && (
+                    <div className="absolute top-4 right-4 z-10">
+                      <span className="inline-flex items-center gap-1 px-2 py-1 bg-amber-100 text-amber-700 text-xs font-medium rounded-full">
+                        <Clock className="w-3 h-3" />
+                        {t('products.comingSoon')}
                       </span>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-alice-dark mb-1">
-                        {step.title}
-                      </h4>
-                      <p className="text-gray-600">{step.description}</p>
+                  )}
+
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className="w-14 h-14 rounded-xl bg-alice-primary/10 flex items-center justify-center mb-6 group-hover:bg-alice-primary/20 transition-colors">
+                      <Icon className="w-7 h-7 text-alice-primary" />
                     </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-alice-dark mb-2 group-hover:text-alice-primary transition-colors">
+                      {category.name}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-600 mb-4 line-clamp-2">{category.description}</p>
+
+                    {/* System Count */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-500">
+                        {category.systemCount} {locale === 'ko' ? '개 시스템' : 'Systems'}
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-alice-primary font-semibold text-sm group-hover:gap-2 transition-all">
+                        {t('common.learnMore')}
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            )
+          })}
+        </div>
+
+        {/* View All Products Link */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <Link
+            to="/products"
+            className="inline-flex items-center gap-2 text-alice-primary font-semibold hover:gap-3 transition-all"
+          >
+            {t('products.viewAll')}
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   )

@@ -16,18 +16,488 @@ export default {
 
   // Products menu
   products: {
-    plan: {
-      name: 'AISIMS Plan',
-      description: '일정 시각화 및 계획 수립',
-    },
-    optimize: {
-      name: 'AISIMS Optimize',
-      description: 'AI 기반 일정 최적화',
-    },
-    model: {
-      name: 'AISIMS Model',
-      description: 'BIM 기반 모델링 및 일정 관리',
-    },
+    viewAll: '모든 제품 보기',
+    comingSoon: '출시 예정',
+    categories: {
+      building: {
+        name: '건축',
+        description: '건축 분야 AI 정보 관리 시스템',
+        longDescription: '설계부터 시공까지, 건축 프로젝트의 모든 단계를 AI로 자동화하고 최적화합니다.',
+        icon: 'Building2',
+        status: 'active',
+        systemCount: 8,
+        systems: {
+          aisims: {
+            name: 'AISIMS',
+            fullName: 'AI Structural Information Management System',
+            description: '구조·골조 정보 관리 및 자동화',
+            status: 'active',
+            features: [
+              'BIM 기반 구조 정보 자동 추출',
+              '물량 산출 자동화 (95% 정확도)',
+              '구조 도면 자동 생성',
+              '공정 연계 일정 관리',
+              '실시간 설계 변경 추적',
+              '협력업체 정보 공유'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'BIM 구축', before: 100, after: 10, unit: '시간' },
+                { name: '물량 산출', before: 40, after: 2, unit: '시간' },
+                { name: '도면 생성', before: 80, after: 4, unit: '시간' },
+                { name: '공정 연계', before: 24, after: 1, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '인건비 절감', value: 45, color: '#4F46E5' },
+                { name: '자재비 절감', value: 25, color: '#10B981' },
+                { name: '재작업 비용 절감', value: 30, color: '#F59E0B' }
+              ],
+              metrics: {
+                timeReduction: 90,
+                accuracyRate: 95,
+                costSavings: 40
+              }
+            }
+          },
+          aimims: {
+            name: 'AIMIMS',
+            fullName: 'AI Mechanical Information Management System',
+            description: '기계설비 정보 관리 자동화',
+            status: 'active',
+            features: [
+              '기계설비 BIM 자동 분석',
+              '배관/덕트 물량 산출',
+              '간섭 체크 자동화',
+              '설비 시공 순서 최적화',
+              '유지보수 정보 연계',
+              '에너지 효율 분석'
+            ],
+            mockData: {
+              efficiency: [
+                { name: '설비 모델링', before: 120, after: 15, unit: '시간' },
+                { name: '간섭 검토', before: 48, after: 4, unit: '시간' },
+                { name: '물량 산출', before: 32, after: 2, unit: '시간' },
+                { name: '시공도 작성', before: 80, after: 8, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '설계 오류 감소', value: 35, color: '#4F46E5' },
+                { name: '재시공 비용 절감', value: 40, color: '#10B981' },
+                { name: '공기 단축', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                timeReduction: 85,
+                accuracyRate: 92,
+                costSavings: 35
+              }
+            }
+          },
+          aieims: {
+            name: 'AIEIMS',
+            fullName: 'AI Electrical Information Management System',
+            description: '전기설비 정보 관리 자동화',
+            status: 'active',
+            features: [
+              '전기설비 BIM 자동 분석',
+              '케이블 트레이 라우팅 최적화',
+              '부하 계산 자동화',
+              '전력 계통도 자동 생성',
+              '조명 시뮬레이션',
+              '에너지 사용량 예측'
+            ],
+            mockData: {
+              efficiency: [
+                { name: '전기 설계', before: 96, after: 12, unit: '시간' },
+                { name: '부하 계산', before: 24, after: 1, unit: '시간' },
+                { name: '케이블 산출', before: 40, after: 3, unit: '시간' },
+                { name: '도면 작성', before: 64, after: 6, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '설계 효율화', value: 40, color: '#4F46E5' },
+                { name: '자재 최적화', value: 30, color: '#10B981' },
+                { name: '시공 효율화', value: 30, color: '#F59E0B' }
+              ],
+              metrics: {
+                timeReduction: 88,
+                accuracyRate: 94,
+                costSavings: 38
+              }
+            }
+          },
+          aifims: {
+            name: 'AIFIMS',
+            fullName: 'AI Finishing Information Management System',
+            description: '마감공사 정보 및 물량 자동화',
+            status: 'active',
+            features: [
+              '마감재 물량 자동 산출',
+              '실별 마감 스케줄 관리',
+              '자재 발주 최적화',
+              '품질 검수 체크리스트',
+              '하자 관리 시스템',
+              '입주 전 펀치리스트'
+            ],
+            mockData: {
+              efficiency: [
+                { name: '물량 산출', before: 80, after: 6, unit: '시간' },
+                { name: '자재 발주', before: 40, after: 4, unit: '시간' },
+                { name: '공정 관리', before: 60, after: 8, unit: '시간' },
+                { name: '품질 검수', before: 48, after: 6, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '자재 손실 감소', value: 35, color: '#4F46E5' },
+                { name: '공기 단축', value: 30, color: '#10B981' },
+                { name: '하자 비용 절감', value: 35, color: '#F59E0B' }
+              ],
+              metrics: {
+                timeReduction: 85,
+                accuracyRate: 90,
+                costSavings: 32
+              }
+            }
+          },
+          aibems: {
+            name: 'AI-BEMS',
+            fullName: 'AI Building Energy Management System',
+            description: '건물 에너지 분석·운영 최적화',
+            status: 'active',
+            features: [
+              '실시간 에너지 모니터링',
+              'AI 기반 에너지 최적화',
+              '설비 예측 유지보수',
+              '탄소 배출량 관리',
+              '에너지 비용 예측',
+              '친환경 인증 지원'
+            ],
+            mockData: {
+              efficiency: [
+                { name: '에너지 분석', before: 40, after: 2, unit: '시간' },
+                { name: '설비 점검', before: 80, after: 8, unit: '시간' },
+                { name: '보고서 작성', before: 24, after: 1, unit: '시간' },
+                { name: '최적화 적용', before: 48, after: 4, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '에너지 비용 절감', value: 50, color: '#4F46E5' },
+                { name: '유지보수 절감', value: 30, color: '#10B981' },
+                { name: '탄소 크레딧', value: 20, color: '#F59E0B' }
+              ],
+              metrics: {
+                energySavings: 25,
+                maintenanceReduction: 35,
+                carbonReduction: 30
+              }
+            }
+          },
+          aimarkin: {
+            name: 'AI-Mark-In',
+            fullName: 'AI Market Analysis & Investment System',
+            description: '사업성·수익성 분석 자동화',
+            status: 'active',
+            features: [
+              '부동산 시장 분석',
+              '사업성 타당성 검토',
+              '수익성 시뮬레이션',
+              '리스크 분석',
+              '투자 수익률 예측',
+              '경쟁 분석 리포트'
+            ],
+            mockData: {
+              efficiency: [
+                { name: '시장 조사', before: 160, after: 8, unit: '시간' },
+                { name: '사업성 분석', before: 80, after: 4, unit: '시간' },
+                { name: '수익성 검토', before: 40, after: 2, unit: '시간' },
+                { name: '보고서 작성', before: 24, after: 1, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '분석 비용 절감', value: 60, color: '#4F46E5' },
+                { name: '의사결정 가속화', value: 25, color: '#10B981' },
+                { name: '리스크 회피', value: 15, color: '#F59E0B' }
+              ],
+              metrics: {
+                analysisSpeed: 95,
+                accuracyRate: 88,
+                decisionSpeed: 300
+              }
+            }
+          },
+          aiarchitect: {
+            name: 'AI-Architect',
+            fullName: 'AI Architectural Planning System',
+            description: '건축 계획 및 초기 설계 자동화',
+            status: 'active',
+            features: [
+              '대지 분석 자동화',
+              '건축 매스 자동 생성',
+              '법규 검토 자동화',
+              '일조/조망 시뮬레이션',
+              '평면 배치 최적화',
+              '초기 설계안 비교'
+            ],
+            mockData: {
+              efficiency: [
+                { name: '대지 분석', before: 40, after: 2, unit: '시간' },
+                { name: '매스 스터디', before: 80, after: 4, unit: '시간' },
+                { name: '법규 검토', before: 24, after: 1, unit: '시간' },
+                { name: '설계안 작성', before: 160, after: 16, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '설계 시간 절감', value: 45, color: '#4F46E5' },
+                { name: '검토 비용 절감', value: 30, color: '#10B981' },
+                { name: '수정 비용 절감', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                designSpeed: 90,
+                complianceRate: 99,
+                optionsGenerated: 50
+              }
+            }
+          },
+          aibscm: {
+            name: 'AI-BSCM',
+            fullName: 'AI Building Supply Chain Management',
+            description: '건축 현장 조달 관리 자동화',
+            status: 'active',
+            features: [
+              '자재 수급 예측',
+              '공급업체 관리',
+              '재고 최적화',
+              '배송 일정 관리',
+              '비용 분석',
+              '품질 이력 추적'
+            ],
+            mockData: {
+              efficiency: [
+                { name: '발주 처리', before: 48, after: 4, unit: '시간' },
+                { name: '재고 관리', before: 24, after: 2, unit: '시간' },
+                { name: '배송 조율', before: 40, after: 4, unit: '시간' },
+                { name: '비용 분석', before: 32, after: 2, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '재고 비용 절감', value: 35, color: '#4F46E5' },
+                { name: '물류비 절감', value: 30, color: '#10B981' },
+                { name: '손실 방지', value: 35, color: '#F59E0B' }
+              ],
+              metrics: {
+                inventoryReduction: 40,
+                deliveryOnTime: 95,
+                costSavings: 28
+              }
+            }
+          }
+        }
+      },
+      civil: {
+        name: '토목',
+        description: '토목 분야 AI 정보 관리 시스템',
+        longDescription: '교량, 터널, 도로 등 토목 인프라의 유지관리와 상태 예측을 AI로 혁신합니다.',
+        icon: 'Landmark',
+        status: 'coming_soon',
+        systemCount: 3,
+        systems: {
+          aibms: {
+            name: 'AI-BMS',
+            fullName: 'AI Bridge Management System',
+            description: '교량 유지관리 및 상태 예측',
+            status: 'coming_soon',
+            features: [
+              '교량 상태 실시간 모니터링',
+              'AI 기반 손상 예측',
+              '유지보수 우선순위 결정',
+              '생애주기 비용 분석',
+              '안전성 평가 자동화',
+              '점검 일정 최적화'
+            ],
+            mockData: {
+              efficiency: [
+                { name: '상태 점검', before: 80, after: 8, unit: '시간' },
+                { name: '손상 분석', before: 40, after: 4, unit: '시간' },
+                { name: '보고서 작성', before: 24, after: 2, unit: '시간' },
+                { name: '보수 계획', before: 48, after: 6, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '점검 비용 절감', value: 35, color: '#4F46E5' },
+                { name: '예방 정비', value: 40, color: '#10B981' },
+                { name: '수명 연장', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                predictionAccuracy: 92,
+                costReduction: 35,
+                efficiencyGain: 40
+              }
+            }
+          },
+          aitms: {
+            name: 'AI-TMS',
+            fullName: 'AI Tunnel Management System',
+            description: '터널 유지관리 및 위험 분석',
+            status: 'coming_soon',
+            features: [
+              '터널 구조 안전 모니터링',
+              '환기/조명 시스템 최적화',
+              '화재 위험 예측',
+              '교통량 분석',
+              '유지보수 이력 관리',
+              '비상 대응 시스템'
+            ],
+            mockData: {
+              efficiency: [
+                { name: '안전 점검', before: 120, after: 12, unit: '시간' },
+                { name: '위험 분석', before: 48, after: 4, unit: '시간' },
+                { name: '시스템 최적화', before: 80, after: 8, unit: '시간' },
+                { name: '보고서 작성', before: 24, after: 2, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '운영 비용 절감', value: 30, color: '#4F46E5' },
+                { name: '사고 예방', value: 45, color: '#10B981' },
+                { name: '에너지 절감', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                riskDetection: 95,
+                accidentPrevention: 60,
+                operationalEfficiency: 25
+              }
+            }
+          },
+          airms: {
+            name: 'AI-RMS',
+            fullName: 'AI Road Management System',
+            description: '도로 유지관리 및 자산 관리',
+            status: 'coming_soon',
+            features: [
+              '노면 상태 자동 분석',
+              '포장 수명 예측',
+              '보수 우선순위 결정',
+              '교통량 예측',
+              '자산 가치 평가',
+              '예산 최적화'
+            ],
+            mockData: {
+              efficiency: [
+                { name: '노면 조사', before: 200, after: 20, unit: '시간' },
+                { name: '상태 평가', before: 80, after: 8, unit: '시간' },
+                { name: '보수 계획', before: 48, after: 4, unit: '시간' },
+                { name: '예산 분석', before: 40, after: 4, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '조사 비용 절감', value: 40, color: '#4F46E5' },
+                { name: '예방 보수', value: 35, color: '#10B981' },
+                { name: '수명 연장', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                analysisAccuracy: 88,
+                assetEfficiency: 45,
+                maintenanceSavings: 30
+              }
+            }
+          }
+        }
+      },
+      plant: {
+        name: '플랜트',
+        description: '플랜트 분야 AI 정보 관리 시스템',
+        longDescription: '정유, 화학, 산업 플랜트의 설계부터 운영까지 AI 기반 최적화를 제공합니다.',
+        icon: 'Factory',
+        status: 'coming_soon',
+        systemCount: 3,
+        systems: {
+          oilgas: {
+            name: 'Oil & Gas Plant',
+            fullName: 'AI Oil & Gas Plant Management System',
+            description: '정유·가스 플랜트 AI 관리',
+            status: 'coming_soon',
+            features: [
+              '공정 최적화',
+              '설비 예측 정비',
+              '안전 관리 시스템',
+              '에너지 효율 분석',
+              '환경 모니터링',
+              '생산 계획 최적화'
+            ],
+            mockData: {
+              efficiency: [
+                { name: '공정 분석', before: 160, after: 16, unit: '시간' },
+                { name: '설비 점검', before: 120, after: 12, unit: '시간' },
+                { name: '안전 검사', before: 80, after: 8, unit: '시간' },
+                { name: '보고서 작성', before: 40, after: 4, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '공정 효율화', value: 40, color: '#4F46E5' },
+                { name: '다운타임 감소', value: 35, color: '#10B981' },
+                { name: '안전 비용 절감', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                processEfficiency: 15,
+                safetyImprovement: 40,
+                downtimeReduction: 30
+              }
+            }
+          },
+          chemical: {
+            name: 'Chemical Plant',
+            fullName: 'AI Chemical Plant Management System',
+            description: '석유화학 플랜트 AI 관리',
+            status: 'coming_soon',
+            features: [
+              '화학 공정 최적화',
+              '품질 관리 자동화',
+              '에너지 사용 최적화',
+              '배출 관리',
+              '재고 관리',
+              '안전 시스템 통합'
+            ],
+            mockData: {
+              efficiency: [
+                { name: '공정 최적화', before: 200, after: 20, unit: '시간' },
+                { name: '품질 검사', before: 80, after: 8, unit: '시간' },
+                { name: '에너지 분석', before: 48, after: 4, unit: '시간' },
+                { name: '환경 모니터링', before: 40, after: 4, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '생산 효율화', value: 45, color: '#4F46E5' },
+                { name: '에너지 절감', value: 30, color: '#10B981' },
+                { name: '불량률 감소', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                productionEfficiency: 20,
+                energySavings: 25,
+                defectReduction: 50
+              }
+            }
+          },
+          industrial: {
+            name: 'Industrial Plant',
+            fullName: 'AI Industrial Plant Management System',
+            description: '산업 플랜트 AI 관리',
+            status: 'coming_soon',
+            features: [
+              '생산 라인 최적화',
+              '설비 가동률 관리',
+              '품질 예측',
+              '재고 최적화',
+              '에너지 관리',
+              '인력 배치 최적화'
+            ],
+            mockData: {
+              efficiency: [
+                { name: '생산 계획', before: 80, after: 8, unit: '시간' },
+                { name: '설비 관리', before: 120, after: 12, unit: '시간' },
+                { name: '품질 관리', before: 60, after: 6, unit: '시간' },
+                { name: '재고 관리', before: 40, after: 4, unit: '시간' }
+              ],
+              costSavings: [
+                { name: '생산성 향상', value: 40, color: '#4F46E5' },
+                { name: '운영비 절감', value: 35, color: '#10B981' },
+                { name: '품질 비용 절감', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                operatingRate: 95,
+                productivityGain: 30,
+                operatingCostReduction: 20
+              }
+            }
+          }
+        }
+      }
+    }
   },
 
   // Solutions

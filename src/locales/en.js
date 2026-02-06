@@ -16,18 +16,488 @@ export default {
 
   // Products menu
   products: {
-    plan: {
-      name: 'AISIMS Plan',
-      description: 'Schedule visualization and planning',
-    },
-    optimize: {
-      name: 'AISIMS Optimize',
-      description: 'AI-powered schedule optimization',
-    },
-    model: {
-      name: 'AISIMS Model',
-      description: 'BIM-based modeling and scheduling',
-    },
+    viewAll: 'View All Products',
+    comingSoon: 'Coming Soon',
+    categories: {
+      building: {
+        name: 'Building',
+        description: 'AI Information Management for Building Construction',
+        longDescription: 'Automate and optimize every stage of building projects from design to construction with AI.',
+        icon: 'Building2',
+        status: 'active',
+        systemCount: 8,
+        systems: {
+          aisims: {
+            name: 'AISIMS',
+            fullName: 'AI Structural Information Management System',
+            description: 'Structural & frame information management automation',
+            status: 'active',
+            features: [
+              'BIM-based structural info auto-extraction',
+              'Quantity takeoff automation (95% accuracy)',
+              'Structural drawing auto-generation',
+              'Schedule integration management',
+              'Real-time design change tracking',
+              'Subcontractor information sharing'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'BIM Construction', before: 100, after: 10, unit: 'hours' },
+                { name: 'Quantity Takeoff', before: 40, after: 2, unit: 'hours' },
+                { name: 'Drawing Generation', before: 80, after: 4, unit: 'hours' },
+                { name: 'Schedule Integration', before: 24, after: 1, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Labor Cost Savings', value: 45, color: '#4F46E5' },
+                { name: 'Material Cost Savings', value: 25, color: '#10B981' },
+                { name: 'Rework Cost Savings', value: 30, color: '#F59E0B' }
+              ],
+              metrics: {
+                timeReduction: 90,
+                accuracyRate: 95,
+                costSavings: 40
+              }
+            }
+          },
+          aimims: {
+            name: 'AIMIMS',
+            fullName: 'AI Mechanical Information Management System',
+            description: 'Mechanical system information management automation',
+            status: 'active',
+            features: [
+              'Mechanical BIM auto-analysis',
+              'Pipe/duct quantity takeoff',
+              'Clash detection automation',
+              'MEP construction sequence optimization',
+              'Maintenance info integration',
+              'Energy efficiency analysis'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'MEP Modeling', before: 120, after: 15, unit: 'hours' },
+                { name: 'Clash Detection', before: 48, after: 4, unit: 'hours' },
+                { name: 'Quantity Takeoff', before: 32, after: 2, unit: 'hours' },
+                { name: 'Shop Drawings', before: 80, after: 8, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Design Error Reduction', value: 35, color: '#4F46E5' },
+                { name: 'Rework Cost Savings', value: 40, color: '#10B981' },
+                { name: 'Schedule Acceleration', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                timeReduction: 85,
+                accuracyRate: 92,
+                costSavings: 35
+              }
+            }
+          },
+          aieims: {
+            name: 'AIEIMS',
+            fullName: 'AI Electrical Information Management System',
+            description: 'Electrical system information management automation',
+            status: 'active',
+            features: [
+              'Electrical BIM auto-analysis',
+              'Cable tray routing optimization',
+              'Load calculation automation',
+              'Power diagram auto-generation',
+              'Lighting simulation',
+              'Energy usage prediction'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'Electrical Design', before: 96, after: 12, unit: 'hours' },
+                { name: 'Load Calculation', before: 24, after: 1, unit: 'hours' },
+                { name: 'Cable Takeoff', before: 40, after: 3, unit: 'hours' },
+                { name: 'Drawing Creation', before: 64, after: 6, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Design Efficiency', value: 40, color: '#4F46E5' },
+                { name: 'Material Optimization', value: 30, color: '#10B981' },
+                { name: 'Construction Efficiency', value: 30, color: '#F59E0B' }
+              ],
+              metrics: {
+                timeReduction: 88,
+                accuracyRate: 94,
+                costSavings: 38
+              }
+            }
+          },
+          aifims: {
+            name: 'AIFIMS',
+            fullName: 'AI Finishing Information Management System',
+            description: 'Finishing work information & quantity automation',
+            status: 'active',
+            features: [
+              'Finish material quantity auto-takeoff',
+              'Room-by-room finish schedule',
+              'Material ordering optimization',
+              'Quality inspection checklists',
+              'Defect management system',
+              'Pre-occupancy punch list'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'Quantity Takeoff', before: 80, after: 6, unit: 'hours' },
+                { name: 'Material Ordering', before: 40, after: 4, unit: 'hours' },
+                { name: 'Schedule Management', before: 60, after: 8, unit: 'hours' },
+                { name: 'Quality Inspection', before: 48, after: 6, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Material Waste Reduction', value: 35, color: '#4F46E5' },
+                { name: 'Schedule Acceleration', value: 30, color: '#10B981' },
+                { name: 'Defect Cost Reduction', value: 35, color: '#F59E0B' }
+              ],
+              metrics: {
+                timeReduction: 85,
+                accuracyRate: 90,
+                costSavings: 32
+              }
+            }
+          },
+          aibems: {
+            name: 'AI-BEMS',
+            fullName: 'AI Building Energy Management System',
+            description: 'Building energy analysis & operation optimization',
+            status: 'active',
+            features: [
+              'Real-time energy monitoring',
+              'AI-based energy optimization',
+              'Predictive equipment maintenance',
+              'Carbon emission management',
+              'Energy cost forecasting',
+              'Green certification support'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'Energy Analysis', before: 40, after: 2, unit: 'hours' },
+                { name: 'Equipment Inspection', before: 80, after: 8, unit: 'hours' },
+                { name: 'Report Generation', before: 24, after: 1, unit: 'hours' },
+                { name: 'Optimization Apply', before: 48, after: 4, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Energy Cost Savings', value: 50, color: '#4F46E5' },
+                { name: 'Maintenance Savings', value: 30, color: '#10B981' },
+                { name: 'Carbon Credits', value: 20, color: '#F59E0B' }
+              ],
+              metrics: {
+                energySavings: 25,
+                maintenanceReduction: 35,
+                carbonReduction: 30
+              }
+            }
+          },
+          aimarkin: {
+            name: 'AI-Mark-In',
+            fullName: 'AI Market Analysis & Investment System',
+            description: 'Feasibility & profitability analysis automation',
+            status: 'active',
+            features: [
+              'Real estate market analysis',
+              'Feasibility study automation',
+              'Profitability simulation',
+              'Risk analysis',
+              'Investment ROI prediction',
+              'Competitive analysis reports'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'Market Research', before: 160, after: 8, unit: 'hours' },
+                { name: 'Feasibility Analysis', before: 80, after: 4, unit: 'hours' },
+                { name: 'Profitability Review', before: 40, after: 2, unit: 'hours' },
+                { name: 'Report Creation', before: 24, after: 1, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Analysis Cost Savings', value: 60, color: '#4F46E5' },
+                { name: 'Decision Acceleration', value: 25, color: '#10B981' },
+                { name: 'Risk Avoidance', value: 15, color: '#F59E0B' }
+              ],
+              metrics: {
+                analysisSpeed: 95,
+                accuracyRate: 88,
+                decisionSpeed: 300
+              }
+            }
+          },
+          aiarchitect: {
+            name: 'AI-Architect',
+            fullName: 'AI Architectural Planning System',
+            description: 'Architectural planning & early design automation',
+            status: 'active',
+            features: [
+              'Site analysis automation',
+              'Building mass auto-generation',
+              'Code compliance automation',
+              'Sun/view simulation',
+              'Floor plan optimization',
+              'Design option comparison'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'Site Analysis', before: 40, after: 2, unit: 'hours' },
+                { name: 'Massing Study', before: 80, after: 4, unit: 'hours' },
+                { name: 'Code Review', before: 24, after: 1, unit: 'hours' },
+                { name: 'Design Creation', before: 160, after: 16, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Design Time Savings', value: 45, color: '#4F46E5' },
+                { name: 'Review Cost Savings', value: 30, color: '#10B981' },
+                { name: 'Revision Cost Savings', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                designSpeed: 90,
+                complianceRate: 99,
+                optionsGenerated: 50
+              }
+            }
+          },
+          aibscm: {
+            name: 'AI-BSCM',
+            fullName: 'AI Building Supply Chain Management',
+            description: 'Construction site procurement management automation',
+            status: 'active',
+            features: [
+              'Material demand forecasting',
+              'Supplier management',
+              'Inventory optimization',
+              'Delivery schedule management',
+              'Cost analysis',
+              'Quality history tracking'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'Order Processing', before: 48, after: 4, unit: 'hours' },
+                { name: 'Inventory Management', before: 24, after: 2, unit: 'hours' },
+                { name: 'Delivery Coordination', before: 40, after: 4, unit: 'hours' },
+                { name: 'Cost Analysis', before: 32, after: 2, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Inventory Cost Savings', value: 35, color: '#4F46E5' },
+                { name: 'Logistics Cost Savings', value: 30, color: '#10B981' },
+                { name: 'Loss Prevention', value: 35, color: '#F59E0B' }
+              ],
+              metrics: {
+                inventoryReduction: 40,
+                deliveryOnTime: 95,
+                costSavings: 28
+              }
+            }
+          }
+        }
+      },
+      civil: {
+        name: 'Civil',
+        description: 'AI Information Management for Civil Infrastructure',
+        longDescription: 'Revolutionize maintenance and condition prediction for bridges, tunnels, roads, and civil infrastructure with AI.',
+        icon: 'Landmark',
+        status: 'coming_soon',
+        systemCount: 3,
+        systems: {
+          aibms: {
+            name: 'AI-BMS',
+            fullName: 'AI Bridge Management System',
+            description: 'Bridge maintenance & condition prediction',
+            status: 'coming_soon',
+            features: [
+              'Real-time bridge condition monitoring',
+              'AI-based damage prediction',
+              'Maintenance priority ranking',
+              'Life-cycle cost analysis',
+              'Safety assessment automation',
+              'Inspection schedule optimization'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'Condition Inspection', before: 80, after: 8, unit: 'hours' },
+                { name: 'Damage Analysis', before: 40, after: 4, unit: 'hours' },
+                { name: 'Report Generation', before: 24, after: 2, unit: 'hours' },
+                { name: 'Repair Planning', before: 48, after: 6, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Inspection Cost Savings', value: 35, color: '#4F46E5' },
+                { name: 'Preventive Maintenance', value: 40, color: '#10B981' },
+                { name: 'Life Extension', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                predictionAccuracy: 92,
+                costReduction: 35,
+                efficiencyGain: 40
+              }
+            }
+          },
+          aitms: {
+            name: 'AI-TMS',
+            fullName: 'AI Tunnel Management System',
+            description: 'Tunnel maintenance & risk analysis',
+            status: 'coming_soon',
+            features: [
+              'Tunnel structural safety monitoring',
+              'Ventilation/lighting optimization',
+              'Fire risk prediction',
+              'Traffic analysis',
+              'Maintenance history management',
+              'Emergency response system'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'Safety Inspection', before: 120, after: 12, unit: 'hours' },
+                { name: 'Risk Analysis', before: 48, after: 4, unit: 'hours' },
+                { name: 'System Optimization', before: 80, after: 8, unit: 'hours' },
+                { name: 'Report Generation', before: 24, after: 2, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Operating Cost Savings', value: 30, color: '#4F46E5' },
+                { name: 'Accident Prevention', value: 45, color: '#10B981' },
+                { name: 'Energy Savings', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                riskDetection: 95,
+                accidentPrevention: 60,
+                operationalEfficiency: 25
+              }
+            }
+          },
+          airms: {
+            name: 'AI-RMS',
+            fullName: 'AI Road Management System',
+            description: 'Road maintenance & asset management',
+            status: 'coming_soon',
+            features: [
+              'Pavement condition auto-analysis',
+              'Pavement life prediction',
+              'Repair priority ranking',
+              'Traffic prediction',
+              'Asset valuation',
+              'Budget optimization'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'Pavement Survey', before: 200, after: 20, unit: 'hours' },
+                { name: 'Condition Assessment', before: 80, after: 8, unit: 'hours' },
+                { name: 'Repair Planning', before: 48, after: 4, unit: 'hours' },
+                { name: 'Budget Analysis', before: 40, after: 4, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Survey Cost Savings', value: 40, color: '#4F46E5' },
+                { name: 'Preventive Repair', value: 35, color: '#10B981' },
+                { name: 'Life Extension', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                analysisAccuracy: 88,
+                assetEfficiency: 45,
+                maintenanceSavings: 30
+              }
+            }
+          }
+        }
+      },
+      plant: {
+        name: 'Plant',
+        description: 'AI Information Management for Plant Facilities',
+        longDescription: 'Provide AI-based optimization from design to operation for oil & gas, chemical, and industrial plants.',
+        icon: 'Factory',
+        status: 'coming_soon',
+        systemCount: 3,
+        systems: {
+          oilgas: {
+            name: 'Oil & Gas Plant',
+            fullName: 'AI Oil & Gas Plant Management System',
+            description: 'Oil & gas plant AI management',
+            status: 'coming_soon',
+            features: [
+              'Process optimization',
+              'Predictive equipment maintenance',
+              'Safety management system',
+              'Energy efficiency analysis',
+              'Environmental monitoring',
+              'Production planning optimization'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'Process Analysis', before: 160, after: 16, unit: 'hours' },
+                { name: 'Equipment Inspection', before: 120, after: 12, unit: 'hours' },
+                { name: 'Safety Inspection', before: 80, after: 8, unit: 'hours' },
+                { name: 'Report Generation', before: 40, after: 4, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Process Efficiency', value: 40, color: '#4F46E5' },
+                { name: 'Downtime Reduction', value: 35, color: '#10B981' },
+                { name: 'Safety Cost Savings', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                processEfficiency: 15,
+                safetyImprovement: 40,
+                downtimeReduction: 30
+              }
+            }
+          },
+          chemical: {
+            name: 'Chemical Plant',
+            fullName: 'AI Chemical Plant Management System',
+            description: 'Petrochemical plant AI management',
+            status: 'coming_soon',
+            features: [
+              'Chemical process optimization',
+              'Quality control automation',
+              'Energy usage optimization',
+              'Emission management',
+              'Inventory management',
+              'Safety system integration'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'Process Optimization', before: 200, after: 20, unit: 'hours' },
+                { name: 'Quality Inspection', before: 80, after: 8, unit: 'hours' },
+                { name: 'Energy Analysis', before: 48, after: 4, unit: 'hours' },
+                { name: 'Environmental Monitoring', before: 40, after: 4, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Production Efficiency', value: 45, color: '#4F46E5' },
+                { name: 'Energy Savings', value: 30, color: '#10B981' },
+                { name: 'Defect Reduction', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                productionEfficiency: 20,
+                energySavings: 25,
+                defectReduction: 50
+              }
+            }
+          },
+          industrial: {
+            name: 'Industrial Plant',
+            fullName: 'AI Industrial Plant Management System',
+            description: 'Industrial plant AI management',
+            status: 'coming_soon',
+            features: [
+              'Production line optimization',
+              'Equipment uptime management',
+              'Quality prediction',
+              'Inventory optimization',
+              'Energy management',
+              'Workforce allocation optimization'
+            ],
+            mockData: {
+              efficiency: [
+                { name: 'Production Planning', before: 80, after: 8, unit: 'hours' },
+                { name: 'Equipment Management', before: 120, after: 12, unit: 'hours' },
+                { name: 'Quality Management', before: 60, after: 6, unit: 'hours' },
+                { name: 'Inventory Management', before: 40, after: 4, unit: 'hours' }
+              ],
+              costSavings: [
+                { name: 'Productivity Improvement', value: 40, color: '#4F46E5' },
+                { name: 'Operating Cost Savings', value: 35, color: '#10B981' },
+                { name: 'Quality Cost Savings', value: 25, color: '#F59E0B' }
+              ],
+              metrics: {
+                operatingRate: 95,
+                productivityGain: 30,
+                operatingCostReduction: 20
+              }
+            }
+          }
+        }
+      }
+    }
   },
 
   // Solutions

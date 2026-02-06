@@ -12,9 +12,9 @@ function Footer() {
       { name: t('footer.contact'), href: '/company#contact' },
     ],
     products: [
-      { name: 'AICONS Plan', href: '/products/plan' },
-      { name: 'AICONS Optimize', href: '/products/optimize' },
-      { name: 'AICONS Model', href: '/products/model' },
+      { name: 'AICONS Plan', href: '/products/building' },
+      { name: 'AICONS Optimize', href: '/products/civil' },
+      { name: 'AICONS Model', href: '/products/plant' },
     ],
     solutions: [
       { name: t('solutions.gc'), href: '/solutions/gc' },

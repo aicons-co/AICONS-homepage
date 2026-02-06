@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, Building2, Landmark, Factory, Clock } from 'lucide-react'
+import useTranslation from '../hooks/useTranslation'
 
-const productsMenu = [
-  { name: 'AICONS Plan', href: '/products/plan', description: 'Schedule visualization and planning' },
-  { name: 'AICONS Optimize', href: '/products/optimize', description: 'P6/MSP-based optimization' },
-  { name: 'AICONS Model', href: '/products/model', description: 'BIM-based modeling' },
-]
+const iconMap = {
+  Building2,
+  Landmark,
+  Factory
+}
 
 const solutionsMenu = {
   byStakeholder: [
@@ -26,6 +27,7 @@ function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
   const navigate = useNavigate()
+  const { t, locale } = useTranslation()
 
   const handleDropdownEnter = (menu) => {
     setActiveDropdown(menu)
@@ -34,6 +36,22 @@ function Header() {
   const handleDropdownLeave = () => {
     setActiveDropdown(null)
   }
+
+  // Get products categories from translations
+  const categories = t('products.categories')
+  const categoryOrder = ['building', 'civil', 'plant']
+
+  const productsMenu = categoryOrder.map((key) => {
+    const category = categories[key]
+    return {
+      key,
+      name: category?.name || key,
+      href: `/products/${key}`,
+      description: category?.description || '',
+      icon: category?.icon || 'Building2',
+      status: category?.status || 'active'
+    }
+  })
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
@@ -55,7 +73,7 @@ function Header() {
               onMouseLeave={handleDropdownLeave}
             >
               <button className="nav-link flex items-center gap-1">
-                Products
+                {t('nav.products')}
                 <ChevronDown className="w-4 h-4" />
               </button>
               <AnimatePresence>
@@ -65,18 +83,44 @@ function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 border"
+                    className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg py-2 border"
                   >
-                    {productsMenu.map((item) => (
+                    {productsMenu.map((item) => {
+                      const Icon = iconMap[item.icon] || Building2
+                      const isComingSoon = item.status === 'coming_soon'
+
+                      return (
+                        <Link
+                          key={item.key}
+                          to={item.href}
+                          className="flex items-start gap-3 px-4 py-3 hover:bg-gray-50"
+                        >
+                          <div className="w-10 h-10 rounded-lg bg-alice-primary/10 flex items-center justify-center flex-shrink-0">
+                            <Icon className="w-5 h-5 text-alice-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2">
+                              <span className="font-medium text-alice-dark">{item.name}</span>
+                              {isComingSoon && (
+                                <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-amber-100 text-amber-700 text-xs font-medium rounded-full">
+                                  <Clock className="w-3 h-3" />
+                                  {t('products.comingSoon')}
+                                </span>
+                              )}
+                            </div>
+                            <div className="text-sm text-gray-500">{item.description}</div>
+                          </div>
+                        </Link>
+                      )
+                    })}
+                    <div className="border-t mt-2 pt-2 px-4 pb-2">
                       <Link
-                        key={item.name}
-                        to={item.href}
-                        className="block px-4 py-3 hover:bg-gray-50"
+                        to="/products"
+                        className="text-sm text-alice-primary hover:underline"
                       >
-                        <div className="font-medium text-alice-dark">{item.name}</div>
-                        <div className="text-sm text-gray-500">{item.description}</div>
+                        {t('products.viewAll')} →
                       </Link>
-                    ))}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -89,7 +133,7 @@ function Header() {
               onMouseLeave={handleDropdownLeave}
             >
               <button className="nav-link flex items-center gap-1">
-                Solutions
+                {t('nav.solutions')}
                 <ChevronDown className="w-4 h-4" />
               </button>
               <AnimatePresence>
@@ -104,7 +148,7 @@ function Header() {
                     <div className="grid grid-cols-2 gap-4 px-4">
                       <div>
                         <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                          By Stakeholder
+                          {t('nav.byStakeholder')}
                         </h4>
                         {solutionsMenu.byStakeholder.map((item) => (
                           <Link
@@ -112,13 +156,13 @@ function Header() {
                             to={item.href}
                             className="block py-2 text-gray-700 hover:text-alice-primary"
                           >
-                            {item.name}
+                            {locale === 'ko' ? t(`solutions.${item.href.split('/').pop()}`) : item.name}
                           </Link>
                         ))}
                       </div>
                       <div>
                         <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                          By Project Type
+                          {t('nav.byProjectType')}
                         </h4>
                         {solutionsMenu.byProject.map((item) => (
                           <Link
@@ -126,7 +170,7 @@ function Header() {
                             to={item.href}
                             className="block py-2 text-gray-700 hover:text-alice-primary"
                           >
-                            {item.name}
+                            {locale === 'ko' ? t(`solutions.${item.href.split('/').pop()}`) : item.name}
                           </Link>
                         ))}
                       </div>
@@ -137,10 +181,10 @@ function Header() {
             </div>
 
             <Link to="/resources" className="nav-link">
-              Resources
+              {t('nav.resources')}
             </Link>
             <Link to="/company" className="nav-link">
-              Company
+              {t('nav.company')}
             </Link>
           </div>
 
@@ -150,7 +194,7 @@ function Header() {
               onClick={() => navigate('/demo')}
               className="btn-primary"
             >
-              Book a Demo
+              {locale === 'ko' ? '데모 예약' : 'Book a Demo'}
             </button>
           </div>
 
@@ -178,21 +222,30 @@ function Header() {
             >
               <div className="py-4 space-y-4">
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-gray-900">Products</h4>
-                  {productsMenu.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className="block pl-4 py-2 text-gray-600 hover:text-alice-primary"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
+                  <h4 className="font-semibold text-gray-900">{t('nav.products')}</h4>
+                  {productsMenu.map((item) => {
+                    const Icon = iconMap[item.icon] || Building2
+                    const isComingSoon = item.status === 'coming_soon'
+
+                    return (
+                      <Link
+                        key={item.key}
+                        to={item.href}
+                        className="flex items-center gap-2 pl-4 py-2 text-gray-600 hover:text-alice-primary"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <Icon className="w-4 h-4" />
+                        {item.name}
+                        {isComingSoon && (
+                          <span className="text-xs text-amber-600">({t('products.comingSoon')})</span>
+                        )}
+                      </Link>
+                    )
+                  })}
                 </div>
 
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-gray-900">Solutions</h4>
+                  <h4 className="font-semibold text-gray-900">{t('nav.solutions')}</h4>
                   {[...solutionsMenu.byStakeholder, ...solutionsMenu.byProject].map((item) => (
                     <Link
                       key={item.name}
@@ -200,7 +253,7 @@ function Header() {
                       className="block pl-4 py-2 text-gray-600 hover:text-alice-primary"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      {item.name}
+                      {locale === 'ko' ? t(`solutions.${item.href.split('/').pop()}`) : item.name}
                     </Link>
                   ))}
                 </div>
@@ -210,14 +263,14 @@ function Header() {
                   className="block py-2 font-semibold text-gray-900"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Resources
+                  {t('nav.resources')}
                 </Link>
                 <Link
                   to="/company"
                   className="block py-2 font-semibold text-gray-900"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Company
+                  {t('nav.company')}
                 </Link>
 
                 <div className="pt-4">
@@ -228,7 +281,7 @@ function Header() {
                     }}
                     className="btn-primary w-full"
                   >
-                    Book a Demo
+                    {locale === 'ko' ? '데모 예약' : 'Book a Demo'}
                   </button>
                 </div>
               </div>

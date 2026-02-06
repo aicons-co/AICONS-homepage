@@ -7,14 +7,6 @@ const clients = [
   { name: 'Accenture', color: '#A855F7' },
   { name: 'Turner', color: '#0891B2' },
   { name: 'Skanska', color: '#DC2626' },
-  // { name: 'AECOM', color: '#EA580C' },
-  // { name: 'Parsons', color: '#2563EB' },
-  // { name: 'Kiewit', color: '#16A34A' },
-  // { name: 'PCL', color: '#D97706' },
-  // { name: 'Mortenson', color: '#7C3AED' },
-  // { name: 'Clark', color: '#0D9488' },
-  // { name: 'Fluor', color: '#DB2777' },
-  // { name: 'Jacobs', color: '#4F46E5' },
 ]
 
 function LogoSlider() {

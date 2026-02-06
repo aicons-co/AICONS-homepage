@@ -17,19 +17,19 @@ function Navbar() {
       title: 'Products',
       items: [
         {
-          name: t('products.plan.name'),
-          href: '/products/plan',
-          description: t('products.plan.description'),
+          name: t('건축'),
+          href: '/products/building',
+          description: t('건축 분야 AI 정보 관리 시스템'),
         },
         {
-          name: t('products.optimize.name'),
-          href: '/products/optimize',
-          description: t('products.optimize.description'),
+          name: t('토목'),
+          href: '/products/civil',
+          description: t('토목 분야 AI 정보 관리 시스템'),
         },
         {
-          name: t('products.model.name'),
-          href: '/products/model',
-          description: t('products.model.description'),
+          name: t('플랜트'),
+          href: '/products/plant',
+          description: t('플랜트 분야 AI 정보 관리 시스템'),
         },
       ],
     },
