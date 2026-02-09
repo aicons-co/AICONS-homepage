@@ -37,11 +37,10 @@ npm run lint
 
 ### 라우팅 구조
 - `/` - 홈페이지 (HeroSection, FeaturesSection 등 여러 섹션으로 구성)
-- `/products/*` - 제품 페이지 (Plan, Optimize, Model)
-- `/solutions/*` - 솔루션 페이지 (이해관계자별, 프로젝트 유형별)
+- `/products/*` - 제품 페이지 (건축, 토목, 플랜트)
+- `/solutions/*` - 솔루션 페이지
 - `/resources` - 리소스 페이지 (케이스 스터디, 웨비나, 백서)
 - `/company` - 회사 소개
-- `/login` - 로그인 UI (인증 기능 없음)
 - `/demo` - 데모 요청 폼
 
 ### 컴포넌트 구조

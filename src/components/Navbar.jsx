@@ -37,21 +37,23 @@ function Navbar() {
       title: 'Solutions',
       sections: [
         {
-          title: t('nav.byStakeholder'),
+          // title: t('nav.byStakeholder'),
           items: [
-            { name: t('solutions.gc'), href: '/solutions/gc' },
-            { name: t('solutions.owners'), href: '/solutions/owners' },
-            { name: t('solutions.consultants'), href: '/solutions/consultants' },
+            { name: t('parsing'), href: '/solutions/parsing' },
+            { name: t('automation'), href: '/solutions/automation' },
+            { name: t('optimization'), href: '/solutions/optimization' },
+            { name: t('scheduling'), href: '/solutions/scheduling' },
+            { name: t('integration'), href: '/solutions/integration' },
           ],
         },
-        {
-          title: t('nav.byProjectType'),
-          items: [
-            { name: t('solutions.industrial'), href: '/solutions/industrial' },
-            { name: t('solutions.infrastructure'), href: '/solutions/infrastructure' },
-            { name: t('solutions.commercial'), href: '/solutions/commercial' },
-          ],
-        },
+        // {
+        //   // title: t('nav.byProjectType'),
+        //   items: [
+        //     { name: t('solutions.industrial'), href: '/solutions/industrial' },
+        //     { name: t('solutions.infrastructure'), href: '/solutions/infrastructure' },
+        //     { name: t('solutions.commercial'), href: '/solutions/commercial' },
+        //   ],
+        // },
       ],
     },
     resources: {
@@ -216,9 +218,9 @@ function Navbar() {
                     <div className="p-6 grid grid-cols-2 gap-6">
                       {menuItems.solutions.sections.map((section) => (
                         <div key={section.title}>
-                          <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
+                          {/* <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
                             {section.title}
-                          </h4>
+                          </h4> */}
                           <ul className="space-y-2">
                             {section.items.map((item) => (
                               <li key={item.name}>
@@ -233,6 +235,14 @@ function Navbar() {
                           </ul>
                         </div>
                       ))}
+                    </div>
+                    <div className="bg-gray-50 p-4 border-t">
+                      <Link
+                        to="/solutions"
+                        className="text-sm text-alice-primary font-medium hover:underline flex items-center gap-1"
+                      >
+                        {t('solutionsPage.viewAll')} <ChevronRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </motion.div>
                 )}

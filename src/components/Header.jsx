@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown, Building2, Landmark, Factory, Clock } from 'lucide-react'
+import { Menu, X, ChevronDown, Building2, Landmark, Factory, Clock, FileSearch, Bot, Target, CalendarClock, Link2 } from 'lucide-react'
 import useTranslation from '../hooks/useTranslation'
 
 const iconMap = {
@@ -10,18 +10,21 @@ const iconMap = {
   Factory
 }
 
-const solutionsMenu = {
-  byStakeholder: [
-    { name: 'General Contractors', href: '/solutions/gc' },
-    { name: 'Owners', href: '/solutions/owners' },
-    { name: 'Consultants', href: '/solutions/consultants' },
-  ],
-  byProject: [
-    { name: 'Industrial', href: '/solutions/industrial' },
-    { name: 'Infrastructure', href: '/solutions/infrastructure' },
-    { name: 'Commercial', href: '/solutions/commercial' },
-  ],
+const solutionIconMap = {
+  FileSearch,
+  Bot,
+  Target,
+  CalendarClock,
+  Link2
 }
+
+const solutionsMenu = [
+  { key: 'parsing', icon: 'FileSearch' },
+  { key: 'automation', icon: 'Bot' },
+  { key: 'optimization', icon: 'Target' },
+  { key: 'scheduling', icon: 'CalendarClock' },
+  { key: 'integration', icon: 'Link2' },
+]
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -143,37 +146,33 @@ function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg py-4 border"
+                    className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-lg py-2 border"
                   >
-                    <div className="grid grid-cols-2 gap-4 px-4">
-                      <div>
-                        <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                          {t('nav.byStakeholder')}
-                        </h4>
-                        {solutionsMenu.byStakeholder.map((item) => (
-                          <Link
-                            key={item.name}
-                            to={item.href}
-                            className="block py-2 text-gray-700 hover:text-alice-primary"
-                          >
-                            {locale === 'ko' ? t(`solutions.${item.href.split('/').pop()}`) : item.name}
-                          </Link>
-                        ))}
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                          {t('nav.byProjectType')}
-                        </h4>
-                        {solutionsMenu.byProject.map((item) => (
-                          <Link
-                            key={item.name}
-                            to={item.href}
-                            className="block py-2 text-gray-700 hover:text-alice-primary"
-                          >
-                            {locale === 'ko' ? t(`solutions.${item.href.split('/').pop()}`) : item.name}
-                          </Link>
-                        ))}
-                      </div>
+                    {solutionsMenu.map((item) => {
+                      const Icon = solutionIconMap[item.icon] || FileSearch
+                      return (
+                        <Link
+                          key={item.key}
+                          to={`/solutions/${item.key}`}
+                          className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50"
+                        >
+                          <div className="w-10 h-10 rounded-lg bg-alice-primary/10 flex items-center justify-center flex-shrink-0">
+                            <Icon className="w-5 h-5 text-alice-primary" />
+                          </div>
+                          <div>
+                            <span className="font-medium text-alice-dark block">{t(`solutionsPage.${item.key}.name`)}</span>
+                            <span className="text-sm text-gray-500">{t(`solutionsPage.${item.key}.tagline`)}</span>
+                          </div>
+                        </Link>
+                      )
+                    })}
+                    <div className="border-t mt-2 pt-2 px-4 pb-2">
+                      <Link
+                        to="/solutions"
+                        className="text-sm text-alice-primary hover:underline"
+                      >
+                        {t('solutionsPage.viewAll')} →
+                      </Link>
                     </div>
                   </motion.div>
                 )}
@@ -246,16 +245,20 @@ function Header() {
 
                 <div className="space-y-2">
                   <h4 className="font-semibold text-gray-900">{t('nav.solutions')}</h4>
-                  {[...solutionsMenu.byStakeholder, ...solutionsMenu.byProject].map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className="block pl-4 py-2 text-gray-600 hover:text-alice-primary"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {locale === 'ko' ? t(`solutions.${item.href.split('/').pop()}`) : item.name}
-                    </Link>
-                  ))}
+                  {solutionsMenu.map((item) => {
+                    const Icon = solutionIconMap[item.icon] || FileSearch
+                    return (
+                      <Link
+                        key={item.key}
+                        to={`/solutions/${item.key}`}
+                        className="flex items-center gap-2 pl-4 py-2 text-gray-600 hover:text-alice-primary"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <Icon className="w-4 h-4" />
+                        {t(`solutionsPage.${item.key}.name`)}
+                      </Link>
+                    )
+                  })}
                 </div>
 
                 <Link

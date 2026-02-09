@@ -205,7 +205,7 @@ function HeroSection() {
             // className="mt-10 pt-10 border-t border-white/10"
             className="mt-10 pt-10 border-t border-white/50"
           >
-            <div className="grid grid-cols-3 gap-12">
+            <div className="flex justify-between">
               {[
                 { value: '17%', label: t('hero.durationReduction') },
                 { value: '14%', label: t('hero.laborCostSavings') },
@@ -216,7 +216,7 @@ function HeroSection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.2 + index * 0.1 }}
-                  className="text-left"
+                  className="text-center"
                 >
                   <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1">
                     {stat.value}
