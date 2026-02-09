@@ -60,17 +60,17 @@ function BuildingProducts() {
             transition={{ delay: 0.2 }}
             className="mt-8 flex flex-wrap gap-6"
           >
-            <div className="bg-white/10 rounded-lg px-6 py-3">
+            <div className="bg-white/10 rounded-lg px-6 py-3 flex justify-center items-center">
               <span className="text-2xl font-bold text-white">{category.systemCount}</span>
-              <span className="text-gray-300 ml-2">{locale === 'ko' ? '개 시스템' : 'Systems'}</span>
+              <span className="text-gray-300 ml-2">{t('products.stats.systems')}</span>
             </div>
-            <div className="bg-white/10 rounded-lg px-6 py-3">
+            <div className="bg-white/10 rounded-lg px-6 py-3 flex justify-center items-center">
               <span className="text-2xl font-bold text-alice-primary">90%+</span>
-              <span className="text-gray-300 ml-2">{locale === 'ko' ? '자동화율' : 'Automation'}</span>
+              <span className="text-gray-300 ml-2">{t('products.stats.automation')}</span>
             </div>
-            <div className="bg-white/10 rounded-lg px-6 py-3">
+            <div className="bg-white/10 rounded-lg px-6 py-3 flex justify-center items-center">
               <span className="text-2xl font-bold text-green-400">40%</span>
-              <span className="text-gray-300 ml-2">{locale === 'ko' ? '비용 절감' : 'Cost Savings'}</span>
+              <span className="text-gray-300 ml-2">{t('products.stats.costSavings')}</span>
             </div>
           </motion.div>
         </div>

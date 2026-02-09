@@ -19,16 +19,7 @@ function PlantProducts() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-alice-dark to-alice-navy relative">
-        {isComingSoon && (
-          <div className="absolute top-6 right-6 md:top-10 md:right-10">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-amber-400 text-amber-900 text-sm font-medium rounded-full">
-              <Clock className="w-4 h-4" />
-              {t('products.comingSoon')}
-            </span>
-          </div>
-        )}
-
+      <section className="py-16 bg-gradient-to-br from-alice-dark to-alice-navy">
         <div className="container-custom">
           <Link
             to="/products"
@@ -47,8 +38,14 @@ function PlantProducts() {
               <Factory className="w-10 h-10 text-alice-primary" />
             </div>
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 flex items-center gap-4">
                 {category.name}
+                {isComingSoon && (
+                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-amber-400 text-amber-900 text-sm font-medium rounded-full">
+                    <Clock className="w-3 h-3" />
+                    {t('products.comingSoon')}
+                  </span>
+                )}
               </h1>
               <p className="text-xl text-gray-300">{category.description}</p>
             </div>
@@ -70,17 +67,17 @@ function PlantProducts() {
             transition={{ delay: 0.2 }}
             className="mt-8 flex flex-wrap gap-6"
           >
-            <div className="bg-white/10 rounded-lg px-6 py-3">
+            <div className="bg-white/10 rounded-lg px-6 py-3 flex justify-center items-center">
               <span className="text-2xl font-bold text-white">{category.systemCount}</span>
-              <span className="text-gray-300 ml-2">{locale === 'ko' ? '개 시스템' : 'Systems'}</span>
+              <span className="text-gray-300 ml-2">{t('products.stats.systems')}</span>
             </div>
-            <div className="bg-white/10 rounded-lg px-6 py-3">
+            <div className="bg-white/10 rounded-lg px-6 py-3 flex justify-center items-center">
               <span className="text-2xl font-bold text-alice-primary">95%</span>
-              <span className="text-gray-300 ml-2">{locale === 'ko' ? '설비 가동률' : 'Uptime Rate'}</span>
+              <span className="text-gray-300 ml-2">{t('products.stats.uptimeRate')}</span>
             </div>
-            <div className="bg-white/10 rounded-lg px-6 py-3">
+            <div className="bg-white/10 rounded-lg px-6 py-3 flex justify-center items-center">
               <span className="text-2xl font-bold text-green-400">30%</span>
-              <span className="text-gray-300 ml-2">{locale === 'ko' ? '다운타임 감소' : 'Downtime Reduction'}</span>
+              <span className="text-gray-300 ml-2">{t('products.stats.downtimeReduction')}</span>
             </div>
           </motion.div>
         </div>
