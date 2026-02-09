@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Check, Clock, TrendingUp, PieChart, BarChart3 } from 'lucide-react'
 import { EfficiencyChart, CostSavingsChart } from '../charts'
@@ -5,6 +6,17 @@ import useTranslation from '../../hooks/useTranslation'
 
 function SystemDetailModal({ system, isOpen, onClose }) {
   const { t, locale } = useTranslation()
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
 
   if (!system) return null
 
