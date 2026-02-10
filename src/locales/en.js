@@ -18,6 +18,15 @@ export default {
   products: {
     viewAll: 'View All Products',
     comingSoon: 'Coming Soon',
+    stats: {
+      systems: 'Systems',
+      automation: 'Automation',
+      costSavings: 'Cost Savings',
+      predictionAccuracy: 'Prediction Accuracy',
+      maintenanceSavings: 'Maintenance Savings',
+      uptimeRate: 'Uptime Rate',
+      downtimeReduction: 'Downtime Reduction',
+    },
     categories: {
       building: {
         name: 'Building',
@@ -63,7 +72,7 @@ export default {
             name: 'AIMIMS',
             fullName: 'AI Mechanical Information Management System',
             description: 'Mechanical system information management automation',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               'Mechanical BIM auto-analysis',
               'Pipe/duct quantity takeoff',
@@ -95,7 +104,7 @@ export default {
             name: 'AIEIMS',
             fullName: 'AI Electrical Information Management System',
             description: 'Electrical system information management automation',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               'Electrical BIM auto-analysis',
               'Cable tray routing optimization',
@@ -127,7 +136,7 @@ export default {
             name: 'AIFIMS',
             fullName: 'AI Finishing Information Management System',
             description: 'Finishing work information & quantity automation',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               'Finish material quantity auto-takeoff',
               'Room-by-room finish schedule',
@@ -159,7 +168,7 @@ export default {
             name: 'AI-BEMS',
             fullName: 'AI Building Energy Management System',
             description: 'Building energy analysis & operation optimization',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               'Real-time energy monitoring',
               'AI-based energy optimization',
@@ -191,7 +200,7 @@ export default {
             name: 'AI-Mark-In',
             fullName: 'AI Market Analysis & Investment System',
             description: 'Feasibility & profitability analysis automation',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               'Real estate market analysis',
               'Feasibility study automation',
@@ -223,7 +232,7 @@ export default {
             name: 'AI-Architect',
             fullName: 'AI Architectural Planning System',
             description: 'Architectural planning & early design automation',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               'Site analysis automation',
               'Building mass auto-generation',
@@ -255,7 +264,7 @@ export default {
             name: 'AI-BSCM',
             fullName: 'AI Building Supply Chain Management',
             description: 'Construction site procurement management automation',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               'Material demand forecasting',
               'Supplier management',
@@ -1086,6 +1095,7 @@ export default {
     requestDemo: 'Request Demo',
     contactUs: 'Contact Us',
     viewAll: 'View All',
+    close: 'Close',
   },
 
   // Language

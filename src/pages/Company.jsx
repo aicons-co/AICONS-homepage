@@ -66,7 +66,7 @@ function Company() {
               className="bg-gradient-to-br from-alice-primary/10 to-alice-secondary/10 rounded-2xl aspect-video flex items-center justify-center"
             >
               <div className="text-center p-8">
-                <p className="text-6xl font-bold text-alice-primary mb-2">2015</p>
+                <p className="text-6xl font-bold text-alice-primary mb-2">2025</p>
                 <p className="text-gray-600">{t('companyPage.foundedIn')}</p>
               </div>
             </motion.div>

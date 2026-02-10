@@ -18,6 +18,15 @@ export default {
   products: {
     viewAll: '모든 제품 보기',
     comingSoon: '출시 예정',
+    stats: {
+      systems: '시스템',
+      automation: '자동화율',
+      costSavings: '비용 감소',
+      predictionAccuracy: '예측 정확도',
+      maintenanceSavings: '비용 감소',
+      uptimeRate: '설비 가동률',
+      downtimeReduction: '다운타임 감소',
+    },
     categories: {
       building: {
         name: '건축',
@@ -63,7 +72,7 @@ export default {
             name: 'AIMIMS',
             fullName: 'AI Mechanical Information Management System',
             description: '기계설비 정보 관리 자동화',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               '기계설비 BIM 자동 분석',
               '배관/덕트 물량 산출',
@@ -95,7 +104,7 @@ export default {
             name: 'AIEIMS',
             fullName: 'AI Electrical Information Management System',
             description: '전기설비 정보 관리 자동화',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               '전기설비 BIM 자동 분석',
               '케이블 트레이 라우팅 최적화',
@@ -127,7 +136,7 @@ export default {
             name: 'AIFIMS',
             fullName: 'AI Finishing Information Management System',
             description: '마감공사 정보 및 물량 자동화',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               '마감재 물량 자동 산출',
               '실별 마감 스케줄 관리',
@@ -159,7 +168,7 @@ export default {
             name: 'AI-BEMS',
             fullName: 'AI Building Energy Management System',
             description: '건물 에너지 분석·운영 최적화',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               '실시간 에너지 모니터링',
               'AI 기반 에너지 최적화',
@@ -191,7 +200,7 @@ export default {
             name: 'AI-Mark-In',
             fullName: 'AI Market Analysis & Investment System',
             description: '사업성·수익성 분석 자동화',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               '부동산 시장 분석',
               '사업성 타당성 검토',
@@ -223,7 +232,7 @@ export default {
             name: 'AI-Architect',
             fullName: 'AI Architectural Planning System',
             description: '건축 계획 및 초기 설계 자동화',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               '대지 분석 자동화',
               '건축 매스 자동 생성',
@@ -255,7 +264,7 @@ export default {
             name: 'AI-BSCM',
             fullName: 'AI Building Supply Chain Management',
             description: '건축 현장 조달 관리 자동화',
-            status: 'active',
+            status: 'coming_soon',
             features: [
               '자재 수급 예측',
               '공급업체 관리',
@@ -1089,6 +1098,7 @@ export default {
     requestDemo: '데모 요청',
     contactUs: '문의하기',
     viewAll: '모두 보기',
+    close: '닫기',
   },
 
   // Language

@@ -83,7 +83,7 @@ function BuildingProducts() {
             {locale === 'ko' ? '건축 AI 시스템' : 'Building AI Systems'}
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {systemKeys.map((key, index) => {
               const system = category.systems[key]
               return (

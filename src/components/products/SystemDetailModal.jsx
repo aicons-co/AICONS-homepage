@@ -156,7 +156,7 @@ function SystemDetailModal({ system, isOpen, onClose }) {
                   onClick={onClose}
                   className="px-6 py-2 text-gray-600 hover:text-gray-900 font-medium transition-colors"
                 >
-                  {locale === 'ko' ? '닫기' : 'Close'}
+                  {t('common.close')}
                 </button>
                 <button className="btn-primary">
                   {t('common.requestDemo')}
