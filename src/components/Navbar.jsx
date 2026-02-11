@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
+import { Menu, X, ChevronDown, ChevronRight, Clock, Building2, Landmark, Factory } from 'lucide-react'
 import useTranslation from '../hooks/useTranslation'
 import LanguageSwitcher from './LanguageSwitcher'
 
@@ -19,17 +19,23 @@ function Navbar() {
         {
           name: t('건축'),
           href: '/products/building',
-          description: t('건축 분야 AI 정보 관리 시스템'),
+          description: t('건축 분야 AI 관리 시스템'),
+          icon: Building2,
+          status: 'active',
         },
         {
           name: t('토목'),
           href: '/products/civil',
-          description: t('토목 분야 AI 정보 관리 시스템'),
+          description: t('토목 분야 AI 관리 시스템'),
+          icon: Landmark,
+          status: 'coming_soon',
         },
         {
           name: t('플랜트'),
           href: '/products/plant',
-          description: t('플랜트 분야 AI 정보 관리 시스템'),
+          description: t('플랜트 분야 AI 관리 시스템'),
+          icon: Factory,
+          status: 'coming_soon',
         },
       ],
     },
@@ -39,11 +45,12 @@ function Navbar() {
         {
           // title: t('nav.byStakeholder'),
           items: [
-            { name: t('parsing'), href: '/solutions/parsing' },
-            { name: t('automation'), href: '/solutions/automation' },
-            { name: t('optimization'), href: '/solutions/optimization' },
-            { name: t('scheduling'), href: '/solutions/scheduling' },
-            { name: t('integration'), href: '/solutions/integration' },
+            { name: t('solutions.parsing'), href: '/solutions/parsing' },
+            { name: t('solutions.automation'), href: '/solutions/automation' },
+            { name: t('solutions.optimization'), href: '/solutions/optimization' },
+            { name: t('solutions.scheduling'), href: '/solutions/scheduling' },
+            { name: t('solutions.integration'), href: '/solutions/integration' },
+            { name: t('solutions.feedback'), href: '/solutions/feedback' },
           ],
         },
         // {
@@ -59,10 +66,9 @@ function Navbar() {
     resources: {
       title: 'Resources',
       items: [
-        { name: t('nav.caseStudies'), href: '/resources#case-studies' },
-        { name: t('nav.webinars'), href: '/resources#webinars' },
-        { name: t('nav.blog'), href: '/resources#blog' },
-        { name: t('nav.whitepapers'), href: '/resources#whitepapers' },
+        { name: t('nav.patents'), href: '/resources#patents' },
+        { name: t('nav.papers'), href: '/resources#papers' },
+        { name: t('nav.downloads'), href: '/resources#downloads' },
       ],
     },
   }
@@ -119,7 +125,7 @@ function Navbar() {
                 to="/company"
                 // className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                 //   isScrolled
-                //     ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
+                //     ? 'text-gray-700 hover:text-aicons-primary hover:bg-gray-100'
                 //     : 'text-white/90 hover:text-white hover:bg-white/10'
                 //   }`}
                 className='px-4 py-2 rounded-lg font-medium text-black'
@@ -136,7 +142,7 @@ function Navbar() {
               <button
                 // className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
                 //   isScrolled
-                //     ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
+                //     ? 'text-gray-700 hover:text-aicons-primary hover:bg-gray-100'
                 //     : 'text-white/90 hover:text-white hover:bg-white/10'
                 // }`}
                 className='flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-black'
@@ -155,30 +161,55 @@ function Navbar() {
                     className="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
                   >
                     <div className="p-2">
-                      {menuItems.products.items.map((item) => (
-                        <Link
-                          key={item.name}
-                          to={item.href}
-                          className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors group"
-                        >
-                          <div className="w-10 h-10 rounded-lg bg-alice-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-alice-primary/20 transition-colors">
-                            <span className="text-alice-primary font-bold">
-                              {item.name.split(' ')[1]?.charAt(0) || 'A'}
-                            </span>
-                          </div>
-                          <div>
-                            <div className="font-semibold text-gray-900 group-hover:text-alice-primary transition-colors">
-                              {item.name}
+                      {menuItems.products.items.map((item) => {
+                        const isComingSoon = item.status === 'coming_soon'
+
+                        if (isComingSoon) {
+                          return (
+                            <div
+                              key={item.name}
+                              className="flex items-start gap-4 p-4 rounded-xl bg-gray-50 opacity-60 cursor-default"
+                            >
+                              <div className="w-10 h-10 rounded-lg bg-gray-200 flex items-center justify-center flex-shrink-0">
+                                <item.icon className="w-5 h-5 text-gray-400" />
+                              </div>
+                              <div>
+                                <div className="flex items-center gap-2">
+                                  <span className="font-semibold text-gray-400">{item.name}</span>
+                                  <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-gray-200 text-gray-500 text-xs font-medium rounded-full">
+                                    <Clock className="w-3 h-3" />
+                                    {t('products.comingSoon')}
+                                  </span>
+                                </div>
+                                <div className="text-sm text-gray-400">{item.description}</div>
+                              </div>
                             </div>
-                            <div className="text-sm text-gray-500">{item.description}</div>
-                          </div>
-                        </Link>
-                      ))}
+                          )
+                        }
+
+                        return (
+                          <Link
+                            key={item.name}
+                            to={item.href}
+                            className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors group"
+                          >
+                            <div className="w-10 h-10 rounded-lg bg-aicons-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-aicons-primary/20 transition-colors">
+                              <item.icon className="w-5 h-5 text-aicons-primary" />
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-aicons-primary transition-colors">
+                                {item.name}
+                              </div>
+                              <div className="text-sm text-gray-500">{item.description}</div>
+                            </div>
+                          </Link>
+                        )
+                      })}
                     </div>
                     <div className="bg-gray-50 p-4 border-t">
                       <Link
                         to="/products"
-                        className="text-sm text-alice-primary font-medium hover:underline flex items-center gap-1"
+                        className="text-sm text-aicons-primary font-medium hover:underline flex items-center gap-1"
                       >
                         {t('nav.viewAllProducts')} <ChevronRight className="w-4 h-4" />
                       </Link>
@@ -197,7 +228,7 @@ function Navbar() {
               <button
                 // className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
                 //   isScrolled
-                //     ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
+                //     ? 'text-gray-700 hover:text-aicons-primary hover:bg-gray-100'
                 //     : 'text-white/90 hover:text-white hover:bg-white/10'
                 // }`}
                 className='flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-black'
@@ -226,7 +257,7 @@ function Navbar() {
                               <li key={item.name}>
                                 <Link
                                   to={item.href}
-                                  className="block py-1.5 text-gray-700 hover:text-alice-primary transition-colors"
+                                  className="block py-1.5 text-gray-700 hover:text-aicons-primary transition-colors"
                                 >
                                   {item.name}
                                 </Link>
@@ -239,7 +270,7 @@ function Navbar() {
                     <div className="bg-gray-50 p-4 border-t">
                       <Link
                         to="/solutions"
-                        className="text-sm text-alice-primary font-medium hover:underline flex items-center gap-1"
+                        className="text-sm text-aicons-primary font-medium hover:underline flex items-center gap-1"
                       >
                         {t('solutionsPage.viewAll')} <ChevronRight className="w-4 h-4" />
                       </Link>
@@ -258,7 +289,7 @@ function Navbar() {
               <button
                 // className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
                 //   isScrolled
-                //     ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
+                //     ? 'text-gray-700 hover:text-aicons-primary hover:bg-gray-100'
                 //     : 'text-white/90 hover:text-white hover:bg-white/10'
                 // }`}
                 className='flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-black'
@@ -281,7 +312,7 @@ function Navbar() {
                         <Link
                           key={item.name}
                           to={item.href}
-                          className="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-alice-primary transition-colors"
+                          className="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-aicons-primary transition-colors"
                         >
                           {item.name}
                         </Link>
@@ -306,8 +337,8 @@ function Navbar() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="inline-block px-6 py-2.5
-                bg-alice-primary text-white font-semibold rounded-lg
-                hover:bg-alice-primary/90 transition-colors shadow-lg shadow-alice-primary/10"
+                bg-aicons-primary text-white font-semibold rounded-lg
+                hover:bg-aicons-primary/90 transition-colors shadow-lg shadow-aicons-primary/10"
             >
               AISIMS<sup className="text-xs">®</sup>
             </motion.a>
@@ -356,16 +387,32 @@ function Navbar() {
                           className="overflow-hidden"
                         >
                           <div className="pl-4 py-2 space-y-1">
-                            {menuItems.products.items.map((item) => (
-                              <Link
-                                key={item.name}
-                                to={item.href}
-                                onClick={closeMobileMenu}
-                                className="block px-4 py-2.5 text-gray-600 hover:text-alice-primary rounded-lg hover:bg-gray-50"
-                              >
-                                {item.name}
-                              </Link>
-                            ))}
+                            {menuItems.products.items.map((item) => {
+                              const isComingSoon = item.status === 'coming_soon'
+
+                              if (isComingSoon) {
+                                return (
+                                  <div
+                                    key={item.name}
+                                    className="flex items-center gap-2 px-4 py-2.5 text-gray-400 opacity-60 cursor-default rounded-lg"
+                                  >
+                                    {item.name}
+                                    <span className="text-xs text-gray-400">({t('products.comingSoon')})</span>
+                                  </div>
+                                )
+                              }
+
+                              return (
+                                <Link
+                                  key={item.name}
+                                  to={item.href}
+                                  onClick={closeMobileMenu}
+                                  className="block px-4 py-2.5 text-gray-600 hover:text-aicons-primary rounded-lg hover:bg-gray-50"
+                                >
+                                  {item.name}
+                                </Link>
+                              )
+                            })}
                           </div>
                         </motion.div>
                       )}
@@ -400,7 +447,7 @@ function Navbar() {
                                     key={item.name}
                                     to={item.href}
                                     onClick={closeMobileMenu}
-                                    className="block px-4 py-2 text-gray-600 hover:text-alice-primary"
+                                    className="block px-4 py-2 text-gray-600 hover:text-aicons-primary"
                                   >
                                     {item.name}
                                   </Link>
@@ -439,7 +486,7 @@ function Navbar() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={closeMobileMenu}
-                      className="block w-full py-3 bg-alice-primary text-white font-semibold rounded-lg hover:bg-alice-primary/90 transition-colors text-center"
+                      className="block w-full py-3 bg-aicons-primary text-white font-semibold rounded-lg hover:bg-aicons-primary/90 transition-colors text-center"
                     >
                       AISIMS<sup className="text-xs">®</sup>
                     </a>

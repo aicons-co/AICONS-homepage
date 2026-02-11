@@ -17,19 +17,22 @@ function Footer() {
       { name: 'AICONS Model', href: '/products/plant' },
     ],
     solutions: [
-      { name: t('solutions.gc'), href: '/solutions/gc' },
-      { name: t('solutions.owners'), href: '/solutions/owners' },
-      { name: t('solutions.consultants'), href: '/solutions/consultants' },
+      { name: t('solutions.parsing'), href: '/solutions/parsing' },
+      { name: t('solutions.automation'), href: '/solutions/automation' },
+      { name: t('solutions.optimization'), href: '/solutions/optimization' },
+      { name: t('solutions.scheduling'), href: '/solutions/scheduling' },
+      { name: t('solutions.integration'), href: '/solutions/integration' },
+      { name: t('solutions.feedback'), href: '/solutions/feedback' },
     ],
     resources: [
-      { name: t('footer.caseStudies'), href: '/resources#case-studies' },
-      { name: t('footer.blog'), href: '/resources#blog' },
-      { name: t('footer.webinars'), href: '/resources#webinars' },
+      { name: t('nav.patents'), href: '/resources#patents' },
+      { name: t('nav.papers'), href: '/resources#papers' },
+      { name: t('nav.downloads'), href: '/resources#downloads' },
     ],
   }
 
   return (
-    <footer className="bg-alice-dark text-white">
+    <footer className="bg-aicons-dark text-white">
       {/* Newsletter Section */}
       <div className="border-b border-gray-700">
         <div className="container-custom py-12">
@@ -44,7 +47,7 @@ function Footer() {
               <input
                 type="email"
                 placeholder={t('footer.enterEmail')}
-                className="px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-alice-primary flex-grow md:w-64"
+                className="px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-aicons-primary flex-grow md:w-64"
               />
               <button type="submit" className="btn-primary whitespace-nowrap">
                 {t('footer.subscribe')}
@@ -61,23 +64,23 @@ function Footer() {
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
               <span className="text-2xl font-bold">
-                <span className="text-alice-primary">AICONS</span>
+                <span className="text-aicons-primary">AICONS</span>
               </span>
             </Link>
             <p className="text-gray-400 text-sm mb-4">
               {t('footer.description')}
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-alice-primary transition-colors">
+              <a href="#" className="text-gray-400 hover:text-aicons-primary transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-alice-primary transition-colors">
+              <a href="#" className="text-gray-400 hover:text-aicons-primary transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-alice-primary transition-colors">
+              <a href="#" className="text-gray-400 hover:text-aicons-primary transition-colors">
                 <Youtube className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-alice-primary transition-colors">
+              <a href="#" className="text-gray-400 hover:text-aicons-primary transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>

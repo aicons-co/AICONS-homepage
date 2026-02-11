@@ -1,66 +1,118 @@
 import { motion } from 'framer-motion'
-import { FileText, Video, BookOpen, Download, ArrowRight, Play } from 'lucide-react'
+import { FileText, Shield, Download, ArrowRight, ExternalLink } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import useTranslation from '../hooks/useTranslation'
 
 function Resources() {
   const { t } = useTranslation()
 
-  const resources = {
-    caseStudies: [
-      {
-        title: t('resourcesPage.cases.alignJV.title'),
-        description: t('resourcesPage.cases.alignJV.description'),
-        type: t('resourcesPage.cases.alignJV.type'),
-        image: null,
-      },
-      {
-        title: t('resourcesPage.cases.dataCenter.title'),
-        description: t('resourcesPage.cases.dataCenter.description'),
-        type: t('resourcesPage.cases.dataCenter.type'),
-        image: null,
-      },
-      {
-        title: t('resourcesPage.cases.industrialBrazil.title'),
-        description: t('resourcesPage.cases.industrialBrazil.description'),
-        type: t('resourcesPage.cases.industrialBrazil.type'),
-        image: null,
-      },
-    ],
-    webinars: [
-      {
-        title: t('resourcesPage.webinarList.introAI.title'),
-        description: t('resourcesPage.webinarList.introAI.description'),
-        duration: t('resourcesPage.webinarList.introAI.duration'),
-      },
-      {
-        title: t('resourcesPage.webinarList.resourceAllocation.title'),
-        description: t('resourcesPage.webinarList.resourceAllocation.description'),
-        duration: t('resourcesPage.webinarList.resourceAllocation.duration'),
-      },
-      {
-        title: t('resourcesPage.webinarList.bimToSchedule.title'),
-        description: t('resourcesPage.webinarList.bimToSchedule.description'),
-        duration: t('resourcesPage.webinarList.bimToSchedule.duration'),
-      },
-    ],
-    whitepapers: [
-      {
-        title: t('resourcesPage.whitepaperList.futureScheduling.title'),
-        description: t('resourcesPage.whitepaperList.futureScheduling.description'),
-        pages: t('resourcesPage.whitepaperList.futureScheduling.pages'),
-      },
-      {
-        title: t('resourcesPage.whitepaperList.measuringROI.title'),
-        description: t('resourcesPage.whitepaperList.measuringROI.description'),
-        pages: t('resourcesPage.whitepaperList.measuringROI.pages'),
-      },
-    ],
+  const papers = [
+    {
+      title: t('resourcesPage.papers.items.paper1.title'),
+      authors: t('resourcesPage.papers.items.paper1.authors'),
+      journal: t('resourcesPage.papers.items.paper1.journal'),
+      year: '2024',
+      gradient: 'from-indigo-500 to-blue-600',
+    },
+    {
+      title: t('resourcesPage.papers.items.paper2.title'),
+      authors: t('resourcesPage.papers.items.paper2.authors'),
+      journal: t('resourcesPage.papers.items.paper2.journal'),
+      year: '2024',
+      gradient: 'from-emerald-500 to-teal-600',
+    },
+    {
+      title: t('resourcesPage.papers.items.paper3.title'),
+      authors: t('resourcesPage.papers.items.paper3.authors'),
+      journal: t('resourcesPage.papers.items.paper3.journal'),
+      year: '2023',
+      gradient: 'from-amber-500 to-orange-600',
+    },
+    {
+      title: t('resourcesPage.papers.items.paper4.title'),
+      authors: t('resourcesPage.papers.items.paper4.authors'),
+      journal: t('resourcesPage.papers.items.paper4.journal'),
+      year: '2023',
+      gradient: 'from-purple-500 to-pink-600',
+    },
+  ]
+
+  const patents = [
+    {
+      title: t('resourcesPage.patents.items.patent1.title'),
+      number: t('resourcesPage.patents.items.patent1.number'),
+      date: t('resourcesPage.patents.items.patent1.date'),
+      status: 'registered',
+      gradient: 'from-blue-600 to-indigo-700',
+    },
+    {
+      title: t('resourcesPage.patents.items.patent2.title'),
+      number: t('resourcesPage.patents.items.patent2.number'),
+      date: t('resourcesPage.patents.items.patent2.date'),
+      status: 'registered',
+      gradient: 'from-teal-600 to-cyan-700',
+    },
+    {
+      title: t('resourcesPage.patents.items.patent3.title'),
+      number: t('resourcesPage.patents.items.patent3.number'),
+      date: t('resourcesPage.patents.items.patent3.date'),
+      status: 'pending',
+      gradient: 'from-violet-600 to-purple-700',
+    },
+    {
+      title: t('resourcesPage.patents.items.patent4.title'),
+      number: t('resourcesPage.patents.items.patent4.number'),
+      date: t('resourcesPage.patents.items.patent4.date'),
+      status: 'pending',
+      gradient: 'from-rose-600 to-red-700',
+    },
+  ]
+
+  const downloads = [
+    {
+      title: t('resourcesPage.downloads.items.dl1.title'),
+      description: t('resourcesPage.downloads.items.dl1.description'),
+      pages: t('resourcesPage.downloads.items.dl1.pages'),
+    },
+    {
+      title: t('resourcesPage.downloads.items.dl2.title'),
+      description: t('resourcesPage.downloads.items.dl2.description'),
+      pages: t('resourcesPage.downloads.items.dl2.pages'),
+    },
+    {
+      title: t('resourcesPage.downloads.items.dl3.title'),
+      description: t('resourcesPage.downloads.items.dl3.description'),
+      pages: t('resourcesPage.downloads.items.dl3.pages'),
+    },
+    {
+      title: t('resourcesPage.downloads.items.dl4.title'),
+      description: t('resourcesPage.downloads.items.dl4.description'),
+      pages: t('resourcesPage.downloads.items.dl4.pages'),
+    },
+    {
+      title: t('resourcesPage.downloads.items.dl5.title'),
+      description: t('resourcesPage.downloads.items.dl5.description'),
+      pages: t('resourcesPage.downloads.items.dl5.pages'),
+    },
+  ]
+
+  const statusLabel = (status) => {
+    if (status === 'registered') {
+      return {
+        text: t('resourcesPage.patents.registered'),
+        className: 'bg-emerald-100 text-emerald-700',
+      }
+    }
+    return {
+      text: t('resourcesPage.patents.pending'),
+      className: 'bg-amber-100 text-amber-700',
+    }
   }
 
   return (
     <div>
       {/* Hero */}
-      <section className="py-20 bg-gradient-to-br from-alice-dark to-alice-navy">
+      <section className="py-20 bg-gradient-to-br from-aicons-dark to-aicons-navy">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{t('resourcesPage.title')}</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
@@ -69,32 +121,71 @@ function Resources() {
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section id="case-studies" className="py-20 bg-white">
+      {/* Patents */}
+      <section id="patents" className="py-20 bg-white">
         <div className="container-custom">
           <div className="flex items-center gap-3 mb-8">
-            <FileText className="w-8 h-8 text-alice-primary" />
-            <h2 className="text-3xl font-bold text-alice-dark">{t('resourcesPage.caseStudies')}</h2>
+            <Shield className="w-8 h-8 text-aicons-primary" />
+            <h2 className="text-3xl font-bold text-aicons-dark">{t('resourcesPage.patents.title')}</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {resources.caseStudies.map((study, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {patents.map((patent, index) => (
               <motion.div
-                key={study.title}
+                key={patent.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group"
+                className="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="aspect-video bg-gradient-to-br from-alice-primary/20 to-alice-secondary/20" />
-                <div className="p-6">
-                  <span className="text-xs font-semibold text-alice-primary uppercase tracking-wider">
-                    {study.type}
-                  </span>
-                  <h3 className="text-xl font-bold text-alice-dark mt-2 mb-3">{study.title}</h3>
-                  <p className="text-gray-600 mb-4">{study.description}</p>
-                  <button className="inline-flex items-center gap-2 text-alice-primary font-semibold group-hover:gap-3 transition-all">
-                    {t('resourcesPage.readMore')} <ArrowRight className="w-4 h-4" />
+                <div className={`aspect-[4/3] bg-gradient-to-br ${patent.gradient} flex items-center justify-center`}>
+                  <Shield className="w-12 h-12 text-white/60" />
+                </div>
+                <div className="p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusLabel(patent.status).className}`}>
+                      {statusLabel(patent.status).text}
+                    </span>
+                  </div>
+                  <h3 className="text-sm font-bold text-aicons-dark mb-2 line-clamp-3 leading-snug">{patent.title}</h3>
+                  <p className="text-xs text-gray-500 mb-1">{patent.number}</p>
+                  <p className="text-xs text-gray-400">{patent.date}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Papers */}
+      <section id="papers" className="py-20 bg-gray-50">
+        <div className="container-custom">
+          <div className="flex items-center gap-3 mb-8">
+            <FileText className="w-8 h-8 text-aicons-primary" />
+            <h2 className="text-3xl font-bold text-aicons-dark">{t('resourcesPage.papers.title')}</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {papers.map((paper, index) => (
+              <motion.div
+                key={paper.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group"
+              >
+                <div className={`aspect-[4/3] bg-gradient-to-br ${paper.gradient} flex items-center justify-center`}>
+                  <FileText className="w-12 h-12 text-white/60" />
+                </div>
+                <div className="p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xs font-semibold text-aicons-primary">{paper.journal}</span>
+                    <span className="text-xs text-gray-400">{paper.year}</span>
+                  </div>
+                  <h3 className="text-sm font-bold text-aicons-dark mb-2 line-clamp-3 leading-snug">{paper.title}</h3>
+                  <p className="text-xs text-gray-500 mb-4">{paper.authors}</p>
+                  <button className="inline-flex items-center gap-1.5 text-sm text-aicons-primary font-semibold hover:gap-2.5 transition-all">
+                    {t('resourcesPage.downloadPDF')} <Download className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </motion.div>
@@ -103,66 +194,36 @@ function Resources() {
         </div>
       </section>
 
-      {/* Webinars */}
-      <section id="webinars" className="py-20 bg-gray-50">
+      {/* Downloads */}
+      <section id="downloads" className="py-20 bg-white">
         <div className="container-custom">
           <div className="flex items-center gap-3 mb-8">
-            <Video className="w-8 h-8 text-alice-primary" />
-            <h2 className="text-3xl font-bold text-alice-dark">{t('resourcesPage.webinars')}</h2>
+            <Download className="w-8 h-8 text-aicons-primary" />
+            <h2 className="text-3xl font-bold text-aicons-dark">{t('resourcesPage.downloads.title')}</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {resources.webinars.map((webinar, index) => (
+          <div className="space-y-4">
+            {downloads.map((dl, index) => (
               <motion.div
-                key={webinar.title}
+                key={dl.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow"
+                transition={{ delay: index * 0.08 }}
+                className="flex items-center gap-5 bg-gray-50 rounded-2xl p-5 hover:shadow-lg transition-shadow"
               >
-                <div className="aspect-video bg-alice-dark rounded-xl mb-4 flex items-center justify-center group cursor-pointer">
-                  <div className="w-16 h-16 rounded-full bg-alice-primary/20 flex items-center justify-center group-hover:bg-alice-primary/40 transition-colors">
-                    <Play className="w-8 h-8 text-alice-primary" />
-                  </div>
+                <div className="flex-shrink-0 w-14 h-14 bg-aicons-primary/10 rounded-xl flex items-center justify-center">
+                  <FileText className="w-7 h-7 text-aicons-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-alice-dark mb-2">{webinar.title}</h3>
-                <p className="text-gray-600 mb-3">{webinar.description}</p>
-                <span className="text-sm text-alice-primary font-medium">{webinar.duration}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Whitepapers */}
-      <section id="blog" className="py-20 bg-white">
-        <div className="container-custom">
-          <div className="flex items-center gap-3 mb-8">
-            <BookOpen className="w-8 h-8 text-alice-primary" />
-            <h2 className="text-3xl font-bold text-alice-dark">{t('resourcesPage.whitepapers')}</h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {resources.whitepapers.map((paper, index) => (
-              <motion.div
-                key={paper.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex gap-6 bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-shadow"
-              >
-                <div className="flex-shrink-0 w-20 h-28 bg-alice-primary/10 rounded-lg flex items-center justify-center">
-                  <Download className="w-8 h-8 text-alice-primary" />
+                <div className="flex-grow min-w-0">
+                  <h3 className="text-lg font-bold text-aicons-dark mb-1">{dl.title}</h3>
+                  <p className="text-sm text-gray-600">{dl.description}</p>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-alice-dark mb-2">{paper.title}</h3>
-                  <p className="text-gray-600 mb-3">{paper.description}</p>
-                  <div className="flex items-center gap-4">
-                    <span className="text-sm text-gray-500">{paper.pages}</span>
-                    <button className="text-alice-primary font-semibold hover:underline">
-                      {t('resourcesPage.downloadPDF')}
-                    </button>
-                  </div>
+                <div className="flex-shrink-0 flex items-center gap-4">
+                  <span className="text-sm text-gray-400 hidden sm:block">{dl.pages}</span>
+                  <button className="inline-flex items-center gap-2 px-4 py-2 bg-aicons-primary text-white text-sm font-semibold rounded-lg hover:bg-aicons-primary/90 transition-colors">
+                    <Download className="w-4 h-4" />
+                    {t('resourcesPage.downloadPDF')}
+                  </button>
                 </div>
               </motion.div>
             ))}
@@ -170,28 +231,29 @@ function Resources() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="py-20 bg-alice-primary">
+      {/* CTA */}
+      <section className="py-20 bg-aicons-primary">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            {t('resourcesPage.stayUpdated')}
+            {t('resourcesPage.cta.title')}
           </h2>
           <p className="text-xl text-white/80 mb-8 max-w-xl mx-auto">
-            {t('resourcesPage.newsletterSubtitle')}
+            {t('resourcesPage.cta.subtitle')}
           </p>
-          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder={t('resourcesPage.enterEmail')}
-              className="flex-grow px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-white"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 bg-white text-alice-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/company"
+              className="px-8 py-3 bg-white text-aicons-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors"
             >
-              {t('resourcesPage.subscribe')}
-            </button>
-          </form>
+              {t('common.contactUs')}
+            </Link>
+            <Link
+              to="/demo"
+              className="px-8 py-3 bg-white/10 border border-white/30 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors"
+            >
+              {t('common.requestDemo')}
+            </Link>
+          </div>
         </div>
       </section>
     </div>
