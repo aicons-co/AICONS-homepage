@@ -128,7 +128,7 @@ function Resources() {
             <Shield className="w-8 h-8 text-aicons-primary" />
             <h2 className="text-3xl font-bold text-aicons-dark">{t('resourcesPage.patents.title')}</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {patents.map((patent, index) => (
               <motion.div
                 key={patent.title}
