@@ -18,7 +18,7 @@ function BuildingProducts() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-alice-dark to-alice-navy">
+      <section className="py-16 bg-gradient-to-br from-aicons-dark to-aicons-navy">
         <div className="container-custom">
           <Link
             to="/products"
@@ -33,8 +33,8 @@ function BuildingProducts() {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center gap-6"
           >
-            <div className="w-20 h-20 rounded-2xl bg-alice-primary/20 flex items-center justify-center">
-              <Building2 className="w-10 h-10 text-alice-primary" />
+            <div className="w-20 h-20 rounded-2xl bg-aicons-primary/20 flex items-center justify-center">
+              <Building2 className="w-10 h-10 text-aicons-primary" />
             </div>
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
@@ -65,7 +65,7 @@ function BuildingProducts() {
               <span className="text-gray-300 ml-2">{t('products.stats.systems')}</span>
             </div>
             <div className="bg-white/10 rounded-lg px-6 py-3 flex justify-center items-center">
-              <span className="text-2xl font-bold text-alice-primary">90%+</span>
+              <span className="text-2xl font-bold text-aicons-primary">90%+</span>
               <span className="text-gray-300 ml-2">{t('products.stats.automation')}</span>
             </div>
             <div className="bg-white/10 rounded-lg px-6 py-3 flex justify-center items-center">
@@ -79,8 +79,8 @@ function BuildingProducts() {
       {/* Systems Grid */}
       <section className="py-16 bg-gray-50">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold text-alice-dark mb-8">
-            {locale === 'ko' ? '건축 AI 시스템' : 'Building AI Systems'}
+          <h2 className="text-2xl font-bold text-aicons-dark mb-8">
+            {t('products.categories.building.systemsTitle')}
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -100,7 +100,7 @@ function BuildingProducts() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-alice-primary">
+      <section className="py-16 bg-aicons-primary">
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             {locale === 'ko'
@@ -116,7 +116,7 @@ function BuildingProducts() {
           </p>
           <Link
             to="/demo"
-            className="inline-flex items-center gap-2 bg-white text-alice-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center gap-2 bg-white text-aicons-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
           >
             {t('common.requestDemo')}
             <ArrowRight className="w-5 h-5" />

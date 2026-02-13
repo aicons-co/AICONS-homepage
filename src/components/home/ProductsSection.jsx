@@ -54,7 +54,7 @@ function ProductsSection() {
                   }`}
                 >
                   {/* Background gradient on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-alice-primary/5 to-alice-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-aicons-primary/5 to-aicons-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
 
                   {/* Coming Soon Badge */}
                   {isComingSoon && (
@@ -68,12 +68,12 @@ function ProductsSection() {
 
                   <div className="relative z-10">
                     {/* Icon */}
-                    <div className="w-14 h-14 rounded-xl bg-alice-primary/10 flex items-center justify-center mb-6 group-hover:bg-alice-primary/20 transition-colors">
-                      <Icon className="w-7 h-7 text-alice-primary" />
+                    <div className="w-14 h-14 rounded-xl bg-aicons-primary/10 flex items-center justify-center mb-6 group-hover:bg-aicons-primary/20 transition-colors">
+                      <Icon className="w-7 h-7 text-aicons-primary" />
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-alice-dark mb-2 group-hover:text-alice-primary transition-colors">
+                    <h3 className="text-xl font-bold text-aicons-dark mb-2 group-hover:text-aicons-primary transition-colors">
                       {category.name}
                     </h3>
 
@@ -85,7 +85,7 @@ function ProductsSection() {
                       <span className="text-sm text-gray-500">
                         {category.systemCount} {locale === 'ko' ? '개 시스템' : 'Systems'}
                       </span>
-                      <span className="inline-flex items-center gap-1 text-alice-primary font-semibold text-sm group-hover:gap-2 transition-all">
+                      <span className="inline-flex items-center gap-1 text-aicons-primary font-semibold text-sm group-hover:gap-2 transition-all">
                         {t('common.learnMore')}
                         <ArrowRight className="w-4 h-4" />
                       </span>
@@ -106,7 +106,7 @@ function ProductsSection() {
         >
           <Link
             to="/products"
-            className="inline-flex items-center gap-2 text-alice-primary font-semibold hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-aicons-primary font-semibold hover:gap-3 transition-all"
           >
             {t('products.viewAll')}
             <ArrowRight className="w-5 h-5" />

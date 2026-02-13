@@ -45,7 +45,7 @@ function LanguageSwitcher({ isScrolled = false, isMobile = false }) {
               onClick={() => handleLanguageChange(lang.code)}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
                 language === lang.code
-                  ? 'bg-alice-primary text-white'
+                  ? 'bg-aicons-primary text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -64,7 +64,7 @@ function LanguageSwitcher({ isScrolled = false, isMobile = false }) {
         onClick={() => setIsOpen(!isOpen)}
         // className={`flex items-center gap-1.5 px-3 py-2 rounded-lg font-medium transition-colors ${
         //   isScrolled
-        //     ? 'text-gray-700 hover:text-alice-primary hover:bg-gray-100'
+        //     ? 'text-gray-700 hover:text-aicons-primary hover:bg-gray-100'
         //     : 'text-white/90 hover:text-white hover:bg-white/10'
         // }`}
         className='flex items-center gap-1.5 px-3 py-2 rounded-lg font-medium text-black'
@@ -92,7 +92,7 @@ function LanguageSwitcher({ isScrolled = false, isMobile = false }) {
                   onClick={() => handleLanguageChange(lang.code)}
                   className={`flex items-center gap-3 w-full px-4 py-2.5 text-left transition-colors ${
                     language === lang.code
-                      ? 'bg-alice-primary/10 text-alice-primary'
+                      ? 'bg-aicons-primary/10 text-aicons-primary'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >

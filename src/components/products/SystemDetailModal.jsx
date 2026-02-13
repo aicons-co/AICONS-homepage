@@ -43,7 +43,7 @@ function SystemDetailModal({ system, isOpen, onClose }) {
             className="fixed inset-4 md:inset-10 lg:inset-20 bg-white rounded-2xl z-50 overflow-hidden flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-gradient-to-r from-alice-dark to-alice-navy">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-gradient-to-r from-aicons-dark to-aicons-navy">
               <div>
                 <div className="flex items-center gap-3">
                   <h2 className="text-2xl font-bold text-white">{system.name}</h2>
@@ -74,8 +74,8 @@ function SystemDetailModal({ system, isOpen, onClose }) {
 
                 {/* Features */}
                 <div>
-                  <h3 className="text-xl font-bold text-alice-dark mb-4 flex items-center gap-2">
-                    <Check className="w-5 h-5 text-alice-primary" />
+                  <h3 className="text-xl font-bold text-aicons-dark mb-4 flex items-center gap-2">
+                    <Check className="w-5 h-5 text-aicons-primary" />
                     {locale === 'ko' ? '주요 기능' : 'Key Features'}
                   </h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -84,7 +84,7 @@ function SystemDetailModal({ system, isOpen, onClose }) {
                         key={index}
                         className="flex items-start gap-2 p-3 bg-gray-50 rounded-lg"
                       >
-                        <Check className="w-4 h-4 text-alice-primary flex-shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-aicons-primary flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-gray-700">{feature}</span>
                       </div>
                     ))}
@@ -97,8 +97,8 @@ function SystemDetailModal({ system, isOpen, onClose }) {
                     {/* Efficiency Chart */}
                     {system.mockData.efficiency && (
                       <div className="bg-gray-50 rounded-xl p-6">
-                        <h3 className="text-lg font-bold text-alice-dark mb-4 flex items-center gap-2">
-                          <BarChart3 className="w-5 h-5 text-alice-primary" />
+                        <h3 className="text-lg font-bold text-aicons-dark mb-4 flex items-center gap-2">
+                          <BarChart3 className="w-5 h-5 text-aicons-primary" />
                           {locale === 'ko' ? '업무 효율 향상' : 'Efficiency Improvement'}
                         </h3>
                         <EfficiencyChart data={system.mockData.efficiency} />
@@ -108,8 +108,8 @@ function SystemDetailModal({ system, isOpen, onClose }) {
                     {/* Cost Savings Chart */}
                     {system.mockData.costSavings && (
                       <div className="bg-gray-50 rounded-xl p-6">
-                        <h3 className="text-lg font-bold text-alice-dark mb-4 flex items-center gap-2">
-                          <PieChart className="w-5 h-5 text-alice-primary" />
+                        <h3 className="text-lg font-bold text-aicons-dark mb-4 flex items-center gap-2">
+                          <PieChart className="w-5 h-5 text-aicons-primary" />
                           {locale === 'ko' ? '비용 절감 효과' : 'Cost Savings Breakdown'}
                         </h3>
                         <CostSavingsChart data={system.mockData.costSavings} />
@@ -120,7 +120,7 @@ function SystemDetailModal({ system, isOpen, onClose }) {
 
                 {/* Metrics Summary */}
                 {system.mockData?.metrics && (
-                  <div className="bg-gradient-to-r from-alice-primary to-alice-secondary rounded-xl p-6">
+                  <div className="bg-gradient-to-r from-aicons-primary to-aicons-secondary rounded-xl p-6">
                     <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                       <TrendingUp className="w-5 h-5" />
                       {locale === 'ko' ? '예상 성과' : 'Expected Results'}

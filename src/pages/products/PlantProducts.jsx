@@ -19,7 +19,7 @@ function PlantProducts() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-alice-dark to-alice-navy">
+      <section className="py-16 bg-gradient-to-br from-aicons-dark to-aicons-navy">
         <div className="container-custom">
           <Link
             to="/products"
@@ -34,8 +34,8 @@ function PlantProducts() {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center gap-6"
           >
-            <div className="w-20 h-20 rounded-2xl bg-alice-primary/20 flex items-center justify-center">
-              <Factory className="w-10 h-10 text-alice-primary" />
+            <div className="w-20 h-20 rounded-2xl bg-aicons-primary/20 flex items-center justify-center">
+              <Factory className="w-10 h-10 text-aicons-primary" />
             </div>
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 flex items-center gap-4">
@@ -72,7 +72,7 @@ function PlantProducts() {
               <span className="text-gray-300 ml-2">{t('products.stats.systems')}</span>
             </div>
             <div className="bg-white/10 rounded-lg px-6 py-3 flex justify-center items-center">
-              <span className="text-2xl font-bold text-alice-primary">95%</span>
+              <span className="text-2xl font-bold text-aicons-primary">95%</span>
               <span className="text-gray-300 ml-2">{t('products.stats.uptimeRate')}</span>
             </div>
             <div className="bg-white/10 rounded-lg px-6 py-3 flex justify-center items-center">
@@ -87,8 +87,8 @@ function PlantProducts() {
       <section className="py-16 bg-gray-50">
         <div className="container-custom">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-alice-dark">
-              {locale === 'ko' ? '플랜트 AI 시스템' : 'Plant AI Systems'}
+            <h2 className="text-2xl font-bold text-aicons-dark">
+              {t('products.categories.plant.systemsTitle')}
             </h2>
             {isComingSoon && (
               <span className="text-sm text-amber-600 font-medium">
@@ -118,7 +118,7 @@ function PlantProducts() {
         <div className="container-custom">
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12">
             <div className="max-w-3xl">
-              <h3 className="text-2xl font-bold text-alice-dark mb-4">
+              <h3 className="text-2xl font-bold text-aicons-dark mb-4">
                 {locale === 'ko'
                   ? '스마트 플랜트 운영의 시작'
                   : 'The Beginning of Smart Plant Operations'
@@ -132,15 +132,15 @@ function PlantProducts() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <div className="bg-white rounded-lg px-4 py-2">
-                  <span className="font-semibold text-alice-primary">Oil & Gas</span>
+                  <span className="font-semibold text-aicons-primary">Oil & Gas</span>
                   <span className="text-gray-500 ml-2">{locale === 'ko' ? '정유/가스' : 'Refinery/Gas'}</span>
                 </div>
                 <div className="bg-white rounded-lg px-4 py-2">
-                  <span className="font-semibold text-alice-primary">Chemical</span>
+                  <span className="font-semibold text-aicons-primary">Chemical</span>
                   <span className="text-gray-500 ml-2">{locale === 'ko' ? '석유화학' : 'Petrochemical'}</span>
                 </div>
                 <div className="bg-white rounded-lg px-4 py-2">
-                  <span className="font-semibold text-alice-primary">Industrial</span>
+                  <span className="font-semibold text-aicons-primary">Industrial</span>
                   <span className="text-gray-500 ml-2">{locale === 'ko' ? '산업' : 'Industrial'}</span>
                 </div>
               </div>
@@ -150,7 +150,7 @@ function PlantProducts() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-alice-primary">
+      <section className="py-16 bg-aicons-primary">
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             {locale === 'ko'
@@ -166,7 +166,7 @@ function PlantProducts() {
           </p>
           <Link
             to="/demo"
-            className="inline-flex items-center gap-2 bg-white text-alice-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center gap-2 bg-white text-aicons-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
           >
             {t('common.requestDemo')}
             <ArrowRight className="w-5 h-5" />

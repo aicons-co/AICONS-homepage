@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        alice: {
+        aicons: {
           // primary: '#6878FF',
           primary: '#037be1',
           secondary: '#8B5CF6',

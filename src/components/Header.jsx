@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown, Building2, Landmark, Factory, Clock, FileSearch, Bot, Target, CalendarClock, Link2 } from 'lucide-react'
+import { Menu, X, ChevronDown, Building2, Landmark, Factory, Clock, FileSearch, Bot, Target, CalendarClock, Link2, ClipboardCheck } from 'lucide-react'
 import useTranslation from '../hooks/useTranslation'
 
 const iconMap = {
@@ -15,7 +15,8 @@ const solutionIconMap = {
   Bot,
   Target,
   CalendarClock,
-  Link2
+  Link2,
+  ClipboardCheck
 }
 
 const solutionsMenu = [
@@ -24,6 +25,7 @@ const solutionsMenu = [
   { key: 'optimization', icon: 'Target' },
   { key: 'scheduling', icon: 'CalendarClock' },
   { key: 'integration', icon: 'Link2' },
+  { key: 'feedback', icon: 'ClipboardCheck' },
 ]
 
 function Header() {
@@ -62,8 +64,8 @@ function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-alice-dark">
-              <span className="text-alice-primary">AICONS</span>
+            <span className="text-2xl font-bold text-aicons-dark">
+              <span className="text-aicons-primary">AICONS</span>
             </span>
           </Link>
 
@@ -92,24 +94,41 @@ function Header() {
                       const Icon = iconMap[item.icon] || Building2
                       const isComingSoon = item.status === 'coming_soon'
 
+                      if (isComingSoon) {
+                        return (
+                          <div
+                            key={item.key}
+                            className="flex items-start gap-3 px-4 py-3 bg-gray-100 opacity-60 cursor-not-allowed"
+                          >
+                            <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-gray-200">
+                              <Icon className="w-5 h-5 text-gray-400" />
+                            </div>
+                            <div className="flex-1">
+                              <div className="flex items-center gap-2">
+                                <span className="font-medium text-gray-400">{item.name}</span>
+                                <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-gray-200 text-gray-500 text-xs font-medium rounded-full">
+                                  <Clock className="w-3 h-3" />
+                                  {t('products.comingSoon')}
+                                </span>
+                              </div>
+                              <div className="text-sm text-gray-400">{item.description}</div>
+                            </div>
+                          </div>
+                        )
+                      }
+
                       return (
                         <Link
                           key={item.key}
                           to={item.href}
                           className="flex items-start gap-3 px-4 py-3 hover:bg-gray-50"
                         >
-                          <div className="w-10 h-10 rounded-lg bg-alice-primary/10 flex items-center justify-center flex-shrink-0">
-                            <Icon className="w-5 h-5 text-alice-primary" />
+                          <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-aicons-primary/10">
+                            <Icon className="w-5 h-5 text-aicons-primary" />
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center gap-2">
-                              <span className="font-medium text-alice-dark">{item.name}</span>
-                              {isComingSoon && (
-                                <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-amber-100 text-amber-700 text-xs font-medium rounded-full">
-                                  <Clock className="w-3 h-3" />
-                                  {t('products.comingSoon')}
-                                </span>
-                              )}
+                              <span className="font-medium text-aicons-dark">{item.name}</span>
                             </div>
                             <div className="text-sm text-gray-500">{item.description}</div>
                           </div>
@@ -119,7 +138,7 @@ function Header() {
                     <div className="border-t mt-2 pt-2 px-4 pb-2">
                       <Link
                         to="/products"
-                        className="text-sm text-alice-primary hover:underline"
+                        className="text-sm text-aicons-primary hover:underline"
                       >
                         {t('products.viewAll')} →
                       </Link>
@@ -156,11 +175,11 @@ function Header() {
                           to={`/solutions/${item.key}`}
                           className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50"
                         >
-                          <div className="w-10 h-10 rounded-lg bg-alice-primary/10 flex items-center justify-center flex-shrink-0">
-                            <Icon className="w-5 h-5 text-alice-primary" />
+                          <div className="w-10 h-10 rounded-lg bg-aicons-primary/10 flex items-center justify-center flex-shrink-0">
+                            <Icon className="w-5 h-5 text-aicons-primary" />
                           </div>
                           <div>
-                            <span className="font-medium text-alice-dark block">{t(`solutionsPage.${item.key}.name`)}</span>
+                            <span className="font-medium text-aicons-dark block">{t(`solutionsPage.${item.key}.name`)}</span>
                             <span className="text-sm text-gray-500">{t(`solutionsPage.${item.key}.tagline`)}</span>
                           </div>
                         </Link>
@@ -169,7 +188,7 @@ function Header() {
                     <div className="border-t mt-2 pt-2 px-4 pb-2">
                       <Link
                         to="/solutions"
-                        className="text-sm text-alice-primary hover:underline"
+                        className="text-sm text-aicons-primary hover:underline"
                       >
                         {t('solutionsPage.viewAll')} →
                       </Link>
@@ -226,18 +245,28 @@ function Header() {
                     const Icon = iconMap[item.icon] || Building2
                     const isComingSoon = item.status === 'coming_soon'
 
+                    if (isComingSoon) {
+                      return (
+                        <div
+                          key={item.key}
+                          className="flex items-center gap-2 pl-4 py-2 text-gray-400 opacity-60 cursor-not-allowed"
+                        >
+                          <Icon className="w-4 h-4 text-gray-400" />
+                          {item.name}
+                          <span className="text-xs text-gray-400">({t('products.comingSoon')})</span>
+                        </div>
+                      )
+                    }
+
                     return (
                       <Link
                         key={item.key}
                         to={item.href}
-                        className="flex items-center gap-2 pl-4 py-2 text-gray-600 hover:text-alice-primary"
+                        className="flex items-center gap-2 pl-4 py-2 text-gray-600 hover:text-aicons-primary"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <Icon className="w-4 h-4" />
                         {item.name}
-                        {isComingSoon && (
-                          <span className="text-xs text-amber-600">({t('products.comingSoon')})</span>
-                        )}
                       </Link>
                     )
                   })}
@@ -251,7 +280,7 @@ function Header() {
                       <Link
                         key={item.key}
                         to={`/solutions/${item.key}`}
-                        className="flex items-center gap-2 pl-4 py-2 text-gray-600 hover:text-alice-primary"
+                        className="flex items-center gap-2 pl-4 py-2 text-gray-600 hover:text-aicons-primary"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <Icon className="w-4 h-4" />

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 프로젝트 개요
 
-ALICE Technologies 홈페이지 클론 프로젝트입니다. 건설 일정 최적화 AI 플랫폼인 ALICE Technologies의 마케팅 웹사이트를 React + Tailwind CSS로 구현한 프로젝트입니다.
+AICONS 홈페이지 프로젝트입니다. 건설 및 설계 등의 영역에서 최적화 및 자동화 AI 플랫폼인 AICONS의 회사 소개 및 마케팅 웹사이트를 React + Tailwind CSS로 구현한 프로젝트입니다.
 
 ## 기술 스택
 
@@ -39,7 +39,7 @@ npm run lint
 - `/` - 홈페이지 (HeroSection, FeaturesSection 등 여러 섹션으로 구성)
 - `/products/*` - 제품 페이지 (건축, 토목, 플랜트)
 - `/solutions/*` - 솔루션 페이지
-- `/resources` - 리소스 페이지 (케이스 스터디, 웨비나, 백서)
+- `/resources` - 리소스 페이지 (논문, 특허)
 - `/company` - 회사 소개
 - `/demo` - 데모 요청 폼
 
@@ -62,7 +62,7 @@ src/
 ```
 
 ### 스타일링
-- `tailwind.config.js`에 ALICE 브랜드 색상 정의 (`alice-primary`, `alice-secondary` 등)
+- `tailwind.config.js`에 AICONS 브랜드 색상 정의 (`aicons-primary`, `aicons-secondary` 등)
 - `src/index.css`에 커스텀 유틸리티 클래스 정의 (`.btn-primary`, `.container-custom` 등)
 
 ## Vercel 배포

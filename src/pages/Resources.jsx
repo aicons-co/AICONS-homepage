@@ -7,15 +7,16 @@ import useTranslation from '../hooks/useTranslation'
 function Resources() {
   const { t } = useTranslation()
   const [selectedPaper, setSelectedPaper] = useState(null)
+  const [selectedPatent, setSelectedPatent] = useState(null)
 
   useEffect(() => {
-    if (selectedPaper) {
+    if (selectedPaper || selectedPatent) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = ''
     }
     return () => { document.body.style.overflow = '' }
-  }, [selectedPaper])
+  }, [selectedPaper, selectedPatent])
 
   const papers = [
     {
@@ -76,36 +77,36 @@ function Resources() {
     },
   ]
 
-  const patents = [
-    {
-      title: t('resourcesPage.patents.items.patent1.title'),
-      number: t('resourcesPage.patents.items.patent1.number'),
-      date: t('resourcesPage.patents.items.patent1.date'),
+  const patentImages = {
+    patent1: '/images/patents/patent-kr-2831238.png',
+    patent2: '/images/patents/patent-kr-2831236.png',
+    patent3: '/images/patents/patent-kr-2831237.png',
+    patent4: '/images/patents/patent-cn-106660226.png',
+    patent5: '/images/patents/patent-kr-1691798.png',
+    patent6: '/images/patents/patent-kr-1691634.png',
+    patent7: '/images/patents/patent-kr-1247598.png',
+    patent8: '/images/patents/patent-kr-1260392.png',
+    patent9: '/images/patents/patent-kr-1308053.png',
+    patent10: '/images/patents/patent-kr-1308055.png',
+    patent11: '/images/patents/patent-kr-1285189.png',
+    patent12: '/images/patents/patent-kr-1249922.png',
+    patent13: '/images/patents/patent-kr-1249921.png',
+    patent14: '/images/patents/patent-kr-1228012.png',
+    patent15: '/images/patents/patent-kr-1217683.png',
+    patent16: '/images/patents/patent-kr-1216557.png',
+  }
+
+  const patents = Array.from({ length: 16 }, (_, i) => {
+    const key = `patent${i + 1}`
+    return {
+      title: t(`resourcesPage.patents.items.${key}.title`),
+      number: t(`resourcesPage.patents.items.${key}.number`),
+      date: t(`resourcesPage.patents.items.${key}.date`),
+      country: t(`resourcesPage.patents.items.${key}.country`),
       status: 'registered',
-      image: '/images/patents/patent1-bim.svg',
-    },
-    {
-      title: t('resourcesPage.patents.items.patent2.title'),
-      number: t('resourcesPage.patents.items.patent2.number'),
-      date: t('resourcesPage.patents.items.patent2.date'),
-      status: 'registered',
-      image: '/images/patents/patent2-slp.svg',
-    },
-    {
-      title: t('resourcesPage.patents.items.patent3.title'),
-      number: t('resourcesPage.patents.items.patent3.number'),
-      date: t('resourcesPage.patents.items.patent3.date'),
-      status: 'pending',
-      image: '/images/patents/patent3-simulation.svg',
-    },
-    {
-      title: t('resourcesPage.patents.items.patent4.title'),
-      number: t('resourcesPage.patents.items.patent4.number'),
-      date: t('resourcesPage.patents.items.patent4.date'),
-      status: 'pending',
-      image: '/images/patents/patent4-detection.svg',
-    },
-  ]
+      image: patentImages[key],
+    }
+  })
 
   const downloads = [
     {
@@ -170,21 +171,22 @@ function Resources() {
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {patents.map((patent, index) => (
               <motion.div
-                key={patent.title}
+                key={`g-${index}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
                 className="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group"
               >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={patent.image} alt={patent.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <div className="aspect-[3/4] overflow-hidden bg-white">
+                  <img src={patent.image} alt={patent.title} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-2">
                     <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusLabel(patent.status).className}`}>
                       {statusLabel(patent.status).text}
                     </span>
+                    <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-600">{patent.country}</span>
                   </div>
                   <h3 className="text-sm font-bold text-aicons-dark mb-2 line-clamp-3 leading-snug">{patent.title}</h3>
                   <p className="text-xs text-gray-500 mb-1">{patent.number}</p>
@@ -193,6 +195,70 @@ function Resources() {
               </motion.div>
             ))}
           </div>
+
+          {/* 가로 카드형 레이아웃 (비교용) */}
+          <div className="mt-16">
+            <h3 className="text-lg font-semibold text-gray-400 mb-6 border-b border-gray-200 pb-2">Horizontal Card Layout</h3>
+            <div className="space-y-4">
+              {patents.map((patent, index) => (
+                <motion.div
+                  key={`h-${index}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.04 }}
+                  className="flex flex-col sm:flex-row bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group"
+                >
+                  <div className="sm:w-40 sm:flex-shrink-0 aspect-[3/4] sm:aspect-auto overflow-hidden bg-white">
+                    <img src={patent.image} alt={patent.title} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" />
+                  </div>
+                  <div className="p-5 flex flex-col justify-center flex-grow min-w-0">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${statusLabel(patent.status).className}`}>
+                        {statusLabel(patent.status).text}
+                      </span>
+                      <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-600">{patent.country}</span>
+                    </div>
+                    <h3 className="text-base font-bold text-aicons-dark mb-2 leading-snug">{patent.title}</h3>
+                    <p className="text-sm text-gray-500 mb-1">{patent.number}</p>
+                    <p className="text-sm text-gray-400">{patent.date}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* 테이블형 레이아웃 (추천) */}
+          <div className="mt-16">
+            <h3 className="text-lg font-semibold text-gray-400 mb-6 border-b border-gray-200 pb-2">Table Layout (Recommended)</h3>
+            <div className="bg-gray-50 rounded-2xl overflow-hidden">
+              <div className="hidden sm:grid sm:grid-cols-[2rem_auto_1fr_auto_auto] gap-4 px-6 py-3 border-b border-gray-200 text-xs font-semibold text-gray-400 uppercase tracking-wider text-center">
+                <span></span>
+                <span>Country</span>
+                <span>Title</span>
+                <span>Patent No.</span>
+                <span>Date</span>
+              </div>
+              {patents.map((patent, index) => (
+                <motion.div
+                  key={`t-${index}`}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.03 }}
+                  onClick={() => setSelectedPatent(patent)}
+                  className="grid grid-cols-1 sm:grid-cols-[2rem_auto_1fr_auto_auto] gap-2 sm:gap-4 px-6 py-4 border-b border-gray-100 last:border-b-0 hover:bg-white transition-colors items-center cursor-pointer"
+                >
+                  <span className="text-xs text-gray-400 font-medium">{index + 1}</span>
+                  <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 w-fit">{patent.country}</span>
+                  <h4 className="text-sm font-bold text-aicons-dark leading-snug">{patent.title}</h4>
+                  <span className="text-xs text-gray-500">{patent.number}</span>
+                  <span className="text-xs text-gray-400">{patent.date}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -340,6 +406,56 @@ function Resources() {
                     <Download className="w-4 h-4" />
                     {t('resourcesPage.downloadPDF')}
                   </button>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* Patent Detail Modal */}
+      <AnimatePresence>
+        {selectedPatent && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedPatent(null)}
+              className="fixed inset-0 bg-black/50 z-50"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="fixed inset-4 md:inset-10 lg:inset-y-16 lg:inset-x-[20%] bg-white rounded-2xl z-50 overflow-hidden flex flex-col"
+            >
+              <div className="flex items-center justify-end p-3 border-b border-gray-200">
+                <button
+                  onClick={() => setSelectedPatent(null)}
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                >
+                  <X className="w-5 h-5 text-gray-500" />
+                </button>
+              </div>
+              <div className="flex-1 overflow-y-auto p-6">
+                <div className="max-w-2xl mx-auto">
+                  <div className="rounded-xl overflow-hidden border border-gray-200 mb-6 aspect-[3/4]">
+                    <img
+                      src={selectedPatent.image}
+                      alt={selectedPatent.title}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${statusLabel(selectedPatent.status).className}`}>
+                      {statusLabel(selectedPatent.status).text}
+                    </span>
+                    <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-600">{selectedPatent.country}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-aicons-dark leading-snug mb-3">{selectedPatent.title}</h3>
+                  <p className="text-sm text-gray-400 mb-1">{selectedPatent.number}</p>
+                  <p className="text-sm text-gray-400">{selectedPatent.date}</p>
                 </div>
               </div>
             </motion.div>

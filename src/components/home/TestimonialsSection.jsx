@@ -84,22 +84,22 @@ function TestimonialsSection() {
               transition={{ delay: index * 0.1 }}
               className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow"
             >
-              <Quote className="w-10 h-10 text-alice-primary/20 mb-4" />
+              <Quote className="w-10 h-10 text-aicons-primary/20 mb-4" />
               <p className="text-gray-700 mb-6 line-clamp-4">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
               <div className="border-t pt-4">
-                <p className="font-semibold text-alice-dark">{testimonial.company}</p>
+                <p className="font-semibold text-aicons-dark">{testimonial.company}</p>
                 <p className="text-sm text-gray-500">{testimonial.project}</p>
-                <p className="text-sm text-alice-primary mt-1">{testimonial.author}</p>
+                <p className="text-sm text-aicons-primary mt-1">{testimonial.author}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* Featured Testimonial Carousel */}
-        <div className="relative bg-gradient-to-br from-alice-dark to-alice-navy rounded-2xl p-8 md:p-12 overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-alice-primary/10 rounded-full blur-3xl" />
+        <div className="relative bg-gradient-to-br from-aicons-dark to-aicons-navy rounded-2xl p-8 md:p-12 overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-aicons-primary/10 rounded-full blur-3xl" />
 
           <AnimatePresence mode="wait">
             <motion.div
@@ -110,13 +110,13 @@ function TestimonialsSection() {
               transition={{ duration: 0.3 }}
               className="relative z-10"
             >
-              <Quote className="w-16 h-16 text-alice-primary/30 mb-6" />
+              <Quote className="w-16 h-16 text-aicons-primary/30 mb-6" />
               <blockquote className="text-2xl md:text-3xl text-white font-light mb-8 max-w-4xl">
                 &ldquo;{testimonials[currentIndex].quote}&rdquo;
               </blockquote>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-alice-primary/20 flex items-center justify-center">
-                  <span className="text-alice-primary font-bold">
+                <div className="w-12 h-12 rounded-full bg-aicons-primary/20 flex items-center justify-center">
+                  <span className="text-aicons-primary font-bold">
                     {testimonials[currentIndex].company.charAt(0)}
                   </span>
                 </div>
@@ -151,7 +151,7 @@ function TestimonialsSection() {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentIndex ? 'bg-alice-primary w-6' : 'bg-white/30'
+                  index === currentIndex ? 'bg-aicons-primary w-6' : 'bg-white/30'
                 }`}
               />
             ))}

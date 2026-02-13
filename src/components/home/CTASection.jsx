@@ -12,11 +12,11 @@ function CTASection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-alice-dark to-alice-navy rounded-3xl p-12 md:p-16 text-center relative overflow-hidden"
+          className="bg-gradient-to-br from-aicons-dark to-aicons-navy rounded-3xl p-12 md:p-16 text-center relative overflow-hidden"
         >
           {/* Background decoration */}
-          <div className="absolute top-0 left-0 w-72 h-72 bg-alice-primary/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-alice-secondary/20 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-0 w-72 h-72 bg-aicons-primary/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-aicons-secondary/20 rounded-full blur-3xl" />
 
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">

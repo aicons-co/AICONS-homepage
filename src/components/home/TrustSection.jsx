@@ -47,7 +47,7 @@ function TrustSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="text-gray-400 font-semibold text-lg hover:text-alice-primary transition-colors"
+              className="text-gray-400 font-semibold text-lg hover:text-aicons-primary transition-colors"
             >
               {client}
             </motion.div>

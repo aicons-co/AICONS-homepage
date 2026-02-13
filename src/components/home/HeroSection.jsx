@@ -86,7 +86,7 @@ function HeroSection() {
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-alice-primary/10 rounded-full blur-[120px]"
+        className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-aicons-primary/10 rounded-full blur-[120px]"
       />
       <motion.div
         animate={{
@@ -98,7 +98,7 @@ function HeroSection() {
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className="absolute bottom-1/3 right-1/4 w-[300px] h-[300px] bg-alice-secondary/10 rounded-full blur-[100px]"
+        className="absolute bottom-1/3 right-1/4 w-[300px] h-[300px] bg-aicons-secondary/10 rounded-full blur-[100px]"
       />
 
       {/* ✅ 히어로 섹션 컨테이너 너비 조정 */}
@@ -113,7 +113,7 @@ function HeroSection() {
           <motion.div variants={itemVariants} className="mb-6 flex justify-start">
             {/* <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/80 text-sm backdrop-blur-sm"> */}
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/50 text-white text-sm backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 text-alice-primary" />
+              <Sparkles className="w-4 h-4 text-aicons-primary" />
               AI-Powered Construction Scheduling
             </span>
           </motion.div>
@@ -131,7 +131,7 @@ function HeroSection() {
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    // className="block text-alice-primary"
+                    // className="block text-aicons-primary"
                     className="block text-white"
                   >
                     {heroWords[currentWordIndex]}
@@ -145,11 +145,11 @@ function HeroSection() {
                 {/* project with{' '} */}
                 End-to-End{' '}
                 <span className="relative inline-block">
-                  {/* <span className="text-alice-primary">AICONS</span> */}
+                  {/* <span className="text-aicons-primary">AICONS</span> */}
                   {/* <span className="text-white">AICONS</span> */}
                   <span className="text-white">Optimization</span>
                   <motion.span
-                    // className="absolute -bottom-2 left-0 right-0 h-1 bg-alice-primary rounded-full"
+                    // className="absolute -bottom-2 left-0 right-0 h-1 bg-aicons-primary rounded-full"
                     className="absolute -bottom-2 left-0 right-0 h-1 bg-white rounded-full"
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
@@ -181,7 +181,7 @@ function HeroSection() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02, boxShadow: '0 20px 40px rgba(104, 120, 255, 0.3)' }}
               whileTap={{ scale: 0.98 }}
-              className="group flex items-center justify-center gap-3 px-6 py-2.5 bg-alice-primary text-white font-semibold rounded-xl hover:bg-alice-primary/90 transition-all shadow-xl shadow-alice-primary/20 text-base md:text-lg"
+              className="group flex items-center justify-center gap-3 px-6 py-2.5 bg-aicons-primary text-white font-semibold rounded-xl hover:bg-aicons-primary/90 transition-all shadow-xl shadow-aicons-primary/20 text-base md:text-lg"
             >
               AISIMS
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

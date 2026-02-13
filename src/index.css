@@ -15,15 +15,24 @@
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 bg-alice-primary text-white font-semibold rounded-lg
+    @apply px-6 py-3 text-white font-semibold rounded-lg
            hover:bg-opacity-90 transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-alice-primary focus:ring-offset-2;
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    background-color: theme('colors.aicons.primary');
+    --tw-ring-color: theme('colors.aicons.primary');
   }
 
   .btn-secondary {
-    @apply px-6 py-3 border-2 border-alice-primary text-alice-primary font-semibold rounded-lg
-           hover:bg-alice-primary hover:text-white transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-alice-primary focus:ring-offset-2;
+    @apply px-6 py-3 border-2 font-semibold rounded-lg
+           hover:text-white transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    border-color: theme('colors.aicons.primary');
+    color: theme('colors.aicons.primary');
+    --tw-ring-color: theme('colors.aicons.primary');
+  }
+
+  .btn-secondary:hover {
+    background-color: theme('colors.aicons.primary');
   }
 
   .container-custom {
@@ -31,11 +40,16 @@
   }
 
   .nav-link {
-    @apply text-gray-700 hover:text-alice-primary transition-colors duration-200 font-medium;
+    @apply text-gray-700 transition-colors duration-200 font-medium;
+  }
+
+  .nav-link:hover {
+    color: theme('colors.aicons.primary');
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-alice-dark;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+    color: theme('colors.aicons.dark');
   }
 
   .section-subtitle {
@@ -45,6 +59,7 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-alice-primary to-alice-secondary;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, theme('colors.aicons.primary'), theme('colors.aicons.secondary'));
   }
 }

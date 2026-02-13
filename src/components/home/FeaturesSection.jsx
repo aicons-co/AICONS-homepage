@@ -42,7 +42,7 @@ function FeaturesSection() {
           className="text-center mb-16"
         >
           <h2 className="section-title mb-4">
-            {t('features.title')} <span className="text-alice-primary">{t('features.titleHighlight')}</span>{t('features.titleEnd')}
+            {t('features.title')} <span className="text-aicons-primary">{t('features.titleHighlight')}</span>{t('features.titleEnd')}
           </h2>
           <p className="section-subtitle max-w-2xl mx-auto">
             {t('features.subtitle')}
@@ -59,11 +59,11 @@ function FeaturesSection() {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-white rounded-2xl p-8 h-full border border-gray-100 hover:border-alice-primary/30 hover:shadow-xl transition-all duration-300">
+              <div className="bg-white rounded-2xl p-8 h-full border border-gray-100 hover:border-aicons-primary/30 hover:shadow-xl transition-all duration-300">
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-alice-dark mb-3">
+                <h3 className="text-xl font-semibold text-aicons-dark mb-3">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600">

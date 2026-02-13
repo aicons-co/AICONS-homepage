@@ -27,7 +27,7 @@ function SystemCard({ system, onClick, index = 0 }) {
       )}
 
       <div className="mb-4">
-        <h3 className="text-xl font-bold text-alice-dark group-hover:text-alice-primary transition-colors">
+        <h3 className="text-xl font-bold text-aicons-dark group-hover:text-aicons-primary transition-colors">
           {system.name}
         </h3>
         <p className="text-sm text-gray-500">{system.fullName}</p>
@@ -39,7 +39,7 @@ function SystemCard({ system, onClick, index = 0 }) {
         <div className="grid grid-cols-3 gap-2 mb-4">
           {Object.entries(system.mockData.metrics).slice(0, 3).map(([key, value]) => (
             <div key={key} className="text-center p-2 bg-gray-50 rounded-lg">
-              <div className="text-lg font-bold text-alice-primary">
+              <div className="text-lg font-bold text-aicons-primary">
                 {typeof value === 'number' && value > 50 ? `${value}%` : value}
               </div>
             </div>
@@ -48,7 +48,7 @@ function SystemCard({ system, onClick, index = 0 }) {
       )}
 
       <div className="flex items-center justify-between">
-        <span className="inline-flex items-center gap-2 text-alice-primary font-semibold text-sm group-hover:gap-3 transition-all">
+        <span className="inline-flex items-center gap-2 text-aicons-primary font-semibold text-sm group-hover:gap-3 transition-all">
           {t('common.learnMore')}
           <ArrowRight className="w-4 h-4" />
         </span>
