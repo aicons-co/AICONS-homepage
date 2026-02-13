@@ -63,14 +63,6 @@ function Navbar() {
         // },
       ],
     },
-    resources: {
-      title: 'Resources',
-      items: [
-        { name: t('nav.patents'), href: '/resources#patents' },
-        { name: t('nav.papers'), href: '/resources#papers' },
-        { name: t('nav.downloads'), href: '/resources#downloads' },
-      ],
-    },
   }
 
   useEffect(() => {
@@ -280,48 +272,13 @@ function Navbar() {
               </AnimatePresence>
             </div>
 
-            {/* Resources Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleDropdownEnter('resources')}
-              onMouseLeave={handleDropdownLeave}
+            {/* Resources */}
+            <Link
+              to="/resources"
+              className='px-4 py-2 rounded-lg font-medium text-black'
             >
-              <button
-                // className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
-                //   isScrolled
-                //     ? 'text-gray-700 hover:text-aicons-primary hover:bg-gray-100'
-                //     : 'text-white/90 hover:text-white hover:bg-white/10'
-                // }`}
-                className='flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-black'
-              >
-                {menuItems.resources.title}
-                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'resources' ? 'rotate-180' : ''}`} />
-              </button>
-
-              <AnimatePresence>
-                {activeDropdown === 'resources' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    transition={{ duration: 0.15 }}
-                    className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden"
-                  >
-                    <div className="py-2">
-                      {menuItems.resources.items.map((item) => (
-                        <Link
-                          key={item.name}
-                          to={item.href}
-                          className="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-aicons-primary transition-colors"
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+              Resources
+            </Link>
 
             {/* Language Switcher */}
             <LanguageSwitcher isScrolled={isScrolled} />
