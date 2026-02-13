@@ -168,73 +168,10 @@ function Resources() {
             <Shield className="w-8 h-8 text-aicons-primary" />
             <h2 className="text-3xl font-bold text-aicons-dark">{t('resourcesPage.patents.title')}</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
-            {patents.map((patent, index) => (
-              <motion.div
-                key={`g-${index}`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group"
-              >
-                <div className="aspect-[3/4] overflow-hidden bg-white">
-                  <img src={patent.image} alt={patent.title} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" />
-                </div>
-                <div className="p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusLabel(patent.status).className}`}>
-                      {statusLabel(patent.status).text}
-                    </span>
-                    <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-600">{patent.country}</span>
-                  </div>
-                  <h3 className="text-sm font-bold text-aicons-dark mb-2 line-clamp-3 leading-snug">{patent.title}</h3>
-                  <p className="text-xs text-gray-500 mb-1">{patent.number}</p>
-                  <p className="text-xs text-gray-400">{patent.date}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* 가로 카드형 레이아웃 (비교용) */}
-          <div className="mt-16">
-            <h3 className="text-lg font-semibold text-gray-400 mb-6 border-b border-gray-200 pb-2">Horizontal Card Layout</h3>
-            <div className="space-y-4">
-              {patents.map((patent, index) => (
-                <motion.div
-                  key={`h-${index}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.04 }}
-                  className="flex flex-col sm:flex-row bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group"
-                >
-                  <div className="sm:w-40 sm:flex-shrink-0 aspect-[3/4] sm:aspect-auto overflow-hidden bg-white">
-                    <img src={patent.image} alt={patent.title} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" />
-                  </div>
-                  <div className="p-5 flex flex-col justify-center flex-grow min-w-0">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${statusLabel(patent.status).className}`}>
-                        {statusLabel(patent.status).text}
-                      </span>
-                      <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-600">{patent.country}</span>
-                    </div>
-                    <h3 className="text-base font-bold text-aicons-dark mb-2 leading-snug">{patent.title}</h3>
-                    <p className="text-sm text-gray-500 mb-1">{patent.number}</p>
-                    <p className="text-sm text-gray-400">{patent.date}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* 테이블형 레이아웃 (추천) */}
-          <div className="mt-16">
-            <h3 className="text-lg font-semibold text-gray-400 mb-6 border-b border-gray-200 pb-2">Table Layout (Recommended)</h3>
-            <div className="bg-gray-50 rounded-2xl overflow-hidden">
-              <div className="hidden sm:grid sm:grid-cols-[2rem_auto_1fr_auto_auto] gap-4 px-6 py-3 border-b border-gray-200 text-xs font-semibold text-gray-400 uppercase tracking-wider text-center">
+          <div className="bg-gray-50 rounded-2xl overflow-hidden">
+              <div className="hidden sm:grid sm:grid-cols-[2rem_3.5rem_1fr_12rem_7rem] gap-4 px-6 py-3 border-b border-gray-200 text-xs font-semibold text-gray-400 uppercase tracking-wider text-center">
                 <span></span>
-                <span>Country</span>
+                <span></span>
                 <span>Title</span>
                 <span>Patent No.</span>
                 <span>Date</span>
@@ -247,7 +184,7 @@ function Resources() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.03 }}
                   onClick={() => setSelectedPatent(patent)}
-                  className="grid grid-cols-1 sm:grid-cols-[2rem_auto_1fr_auto_auto] gap-2 sm:gap-4 px-6 py-4 border-b border-gray-100 last:border-b-0 hover:bg-white transition-colors items-center cursor-pointer"
+                  className="grid grid-cols-1 sm:grid-cols-[2rem_3.5rem_1fr_12rem_7rem] gap-2 sm:gap-4 px-6 py-4 border-b border-gray-100 last:border-b-0 hover:bg-white transition-colors items-center cursor-pointer"
                 >
                   <span className="text-xs text-gray-400 font-medium">{index + 1}</span>
                   <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 w-fit">{patent.country}</span>
@@ -257,7 +194,6 @@ function Resources() {
                 </motion.div>
               ))}
             </div>
-          </div>
 
         </div>
       </section>
