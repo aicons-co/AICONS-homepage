@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { MapPin, Linkedin, Twitter, Globe } from 'lucide-react'
 import useTranslation from '../hooks/useTranslation'
 
 function Company() {
@@ -25,16 +24,10 @@ function Company() {
     { title: t('companyPage.values.excellence.title'), description: t('companyPage.values.excellence.description') },
   ]
 
-  const offices = [
-    { city: t('companyPage.offices.sanFrancisco.city'), country: t('companyPage.offices.sanFrancisco.country'), type: t('companyPage.offices.sanFrancisco.type') },
-    { city: t('companyPage.offices.london.city'), country: t('companyPage.offices.london.country'), type: t('companyPage.offices.london.type') },
-    { city: t('companyPage.offices.sydney.city'), country: t('companyPage.offices.sydney.country'), type: t('companyPage.offices.sydney.type') },
-  ]
-
   return (
     <div>
       {/* Hero */}
-      <section className="py-20 bg-gradient-to-br from-alice-dark to-alice-navy">
+      <section className="py-20 bg-gradient-to-br from-aicons-dark to-aicons-navy">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{t('companyPage.title')}</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
@@ -63,10 +56,10 @@ function Company() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-alice-primary/10 to-alice-secondary/10 rounded-2xl aspect-video flex items-center justify-center"
+              className="bg-gradient-to-br from-aicons-primary/10 to-aicons-secondary/10 rounded-2xl aspect-video flex items-center justify-center"
             >
               <div className="text-center p-8">
-                <p className="text-6xl font-bold text-alice-primary mb-2">2025</p>
+                <p className="text-6xl font-bold text-aicons-primary mb-2">2025</p>
                 <p className="text-gray-600">{t('companyPage.foundedIn')}</p>
               </div>
             </motion.div>
@@ -88,7 +81,7 @@ function Company() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-2xl p-8 text-center"
               >
-                <h3 className="text-xl font-bold text-alice-dark mb-3">{value.title}</h3>
+                <h3 className="text-xl font-bold text-aicons-dark mb-3">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
               </motion.div>
             ))}
@@ -113,13 +106,13 @@ function Company() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-gray-50 rounded-2xl p-8 text-center"
               >
-                <div className="w-24 h-24 rounded-full bg-alice-primary/10 mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-alice-primary">
+                <div className="w-24 h-24 rounded-full bg-aicons-primary/10 mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-3xl font-bold text-aicons-primary">
                     {member.name.split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-alice-dark">{member.name}</h3>
-                <p className="text-alice-primary mb-2">{member.role}</p>
+                <h3 className="text-xl font-bold text-aicons-dark">{member.name}</h3>
+                <p className="text-aicons-primary mb-2">{member.role}</p>
                 <p className="text-gray-600 text-sm">{member.bio}</p>
               </motion.div>
             ))}
@@ -134,102 +127,6 @@ function Company() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="py-20 bg-gray-50">
-        <div className="container-custom">
-          <h2 className="section-title text-center mb-12">{t('companyPage.globalOffices')}</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {offices.map((office, index) => (
-              <motion.div
-                key={office.city}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 text-center"
-              >
-                <div className="w-12 h-12 rounded-full bg-alice-primary/10 mx-auto mb-4 flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-alice-primary" />
-                </div>
-                <h3 className="text-xl font-bold text-alice-dark">{office.city}</h3>
-                <p className="text-gray-600">{office.country}</p>
-                <p className="text-sm text-alice-primary mt-2">{office.type}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form */}
-      <section className="py-20 bg-white">
-        <div className="container-custom">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="section-title text-center mb-4">{t('companyPage.getInTouch')}</h2>
-            <p className="text-center text-gray-600 mb-8">
-              {t('companyPage.getInTouchSubtitle')}
-            </p>
-
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">{t('companyPage.form.firstName')}</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-alice-primary focus:ring-2 focus:ring-alice-primary/20 outline-none transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">{t('companyPage.form.lastName')}</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-alice-primary focus:ring-2 focus:ring-alice-primary/20 outline-none transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">{t('companyPage.form.email')}</label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-alice-primary focus:ring-2 focus:ring-alice-primary/20 outline-none transition-colors"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">{t('companyPage.form.company')}</label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-alice-primary focus:ring-2 focus:ring-alice-primary/20 outline-none transition-colors"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">{t('companyPage.form.message')}</label>
-                <textarea
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-alice-primary focus:ring-2 focus:ring-alice-primary/20 outline-none transition-colors resize-none"
-                />
-              </div>
-
-              <button type="submit" className="btn-primary w-full">
-                {t('companyPage.form.sendMessage')}
-              </button>
-            </form>
-
-            <div className="flex justify-center gap-6 mt-8">
-              <a href="#" className="text-gray-400 hover:text-alice-primary transition-colors">
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-alice-primary transition-colors">
-                <Twitter className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-alice-primary transition-colors">
-                <Globe className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
