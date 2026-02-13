@@ -8,10 +8,9 @@ export default {
     viewAllProducts: 'View all products',
     byStakeholder: 'By Stakeholder',
     byProjectType: 'By Project Type',
-    caseStudies: 'Case Studies',
-    webinars: 'Webinars',
-    blog: 'Blog',
-    whitepapers: 'Whitepapers',
+    papers: 'Papers',
+    patents: 'Patents',
+    downloads: 'Downloads',
   },
 
   // Products menu
@@ -31,6 +30,7 @@ export default {
       building: {
         name: 'Building',
         description: 'AI Information Management for Building Construction',
+        systemsTitle: 'Building AI Systems',
         longDescription: 'Automate and optimize every stage of building projects from design to construction with AI.',
         icon: 'Building2',
         status: 'active',
@@ -297,6 +297,7 @@ export default {
       civil: {
         name: 'Civil',
         description: 'AI Information Management for Civil Infrastructure',
+        systemsTitle: 'Civil AI Systems',
         longDescription: 'Revolutionize maintenance and condition prediction for bridges, tunnels, roads, and civil infrastructure with AI.',
         icon: 'Landmark',
         status: 'coming_soon',
@@ -403,6 +404,7 @@ export default {
       plant: {
         name: 'Plant',
         description: 'AI Information Management for Plant Facilities',
+        systemsTitle: 'Plant AI Systems',
         longDescription: 'Provide AI-based optimization from design to operation for oil & gas, chemical, and industrial plants.',
         icon: 'Factory',
         status: 'coming_soon',
@@ -516,6 +518,7 @@ export default {
     optimization: 'Optimization',
     scheduling: 'Scheduling',
     integration: 'Integration',
+    feedback: 'I-Feedback',
   },
 
   // Hero Section
@@ -729,7 +732,7 @@ export default {
   // Solutions Page
   solutionsPage: {
     title: 'AISIMS Technology',
-    subtitle: 'From structural design to construction, revolutionize the construction process with 5 core technologies',
+    subtitle: 'From structural design to construction, revolutionize the construction process with 6 core technologies',
     techTitle: 'AISIMS Core Technologies',
     viewAll: 'View All Technologies',
     learnMore: 'Learn More',
@@ -983,6 +986,54 @@ export default {
       ],
       recommendedProducts: ['building'],
     },
+
+    // Feedback
+    feedback: {
+      name: 'I-Feedback',
+      tagline: 'AI-Powered Automated Design Feedback',
+      description: 'AI automatically reviews architectural design documents and provides real-time feedback through comprehensive analysis of regulatory compliance, structural safety, and constructability. Detect design errors early and improve quality.',
+      features: [
+        { title: 'Automated Code Compliance Review', description: 'Automatically review compliance with building codes, structural standards, and related regulations.', icon: 'FileSearch' },
+        { title: 'Structural Safety Analysis', description: 'AI automatically analyzes structural design safety and suggests improvements.', icon: 'Target' },
+        { title: 'Constructability Review', description: 'Evaluate design constructability and proactively identify potential issues.', icon: 'Settings' },
+        { title: 'Design Quality Scoring', description: 'Comprehensively score design quality based on multi-faceted analysis results.', icon: 'BarChart3' },
+        { title: 'Automated Improvement Suggestions', description: 'AI suggests specific design improvements based on analysis results.', icon: 'Workflow' },
+      ],
+      metrics: {
+        reviewTime: { value: '85%', label: 'Review Time Reduction' },
+        errorDetection: { value: '95%', label: 'Error Detection Rate' },
+        compliance: { value: '99%', label: 'Compliance Verification Rate' },
+        quality: { value: '40%', label: 'Design Quality Improvement' },
+      },
+      useCases: [
+        {
+          title: 'Large Residential Complex Design Review',
+          scenario: 'Need structural design review for a 1,000-unit apartment complex within 2 weeks.',
+          solution: 'Batch upload all design documents and run AI auto-review with I-Feedback.',
+          result: 'Completed 4-week task in 3 days, discovered 15 design errors in advance.',
+        },
+        {
+          title: 'Design Change Impact Feedback',
+          scenario: 'Need to quickly re-review related drawings for compliance after design change during construction.',
+          solution: 'Instantly generate regulatory, structural, and constructability feedback on changed design using I-Feedback.',
+          result: '90% review time reduction, prevented cascading errors from changes.',
+        },
+        {
+          title: 'New Design Quality Pre-verification',
+          scenario: 'Need to verify and improve bid design quality in a short period.',
+          solution: 'Auto-derive design quality scoring and improvement suggestions using I-Feedback.',
+          result: '30% design quality score improvement, 80% pre-resolution of supervision findings.',
+        },
+      ],
+      workflow: [
+        { step: 1, title: 'Upload Design Documents', description: 'Upload design documents in PDF, DWG, BIM formats to the system.' },
+        { step: 2, title: 'AI Auto-Analysis', description: 'AI comprehensively analyzes design from regulatory, structural, and constructability perspectives.' },
+        { step: 3, title: 'Feedback Report Generation', description: 'Generate organized feedback report by category from analysis results.' },
+        { step: 4, title: 'Improvement Suggestions', description: 'AI suggests specific improvement measures for discovered issues.' },
+        { step: 5, title: 'Re-review After Revision', description: 'Re-review after design revision to confirm improvement results.' },
+      ],
+      recommendedProducts: ['building'],
+    },
   },
 
   // Company Page
@@ -1030,61 +1081,113 @@ export default {
   // Resources Page
   resourcesPage: {
     title: 'Resources',
-    subtitle: 'Explore case studies, webinars, and whitepapers to learn more about AI-powered construction scheduling',
-    caseStudies: 'Case Studies',
-    webinars: 'Webinars',
-    whitepapers: 'Whitepapers',
-    readMore: 'Read More',
+    subtitle: 'Explore our research papers, patents, and downloadable resources',
     downloadPDF: 'Download PDF',
-    stayUpdated: 'Stay Updated',
-    newsletterSubtitle: 'Subscribe to our newsletter for the latest resources and industry insights.',
-    enterEmail: 'Enter your email',
-    subscribe: 'Subscribe',
-    cases: {
-      alignJV: {
-        title: 'Align JV - HS2 High Speed Rail',
-        description: 'How Align JV reduced project duration by 17% using AICONS optimization.',
-        type: 'Case Study',
-      },
-      dataCenter: {
-        title: 'Data Center Construction',
-        description: 'Optimizing complex MEP coordination in a large-scale data center project.',
-        type: 'Case Study',
-      },
-      industrialBrazil: {
-        title: 'Industrial Facility Brazil',
-        description: 'Reta Engenharia saved millions in labor costs with AI-powered scheduling.',
-        type: 'Case Study',
+    papers: {
+      title: 'Papers',
+      items: {
+        paper1: {
+          title: 'Minimizing Rebar Consumption: A Decarbonization Strategy for the Civil and Construction Industry',
+          authors: 'Widjaja, D.D., Rachmawati, T.S.N., Kim, S.',
+          journal: 'Sustainability',
+        },
+        paper2: {
+          title: 'Reducing Rebar Cutting Waste and Rebar Usage of Beams: A Two-Stage Optimization Algorithm',
+          authors: 'Widjaja, D.D., Kim, S.',
+          journal: 'Buildings',
+        },
+        paper3: {
+          title: 'Optimizing Rebar Consumption and Cutting Waste in Column Reinforcement: Integrated Mechanical Couplers and a Special-Length-Priority Minimization Algorithm',
+          authors: 'Widjaja, D.D., Kim, S., Kim, D.J.',
+          journal: 'Buildings',
+        },
+        paper4: {
+          title: 'Special Length Priority Optimization Model: Minimizing Wall Rebar Usage and Cutting Waste',
+          authors: 'Kim, D.J., Khant, L.P., Widjaja, D.D., Kim, S.',
+          journal: 'Buildings',
+        },
+        paper5: {
+          title: 'Optimization of Rebar Usage and Sustainability Based on Special-Length Priority: A Case Study of Mechanical Couplers in Diaphragm Walls',
+          authors: 'Widjaja, D.D., Khant, L.P., Kim, S., Kim, K.Y.',
+          journal: 'Sustainability',
+        },
+        paper6: {
+          title: 'Combined Mechanical Couplers and Special-Length-Priority Algorithm for Reducing Rebar Consumption and Cutting Waste of Beam Reinforcement',
+          authors: 'Widjaja, D.D., Park, C.Y., Choi, C.H., Kim, S.',
+          journal: 'Results in Engineering',
+        },
+        paper7: {
+          title: 'A BIM-Based Bar Bending Schedule Generation Algorithm with Enhanced Accuracy',
+          authors: 'Khant, L.P., Widjaja, D.D., Kwon, K., Kim, S.',
+          journal: 'Buildings',
+        },
+        paper8: {
+          title: 'A Dynamic Simulation Model for Near-Zero Rebar-Cutting Waste through Special-Length-Priority Optimization',
+          authors: 'Oh, J., Kim, S., Widjaja, D.D.',
+          journal: 'Buildings',
+        },
       },
     },
-    webinarList: {
-      introAI: {
-        title: 'Introduction to AI-Powered Scheduling',
-        description: 'Learn how AI is transforming construction project scheduling.',
-        duration: '45 min',
-      },
-      resourceAllocation: {
-        title: 'Optimizing Resource Allocation',
-        description: 'Best practices for using AICONS to optimize resource leveling.',
-        duration: '60 min',
-      },
-      bimToSchedule: {
-        title: 'BIM to Schedule Automation',
-        description: 'Generating schedules directly from your BIM models.',
-        duration: '30 min',
+    patents: {
+      title: 'Patents',
+      registered: 'Registered',
+      pending: 'Pending',
+      items: {
+        patent1: {
+          title: 'AI-based Automatic Structural Drawing Interpretation and BIM Model Generation System',
+          number: 'Patent No. 10-2024-0001234',
+          date: 'Registered Mar 15, 2024',
+        },
+        patent2: {
+          title: 'SLP Algorithm-based Rebar Cutting Loss Optimization Apparatus and Method',
+          number: 'Patent No. 10-2024-0005678',
+          date: 'Registered Jun 20, 2024',
+        },
+        patent3: {
+          title: 'Construction Schedule Auto-generation Method Based on Process Simulation',
+          number: 'Application No. 10-2024-0009012',
+          date: 'Filed Sep 10, 2024',
+        },
+        patent4: {
+          title: 'AI-based Design Change Auto-detection and Cascading Update System',
+          number: 'Application No. 10-2025-0001234',
+          date: 'Filed Jan 15, 2025',
+        },
       },
     },
-    whitepaperList: {
-      futureScheduling: {
-        title: 'The Future of Construction Scheduling',
-        description: 'A comprehensive look at how AI is reshaping project controls.',
-        pages: '24 pages',
+    downloads: {
+      title: 'PDF Downloads',
+      items: {
+        dl1: {
+          title: 'AICONS Company Profile',
+          description: 'An overview of AICONS Technologies vision, technology, and key achievements.',
+          pages: '16 pages',
+        },
+        dl2: {
+          title: 'AISIMS Service Brochure',
+          description: 'Features and benefits of the AI Structural Information Management System (AISIMS).',
+          pages: '12 pages',
+        },
+        dl3: {
+          title: 'Construction AI Technology White Paper',
+          description: 'A comprehensive analysis of how AI is revolutionizing the construction industry.',
+          pages: '24 pages',
+        },
+        dl4: {
+          title: 'AISIMS Case Studies Collection',
+          description: 'Real-world project case studies with ROI analysis and implementation results.',
+          pages: '20 pages',
+        },
+        dl5: {
+          title: 'BIM & AI Integration Solution Guide',
+          description: 'Guide on integrating BIM data with AI technology for construction workflows.',
+          pages: '18 pages',
+        },
       },
-      measuringROI: {
-        title: 'Measuring Schedule Optimization ROI',
-        description: 'Quantifying the benefits of AI-powered schedule optimization.',
-        pages: '18 pages',
-      },
+    },
+    cta: {
+      title: 'Want to Learn More?',
+      subtitle: 'Have questions about our technology and services? Feel free to reach out anytime.',
     },
   },
 

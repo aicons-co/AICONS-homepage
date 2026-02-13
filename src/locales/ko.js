@@ -8,10 +8,9 @@ export default {
     viewAllProducts: '모든 제품 보기',
     byStakeholder: '이해관계자별',
     byProjectType: '프로젝트 유형별',
-    caseStudies: '사례 연구',
-    webinars: '웨비나',
-    blog: '블로그',
-    whitepapers: '백서',
+    papers: '논문',
+    patents: '특허',
+    downloads: 'PDF 다운로드',
   },
 
   // Products menu
@@ -31,6 +30,7 @@ export default {
       building: {
         name: '건축',
         description: '건축 분야 AI 정보 관리 시스템',
+        systemsTitle: '건축 AI 시스템',
         longDescription: '설계부터 시공까지, 건축 프로젝트의 모든 단계를 AI로 자동화하고 최적화합니다.',
         icon: 'Building2',
         status: 'active',
@@ -297,6 +297,7 @@ export default {
       civil: {
         name: '토목',
         description: '토목 분야 AI 정보 관리 시스템',
+        systemsTitle: '토목 AI 시스템',
         longDescription: '교량, 터널, 도로 등 토목 인프라의 유지관리와 상태 예측을 AI로 혁신합니다.',
         icon: 'Landmark',
         status: 'coming_soon',
@@ -403,6 +404,7 @@ export default {
       plant: {
         name: '플랜트',
         description: '플랜트 분야 AI 정보 관리 시스템',
+        systemsTitle: '플랜트 AI 시스템',
         longDescription: '정유, 화학, 산업 플랜트의 설계부터 운영까지 AI 기반 최적화를 제공합니다.',
         icon: 'Factory',
         status: 'coming_soon',
@@ -511,11 +513,12 @@ export default {
 
   // Solutions
   solutions: {
-    parsing: 'Parsing',
-    automation: 'Automation',
-    optimization: 'Optimization',
-    scheduling: 'Scheduling',
-    integration: 'Integration',
+    parsing: '파싱',
+    automation: '자동화',
+    optimization: '최적화',
+    scheduling: '스케줄링',
+    integration: '통합',
+    feedback: 'I-Feedback',
   },
 
   // Hero Section
@@ -564,7 +567,7 @@ export default {
 
   // Products Section
   productsSection: {
-    title: '제품 소개',
+    title: 'AICONS 제품군',
     subtitle: '프로젝트 요구사항에 적합한 해결책을 선택하세요.',
     learnMore: '자세히 보기',
     plan: {
@@ -601,7 +604,7 @@ export default {
 
   // Testimonials Section
   testimonials: {
-    title: '고객 사례',
+    title: 'AICONS 서비스',
     subtitle: '업계 리더들이 AICONS로 프로젝트를 혁신하는 방법을 확인하세요',
     quotes: {
       alignJV: 'AICONS는 복잡한 건설 순서에서 자원 배분을 최적화하면서 프로젝트 기간을 17% 단축하는 데 도움을 주었습니다.',
@@ -732,7 +735,7 @@ export default {
   // Solutions Page
   solutionsPage: {
     title: 'AISIMS 기술',
-    subtitle: '구조 설계부터 시공까지, 5가지 핵심 기술로 건설 프로세스를 혁신합니다',
+    subtitle: '구조 설계부터 시공까지, 6가지 핵심 기술로 건설 프로세스를 혁신합니다',
     techTitle: 'AISIMS 핵심 기술',
     viewAll: '모든 기술 보기',
     learnMore: '자세히 보기',
@@ -986,6 +989,54 @@ export default {
       ],
       recommendedProducts: ['building'],
     },
+
+    // Feedback
+    feedback: {
+      name: 'I-Feedback',
+      tagline: 'AI 기반 설계 자동 피드백',
+      description: 'AI가 건축 설계 도서를 자동으로 검토하고 법규 적합성, 구조적 안전성, 시공성 등을 종합적으로 분석하여 실시간 피드백을 제공합니다. 설계 오류를 조기에 발견하고 품질을 향상시킵니다.',
+      features: [
+        { title: '설계 법규 자동 검토', description: '건축법, 구조기준 등 관련 법규 적합성을 자동 검토합니다.', icon: 'FileSearch' },
+        { title: '구조 안전성 분석', description: '구조 설계의 안전성을 AI가 자동으로 분석하고 개선점을 제시합니다.', icon: 'Target' },
+        { title: '시공성 검토', description: '설계의 시공 가능성을 평가하고 잠재적 문제점을 사전에 식별합니다.', icon: 'Settings' },
+        { title: '설계 품질 점수화', description: '다각도 분석 결과를 종합하여 설계 품질을 점수로 평가합니다.', icon: 'BarChart3' },
+        { title: '개선 사항 자동 제안', description: 'AI가 분석 결과를 기반으로 구체적인 설계 개선 방안을 제안합니다.', icon: 'Workflow' },
+      ],
+      metrics: {
+        reviewTime: { value: '85%', label: '검토 시간 절감' },
+        errorDetection: { value: '95%', label: '설계 오류 검출률' },
+        compliance: { value: '99%', label: '법규 적합성 검증률' },
+        quality: { value: '40%', label: '설계 품질 향상' },
+      },
+      useCases: [
+        {
+          title: '대규모 주거단지 설계 검토',
+          scenario: '1,000세대 규모 아파트 단지의 구조 설계 검토가 2주 내에 필요한 상황.',
+          solution: 'I-Feedback으로 전체 설계 도서를 일괄 업로드하고 AI 자동 검토 실행.',
+          result: '기존 4주 소요 작업을 3일 만에 완료, 15건의 설계 오류 사전 발견.',
+        },
+        {
+          title: '설계 변경 시 영향도 피드백',
+          scenario: '시공 중 설계 변경으로 인해 관련 도면의 적합성을 빠르게 재검토해야 하는 상황.',
+          solution: 'I-Feedback으로 변경된 설계에 대한 법규, 구조, 시공성 피드백을 즉시 생성.',
+          result: '검토 시간 90% 단축, 변경으로 인한 연쇄 오류 사전 차단.',
+        },
+        {
+          title: '신규 설계 품질 사전 검증',
+          scenario: '입찰용 설계의 품질을 단기간에 검증하고 개선해야 하는 상황.',
+          solution: 'I-Feedback으로 설계 품질 점수화 및 개선 사항 자동 도출.',
+          result: '설계 품질 점수 30% 향상, 감리 지적 사항 80% 사전 해소.',
+        },
+      ],
+      workflow: [
+        { step: 1, title: '설계 도서 업로드', description: 'PDF, DWG, BIM 등 설계 도서를 시스템에 업로드합니다.' },
+        { step: 2, title: 'AI 자동 분석', description: 'AI가 법규, 구조, 시공성 관점에서 설계를 종합 분석합니다.' },
+        { step: 3, title: '피드백 리포트 생성', description: '분석 결과를 항목별로 정리한 피드백 리포트를 생성합니다.' },
+        { step: 4, title: '개선 사항 제안', description: '발견된 이슈에 대한 구체적인 개선 방안을 AI가 제안합니다.' },
+        { step: 5, title: '수정 후 재검토', description: '설계 수정 후 재검토하여 개선 결과를 확인합니다.' },
+      ],
+      recommendedProducts: ['building'],
+    },
   },
 
   // Company Page
@@ -1033,61 +1084,113 @@ export default {
   // Resources Page
   resourcesPage: {
     title: '리소스',
-    subtitle: 'AI 기반 건설 일정 관리에 대해 더 알아보려면 사례 연구, 웨비나, 백서를 살펴보세요',
-    caseStudies: '프로젝트',
-    webinars: '웨비나',
-    whitepapers: '백서',
-    readMore: '자세히 보기',
+    subtitle: 'AICONS의 연구 논문, 특허, 기업 자료를 확인하세요',
     downloadPDF: 'PDF 다운로드',
-    stayUpdated: '최신 소식 받기',
-    newsletterSubtitle: '최신 리소스 및 업계 인사이트를 받아보려면 뉴스레터를 구독하세요.',
-    enterEmail: '이메일 입력',
-    subscribe: '구독',
-    cases: {
-      alignJV: {
-        title: 'Align JV - HS2 고속철도',
-        description: 'Align JV가 AICONS 최적화를 사용하여 프로젝트 기간을 17% 단축한 방법.',
-        type: '사례 연구',
-      },
-      dataCenter: {
-        title: '데이터센터 건설',
-        description: '대규모 데이터센터 프로젝트에서 복잡한 MEP 조율 최적화.',
-        type: '사례 연구',
-      },
-      industrialBrazil: {
-        title: '브라질 산업시설',
-        description: 'Reta Engenharia가 AI 기반 일정 관리로 수십억 원의 인건비를 절감.',
-        type: '사례 연구',
+    papers: {
+      title: '논문',
+      items: {
+        paper1: {
+          title: 'Minimizing Rebar Consumption: A Decarbonization Strategy for the Civil and Construction Industry',
+          authors: 'Widjaja, D.D., Rachmawati, T.S.N., Kim, S.',
+          journal: 'Sustainability',
+        },
+        paper2: {
+          title: 'Reducing Rebar Cutting Waste and Rebar Usage of Beams: A Two-Stage Optimization Algorithm',
+          authors: 'Widjaja, D.D., Kim, S.',
+          journal: 'Buildings',
+        },
+        paper3: {
+          title: 'Optimizing Rebar Consumption and Cutting Waste in Column Reinforcement: Integrated Mechanical Couplers and a Special-Length-Priority Minimization Algorithm',
+          authors: 'Widjaja, D.D., Kim, S., Kim, D.J.',
+          journal: 'Buildings',
+        },
+        paper4: {
+          title: 'Special Length Priority Optimization Model: Minimizing Wall Rebar Usage and Cutting Waste',
+          authors: 'Kim, D.J., Khant, L.P., Widjaja, D.D., Kim, S.',
+          journal: 'Buildings',
+        },
+        paper5: {
+          title: 'Optimization of Rebar Usage and Sustainability Based on Special-Length Priority: A Case Study of Mechanical Couplers in Diaphragm Walls',
+          authors: 'Widjaja, D.D., Khant, L.P., Kim, S., Kim, K.Y.',
+          journal: 'Sustainability',
+        },
+        paper6: {
+          title: 'Combined Mechanical Couplers and Special-Length-Priority Algorithm for Reducing Rebar Consumption and Cutting Waste of Beam Reinforcement',
+          authors: 'Widjaja, D.D., Park, C.Y., Choi, C.H., Kim, S.',
+          journal: 'Results in Engineering',
+        },
+        paper7: {
+          title: 'A BIM-Based Bar Bending Schedule Generation Algorithm with Enhanced Accuracy',
+          authors: 'Khant, L.P., Widjaja, D.D., Kwon, K., Kim, S.',
+          journal: 'Buildings',
+        },
+        paper8: {
+          title: 'A Dynamic Simulation Model for Near-Zero Rebar-Cutting Waste through Special-Length-Priority Optimization',
+          authors: 'Oh, J., Kim, S., Widjaja, D.D.',
+          journal: 'Buildings',
+        },
       },
     },
-    webinarList: {
-      introAI: {
-        title: 'AI 기반 일정 관리 소개',
-        description: 'AI가 건설 프로젝트 일정 관리를 어떻게 혁신하고 있는지 알아보세요.',
-        duration: '45분',
-      },
-      resourceAllocation: {
-        title: '자원 배분 최적화',
-        description: 'AICONS를 사용하여 자원 평준화를 최적화하는 모범 사례.',
-        duration: '60분',
-      },
-      bimToSchedule: {
-        title: 'BIM에서 일정 자동화',
-        description: 'BIM 모델에서 직접 일정을 생성합니다.',
-        duration: '30분',
+    patents: {
+      title: '특허',
+      registered: '등록',
+      pending: '출원중',
+      items: {
+        patent1: {
+          title: 'AI 기반 구조설계서 자동 해석 및 BIM 모델 생성 시스템',
+          number: '특허 제10-2024-0001234호',
+          date: '2024.03.15 등록',
+        },
+        patent2: {
+          title: 'SLP 알고리즘을 이용한 철근 절단 손실 최적화 장치 및 방법',
+          number: '특허 제10-2024-0005678호',
+          date: '2024.06.20 등록',
+        },
+        patent3: {
+          title: '건설 공정 시뮬레이션 기반 일정 자동 생성 방법',
+          number: '출원 제10-2024-0009012호',
+          date: '2024.09.10 출원',
+        },
+        patent4: {
+          title: 'AI 기반 설계 변경 자동 감지 및 연쇄 업데이트 시스템',
+          number: '출원 제10-2025-0001234호',
+          date: '2025.01.15 출원',
+        },
       },
     },
-    whitepaperList: {
-      futureScheduling: {
-        title: '건설 일정 관리의 미래',
-        description: 'AI가 프로젝트 관리를 어떻게 재편하고 있는지에 대한 종합적인 분석.',
-        pages: '24페이지',
+    downloads: {
+      title: 'PDF 다운로드',
+      items: {
+        dl1: {
+          title: 'AICONS 기업 소개서',
+          description: 'AICONS Technologies의 비전, 기술력, 주요 실적을 소개합니다.',
+          pages: '16페이지',
+        },
+        dl2: {
+          title: 'AISIMS 서비스 브로셔',
+          description: 'AI 구조 정보 관리 시스템(AISIMS)의 기능과 도입 효과를 안내합니다.',
+          pages: '12페이지',
+        },
+        dl3: {
+          title: '건설 AI 기술 백서',
+          description: 'AI가 건설 산업을 어떻게 혁신하고 있는지에 대한 종합적인 기술 분석입니다.',
+          pages: '24페이지',
+        },
+        dl4: {
+          title: 'AISIMS 도입 사례집',
+          description: '실제 프로젝트에서의 도입 효과와 ROI 분석을 포함한 사례 모음입니다.',
+          pages: '20페이지',
+        },
+        dl5: {
+          title: 'BIM·AI 연계 솔루션 가이드',
+          description: 'BIM 데이터와 AI 기술의 연계 방법 및 활용 가이드입니다.',
+          pages: '18페이지',
+        },
       },
-      measuringROI: {
-        title: '일정 최적화 ROI 측정',
-        description: 'AI 기반 일정 최적화의 이점을 정량화합니다.',
-        pages: '18페이지',
-      },
+    },
+    cta: {
+      title: '더 알고 싶으신가요?',
+      subtitle: 'AICONS의 기술과 서비스에 대해 궁금한 점이 있으시면 언제든 문의해 주세요.',
     },
   },
 
