@@ -4,19 +4,6 @@ import useTranslation from '../hooks/useTranslation'
 function Company() {
   const { t } = useTranslation()
 
-  const team = [
-    {
-      name: t('companyPage.team.rene.name'),
-      role: t('companyPage.team.rene.role'),
-      bio: t('companyPage.team.rene.bio')
-    },
-    {
-      name: t('companyPage.team.leadership.name'),
-      role: t('companyPage.team.leadership.role'),
-      bio: t('companyPage.team.leadership.bio')
-    },
-  ]
-
   const values = [
     { title: t('companyPage.values.innovation.title'), description: t('companyPage.values.innovation.description') },
     { title: t('companyPage.values.customerSuccess.title'), description: t('companyPage.values.customerSuccess.description') },
@@ -85,44 +72,6 @@ function Company() {
                 <p className="text-gray-600">{value.description}</p>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section id="careers" className="py-20 bg-white">
-        <div className="container-custom">
-          <h2 className="section-title text-center mb-4">{t('companyPage.leadership')}</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            {t('companyPage.leadershipSubtitle')}
-          </p>
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {team.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-gray-50 rounded-2xl p-8 text-center"
-              >
-                <div className="w-24 h-24 rounded-full bg-aicons-primary/10 mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-aicons-primary">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-aicons-dark">{member.name}</h3>
-                <p className="text-aicons-primary mb-2">{member.role}</p>
-                <p className="text-gray-600 text-sm">{member.bio}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-gray-600 mb-4">{t('companyPage.interestedInJoining')}</p>
-            <button className="btn-primary">
-              {t('companyPage.viewOpenPositions')}
-            </button>
           </div>
         </div>
       </section>
