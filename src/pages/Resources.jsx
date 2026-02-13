@@ -203,38 +203,7 @@ function Resources() {
             <FileText className="w-8 h-8 text-aicons-primary" />
             <h2 className="text-3xl font-bold text-aicons-dark">{t('resourcesPage.papers.title')}</h2>
           </div>
-          <div className="space-y-4">
-            {papers.map((paper, index) => (
-              <motion.div
-                key={paper.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                className="flex flex-col sm:flex-row bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-shadow group"
-              >
-                <div className="sm:w-48 sm:flex-shrink-0 aspect-[4/3] sm:aspect-auto overflow-hidden">
-                  <img src={paper.image} alt={paper.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                </div>
-                <div className="p-5 flex flex-col justify-center flex-grow min-w-0">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-aicons-primary/10 text-aicons-primary">{paper.journal}</span>
-                    <span className="text-xs text-gray-400">{paper.year}</span>
-                  </div>
-                  <h3 className="text-base font-bold text-aicons-dark mb-2 leading-snug">{paper.title}</h3>
-                  <p className="text-sm text-gray-500 mb-3">{paper.authors}</p>
-                  <button className="inline-flex items-center gap-1.5 text-sm text-aicons-primary font-semibold hover:gap-2.5 transition-all self-start">
-                    {t('resourcesPage.downloadPDF')} <Download className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* 텍스트형 레이아웃 (비교용) */}
-          <div className="mt-16">
-            <h3 className="text-lg font-semibold text-gray-400 mb-6 border-b border-gray-200 pb-2">Text Layout</h3>
-            <ol className="space-y-4">
+          <ol className="space-y-4">
               {papers.map((paper, index) => (
                 <motion.li
                   key={`text-${paper.title}`}
@@ -259,7 +228,6 @@ function Resources() {
                 </motion.li>
               ))}
             </ol>
-          </div>
         </div>
       </section>
 
