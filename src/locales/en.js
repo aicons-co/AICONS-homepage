@@ -1229,6 +1229,12 @@ export default {
           date: 'Registered Dec 21, 2012',
           country: 'KR',
         },
+        patent17: {
+          title: 'Atypical Molded Body Manufacturing Device, Molding Material Casting Form Using Same, and Rod-Type Mold',
+          number: 'US 10,828,799 B2',
+          date: 'Registered Nov 10, 2020',
+          country: 'US',
+        },
       },
     },
     downloads: {

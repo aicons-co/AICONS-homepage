@@ -1232,6 +1232,12 @@ export default {
           date: '2012.12.21 등록',
           country: 'KR',
         },
+        patent17: {
+          title: '비정형 성형체 제조장치, 이를 이용한 성형재료 타설용 거푸집 및 봉형 몰드',
+          number: 'US 10,828,799 B2',
+          date: '2020.11.10 등록',
+          country: 'US',
+        },
       },
     },
     downloads: {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FileText, Shield, Download, X } from 'lucide-react'
+import { FileText, Award, Download, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import useTranslation from '../hooks/useTranslation'
 
@@ -94,9 +94,10 @@ function Resources() {
     patent14: '/images/patents/patent-kr-1228012.png',
     patent15: '/images/patents/patent-kr-1217683.png',
     patent16: '/images/patents/patent-kr-1216557.png',
+    patent17: '/images/patents/patent-us-10828799.png',
   }
 
-  const patents = Array.from({ length: 16 }, (_, i) => {
+  const patents = Array.from({ length: 17 }, (_, i) => {
     const key = `patent${i + 1}`
     return {
       title: t(`resourcesPage.patents.items.${key}.title`),
@@ -136,6 +137,12 @@ function Resources() {
     },
   ]
 
+  const countryColor = (country) => {
+    if (country === 'CN') return 'bg-red-50 text-red-600'
+    if (country === 'US') return 'bg-yellow-50 text-yellow-600'
+    return 'bg-blue-50 text-blue-600'
+  }
+
   const statusLabel = (status) => {
     if (status === 'registered') {
       return {
@@ -161,11 +168,11 @@ function Resources() {
         </div>
       </section>
 
-      {/* Patents */}
+      {/* ✅ Patents 특허 */}
       <section id="patents" className="py-20 bg-white">
         <div className="container-custom">
           <div className="flex items-center gap-3 mb-8">
-            <Shield className="w-8 h-8 text-aicons-primary" />
+            <Award className="w-8 h-8 text-aicons-primary" />
             <h2 className="text-3xl font-bold text-aicons-dark">{t('resourcesPage.patents.title')}</h2>
           </div>
           <div className="bg-gray-50 rounded-2xl overflow-hidden">
@@ -187,7 +194,7 @@ function Resources() {
                   className="grid grid-cols-1 sm:grid-cols-[2rem_3.5rem_1fr_12rem_7rem] gap-2 sm:gap-4 px-6 py-4 border-b border-gray-100 last:border-b-0 hover:bg-white transition-colors items-center cursor-pointer"
                 >
                   <span className="text-xs text-gray-400 font-medium">{index + 1}</span>
-                  <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 w-fit">{patent.country}</span>
+                  <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${countryColor(patent.country)} w-fit`}>{patent.country}</span>
                   <h4 className="text-sm font-bold text-aicons-dark leading-snug">{patent.title}</h4>
                   <span className="text-xs text-gray-500">{patent.number}</span>
                   <span className="text-xs text-gray-400">{patent.date}</span>
@@ -387,7 +394,7 @@ function Resources() {
                     <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${statusLabel(selectedPatent.status).className}`}>
                       {statusLabel(selectedPatent.status).text}
                     </span>
-                    <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-600">{selectedPatent.country}</span>
+                    <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${countryColor(selectedPatent.country)}`}>{selectedPatent.country}</span>
                   </div>
                   <h3 className="text-lg font-bold text-aicons-dark leading-snug mb-3">{selectedPatent.title}</h3>
                   <p className="text-sm text-gray-400 mb-1">{selectedPatent.number}</p>
