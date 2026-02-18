@@ -125,16 +125,6 @@ function Resources() {
       description: t('resourcesPage.downloads.items.dl3.description'),
       pages: t('resourcesPage.downloads.items.dl3.pages'),
     },
-    {
-      title: t('resourcesPage.downloads.items.dl4.title'),
-      description: t('resourcesPage.downloads.items.dl4.description'),
-      pages: t('resourcesPage.downloads.items.dl4.pages'),
-    },
-    {
-      title: t('resourcesPage.downloads.items.dl5.title'),
-      description: t('resourcesPage.downloads.items.dl5.description'),
-      pages: t('resourcesPage.downloads.items.dl5.pages'),
-    },
   ]
 
   const countryColor = (country) => {
@@ -240,7 +230,7 @@ function Resources() {
         </div>
       </section>
 
-      {/* Downloads */}
+      {/* ✅ Downloads 다운로드 */}
       <section id="downloads" className="py-20 bg-white">
         <div className="container-custom">
           <div className="flex items-center gap-3 mb-8">
@@ -278,7 +268,7 @@ function Resources() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-aicons-primary">
+      {/* <section className="py-20 bg-aicons-primary">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {t('resourcesPage.cta.title')}
@@ -301,7 +291,7 @@ function Resources() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Paper Detail Modal */}
       <AnimatePresence>

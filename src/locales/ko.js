@@ -1241,7 +1241,7 @@ export default {
       },
     },
     downloads: {
-      title: 'PDF 다운로드',
+      title: '다운로드',
       items: {
         dl1: {
           title: 'AICONS 기업 소개서',
@@ -1254,16 +1254,6 @@ export default {
           pages: '12페이지',
         },
         dl3: {
-          title: '건설 AI 기술 백서',
-          description: 'AI가 건설 산업을 어떻게 혁신하고 있는지에 대한 종합적인 기술 분석입니다.',
-          pages: '24페이지',
-        },
-        dl4: {
-          title: 'AISIMS 도입 사례집',
-          description: '실제 프로젝트에서의 도입 효과와 ROI 분석을 포함한 사례 모음입니다.',
-          pages: '20페이지',
-        },
-        dl5: {
           title: 'BIM·AI 연계 솔루션 가이드',
           description: 'BIM 데이터와 AI 기술의 연계 방법 및 활용 가이드입니다.',
           pages: '18페이지',

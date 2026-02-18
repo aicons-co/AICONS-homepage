@@ -1251,16 +1251,6 @@ export default {
           pages: '12 pages',
         },
         dl3: {
-          title: 'Construction AI Technology White Paper',
-          description: 'A comprehensive analysis of how AI is revolutionizing the construction industry.',
-          pages: '24 pages',
-        },
-        dl4: {
-          title: 'AISIMS Case Studies Collection',
-          description: 'Real-world project case studies with ROI analysis and implementation results.',
-          pages: '20 pages',
-        },
-        dl5: {
           title: 'BIM & AI Integration Solution Guide',
           description: 'Guide on integrating BIM data with AI technology for construction workflows.',
           pages: '18 pages',
