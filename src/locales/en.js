@@ -1043,7 +1043,7 @@ export default {
     vision: {
       title: 'Vision',
       description: 'An AI platform company automating the Execution phase of the construction industry',
-      detail: 'We build an Information Backbone that parses structural design data (PDF) and connects it to construction, procurement, and scheduling.',
+      detail: 'We build an Information Backbone that parses structural design data (PDF) and connects it to construction, procurement, and scheduling. By integrating Auto-BIM generation, quantity takeoff, and scheduling into a single pipeline, we eliminate the information gap between design and construction. Even when designs change, every downstream process updates automatically — fundamentally removing repetitive manual work and schedule delays.',
       pipeline: 'Structural Design → Structural DB → Auto-BIM → QTO/Scheduling/Procurement Automation',
     },
     problem: {

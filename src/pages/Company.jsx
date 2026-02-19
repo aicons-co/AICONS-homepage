@@ -105,7 +105,7 @@ function Company() {
       </section>
 
       {/* Problem */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -133,10 +133,10 @@ function Company() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Solution - AISIMS */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -174,10 +174,10 @@ function Company() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Pipeline */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -214,10 +214,10 @@ function Company() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Roadmap */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="container-custom">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -244,7 +244,7 @@ function Company() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
     </div>
   )
