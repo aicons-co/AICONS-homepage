@@ -1,14 +1,32 @@
 import { motion } from 'framer-motion'
+import { Database, Box, ClipboardCheck, RefreshCw, ArrowRight, Rocket, Handshake, ShieldCheck, Trophy } from 'lucide-react'
 import useTranslation from '../hooks/useTranslation'
 
 function Company() {
   const { t } = useTranslation()
 
+  const problems = [
+    { key: 'isolation', icon: '🔒' },
+    { key: 'manual', icon: '✋' },
+    { key: 'change', icon: '🔄' },
+  ]
+
+  const solutionItems = [
+    { key: 'parsing', Icon: Database },
+    { key: 'bim', Icon: Box },
+    { key: 'execution', Icon: ClipboardCheck },
+    { key: 'revision', Icon: RefreshCw },
+  ]
+
+  const stages = ['stage1', 'stage2', 'stage3', 'stage4', 'stage5']
+
+  const phases = ['phase1', 'phase2', 'phase3']
+
   const values = [
-    { title: t('companyPage.values.innovation.title'), description: t('companyPage.values.innovation.description') },
-    { title: t('companyPage.values.customerSuccess.title'), description: t('companyPage.values.customerSuccess.description') },
-    { title: t('companyPage.values.integrity.title'), description: t('companyPage.values.integrity.description') },
-    { title: t('companyPage.values.excellence.title'), description: t('companyPage.values.excellence.description') },
+    { key: 'innovation', Icon: Rocket },
+    { key: 'customerSuccess', Icon: Handshake },
+    { key: 'integrity', Icon: ShieldCheck },
+    { key: 'excellence', Icon: Trophy },
   ]
 
   return (
@@ -23,7 +41,7 @@ function Company() {
         </div>
       </section>
 
-      {/* Story */}
+      {/* Vision */}
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -32,22 +50,24 @@ function Company() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="section-title mb-6">{t('companyPage.ourStory')}</h2>
-              <div className="space-y-4 text-gray-600">
-                <p>{t('companyPage.storyP1')}</p>
-                <p>{t('companyPage.storyP2')}</p>
-                <p>{t('companyPage.storyP3')}</p>
-              </div>
+              <h2 className="text-3xl font-bold text-aicons-dark mb-4">{t('companyPage.vision.title')}</h2>
+              <p className="text-xl font-semibold text-aicons-primary mb-4">{t('companyPage.vision.description')}</p>
+              <p className="text-gray-600 mb-6">{t('companyPage.vision.detail')}</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-aicons-primary/10 to-aicons-secondary/10 rounded-2xl aspect-video flex items-center justify-center"
+              className="bg-gradient-to-br from-aicons-primary/5 to-aicons-secondary/10 rounded-2xl p-8"
             >
-              <div className="text-center p-8">
-                <p className="text-6xl font-bold text-aicons-primary mb-2">2025</p>
-                <p className="text-gray-600">{t('companyPage.foundedIn')}</p>
+              <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">End-to-End Pipeline</p>
+              <div className="flex flex-wrap items-center gap-2 text-sm font-medium text-aicons-dark">
+                {t('companyPage.vision.pipeline').split('→').map((step, i, arr) => (
+                  <span key={i} className="flex items-center gap-2">
+                    <span className="bg-white px-3 py-2 rounded-lg shadow-sm border border-gray-100">{step.trim()}</span>
+                    {i < arr.length - 1 && <ArrowRight className="w-4 h-4 text-aicons-primary flex-shrink-0" />}
+                  </span>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -57,19 +77,169 @@ function Company() {
       {/* Values */}
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
-          <h2 className="section-title text-center mb-12">{t('companyPage.ourValues')}</h2>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-aicons-dark mb-2">{t('companyPage.ourValues')}</h2>
+            <p className="text-lg text-gray-500">{t('companyPage.valuesSubtitle')}</p>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <motion.div
-                key={value.title}
+                key={value.key}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 text-center"
+                className="rounded-2xl overflow-hidden shadow-sm flex flex-col"
               >
-                <h3 className="text-xl font-bold text-aicons-dark mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <div className="bg-aicons-dark flex items-center justify-center py-12">
+                  <value.Icon className="w-16 h-16 text-white" strokeWidth={1.2} />
+                </div>
+                <div className="bg-white p-6 flex-grow">
+                  <h3 className="text-xl font-bold text-aicons-dark mb-3">{t(`companyPage.values.${value.key}.title`)}</h3>
+                  <p className="text-sm text-gray-600">{t(`companyPage.values.${value.key}.description`)}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Problem */}
+      <section className="py-20 bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-aicons-dark mb-4">{t('companyPage.problem.title')}</h2>
+            <p className="text-lg text-gray-500 max-w-3xl mx-auto">{t('companyPage.problem.subtitle')}</p>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {problems.map((item, index) => (
+              <motion.div
+                key={item.key}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-8 border border-gray-100"
+              >
+                <span className="text-3xl mb-4 block">{item.icon}</span>
+                <h3 className="text-lg font-bold text-aicons-dark mb-2">{t(`companyPage.problem.items.${item.key}.title`)}</h3>
+                <p className="text-sm text-gray-600">{t(`companyPage.problem.items.${item.key}.description`)}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Solution - AISIMS */}
+      <section className="py-20 bg-gray-50">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-4"
+          >
+            <h2 className="text-3xl font-bold text-aicons-dark mb-2">{t('companyPage.solution.title')}</h2>
+            <p className="text-lg text-aicons-primary font-semibold mb-4">{t('companyPage.solution.subtitle')}</p>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center text-gray-500 max-w-3xl mx-auto mb-12"
+          >
+            {t('companyPage.solution.tagline')}
+          </motion.p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {solutionItems.map((item, index) => (
+              <motion.div
+                key={item.key}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-gradient-to-br from-aicons-primary/5 to-transparent rounded-2xl p-6 border border-aicons-primary/10"
+              >
+                <div className="w-12 h-12 bg-aicons-primary/10 rounded-xl flex items-center justify-center mb-4">
+                  <item.Icon className="w-6 h-6 text-aicons-primary" />
+                </div>
+                <h3 className="text-lg font-bold text-aicons-dark mb-2">{t(`companyPage.solution.items.${item.key}.title`)}</h3>
+                <p className="text-sm text-gray-600">{t(`companyPage.solution.items.${item.key}.description`)}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pipeline */}
+      <section className="py-20 bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-aicons-dark mb-4">{t('companyPage.pipeline.title')}</h2>
+            <p className="text-gray-500">{t('companyPage.pipeline.subtitle')}</p>
+          </motion.div>
+          <div className="flex flex-col md:flex-row gap-4 items-stretch">
+            {stages.map((stage, index) => (
+              <motion.div
+                key={stage}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="flex-1 relative"
+              >
+                <div className="bg-white rounded-2xl p-6 h-full border border-gray-100">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs font-bold text-white bg-aicons-primary rounded-full w-6 h-6 flex items-center justify-center">{index + 1}</span>
+                    <h3 className="text-sm font-bold text-aicons-dark">{t(`companyPage.pipeline.stages.${stage}.title`)}</h3>
+                  </div>
+                  <p className="text-xs text-gray-500">{t(`companyPage.pipeline.stages.${stage}.description`)}</p>
+                </div>
+                {index < stages.length - 1 && (
+                  <div className="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10">
+                    <ArrowRight className="w-5 h-5 text-aicons-primary" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Roadmap */}
+      <section className="py-20 bg-gray-50">
+        <div className="container-custom">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl font-bold text-aicons-dark text-center mb-12"
+          >
+            {t('companyPage.roadmap.title')}
+          </motion.h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {phases.map((phase, index) => (
+              <motion.div
+                key={phase}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="relative bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100"
+              >
+                <span className="text-sm font-bold text-aicons-primary">{t(`companyPage.roadmap.phases.${phase}.period`)}</span>
+                <h3 className="text-xl font-bold text-aicons-dark mt-1 mb-3">{t(`companyPage.roadmap.phases.${phase}.title`)}</h3>
+                <p className="text-sm text-gray-600">{t(`companyPage.roadmap.phases.${phase}.description`)}</p>
               </motion.div>
             ))}
           </div>
