@@ -376,11 +376,13 @@ function Resources() {
                       <span className="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-500 font-medium">{selectedPaper.year}</span>
                     </span>
                   </h3>
-                  <p className="text-sm text-gray-500 mb-6">{selectedPaper.authors}</p>
-                  <button className="inline-flex items-center gap-2 px-6 py-3 bg-aicons-primary text-white font-semibold rounded-lg hover:bg-aicons-primary/90 transition-colors">
-                    <Download className="w-4 h-4" />
-                    {t('resourcesPage.downloadPDF')}
-                  </button>
+                  <p className="text-sm text-gray-500 mb-10">{selectedPaper.authors}</p>
+                  <div className="text-center">
+                    <button className="inline-flex items-center gap-1.5 px-4 py-2 bg-aicons-primary text-white text-sm font-medium rounded-lg hover:bg-aicons-primary/90 transition-colors">
+                      <Download className="w-3.5 h-3.5" />
+                      {t('resourcesPage.downloadPDF')}
+                    </button>
+                  </div>
                 </div>
               </div>
             </motion.div>

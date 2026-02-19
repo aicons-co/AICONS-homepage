@@ -32,7 +32,7 @@ function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
   const navigate = useNavigate()
-  const { t, locale } = useTranslation()
+  const { t, language } = useTranslation()
 
   const handleDropdownEnter = (menu) => {
     setActiveDropdown(menu)
@@ -212,7 +212,7 @@ function Header() {
               onClick={() => navigate('/demo')}
               className="btn-primary"
             >
-              {locale === 'ko' ? '데모 예약' : 'Book a Demo'}
+              {language === 'ko' ? '데모 예약' : 'Book a Demo'}
             </button>
           </div>
 
@@ -313,7 +313,7 @@ function Header() {
                     }}
                     className="btn-primary w-full"
                   >
-                    {locale === 'ko' ? '데모 예약' : 'Book a Demo'}
+                    {language === 'ko' ? '데모 예약' : 'Book a Demo'}
                   </button>
                 </div>
               </div>

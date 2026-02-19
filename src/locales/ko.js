@@ -1042,10 +1042,10 @@ export default {
   // Company Page
   companyPage: {
     title: 'AICONS 소개',
-    subtitle: 'AICONS는 건설 산업의 실행 과정을 자동화하는 AI 플랫폼입니다',
+    subtitle: 'AICONS는 건설 산업의 실행 과정을 자동화하는 AI 혁신을 목표로 합니다',
     vision: {
       title: '기업비전',
-      description: "건설 산업을 자동화하는 AI 플랫폼",
+      description: "AICONS는 건설 산업을 자동화하는 AI서비스를 제공하는 기업입니다",
       detail: '구조설계 데이터(PDF)를 파싱하여 시공·조달·공정까지 연결하는 자동화 라인을 구축합니다. BIM 자동 생성, 물량 산출, 공정 계획을 하나의 파이프라인으로 통합하여 설계-시공 간 정보 단절을 해소합니다. 설계 변경 시에도 전 공정이 자동 갱신되어, 반복적인 수작업과 공기 지연을 근본적으로 제거합니다.',
       pipeline: '구조설계서 → 구조 DB → BIM 자동생성 → 물량/공정/조달 자동화',
     },

@@ -2,7 +2,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import useTranslation from '../../hooks/useTranslation'
 
 function EfficiencyChart({ data }) {
-  const { locale } = useTranslation()
+  const { language } = useTranslation()
 
   const formattedData = data.map(item => ({
     name: item.name,
@@ -11,8 +11,8 @@ function EfficiencyChart({ data }) {
     reduction: Math.round((1 - item.after / item.before) * 100)
   }))
 
-  const beforeLabel = locale === 'ko' ? '기존' : 'Before'
-  const afterLabel = locale === 'ko' ? 'AI 적용' : 'With AI'
+  const beforeLabel = language === 'ko' ? '기존' : 'Before'
+  const afterLabel = language === 'ko' ? 'AI 적용' : 'With AI'
 
   return (
     <div className="w-full h-80">

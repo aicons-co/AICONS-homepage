@@ -10,7 +10,7 @@ const iconMap = {
 }
 
 function ProductsSection() {
-  const { t, locale } = useTranslation()
+  const { t, language } = useTranslation()
 
   const categories = t('products.categories')
   const categoryOrder = ['building', 'civil', 'plant']
@@ -83,7 +83,7 @@ function ProductsSection() {
                     {/* System Count */}
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-500">
-                        {category.systemCount} {locale === 'ko' ? '개 시스템' : 'Systems'}
+                        {category.systemCount} {language === 'ko' ? '개 시스템' : 'Systems'}
                       </span>
                       <span className="inline-flex items-center gap-1 text-aicons-primary font-semibold text-sm group-hover:gap-2 transition-all">
                         {t('common.learnMore')}

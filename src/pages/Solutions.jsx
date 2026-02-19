@@ -27,7 +27,7 @@ const solutionIconMap = {
 }
 
 function SolutionPage({ solutionKey }) {
-  const { t, locale } = useTranslation()
+  const { t, language } = useTranslation()
 
   const solutionPages = {
     parsing: {
@@ -202,7 +202,7 @@ function SolutionPage({ solutionKey }) {
           <div className="container-custom">
             <h2 className="text-2xl font-bold text-aicons-dark text-center mb-4">{t('solutionsPage.useCases')}</h2>
             <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-              {locale === 'ko' ? `${solution.name} 기술의 실제 적용 사례를 확인하세요` : `Explore real-world applications of ${solution.name} technology`}
+              {language === 'ko' ? `${solution.name} 기술의 실제 적용 사례를 확인하세요` : `Explore real-world applications of ${solution.name} technology`}
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               {solution.useCases.map((useCase, index) => (
@@ -220,15 +220,15 @@ function SolutionPage({ solutionKey }) {
                   <h3 className="text-lg font-bold text-aicons-dark mb-3">{useCase.title}</h3>
                   <div className="space-y-3 text-sm">
                     <div>
-                      <span className="font-semibold text-gray-700">{locale === 'ko' ? '시나리오:' : 'Scenario:'}</span>
+                      <span className="font-semibold text-gray-700">{language === 'ko' ? '시나리오:' : 'Scenario:'}</span>
                       <p className="text-gray-600 mt-1">{useCase.scenario}</p>
                     </div>
                     <div>
-                      <span className="font-semibold text-gray-700">{locale === 'ko' ? '솔루션:' : 'Solution:'}</span>
+                      <span className="font-semibold text-gray-700">{language === 'ko' ? '솔루션:' : 'Solution:'}</span>
                       <p className="text-gray-600 mt-1">{useCase.solution}</p>
                     </div>
                     <div className="bg-green-50 rounded-lg p-3 border border-green-100">
-                      <span className="font-semibold text-green-700">{locale === 'ko' ? '결과:' : 'Result:'}</span>
+                      <span className="font-semibold text-green-700">{language === 'ko' ? '결과:' : 'Result:'}</span>
                       <p className="text-green-600 mt-1">{useCase.result}</p>
                     </div>
                   </div>

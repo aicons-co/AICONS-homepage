@@ -5,7 +5,7 @@ import { EfficiencyChart, CostSavingsChart } from '../charts'
 import useTranslation from '../../hooks/useTranslation'
 
 function SystemDetailModal({ system, isOpen, onClose }) {
-  const { t, locale } = useTranslation()
+  const { t, language } = useTranslation()
 
   useEffect(() => {
     if (isOpen) {
@@ -76,7 +76,7 @@ function SystemDetailModal({ system, isOpen, onClose }) {
                 <div>
                   <h3 className="text-xl font-bold text-aicons-dark mb-4 flex items-center gap-2">
                     <Check className="w-5 h-5 text-aicons-primary" />
-                    {locale === 'ko' ? '주요 기능' : 'Key Features'}
+                    {language === 'ko' ? '주요 기능' : 'Key Features'}
                   </h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {system.features?.map((feature, index) => (
@@ -99,7 +99,7 @@ function SystemDetailModal({ system, isOpen, onClose }) {
                       <div className="bg-gray-50 rounded-xl p-6">
                         <h3 className="text-lg font-bold text-aicons-dark mb-4 flex items-center gap-2">
                           <BarChart3 className="w-5 h-5 text-aicons-primary" />
-                          {locale === 'ko' ? '업무 효율 향상' : 'Efficiency Improvement'}
+                          {language === 'ko' ? '업무 효율 향상' : 'Efficiency Improvement'}
                         </h3>
                         <EfficiencyChart data={system.mockData.efficiency} />
                       </div>
@@ -110,7 +110,7 @@ function SystemDetailModal({ system, isOpen, onClose }) {
                       <div className="bg-gray-50 rounded-xl p-6">
                         <h3 className="text-lg font-bold text-aicons-dark mb-4 flex items-center gap-2">
                           <PieChart className="w-5 h-5 text-aicons-primary" />
-                          {locale === 'ko' ? '비용 절감 효과' : 'Cost Savings Breakdown'}
+                          {language === 'ko' ? '비용 절감 효과' : 'Cost Savings Breakdown'}
                         </h3>
                         <CostSavingsChart data={system.mockData.costSavings} />
                       </div>
@@ -123,7 +123,7 @@ function SystemDetailModal({ system, isOpen, onClose }) {
                   <div className="bg-gradient-to-r from-aicons-primary to-aicons-secondary rounded-xl p-6">
                     <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                       <TrendingUp className="w-5 h-5" />
-                      {locale === 'ko' ? '예상 성과' : 'Expected Results'}
+                      {language === 'ko' ? '예상 성과' : 'Expected Results'}
                     </h3>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                       {Object.entries(system.mockData.metrics).map(([key, value]) => (
