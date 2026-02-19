@@ -1043,12 +1043,12 @@ export default {
   companyPage: {
     title: 'AICONS 소개',
     subtitle: '우리는 AI의 힘으로 건설 프로젝트의 계획과 실행 방식을 혁신하는 미션을 수행하고 있습니다.',
-    ourStory: '우리의 이야기',
+    ourStory: '회사개요',
     storyP1: 'AICONS Technologies는 건설 일정 관리 및 최적화에 인공지능의 힘을 가져오겠다는 단순하지만 야심찬 목표로 설립되었습니다.',
     storyP2: '건설은 세계에서 가장 큰 산업 중 하나이지만 새로운 기술 도입이 느렸습니다. 우리는 AI가 프로젝트의 계획, 일정 관리, 실행 방식을 혁신할 수 있다고 믿습니다.',
     storyP3: '오늘날 AICONS는 전 세계의 선도적인 건설 회사들이 프로젝트를 최적화하고 비용을 절감하며 정시에 납품하도록 신뢰받고 있습니다.',
     foundedIn: '실리콘밸리에서 설립',
-    ourValues: '우리의 가치',
+    ourValues: '핵심가치',
     values: {
       innovation: { title: '혁신', description: '건설 기술의 가능성의 경계를 넓힙니다' },
       customerSuccess: { title: '고객 성공', description: '당신의 성공이 우리의 성공입니다 - 우리는 당신의 여정에 함께하는 파트너입니다' },
@@ -1128,6 +1128,36 @@ export default {
           title: 'A Dynamic Simulation Model for Near-Zero Rebar-Cutting Waste through Special-Length-Priority Optimization',
           authors: 'Oh, J., Kim, S., Widjaja, D.D.',
           journal: 'Buildings',
+        },
+        paper9: {
+          title: 'Optimization of Lap Splice Positions for Near-Zero Rebar Cutting Waste in Diaphragm Walls Using Special-Length-Priority Algorithms',
+          authors: 'Rachmawati, T.S.N., Khant, L.P., Lim, J., Lee, J., Kim, S.',
+          journal: 'JAABE',
+        },
+        paper10: {
+          title: 'A BIM-Based Intelligent Approach to Rebar Layout Optimization for Reinforced Concrete Columns',
+          authors: 'Widjaja, D.D., Rachmawati, T.S.N., Kim, S.',
+          journal: 'Journal of Building Engineering',
+        },
+        paper11: {
+          title: 'Optimizing Rebar Process and Supply Chain Management for Minimized Cutting Waste: A Building Information Modeling-Based Data-Driven Approach',
+          authors: 'Khant, L.P., Widjaja, D.D., Kim, D., Rachmawati, T.S.N., Kim, S.',
+          journal: 'Buildings',
+        },
+        paper12: {
+          title: 'Development of Automatic Rebar Layout Algorithms Considering Design Characteristics of Reinforced Concrete Members',
+          authors: 'Widjaja, D.D., Khant, L.P., Rachmawati, T.S.N., Kim, S.',
+          journal: 'Ain Shams Engineering Journal',
+        },
+        paper13: {
+          title: 'Integrating Digital Twin and BIM for Special-Length-Based Rebar Layout Optimization in Reinforced Concrete Construction',
+          authors: 'Widjaja, D.D., Lim, J., Kim, S.',
+          journal: 'Buildings',
+        },
+        paper14: {
+          title: 'Intelligent Rebar Optimization Framework for Urban Transit Infrastructure: A Case Study of a Diaphragm Wall in a Singapore Mass Rapid Transit Station',
+          authors: 'Widjaja, D.D., Kim, S.',
+          journal: 'Smart Cities',
         },
       },
     },

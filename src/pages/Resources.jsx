@@ -75,6 +75,48 @@ function Resources() {
       year: '2024',
       image: '/images/papers/paper8-simulation.png',
     },
+    {
+      title: t('resourcesPage.papers.items.paper9.title'),
+      authors: t('resourcesPage.papers.items.paper9.authors'),
+      journal: t('resourcesPage.papers.items.paper9.journal'),
+      year: '2024',
+      image: '/images/papers/paper9-diaphragm-splice.png',
+    },
+    {
+      title: t('resourcesPage.papers.items.paper10.title'),
+      authors: t('resourcesPage.papers.items.paper10.authors'),
+      journal: t('resourcesPage.papers.items.paper10.journal'),
+      year: '2025',
+      image: '/images/papers/paper10-bim-column.png',
+    },
+    {
+      title: t('resourcesPage.papers.items.paper11.title'),
+      authors: t('resourcesPage.papers.items.paper11.authors'),
+      journal: t('resourcesPage.papers.items.paper11.journal'),
+      year: '2025',
+      image: '/images/papers/paper11-supply-chain.png',
+    },
+    {
+      title: t('resourcesPage.papers.items.paper12.title'),
+      authors: t('resourcesPage.papers.items.paper12.authors'),
+      journal: t('resourcesPage.papers.items.paper12.journal'),
+      year: '2025',
+      image: '/images/papers/paper12-auto-layout.png',
+    },
+    {
+      title: t('resourcesPage.papers.items.paper13.title'),
+      authors: t('resourcesPage.papers.items.paper13.authors'),
+      journal: t('resourcesPage.papers.items.paper13.journal'),
+      year: '2025',
+      image: '/images/papers/paper13-digital-twin.png',
+    },
+    {
+      title: t('resourcesPage.papers.items.paper14.title'),
+      authors: t('resourcesPage.papers.items.paper14.authors'),
+      journal: t('resourcesPage.papers.items.paper14.journal'),
+      year: '2025',
+      image: '/images/papers/paper14-urban-transit.png',
+    },
   ]
 
   const patentImages = {

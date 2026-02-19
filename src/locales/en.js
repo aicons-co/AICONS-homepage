@@ -1126,6 +1126,36 @@ export default {
           authors: 'Oh, J., Kim, S., Widjaja, D.D.',
           journal: 'Buildings',
         },
+        paper9: {
+          title: 'Optimization of Lap Splice Positions for Near-Zero Rebar Cutting Waste in Diaphragm Walls Using Special-Length-Priority Algorithms',
+          authors: 'Rachmawati, T.S.N., Khant, L.P., Lim, J., Lee, J., Kim, S.',
+          journal: 'JAABE',
+        },
+        paper10: {
+          title: 'A BIM-Based Intelligent Approach to Rebar Layout Optimization for Reinforced Concrete Columns',
+          authors: 'Widjaja, D.D., Rachmawati, T.S.N., Kim, S.',
+          journal: 'Journal of Building Engineering',
+        },
+        paper11: {
+          title: 'Optimizing Rebar Process and Supply Chain Management for Minimized Cutting Waste: A Building Information Modeling-Based Data-Driven Approach',
+          authors: 'Khant, L.P., Widjaja, D.D., Kim, D., Rachmawati, T.S.N., Kim, S.',
+          journal: 'Buildings',
+        },
+        paper12: {
+          title: 'Development of Automatic Rebar Layout Algorithms Considering Design Characteristics of Reinforced Concrete Members',
+          authors: 'Widjaja, D.D., Khant, L.P., Rachmawati, T.S.N., Kim, S.',
+          journal: 'Ain Shams Engineering Journal',
+        },
+        paper13: {
+          title: 'Integrating Digital Twin and BIM for Special-Length-Based Rebar Layout Optimization in Reinforced Concrete Construction',
+          authors: 'Widjaja, D.D., Lim, J., Kim, S.',
+          journal: 'Buildings',
+        },
+        paper14: {
+          title: 'Intelligent Rebar Optimization Framework for Urban Transit Infrastructure: A Case Study of a Diaphragm Wall in a Singapore Mass Rapid Transit Station',
+          authors: 'Widjaja, D.D., Kim, S.',
+          journal: 'Smart Cities',
+        },
       },
     },
     patents: {
