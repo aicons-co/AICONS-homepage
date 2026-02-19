@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FileText, Award, Download, X } from 'lucide-react'
+import { FileText, Award, Download, File, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import useTranslation from '../hooks/useTranslation'
 
@@ -183,11 +183,11 @@ function Resources() {
                   onClick={() => setSelectedPatent(patent)}
                   className="grid grid-cols-1 sm:grid-cols-[2rem_3.5rem_1fr_12rem_7rem] gap-2 sm:gap-4 px-6 py-4 border-b border-gray-100 last:border-b-0 hover:bg-white transition-colors items-center cursor-pointer"
                 >
-                  <span className="text-xs text-gray-400 font-medium">{index + 1}</span>
-                  <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${countryColor(patent.country)} w-fit`}>{patent.country}</span>
+                  <span className="text-xs text-gray-400 font-medium text-center">{index + 1}</span>
+                  <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${countryColor(patent.country)} w-fit mx-auto`}>{patent.country}</span>
                   <h4 className="text-sm font-bold text-aicons-dark leading-snug">{patent.title}</h4>
-                  <span className="text-xs text-gray-500">{patent.number}</span>
-                  <span className="text-xs text-gray-400">{patent.date}</span>
+                  <span className="text-xs text-gray-500 text-center">{patent.number}</span>
+                  <span className="text-xs text-gray-400 text-center">{patent.date}</span>
                 </motion.div>
               ))}
             </div>
@@ -248,14 +248,14 @@ function Resources() {
                 className="flex items-center gap-5 bg-gray-50 rounded-2xl p-5 hover:shadow-lg transition-shadow"
               >
                 <div className="flex-shrink-0 w-14 h-14 bg-aicons-primary/10 rounded-xl flex items-center justify-center">
-                  <FileText className="w-7 h-7 text-aicons-primary" />
+                  <File className="w-7 h-7 text-aicons-primary" />
                 </div>
                 <div className="flex-grow min-w-0">
                   <h3 className="text-lg font-bold text-aicons-dark mb-1">{dl.title}</h3>
                   <p className="text-sm text-gray-600">{dl.description}</p>
                 </div>
                 <div className="flex-shrink-0 flex items-center gap-4">
-                  <span className="text-sm text-gray-400 hidden sm:block">{dl.pages}</span>
+                  {/* <span className="text-sm text-gray-400 hidden sm:block">{dl.pages}</span> -> 페이지수 */}
                   <button className="inline-flex items-center gap-2 px-4 py-2 bg-aicons-primary text-white text-sm font-semibold rounded-lg hover:bg-aicons-primary/90 transition-colors">
                     <Download className="w-4 h-4" />
                     {t('resourcesPage.downloadPDF')}
