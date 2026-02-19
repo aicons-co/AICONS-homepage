@@ -6,7 +6,7 @@ import { SystemCard, SystemDetailModal } from '../../components/products'
 import useTranslation from '../../hooks/useTranslation'
 
 function BuildingProducts() {
-  const { t, locale } = useTranslation()
+  const { t, language } = useTranslation()
   const [selectedSystem, setSelectedSystem] = useState(null)
 
   const category = t('products.categories.building')
@@ -100,16 +100,16 @@ function BuildingProducts() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-aicons-primary">
+      {/* <section className="py-16 bg-aicons-primary">
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            {locale === 'ko'
+            {language === 'ko'
               ? '건축 프로젝트를 혁신할 준비가 되셨나요?'
               : 'Ready to transform your building projects?'
             }
           </h2>
           <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-            {locale === 'ko'
+            {language === 'ko'
               ? 'AICONS 건축 AI 시스템으로 설계부터 시공까지 모든 과정을 자동화하세요.'
               : 'Automate every phase from design to construction with AICONS Building AI Systems.'
             }
@@ -122,7 +122,7 @@ function BuildingProducts() {
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
-      </section>
+      </section> */}
 
       {/* System Detail Modal */}
       <SystemDetailModal

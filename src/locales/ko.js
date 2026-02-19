@@ -518,7 +518,7 @@ export default {
     optimization: '최적화',
     scheduling: '스케줄링',
     integration: '통합',
-    feedback: 'I-Feedback',
+    feedback: 'I-피드백',
   },
 
   // Hero Section

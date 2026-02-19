@@ -10,7 +10,7 @@ const iconMap = {
 }
 
 function ProductsIndex() {
-  const { t, locale } = useTranslation()
+  const { t, language } = useTranslation()
 
   const categories = t('products.categories')
 
@@ -26,10 +26,10 @@ function ProductsIndex() {
             animate={{ opacity: 1, y: 0 }}
           >
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {locale === 'ko' ? 'AI 정보 관리 시스템' : 'AI Information Management Systems'}
+              {language === 'ko' ? 'AI 정보 관리 시스템' : 'AI Information Management Systems'}
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              {locale === 'ko'
+              {language === 'ko'
                 ? '건축, 토목, 플랜트 분야의 AI 기반 정보 관리 솔루션을 만나보세요.'
                 : 'Discover AI-powered information management solutions for Building, Civil, and Plant sectors.'
               }
@@ -78,7 +78,7 @@ function ProductsIndex() {
                         <p className="text-sm text-gray-400 mb-6">{category.longDescription}</p>
                         <div className="flex items-center justify-between">
                           <span className="text-sm text-gray-400">
-                            {category.systemCount} {locale === 'ko' ? '개 시스템' : 'Systems'}
+                            {category.systemCount} {language === 'ko' ? '개 시스템' : 'Systems'}
                           </span>
                           <span className="inline-flex items-center gap-2 text-gray-400 font-semibold">
                             {t('common.learnMore')}
@@ -105,7 +105,7 @@ function ProductsIndex() {
                         <p className="text-sm text-gray-500 mb-6">{category.longDescription}</p>
                         <div className="flex items-center justify-between">
                           <span className="text-sm text-gray-500">
-                            {category.systemCount} {locale === 'ko' ? '개 시스템' : 'Systems'}
+                            {category.systemCount} {language === 'ko' ? '개 시스템' : 'Systems'}
                           </span>
                           <span className="inline-flex items-center gap-2 text-aicons-primary font-semibold group-hover:gap-3 transition-all">
                             {t('common.learnMore')}
@@ -134,7 +134,7 @@ function ProductsIndex() {
             >
               <div className="text-4xl font-bold text-aicons-primary mb-2">14+</div>
               <div className="text-gray-600">
-                {locale === 'ko' ? 'AI 시스템' : 'AI Systems'}
+                {language === 'ko' ? 'AI 시스템' : 'AI Systems'}
               </div>
             </motion.div>
             <motion.div
@@ -146,7 +146,7 @@ function ProductsIndex() {
             >
               <div className="text-4xl font-bold text-aicons-primary mb-2">90%+</div>
               <div className="text-gray-600">
-                {locale === 'ko' ? '업무 자동화율' : 'Automation Rate'}
+                {language === 'ko' ? '업무 자동화율' : 'Automation Rate'}
               </div>
             </motion.div>
             <motion.div
@@ -158,7 +158,7 @@ function ProductsIndex() {
             >
               <div className="text-4xl font-bold text-aicons-primary mb-2">40%</div>
               <div className="text-gray-600">
-                {locale === 'ko' ? '비용 절감' : 'Cost Reduction'}
+                {language === 'ko' ? '비용 절감' : 'Cost Reduction'}
               </div>
             </motion.div>
             <motion.div
@@ -170,7 +170,7 @@ function ProductsIndex() {
             >
               <div className="text-4xl font-bold text-aicons-primary mb-2">3</div>
               <div className="text-gray-600">
-                {locale === 'ko' ? '산업 분야' : 'Industries'}
+                {language === 'ko' ? '산업 분야' : 'Industries'}
               </div>
             </motion.div>
           </div>
