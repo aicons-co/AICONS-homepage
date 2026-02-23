@@ -176,7 +176,7 @@ function HeroSection() {
             className="flex flex-col sm:flex-row gap-3 justify-start"
           >
             <motion.a
-              href="https://www.aicons.co.kr/"
+              href="https://aisims.aicons.co.kr/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02, boxShadow: '0 20px 40px rgba(104, 120, 255, 0.3)' }}

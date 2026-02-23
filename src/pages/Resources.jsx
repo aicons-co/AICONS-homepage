@@ -369,7 +369,7 @@ function Resources() {
                       className="w-full h-auto"
                     />
                   </div>
-                  <h3 className="text-lg font-bold text-aicons-dark leading-snug mb-2">
+                  {/* <h3 className="text-lg font-bold text-aicons-dark leading-snug mb-2">
                     {selectedPaper.title}
                     <span className="inline-flex items-center gap-1.5 ml-2 align-middle">
                       <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-aicons-primary/10 text-aicons-primary">{selectedPaper.journal}</span>
@@ -382,7 +382,7 @@ function Resources() {
                       <Download className="w-3.5 h-3.5" />
                       {t('resourcesPage.downloadPDF')}
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </motion.div>
@@ -424,7 +424,7 @@ function Resources() {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="flex items-center gap-2 mb-3">
+                  {/* <div className="flex items-center gap-2 mb-3">
                     <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${statusLabel(selectedPatent.status).className}`}>
                       {statusLabel(selectedPatent.status).text}
                     </span>
@@ -432,7 +432,7 @@ function Resources() {
                   </div>
                   <h3 className="text-lg font-bold text-aicons-dark leading-snug mb-3">{selectedPatent.title}</h3>
                   <p className="text-sm text-gray-400 mb-1">{selectedPatent.number}</p>
-                  <p className="text-sm text-gray-400">{selectedPatent.date}</p>
+                  <p className="text-sm text-gray-400">{selectedPatent.date}</p> */}
                 </div>
               </div>
             </motion.div>

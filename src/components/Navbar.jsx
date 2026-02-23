@@ -14,33 +14,33 @@ function Navbar() {
 
   const menuItems = {
     products: {
-      title: 'Products',
+      title: t('nav.products'),
       items: [
         {
-          name: t('건축'),
+          name: t('products.categories.building.name'),
           href: '/products/building',
-          description: t('건축 분야 AI 관리 시스템'),
+          description: t('products.categories.building.description'),
           icon: Building2,
           status: 'active',
         },
         {
-          name: t('토목'),
+          name: t('products.categories.civil.name'),
           href: '/products/civil',
-          description: t('토목 분야 AI 관리 시스템'),
+          description: t('products.categories.civil.description'),
           icon: Landmark,
           status: 'coming_soon',
         },
         {
-          name: t('플랜트'),
+          name: t('products.categories.plant.name'),
           href: '/products/plant',
-          description: t('플랜트 분야 AI 관리 시스템'),
+          description: t('products.categories.plant.description'),
           icon: Factory,
           status: 'coming_soon',
         },
       ],
     },
     solutions: {
-      title: 'Solutions',
+      title: t('nav.solutions'),
       sections: [
         {
           // title: t('nav.byStakeholder'),
@@ -122,7 +122,7 @@ function Navbar() {
                 //   }`}
                 className='px-4 py-2 rounded-lg font-medium text-black'
               >
-              Company
+              {t('nav.company')}
               </Link>
 
             {/* Products Dropdown */}
@@ -277,7 +277,7 @@ function Navbar() {
               to="/resources"
               className='px-4 py-2 rounded-lg font-medium text-black'
             >
-              Resources
+              {t('nav.resources')}
             </Link>
 
             {/* Language Switcher */}
@@ -288,7 +288,7 @@ function Navbar() {
           {/* ✅ AISIMS 링크 버튼 */}
           <div className="hidden lg:block">
             <motion.a
-              href="https://www.aicons.co.kr/"
+              href="https://aisims.aicons.co.kr/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
@@ -423,14 +423,14 @@ function Navbar() {
                     onClick={closeMobileMenu}
                     className="block px-4 py-3 text-gray-900 font-medium rounded-lg hover:bg-gray-50"
                   >
-                    Resources
+                    {t('nav.resources')}
                   </Link>
                   <Link
                     to="/company"
                     onClick={closeMobileMenu}
                     className="block px-4 py-3 text-gray-900 font-medium rounded-lg hover:bg-gray-50"
                   >
-                    Company
+                    {t('nav.company')}
                   </Link>
 
                   {/* Mobile Language Switcher */}

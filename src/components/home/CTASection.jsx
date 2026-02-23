@@ -28,7 +28,7 @@ function CTASection() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="https://www.aicons.co.kr/"
+                href="https://aisims.aicons.co.kr/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
