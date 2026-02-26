@@ -101,7 +101,7 @@ function ProductsSection() {
                     {/* border-[6px] border-primary-500 flex rounded-xl */}
                       <div className="
                         items-center justify-center mb-6 w-14 h-14
-                        bg-primary-500 flex rounded-xl
+                        bg-neutral-950 flex rounded-xl
                       ">
                         {/* <Icon className="w-7 h-7 text-primary-500" /> */}
                         <Icon className="w-7 h-7 text-neutral-50" />

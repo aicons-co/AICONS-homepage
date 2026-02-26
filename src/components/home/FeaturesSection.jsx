@@ -10,26 +10,21 @@ function FeaturesSection() {
       icon: Cpu,
       title: t('features.automateOptimization.title'),
       description: t('features.automateOptimization.description'),
-      // color: 'from-blue-500 to-cyan-500',
-      color: 'bg-neutral-950',
     },
     {
       icon: Shield,
       title: t('features.identifyRisks.title'),
       description: t('features.identifyRisks.description'),
-      color: 'from-purple-500 to-pink-500',
     },
     {
       icon: Zap,
       title: t('features.recoverAccelerate.title'),
       description: t('features.recoverAccelerate.description'),
-      color: 'from-orange-500 to-red-500',
     },
     {
       icon: GitMerge,
       title: t('features.integrateControls.title'),
       description: t('features.integrateControls.description'),
-      color: 'from-green-500 to-teal-500',
     },
   ]
 
@@ -60,10 +55,16 @@ function FeaturesSection() {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              <div className="
+              {/* <div className="
                 bg-white rounded-2xl p-8 h-full border
                 border-gray-100 hover:border-primary-500/30
                 hover:shadow-xl transition-all duration-300
+              "> */}
+              <div className="
+                bg-white rounded-2xl p-8 h-full border
+                border-neutral-400
+                hover:border-primary-300
+                transition-all duration-300
               ">
                 {/* ✅ 아이콘 ${feature.color} */}
                 <div className={`
