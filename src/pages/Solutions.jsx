@@ -276,7 +276,7 @@ function SolutionPage({ solutionKey }) {
       )}
 
       {/* Recommended Products */}
-      {solution.recommendedProducts && (
+      {/* {solution.recommendedProducts && (
         <section className="py-16 bg-gray-50">
           <div className="container-custom">
             <h2 className="text-2xl font-bold text-aicons-dark text-center mb-8">{t('solutionsPage.recommendedProducts')}</h2>
@@ -294,10 +294,10 @@ function SolutionPage({ solutionKey }) {
             </div>
           </div>
         </section>
-      )}
+      )} */}
 
       {/* CTA */}
-      <section className="py-20 bg-aicons-primary">
+      {/* <section className="py-20 bg-aicons-primary">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             {t('solutionsPage.readyToTransform')}
@@ -310,7 +310,7 @@ function SolutionPage({ solutionKey }) {
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

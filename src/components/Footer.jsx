@@ -8,13 +8,13 @@ function Footer() {
   const footerLinks = {
     company: [
       { name: t('footer.aboutUs'), href: '/company' },
-      { name: t('footer.careers'), href: '/company#careers' },
-      { name: t('footer.contact'), href: '/company#contact' },
+      // { name: t('footer.careers'), href: '/company#careers' },
+      // { name: t('footer.contact'), href: '/company#contact' },
     ],
     products: [
-      { name: 'AICONS Plan', href: '/products/building' },
-      { name: 'AICONS Optimize', href: '/products/civil' },
-      { name: 'AICONS Model', href: '/products/plant' },
+      { name: t('products.categories.building.name'), href: '/products/building' },
+      { name: t('products.categories.civil.name'), href: '/products/civil' },
+      { name: t('products.categories.plant.name'), href: '/products/plant' },
     ],
     solutions: [
       { name: t('solutions.parsing'), href: '/solutions/parsing' },
@@ -33,29 +33,6 @@ function Footer() {
 
   return (
     <footer className="bg-aicons-dark text-white">
-      {/* Newsletter Section */}
-      <div className="border-b border-gray-700">
-        <div className="container-custom py-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-xl font-semibold mb-2">{t('footer.stayUpdated')}</h3>
-              <p className="text-gray-400">
-                {t('footer.newsletterDesc')}
-              </p>
-            </div>
-            <form className="flex w-full md:w-auto gap-2">
-              <input
-                type="email"
-                placeholder={t('footer.enterEmail')}
-                className="px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-aicons-primary flex-grow md:w-64"
-              />
-              <button type="submit" className="btn-primary whitespace-nowrap">
-                {t('footer.subscribe')}
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
 
       {/* Main Footer Content */}
       <div className="container-custom py-12">
@@ -67,9 +44,9 @@ function Footer() {
                 <span className="text-aicons-primary">AICONS</span>
               </span>
             </Link>
-            <p className="text-gray-400 text-sm mb-4">
+            {/* <p className="text-gray-400 text-sm mb-4">
               {t('footer.description')}
-            </p>
+            </p> */}
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-aicons-primary transition-colors">
                 <Linkedin className="w-5 h-5" />
@@ -86,10 +63,15 @@ function Footer() {
             </div>
           </div>
 
-          {/* Company Links */}
+          {/* ✅ Company Links 회사소개 */}
           <div>
-            <h4 className="font-semibold mb-4">{t('footer.company')}</h4>
-            <ul className="space-y-3">
+            {/* <h4 className="font-semibold mb-4">{t('footer.company')}</h4> */}
+            <Link
+              to="/company"
+              className="font-semibold mb-4">
+                {t('footer.company')}
+            </Link>
+            {/* <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -100,10 +82,10 @@ function Footer() {
                   </Link>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
 
-          {/* Products Links */}
+          {/* ✅ Products Links 제품 */}
           <div>
             <h4 className="font-semibold mb-4">{t('footer.products')}</h4>
             <ul className="space-y-3">
@@ -139,8 +121,13 @@ function Footer() {
 
           {/* Resources Links */}
           <div>
-            <h4 className="font-semibold mb-4">{t('footer.resources')}</h4>
-            <ul className="space-y-3">
+            {/* <h4 className="font-semibold mb-4">{t('footer.resources')}</h4> */}
+            <Link
+              to="/resources"
+              className="font-semibold mb-4">
+              {t('footer.resources')}
+            </Link>
+            {/* <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -151,7 +138,7 @@ function Footer() {
                   </Link>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>

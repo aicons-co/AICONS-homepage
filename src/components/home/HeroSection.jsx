@@ -36,31 +36,8 @@ function HeroSection() {
     },
   }
 
-  const wordVariants = {
-    enter: {
-      y: 50,
-      opacity: 0,
-    },
-    center: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: 'easeOut',
-      },
-    },
-    exit: {
-      y: -50,
-      opacity: 0,
-      transition: {
-        duration: 0.4,
-        ease: 'easeIn',
-      },
-    },
-  }
-
   return (
-    <section className="relative min-h-screen flex items-end overflow-hidden">
+    <section className="relative min-h-[960px] flex items-end overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <div
@@ -109,7 +86,7 @@ function HeroSection() {
           animate="visible"
           className="text-left"
         >
-          {/* Badge */}
+          {/* ✅ Badge 히어로 섹션 뱃지 */}
           <motion.div variants={itemVariants} className="mb-6 flex justify-start">
             {/* <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/80 text-sm backdrop-blur-sm"> */}
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/50 text-white text-sm backdrop-blur-sm">
@@ -123,21 +100,6 @@ function HeroSection() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
               {/* Animated word container */}
               <div className="h-[1.2em] overflow-hidden mb-2">
-                {/* ✅ 메인 타이틀 애니메이션 */}
-                {/* <AnimatePresence mode="wait">
-                  <motion.span
-                    key={currentWordIndex}
-                    variants={wordVariants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    // className="block text-aicons-primary"
-                    className="block text-white"
-                  >
-                    {heroWords[currentWordIndex]}
-                  </motion.span>
-                </AnimatePresence> */}
-                {/* Optimize */}
                 Orchestrating
               </div>
 
@@ -179,19 +141,27 @@ function HeroSection() {
               href="https://aisims.aicons.co.kr/"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.02, boxShadow: '0 20px 40px rgba(104, 120, 255, 0.3)' }}
-              whileTap={{ scale: 0.98 }}
-              className="group flex items-center justify-center gap-3 px-6 py-2.5 bg-aicons-primary text-white font-semibold rounded-xl hover:bg-aicons-primary/90 transition-all shadow-xl shadow-aicons-primary/20 text-base md:text-lg"
-            >
+              // whileHover={{ scale: 1.02, boxShadow: '0 20px 40px rgba(104, 120, 255, 0.3)' }}
+              // whileTap={{ scale: 0.98 }}
+              className="
+                group flex items-center justify-center gap-3 px-6 py-2.5 
+                bg-aicons-primary text-white font-semibold rounded-xl 
+                hover:bg-aicons-primary/90 transition-all
+                shadow-aicons-primary/20 text-base md:text-lg
+              ">
               AISIMS
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
 
             <motion.button
-              whileHover={{ scale: 1.02, backgroundColor: 'rgba(255,255,255,0.15)' }}
-              whileTap={{ scale: 0.98 }}
-              className="group flex items-center justify-center gap-3 px-6 py-2.5 border-2 border-white/50 text-white font-semibold rounded-xl hover:border-white/50 transition-all backdrop-blur-sm text-base md:text-lg"
-            >
+              whileHover={{ backgroundColor: 'rgba(255,255,255,0.15)' }}
+              // whileHover={{ scale: 1.02, backgroundColor: 'rgba(255,255,255,0.15)' }}
+              // whileTap={{ scale: 0.98 }}
+              className="
+                group flex items-center justify-center gap-3 px-6 py-2.5
+                border-2 border-white/50 text-white font-semibold rounded-xl
+                hover:border-white/50 backdrop-blur-sm text-base md:text-lg
+              ">
               <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
                 <Play className="w-4 h-4 ml-0.5" />
               </div>

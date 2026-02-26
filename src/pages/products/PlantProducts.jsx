@@ -150,7 +150,7 @@ function PlantProducts() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-aicons-primary">
+      {/* <section className="py-16 bg-aicons-primary">
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             {language === 'ko'
@@ -172,7 +172,7 @@ function PlantProducts() {
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
-      </section>
+      </section> */}
 
       {/* System Detail Modal */}
       <SystemDetailModal

@@ -14,8 +14,8 @@ function Home() {
       <FeaturesSection />
       <ProductsSection />
       <TestimonialsSection />
-      <MetricsSection />
-      <CTASection />
+      {/* <MetricsSection /> */}
+      {/* <CTASection /> */}
     </div>
   )
 }

@@ -291,12 +291,12 @@ function Navbar() {
               href="https://aisims.aicons.co.kr/"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              // whileHover={{ scale: 1.02 }}
+              // whileTap={{ scale: 0.98 }}
               className="inline-block px-6 py-2.5
                 bg-aicons-primary text-white font-semibold rounded-lg
-                hover:bg-aicons-primary/90 transition-colors shadow-lg shadow-aicons-primary/10"
-            >
+                hover:bg-aicons-primary/90
+                ">
               AISIMS<sup className="text-xs">®</sup>
             </motion.a>
           </div>

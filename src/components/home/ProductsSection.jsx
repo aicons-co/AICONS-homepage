@@ -47,58 +47,70 @@ function ProductsSection() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Link
-                  to={`/products/${categoryKey}`}
-                  className={`block bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group h-full relative overflow-hidden ${
-                    isComingSoon ? 'opacity-90' : ''
-                  }`}
-                >
-                  {/* Background gradient on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-aicons-primary/5 to-aicons-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-
-                  {/* Coming Soon Badge */}
-                  {isComingSoon && (
+                {isComingSoon ? (
+                  <div className="block bg-white rounded-2xl p-8 shadow-lg h-full relative overflow-hidden opacity-60 cursor-default">
+                    {/* Coming Soon Badge */}
                     <div className="absolute top-4 right-4 z-10">
                       <span className="inline-flex items-center gap-1 px-2 py-1 bg-amber-100 text-amber-700 text-xs font-medium rounded-full">
                         <Clock className="w-3 h-3" />
                         {t('products.comingSoon')}
                       </span>
                     </div>
-                  )}
 
-                  <div className="relative z-10">
-                    {/* Icon */}
-                    <div className="w-14 h-14 rounded-xl bg-aicons-primary/10 flex items-center justify-center mb-6 group-hover:bg-aicons-primary/20 transition-colors">
-                      <Icon className="w-7 h-7 text-aicons-primary" />
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-xl font-bold text-aicons-dark mb-2 group-hover:text-aicons-primary transition-colors">
-                      {category.name}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-gray-600 mb-4 line-clamp-2">{category.description}</p>
-
-                    {/* System Count */}
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500">
-                        {category.systemCount} {language === 'ko' ? '개 시스템' : 'Systems'}
-                      </span>
-                      <span className="inline-flex items-center gap-1 text-aicons-primary font-semibold text-sm group-hover:gap-2 transition-all">
-                        {t('common.learnMore')}
-                        <ArrowRight className="w-4 h-4" />
-                      </span>
+                    <div className="relative z-10">
+                      <div className="w-14 h-14 rounded-xl bg-gray-100 flex items-center justify-center mb-6">
+                        <Icon className="w-7 h-7 text-gray-400" />
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-400 mb-2">
+                        {category.name}
+                      </h3>
+                      <p className="text-gray-400 mb-4 line-clamp-2">{category.description}</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-400">
+                          {category.systemCount} {language === 'ko' ? '개 시스템' : 'Systems'}
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-gray-400 font-semibold text-sm">
+                          {t('common.learnMore')}
+                          <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </Link>
+                ) : (
+                  <Link
+                    to={`/products/${categoryKey}`}
+                    className="block bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group h-full relative overflow-hidden"
+                  >
+                    {/* Background gradient on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-aicons-primary/5 to-aicons-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                    <div className="relative z-10">
+                      <div className="w-14 h-14 rounded-xl bg-aicons-primary/10 flex items-center justify-center mb-6 group-hover:bg-aicons-primary/20 transition-colors">
+                        <Icon className="w-7 h-7 text-aicons-primary" />
+                      </div>
+                      <h3 className="text-xl font-bold text-aicons-dark mb-2 group-hover:text-aicons-primary transition-colors">
+                        {category.name}
+                      </h3>
+                      <p className="text-gray-600 mb-4 line-clamp-2">{category.description}</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-500">
+                          {category.systemCount} {language === 'ko' ? '개 시스템' : 'Systems'}
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-aicons-primary font-semibold text-sm group-hover:gap-2 transition-all">
+                          {t('common.learnMore')}
+                          <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                )}
               </motion.div>
             )
           })}
         </div>
 
         {/* View All Products Link */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -111,7 +123,7 @@ function ProductsSection() {
             {t('products.viewAll')}
             <ArrowRight className="w-5 h-5" />
           </Link>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )
