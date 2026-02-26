@@ -62,7 +62,7 @@ src/
 ```
 
 ### 스타일링
-- `tailwind.config.js`에 AICONS 브랜드 색상 정의 (`aicons-primary`, `aicons-secondary` 등)
+- `tailwind.config.js`에 AICONS 브랜드 색상 정의 (`primary-500`, `primary-600` 등)
 - `src/index.css`에 커스텀 유틸리티 클래스 정의 (`.btn-primary`, `.container-custom` 등)
 
 ## Vercel 배포

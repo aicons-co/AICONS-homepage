@@ -81,7 +81,7 @@ function LogoSlider() {
             { value: '$2B+', label: 'Project Value Optimized' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-3xl md:text-3xl font-bold text-aicons-dark">
+              <div className="text-3xl md:text-3xl font-bold text-neutral-950">
                 {stat.value}
               </div>
               <div className="text-sm text-gray-500">{stat.label}</div>

@@ -19,7 +19,7 @@ function ProductsIndex() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-aicons-dark to-aicons-navy">
+      <section className="py-20 bg-gradient-to-br from-neutral-950 to-neutral-900">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -92,13 +92,13 @@ function ProductsIndex() {
                       to={`/products/${categoryKey}`}
                       className="block bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all group h-full relative overflow-hidden"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-br from-aicons-primary/5 to-aicons-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-primary-600/5 opacity-0 group-hover:opacity-100 transition-opacity" />
 
                       <div className="relative z-10">
-                        <div className="w-16 h-16 rounded-2xl bg-aicons-primary/10 flex items-center justify-center mb-6 group-hover:bg-aicons-primary/20 transition-colors">
-                          <Icon className="w-8 h-8 text-aicons-primary" />
+                        <div className="w-16 h-16 rounded-2xl bg-primary-500/10 flex items-center justify-center mb-6 group-hover:bg-primary-500/20 transition-colors">
+                          <Icon className="w-8 h-8 text-primary-500" />
                         </div>
-                        <h2 className="text-2xl font-bold text-aicons-dark mb-2 group-hover:text-aicons-primary transition-colors">
+                        <h2 className="text-2xl font-bold text-neutral-950 mb-2 group-hover:text-primary-500 transition-colors">
                           {category.name}
                         </h2>
                         <p className="text-gray-600 mb-4">{category.description}</p>
@@ -107,7 +107,7 @@ function ProductsIndex() {
                           <span className="text-sm text-gray-500">
                             {category.systemCount} {language === 'ko' ? '개 시스템' : 'Systems'}
                           </span>
-                          <span className="inline-flex items-center gap-2 text-aicons-primary font-semibold group-hover:gap-3 transition-all">
+                          <span className="inline-flex items-center gap-2 text-primary-500 font-semibold group-hover:gap-3 transition-all">
                             {t('common.learnMore')}
                             <ArrowRight className="w-4 h-4" />
                           </span>
@@ -132,7 +132,7 @@ function ProductsIndex() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-4xl font-bold text-aicons-primary mb-2">14+</div>
+              <div className="text-4xl font-bold text-primary-500 mb-2">14+</div>
               <div className="text-gray-600">
                 {language === 'ko' ? 'AI 시스템' : 'AI Systems'}
               </div>
@@ -144,7 +144,7 @@ function ProductsIndex() {
               transition={{ delay: 0.1 }}
               className="text-center"
             >
-              <div className="text-4xl font-bold text-aicons-primary mb-2">90%+</div>
+              <div className="text-4xl font-bold text-primary-500 mb-2">90%+</div>
               <div className="text-gray-600">
                 {language === 'ko' ? '업무 자동화율' : 'Automation Rate'}
               </div>
@@ -156,7 +156,7 @@ function ProductsIndex() {
               transition={{ delay: 0.2 }}
               className="text-center"
             >
-              <div className="text-4xl font-bold text-aicons-primary mb-2">40%</div>
+              <div className="text-4xl font-bold text-primary-500 mb-2">40%</div>
               <div className="text-gray-600">
                 {language === 'ko' ? '비용 절감' : 'Cost Reduction'}
               </div>
@@ -168,7 +168,7 @@ function ProductsIndex() {
               transition={{ delay: 0.3 }}
               className="text-center"
             >
-              <div className="text-4xl font-bold text-aicons-primary mb-2">3</div>
+              <div className="text-4xl font-bold text-primary-500 mb-2">3</div>
               <div className="text-gray-600">
                 {language === 'ko' ? '산업 분야' : 'Industries'}
               </div>

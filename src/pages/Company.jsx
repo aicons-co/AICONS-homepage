@@ -32,7 +32,7 @@ function Company() {
   return (
     <div>
       {/* Hero */}
-      <section className="py-20 bg-gradient-to-br from-aicons-dark to-aicons-navy">
+      <section className="py-20 bg-gradient-to-br from-neutral-950 to-neutral-900">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{t('companyPage.title')}</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
@@ -50,22 +50,22 @@ function Company() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-aicons-dark mb-4">{t('companyPage.vision.title')}</h2>
-              <p className="text-xl font-semibold text-aicons-primary mb-4">{t('companyPage.vision.description')}</p>
+              <h2 className="text-3xl font-bold text-neutral-950 mb-4">{t('companyPage.vision.title')}</h2>
+              <p className="text-xl font-semibold text-primary-500 mb-4">{t('companyPage.vision.description')}</p>
               <p className="text-gray-600 mb-6">{t('companyPage.vision.detail')}</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-aicons-primary/5 to-aicons-secondary/10 rounded-2xl p-8"
+              className="bg-gradient-to-br from-primary-500/5 to-primary-600/10 rounded-2xl p-8"
             >
               <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">End-to-End Pipeline</p>
-              <div className="flex flex-wrap items-center gap-2 text-sm font-medium text-aicons-dark">
+              <div className="flex flex-wrap items-center gap-2 text-sm font-medium text-neutral-950">
                 {t('companyPage.vision.pipeline').split('→').map((step, i, arr) => (
                   <span key={i} className="flex items-center gap-2">
                     <span className="bg-white px-3 py-2 rounded-lg shadow-sm border border-gray-100">{step.trim()}</span>
-                    {i < arr.length - 1 && <ArrowRight className="w-4 h-4 text-aicons-primary flex-shrink-0" />}
+                    {i < arr.length - 1 && <ArrowRight className="w-4 h-4 text-primary-500 flex-shrink-0" />}
                   </span>
                 ))}
               </div>
@@ -78,7 +78,7 @@ function Company() {
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-aicons-dark mb-2">{t('companyPage.ourValues')}</h2>
+            <h2 className="text-3xl font-bold text-neutral-950 mb-2">{t('companyPage.ourValues')}</h2>
             <p className="text-lg text-gray-500">{t('companyPage.valuesSubtitle')}</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -91,11 +91,11 @@ function Company() {
                 transition={{ delay: index * 0.1 }}
                 className="rounded-2xl overflow-hidden shadow-sm flex flex-col"
               >
-                <div className="bg-aicons-dark flex items-center justify-center py-12">
+                <div className="bg-neutral-950 flex items-center justify-center py-12">
                   <value.Icon className="w-16 h-16 text-white" strokeWidth={1.2} />
                 </div>
                 <div className="bg-white p-6 flex-grow">
-                  <h3 className="text-xl font-bold text-aicons-dark mb-3">{t(`companyPage.values.${value.key}.title`)}</h3>
+                  <h3 className="text-xl font-bold text-neutral-950 mb-3">{t(`companyPage.values.${value.key}.title`)}</h3>
                   <p className="text-sm text-gray-600">{t(`companyPage.values.${value.key}.description`)}</p>
                 </div>
               </motion.div>
@@ -113,7 +113,7 @@ function Company() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-aicons-dark mb-4">{t('companyPage.problem.title')}</h2>
+            <h2 className="text-3xl font-bold text-neutral-950 mb-4">{t('companyPage.problem.title')}</h2>
             <p className="text-lg text-gray-500 max-w-3xl mx-auto">{t('companyPage.problem.subtitle')}</p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -127,7 +127,7 @@ function Company() {
                 className="bg-white rounded-2xl p-8 border border-gray-100"
               >
                 <span className="text-3xl mb-4 block">{item.icon}</span>
-                <h3 className="text-lg font-bold text-aicons-dark mb-2">{t(`companyPage.problem.items.${item.key}.title`)}</h3>
+                <h3 className="text-lg font-bold text-neutral-950 mb-2">{t(`companyPage.problem.items.${item.key}.title`)}</h3>
                 <p className="text-sm text-gray-600">{t(`companyPage.problem.items.${item.key}.description`)}</p>
               </motion.div>
             ))}
@@ -144,8 +144,8 @@ function Company() {
             viewport={{ once: true }}
             className="text-center mb-4"
           >
-            <h2 className="text-3xl font-bold text-aicons-dark mb-2">{t('companyPage.solution.title')}</h2>
-            <p className="text-lg text-aicons-primary font-semibold mb-4">{t('companyPage.solution.subtitle')}</p>
+            <h2 className="text-3xl font-bold text-neutral-950 mb-2">{t('companyPage.solution.title')}</h2>
+            <p className="text-lg text-primary-500 font-semibold mb-4">{t('companyPage.solution.subtitle')}</p>
           </motion.div>
           <motion.p
             initial={{ opacity: 0 }}
@@ -163,12 +163,12 @@ function Company() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-aicons-primary/5 to-transparent rounded-2xl p-6 border border-aicons-primary/10"
+                className="bg-gradient-to-br from-primary-500/5 to-transparent rounded-2xl p-6 border border-primary-500/10"
               >
-                <div className="w-12 h-12 bg-aicons-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  <item.Icon className="w-6 h-6 text-aicons-primary" />
+                <div className="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center mb-4">
+                  <item.Icon className="w-6 h-6 text-primary-500" />
                 </div>
-                <h3 className="text-lg font-bold text-aicons-dark mb-2">{t(`companyPage.solution.items.${item.key}.title`)}</h3>
+                <h3 className="text-lg font-bold text-neutral-950 mb-2">{t(`companyPage.solution.items.${item.key}.title`)}</h3>
                 <p className="text-sm text-gray-600">{t(`companyPage.solution.items.${item.key}.description`)}</p>
               </motion.div>
             ))}
@@ -185,7 +185,7 @@ function Company() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-aicons-dark mb-4">{t('companyPage.pipeline.title')}</h2>
+            <h2 className="text-3xl font-bold text-neutral-950 mb-4">{t('companyPage.pipeline.title')}</h2>
             <p className="text-gray-500">{t('companyPage.pipeline.subtitle')}</p>
           </motion.div>
           <div className="flex flex-col md:flex-row gap-4 items-stretch">
@@ -200,14 +200,14 @@ function Company() {
               >
                 <div className="bg-white rounded-2xl p-6 h-full border border-gray-100">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-bold text-white bg-aicons-primary rounded-full w-6 h-6 flex items-center justify-center">{index + 1}</span>
-                    <h3 className="text-sm font-bold text-aicons-dark">{t(`companyPage.pipeline.stages.${stage}.title`)}</h3>
+                    <span className="text-xs font-bold text-white bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center">{index + 1}</span>
+                    <h3 className="text-sm font-bold text-neutral-950">{t(`companyPage.pipeline.stages.${stage}.title`)}</h3>
                   </div>
                   <p className="text-xs text-gray-500">{t(`companyPage.pipeline.stages.${stage}.description`)}</p>
                 </div>
                 {index < stages.length - 1 && (
                   <div className="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10">
-                    <ArrowRight className="w-5 h-5 text-aicons-primary" />
+                    <ArrowRight className="w-5 h-5 text-primary-500" />
                   </div>
                 )}
               </motion.div>
@@ -223,7 +223,7 @@ function Company() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-aicons-dark text-center mb-12"
+            className="text-3xl font-bold text-neutral-950 text-center mb-12"
           >
             {t('companyPage.roadmap.title')}
           </motion.h2>
@@ -237,8 +237,8 @@ function Company() {
                 transition={{ delay: index * 0.1 }}
                 className="relative bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100"
               >
-                <span className="text-sm font-bold text-aicons-primary">{t(`companyPage.roadmap.phases.${phase}.period`)}</span>
-                <h3 className="text-xl font-bold text-aicons-dark mt-1 mb-3">{t(`companyPage.roadmap.phases.${phase}.title`)}</h3>
+                <span className="text-sm font-bold text-primary-500">{t(`companyPage.roadmap.phases.${phase}.period`)}</span>
+                <h3 className="text-xl font-bold text-neutral-950 mt-1 mb-3">{t(`companyPage.roadmap.phases.${phase}.title`)}</h3>
                 <p className="text-sm text-gray-600">{t(`companyPage.roadmap.phases.${phase}.description`)}</p>
               </motion.div>
             ))}

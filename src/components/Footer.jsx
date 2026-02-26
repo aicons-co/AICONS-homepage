@@ -32,7 +32,7 @@ function Footer() {
   }
 
   return (
-    <footer className="bg-aicons-dark text-white">
+    <footer className="bg-neutral-950 text-white">
 
       {/* Main Footer Content */}
       <div className="container-custom py-12">
@@ -41,23 +41,23 @@ function Footer() {
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
               <span className="text-2xl font-bold">
-                <span className="text-aicons-primary">AICONS</span>
+                <span className="text-primary-500">AICONS</span>
               </span>
             </Link>
             {/* <p className="text-gray-400 text-sm mb-4">
               {t('footer.description')}
             </p> */}
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-aicons-primary transition-colors">
+              <a href="#" className="text-gray-400 hover:text-primary-500 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-aicons-primary transition-colors">
+              <a href="#" className="text-gray-400 hover:text-primary-500 transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-aicons-primary transition-colors">
+              <a href="#" className="text-gray-400 hover:text-primary-500 transition-colors">
                 <Youtube className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-aicons-primary transition-colors">
+              <a href="#" className="text-gray-400 hover:text-primary-500 transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>

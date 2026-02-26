@@ -43,7 +43,8 @@
       "WebFetch(domain:aicons-home-cbxm1oaip-aicons.vercel.app)",
       "WebFetch(domain:aicons.co.kr)",
       "WebFetch(domain:www.aicons.co.kr)",
-      "WebFetch(domain:aicons-home.vercel.app)"
+      "WebFetch(domain:aicons-home.vercel.app)",
+      "Bash(cd:*)"
     ]
   }
 }

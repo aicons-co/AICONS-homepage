@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Play, Sparkles } from 'lucide-react'
@@ -63,7 +64,7 @@ function HeroSection() {
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-aicons-primary/10 rounded-full blur-[120px]"
+        className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-primary-500/10 rounded-full blur-[120px]"
       />
       <motion.div
         animate={{
@@ -75,7 +76,7 @@ function HeroSection() {
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className="absolute bottom-1/3 right-1/4 w-[300px] h-[300px] bg-aicons-secondary/10 rounded-full blur-[100px]"
+        className="absolute bottom-1/3 right-1/4 w-[300px] h-[300px] bg-primary-600/10 rounded-full blur-[100px]"
       />
 
       {/* ✅ 히어로 섹션 컨테이너 너비 조정 */}
@@ -90,7 +91,7 @@ function HeroSection() {
           <motion.div variants={itemVariants} className="mb-6 flex justify-start">
             {/* <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/80 text-sm backdrop-blur-sm"> */}
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/50 text-white text-sm backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 text-aicons-primary" />
+              <Sparkles className="w-4 h-4 text-primary-500" />
               AI-Powered Construction Scheduling
             </span>
           </motion.div>
@@ -107,11 +108,11 @@ function HeroSection() {
                 {/* project with{' '} */}
                 End-to-End{' '}
                 <span className="relative inline-block">
-                  {/* <span className="text-aicons-primary">AICONS</span> */}
+                  {/* <span className="text-primary-500">AICONS</span> */}
                   {/* <span className="text-white">AICONS</span> */}
                   <span className="text-white">Optimization</span>
                   <motion.span
-                    // className="absolute -bottom-2 left-0 right-0 h-1 bg-aicons-primary rounded-full"
+                    // className="absolute -bottom-2 left-0 right-0 h-1 bg-primary-500 rounded-full"
                     className="absolute -bottom-2 left-0 right-0 h-1 bg-white rounded-full"
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
@@ -125,8 +126,6 @@ function HeroSection() {
           {/* Subtitle 서브 타이틀*/}
           <motion.p
             variants={itemVariants}
-            // className="text-sm md:text-base text-gray-300 mb-10 leading-relaxed max-w-3xl"
-            // className="text-sm md:text-base text-gray-200 mb-10 leading-relaxed max-w-3xl"
             className="text-base md:text-lg text-white mb-10 leading-relaxed max-w-3xl"
           >
             {t('hero.subtitle')}
@@ -145,9 +144,9 @@ function HeroSection() {
               // whileTap={{ scale: 0.98 }}
               className="
                 group flex items-center justify-center gap-3 px-6 py-2.5 
-                bg-aicons-primary text-white font-semibold rounded-xl 
-                hover:bg-aicons-primary/90 transition-all
-                shadow-aicons-primary/20 text-base md:text-lg
+                bg-primary-500 text-white font-semibold rounded-xl 
+                hover:bg-primary-500/90 transition-all
+                shadow-primary-500/20 text-base md:text-lg
               ">
               AISIMS
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -172,7 +171,6 @@ function HeroSection() {
           {/* Stats 가로선 */}
           <motion.div
             variants={itemVariants}
-            // className="mt-10 pt-10 border-t border-white/10"
             className="mt-10 pt-10 border-t border-white/50"
           >
             <div className="flex justify-between">

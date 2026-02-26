@@ -191,7 +191,7 @@ function Resources() {
   return (
     <div>
       {/* Hero */}
-      <section className="py-20 bg-gradient-to-br from-aicons-dark to-aicons-navy">
+      <section className="py-20 bg-gradient-to-br from-neutral-950 to-neutral-900">
         <div className="container-custom text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{t('resourcesPage.title')}</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
@@ -204,8 +204,8 @@ function Resources() {
       <section id="patents" className="py-20 bg-white">
         <div className="container-custom">
           <div className="flex items-center gap-3 mb-8">
-            <Award className="w-8 h-8 text-aicons-primary" />
-            <h2 className="text-3xl font-bold text-aicons-dark">{t('resourcesPage.patents.title')}</h2>
+            <Award className="w-8 h-8 text-primary-500" />
+            <h2 className="text-3xl font-bold text-neutral-950">{t('resourcesPage.patents.title')}</h2>
           </div>
           <div className="bg-gray-50 rounded-2xl overflow-hidden">
               <div className="hidden sm:grid sm:grid-cols-[2rem_3.5rem_1fr_12rem_7rem] gap-4 px-6 py-3 border-b border-gray-200 text-xs font-semibold text-gray-400 uppercase tracking-wider text-center">
@@ -227,7 +227,7 @@ function Resources() {
                 >
                   <span className="text-xs text-gray-400 font-medium text-center">{index + 1}</span>
                   <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${countryColor(patent.country)} w-fit mx-auto`}>{patent.country}</span>
-                  <h4 className="text-sm font-bold text-aicons-dark leading-snug">{patent.title}</h4>
+                  <h4 className="text-sm font-bold text-neutral-950 leading-snug">{patent.title}</h4>
                   <span className="text-xs text-gray-500 text-center">{patent.number}</span>
                   <span className="text-xs text-gray-400 text-center">{patent.date}</span>
                 </motion.div>
@@ -241,8 +241,8 @@ function Resources() {
       <section id="papers" className="py-20 bg-gray-50">
         <div className="container-custom">
           <div className="flex items-center gap-3 mb-8">
-            <FileText className="w-8 h-8 text-aicons-primary" />
-            <h2 className="text-3xl font-bold text-aicons-dark">{t('resourcesPage.papers.title')}</h2>
+            <FileText className="w-8 h-8 text-primary-500" />
+            <h2 className="text-3xl font-bold text-neutral-950">{t('resourcesPage.papers.title')}</h2>
           </div>
           <ol className="space-y-4">
               {papers.map((paper, index) => (
@@ -255,12 +255,12 @@ function Resources() {
                   onClick={() => setSelectedPaper(paper)}
                   className="flex gap-4 p-4 bg-white rounded-xl hover:shadow-md transition-shadow cursor-pointer"
                 >
-                  <span className="text-lg font-bold text-aicons-primary/40 flex-shrink-0 w-8 text-right">{index + 1}</span>
+                  <span className="text-lg font-bold text-primary-500/40 flex-shrink-0 w-8 text-right">{index + 1}</span>
                   <div className="flex-grow min-w-0">
-                    <h4 className="text-sm font-bold text-aicons-dark leading-snug mb-1">
+                    <h4 className="text-sm font-bold text-neutral-950 leading-snug mb-1">
                       {paper.title}
                       <span className="inline-flex items-center gap-1.5 ml-2 align-middle">
-                        <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-aicons-primary/10 text-aicons-primary">{paper.journal}</span>
+                        <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-primary-500/10 text-primary-500">{paper.journal}</span>
                         <span className="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-500 font-medium">{paper.year}</span>
                       </span>
                     </h4>
@@ -276,8 +276,8 @@ function Resources() {
       <section id="downloads" className="py-20 bg-white">
         <div className="container-custom">
           <div className="flex items-center gap-3 mb-8">
-            <Download className="w-8 h-8 text-aicons-primary" />
-            <h2 className="text-3xl font-bold text-aicons-dark">{t('resourcesPage.downloads.title')}</h2>
+            <Download className="w-8 h-8 text-primary-500" />
+            <h2 className="text-3xl font-bold text-neutral-950">{t('resourcesPage.downloads.title')}</h2>
           </div>
           <div className="space-y-4">
             {downloads.map((dl, index) => (
@@ -289,16 +289,16 @@ function Resources() {
                 transition={{ delay: index * 0.08 }}
                 className="flex items-center gap-5 bg-gray-50 rounded-2xl p-5 hover:shadow-lg transition-shadow"
               >
-                <div className="flex-shrink-0 w-14 h-14 bg-aicons-primary/10 rounded-xl flex items-center justify-center">
-                  <File className="w-7 h-7 text-aicons-primary" />
+                <div className="flex-shrink-0 w-14 h-14 bg-primary-500/10 rounded-xl flex items-center justify-center">
+                  <File className="w-7 h-7 text-primary-500" />
                 </div>
                 <div className="flex-grow min-w-0">
-                  <h3 className="text-lg font-bold text-aicons-dark mb-1">{dl.title}</h3>
+                  <h3 className="text-lg font-bold text-neutral-950 mb-1">{dl.title}</h3>
                   <p className="text-sm text-gray-600">{dl.description}</p>
                 </div>
                 <div className="flex-shrink-0 flex items-center gap-4">
                   {/* <span className="text-sm text-gray-400 hidden sm:block">{dl.pages}</span> -> 페이지수 */}
-                  <button className="inline-flex items-center gap-2 px-4 py-2 bg-aicons-primary text-white text-sm font-semibold rounded-lg hover:bg-aicons-primary/90 transition-colors">
+                  <button className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500 text-white text-sm font-semibold rounded-lg hover:bg-primary-500/90 transition-colors">
                     <Download className="w-4 h-4" />
                     {t('resourcesPage.downloadPDF')}
                   </button>
@@ -310,7 +310,7 @@ function Resources() {
       </section>
 
       {/* CTA */}
-      {/* <section className="py-20 bg-aicons-primary">
+      {/* <section className="py-20 bg-primary-500">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {t('resourcesPage.cta.title')}
@@ -321,7 +321,7 @@ function Resources() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/company"
-              className="px-8 py-3 bg-white text-aicons-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+              className="px-8 py-3 bg-white text-primary-500 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
             >
               {t('common.contactUs')}
             </Link>
@@ -369,16 +369,16 @@ function Resources() {
                       className="w-full h-auto"
                     />
                   </div>
-                  {/* <h3 className="text-lg font-bold text-aicons-dark leading-snug mb-2">
+                  {/* <h3 className="text-lg font-bold text-neutral-950 leading-snug mb-2">
                     {selectedPaper.title}
                     <span className="inline-flex items-center gap-1.5 ml-2 align-middle">
-                      <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-aicons-primary/10 text-aicons-primary">{selectedPaper.journal}</span>
+                      <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-primary-500/10 text-primary-500">{selectedPaper.journal}</span>
                       <span className="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-500 font-medium">{selectedPaper.year}</span>
                     </span>
                   </h3>
                   <p className="text-sm text-gray-500 mb-10">{selectedPaper.authors}</p>
                   <div className="text-center">
-                    <button className="inline-flex items-center gap-1.5 px-4 py-2 bg-aicons-primary text-white text-sm font-medium rounded-lg hover:bg-aicons-primary/90 transition-colors">
+                    <button className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary-500 text-white text-sm font-medium rounded-lg hover:bg-primary-500/90 transition-colors">
                       <Download className="w-3.5 h-3.5" />
                       {t('resourcesPage.downloadPDF')}
                     </button>
@@ -430,7 +430,7 @@ function Resources() {
                     </span>
                     <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${countryColor(selectedPatent.country)}`}>{selectedPatent.country}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-aicons-dark leading-snug mb-3">{selectedPatent.title}</h3>
+                  <h3 className="text-lg font-bold text-neutral-950 leading-snug mb-3">{selectedPatent.title}</h3>
                   <p className="text-sm text-gray-400 mb-1">{selectedPatent.number}</p>
                   <p className="text-sm text-gray-400">{selectedPatent.date}</p> */}
                 </div>

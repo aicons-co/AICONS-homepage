@@ -27,7 +27,7 @@ function MetricsSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-aicons-primary to-aicons-secondary">
+    <section className="py-20 bg-gradient-to-br from-primary-500 to-primary-600">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

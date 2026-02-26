@@ -53,14 +53,6 @@ function Navbar() {
             { name: t('solutions.feedback'), href: '/solutions/feedback' },
           ],
         },
-        // {
-        //   // title: t('nav.byProjectType'),
-        //   items: [
-        //     { name: t('solutions.industrial'), href: '/solutions/industrial' },
-        //     { name: t('solutions.infrastructure'), href: '/solutions/infrastructure' },
-        //     { name: t('solutions.commercial'), href: '/solutions/commercial' },
-        //   ],
-        // },
       ],
     },
   }
@@ -89,16 +81,11 @@ function Navbar() {
 
   return (
     <header
-      // className={`fixed top-0 left-0 right-0 transition-all duration-300 z-50 ${
-      //   isScrolled
-      //     ? 'bg-white shadow-lg py-2'
-      //     : 'bg-transparent py-4'
-      // }`}
       className='fixed top-0 left-0 right-0 z-50 bg-white shadow-lg py-2'
     >
       <nav className="container-custom">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* ✅ Logo 로고 */}
           <Link to="/" className="flex items-center z-10">
             <motion.img
               src="/logo-main.svg"
@@ -115,28 +102,18 @@ function Navbar() {
             {/* Company */}
               <Link
                 to="/company"
-                // className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                //   isScrolled
-                //     ? 'text-gray-700 hover:text-aicons-primary hover:bg-gray-100'
-                //     : 'text-white/90 hover:text-white hover:bg-white/10'
-                //   }`}
                 className='px-4 py-2 rounded-lg font-medium text-black'
               >
               {t('nav.company')}
               </Link>
 
-            {/* Products Dropdown */}
+            {/* ✅ Products Dropdown 제품 */}
             <div
               className="relative"
               onMouseEnter={() => handleDropdownEnter('products')}
               onMouseLeave={handleDropdownLeave}
             >
               <button
-                // className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
-                //   isScrolled
-                //     ? 'text-gray-700 hover:text-aicons-primary hover:bg-gray-100'
-                //     : 'text-white/90 hover:text-white hover:bg-white/10'
-                // }`}
                 className='flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-black'
               >
                 {menuItems.products.title}
@@ -218,11 +195,6 @@ function Navbar() {
               onMouseLeave={handleDropdownLeave}
             >
               <button
-                // className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
-                //   isScrolled
-                //     ? 'text-gray-700 hover:text-aicons-primary hover:bg-gray-100'
-                //     : 'text-white/90 hover:text-white hover:bg-white/10'
-                // }`}
                 className='flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-black'
               >
                 {menuItems.solutions.title}
