@@ -552,7 +552,7 @@ export default {
       description: '실행 과정을 시뮬레이션하여 프로젝트에 가장 적합한 과정을 찾습니다.',
     },
     identifyRisks: {
-      title: '리스크 최소화',
+      title: '리스크 관리',
       description: '잠재적 리스크를 사전에 식별하고 완화 전략을 수립합니다.',
     },
     recoverAccelerate: {

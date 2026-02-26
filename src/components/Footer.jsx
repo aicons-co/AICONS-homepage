@@ -71,18 +71,6 @@ function Footer() {
               className="font-semibold mb-4">
                 {t('footer.company')}
             </Link>
-            {/* <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul> */}
           </div>
 
           {/* ✅ Products Links 제품 */}
@@ -127,18 +115,6 @@ function Footer() {
               className="font-semibold mb-4">
               {t('footer.resources')}
             </Link>
-            {/* <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul> */}
           </div>
         </div>
       </div>

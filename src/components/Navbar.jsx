@@ -97,7 +97,8 @@ function Navbar() {
           </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-4 text-[15px]">
+            {/* <div className="hidden lg:flex items-center space-x-8 xl:space-x-16 text-[15px]"> */}
+            <div className="hidden lg:flex items-center space-x-12 xl:space-x-16 text-[15px]">
 
             {/* Company */}
               <Link
@@ -279,9 +280,9 @@ function Navbar() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
-              <X className={`w-6 h-6 ${isScrolled ? 'text-gray-900' : 'text-white'}`} />
+              <X className="w-6 h-6 text-gray-900" />
             ) : (
-              <Menu className={`w-6 h-6 ${isScrolled ? 'text-gray-900' : 'text-white'}`} />
+              <Menu className="w-6 h-6 text-gray-900" />
             )}
           </button>
         </div>
@@ -298,6 +299,15 @@ function Navbar() {
             >
               <div className="max-h-[80vh] overflow-y-auto">
                 <div className="p-4 space-y-1">
+                  {/* Company */}
+                  <Link
+                    to="/company"
+                    onClick={closeMobileMenu}
+                    className="block px-4 py-3 text-gray-900 font-medium rounded-lg hover:bg-gray-50"
+                  >
+                    {t('nav.company')}
+                  </Link>
+
                   {/* Products */}
                   <div>
                     <button
@@ -396,13 +406,6 @@ function Navbar() {
                     className="block px-4 py-3 text-gray-900 font-medium rounded-lg hover:bg-gray-50"
                   >
                     {t('nav.resources')}
-                  </Link>
-                  <Link
-                    to="/company"
-                    onClick={closeMobileMenu}
-                    className="block px-4 py-3 text-gray-900 font-medium rounded-lg hover:bg-gray-50"
-                  >
-                    {t('nav.company')}
                   </Link>
 
                   {/* Mobile Language Switcher */}
