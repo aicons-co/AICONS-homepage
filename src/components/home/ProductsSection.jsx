@@ -53,7 +53,7 @@ function ProductsSection() {
                     bg-white rounded-2xl p-8 shadow-lg
                     overflow-hidden opacity-60 cursor-default
                   ">
-                    {/* Coming Soon Badge */}
+                    {/* ✅ Coming Soon Badge 출시 예정 배지 */}
                     <div className="absolute top-4 right-4 z-10">
                       <span className="inline-flex items-center gap-1 px-2 py-1 bg-amber-100 text-amber-700 text-xs font-medium rounded-full">
                         <Clock className="w-3 h-3" />
@@ -70,9 +70,9 @@ function ProductsSection() {
                       </h3>
                       <p className="text-gray-400 mb-4 line-clamp-2">{category.description}</p>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-400">
+                        {/* <span className="text-sm text-gray-400">
                           {category.systemCount} {language === 'ko' ? '개 시스템' : 'Systems'}
-                        </span>
+                        </span> */}
                         <span className="inline-flex items-center gap-1 text-gray-400 font-semibold text-sm">
                           {t('common.learnMore')}
                           <ArrowRight className="w-4 h-4" />
@@ -89,23 +89,37 @@ function ProductsSection() {
                       hover:shadow-xl transition-all group overflow-hidden"
                   >
                     {/* Background gradient on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-primary-600/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="
+                      absolute inset-0 bg-gradient-to-br from-primary-500/5 to-primary-600/5 opacity-0
+                      group-hover:opacity-100 transition-opacity
+                    "/>
 
                     <div className="relative z-10">
-                      <div className="w-14 h-14 rounded-xl bg-primary-500/10 flex items-center justify-center mb-6 group-hover:bg-primary-500/20 transition-colors">
-                        <Icon className="w-7 h-7 text-primary-500" />
+                    {/* ✅ 활성화된 제품군 아이콘 */}
+                    {/* group-hover:bg-primary-500/20 transition-colors */}
+                    {/* bg-primary-500/10 flex rounded-xl */}
+                    {/* border-[6px] border-primary-500 flex rounded-xl */}
+                      <div className="
+                        items-center justify-center mb-6 w-14 h-14
+                        bg-primary-500 flex rounded-xl
+                      ">
+                        {/* <Icon className="w-7 h-7 text-primary-500" /> */}
+                        <Icon className="w-7 h-7 text-neutral-50" />
                       </div>
-                      <h3 className="text-xl font-bold text-neutral-950 mb-2 group-hover:text-primary-500 transition-colors">
+                      {/* group-hover:text-primary-500 transition-colors */}
+                      <h3 className="
+                        mb-2 text-xl font-bold text-neutral-950
+                      ">
                         {category.name}
                       </h3>
                       <p className="text-gray-600 mb-4 line-clamp-2">{category.description}</p>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-500">
+                        {/* <span className="text-sm text-gray-500">
                           {category.systemCount} {language === 'ko' ? '개 시스템' : 'Systems'}
-                        </span>
-                        <span className="inline-flex items-center gap-1 text-primary-500 font-semibold text-sm group-hover:gap-2 transition-all">
+                        </span> */}
+                        <span className="inline-flex items-center gap-1 text-primary-500 font-semibold text-sm">
                           {t('common.learnMore')}
-                          <ArrowRight className="w-4 h-4" />
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </span>
                       </div>
                     </div>

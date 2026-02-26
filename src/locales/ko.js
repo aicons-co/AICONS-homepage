@@ -29,7 +29,7 @@ export default {
     categories: {
       building: {
         name: '건축',
-        description: '건축 분야 AI 정보 관리 시스템',
+        description: '건축 분야 AI 관리 시스템',
         systemsTitle: '건축 AI 시스템',
         longDescription: '설계부터 시공까지, 건축 프로젝트의 모든 단계를 AI로 자동화하고 최적화합니다.',
         icon: 'Building2',
@@ -296,7 +296,7 @@ export default {
       },
       civil: {
         name: '토목',
-        description: '토목 분야 AI 정보 관리 시스템',
+        description: '토목 분야 AI 관리 시스템',
         systemsTitle: '토목 AI 시스템',
         longDescription: '교량, 터널, 도로 등 토목 인프라의 유지관리와 상태 예측을 AI로 혁신합니다.',
         icon: 'Landmark',
@@ -403,7 +403,7 @@ export default {
       },
       plant: {
         name: '플랜트',
-        description: '플랜트 분야 AI 정보 관리 시스템',
+        description: '플랜트 분야 AI 관리 시스템',
         systemsTitle: '플랜트 AI 시스템',
         longDescription: '정유, 화학, 산업 플랜트의 설계부터 운영까지 AI 기반 최적화를 제공합니다.',
         icon: 'Factory',
@@ -548,20 +548,20 @@ export default {
     // subtitle: 'AI 기반 플랫폼으로 건설 계획과 프로젝트 과정을 혁신적으로 개선하세요.',
     subtitle: 'AICONS는 불투명하고 파편화된 건설 데이터를 AI와 BIM 기술로 통합하여 비용 절감과 일정 단축, 자재 낭비를 최소화합니다. 건설 시나리오를 시뮬레이션하여 최적의 방법을 적용하세요.',
     automateOptimization: {
-      title: '최적화 자동화',
-      description: '수백만 가지 가능성을 시뮬레이션하여 프로젝트에 최적화된 일정을 찾습니다.',
+      title: '최적화 및 자동화',
+      description: '실행 과정을 시뮬레이션하여 프로젝트에 가장 적합한 과정을 찾습니다.',
     },
     identifyRisks: {
-      title: '리스크 식별 및 완화',
+      title: '리스크 최소화',
       description: '잠재적 리스크를 사전에 식별하고 완화 전략을 수립합니다.',
     },
     recoverAccelerate: {
-      title: '일정 회복 또는 단축',
-      description: '지연된 프로젝트를 회복하거나 정상 프로젝트를 더 단축할 방법을 찾습니다.',
+      title: '일정 단축',
+      description: '프로젝트의 병목을 찾아 해결하고 효율적인 일정을 구축해 실행 기간을 단축합니다.',
     },
     integrateControls: {
-      title: '프로젝트 관리 통합',
-      description: '기존 프로젝트 관리 도구와 원활하게 통합됩니다.',
+      title: '프로젝트 통합 관리',
+      description: 'AI 시스템을 활용하여 기존 프로젝트를 하나로 통합해 관리합니다.',
     },
   },
 

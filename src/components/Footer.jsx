@@ -88,7 +88,7 @@ function Footer() {
           {/* ✅ Products Links 제품 */}
           <div>
             <h4 className="font-semibold mb-4">{t('footer.products')}</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1.5">
               {footerLinks.products.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -105,7 +105,7 @@ function Footer() {
           {/* Solutions Links */}
           <div>
             <h4 className="font-semibold mb-4">{t('footer.solutions')}</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1.5">
               {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
                   <Link
