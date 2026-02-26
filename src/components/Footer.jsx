@@ -35,19 +35,19 @@ function Footer() {
     <footer className="bg-neutral-950 text-white">
 
       {/* Main Footer Content */}
-      <div className="container-custom py-12">
+      <div className="container-custom py-12 text-neutral-600">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {/* Logo and Description */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-1">
-            <Link to="/" className="inline-block mb-4">
+          <div className="col-span-2 md:col-span-4 lg:col-span-1 cursor-default">
+            {/* <Link to="/" className="inline-block mb-4"> */}
               <span className="text-2xl font-bold">
                 <span className="text-primary-500">AICONS</span>
               </span>
-            </Link>
+            {/* </Link> */}
             {/* <p className="text-gray-400 text-sm mb-4">
               {t('footer.description')}
             </p> */}
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-primary-500 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -60,7 +60,7 @@ function Footer() {
               <a href="#" className="text-gray-400 hover:text-primary-500 transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* ✅ Company Links 회사소개 */}
@@ -81,7 +81,7 @@ function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-sm"
                   >
                     {link.name}
                   </Link>
@@ -98,7 +98,7 @@ function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-sm"
                   >
                     {link.name}
                   </Link>
@@ -120,22 +120,22 @@ function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-700">
+      <div className="border-t border-gray-700 text-neutral-600">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-400 text-sm">
+            <p className="text-sm">
               © {new Date().getFullYear()} {t('footer.copyright')}
             </p>
             <div className="flex items-center space-x-6">
-              <Link to="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <Link to="/privacy" className="text-sm">
                 {t('footer.privacyPolicy')}
               </Link>
-              <Link to="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <Link to="/terms" className="text-sm">
                 {t('footer.termsOfService')}
               </Link>
               <div className="flex items-center space-x-2">
-                <span className="text-xs text-gray-500">SOC II</span>
-                <span className="text-xs text-gray-500">Cyber Essentials</span>
+                <span className="text-xs">SOC II</span>
+                <span className="text-xs">Cyber Essentials</span>
               </div>
             </div>
           </div>
