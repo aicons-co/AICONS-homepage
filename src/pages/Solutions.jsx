@@ -1,11 +1,11 @@
 import { Routes, Route, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
-  ArrowRight, Check, Target, ChevronRight,
+  ArrowRight, ArrowLeft, Check, Target, ChevronRight,
   FileSearch, Bot, CalendarClock, Link2,
   FileText, Database, Box, BarChart3, Settings, Workflow,
   Scissors, TrendingDown, Ruler, Calculator, RefreshCw, Layers,
-  ClipboardCheck
+  ClipboardCheck, Wand2, SlidersHorizontal
 } from 'lucide-react'
 import useTranslation from '../hooks/useTranslation'
 
@@ -19,11 +19,11 @@ const iconMap = {
 // Solution icons for index page
 const solutionIconMap = {
   parsing: FileSearch,
-  automation: Bot,
-  optimization: Target,
+  automation: Wand2,
+  optimization: SlidersHorizontal,
   scheduling: CalendarClock,
   integration: Link2,
-  feedback: ClipboardCheck
+  feedback: Bot
 }
 
 function SolutionPage({ solutionKey }) {
@@ -43,7 +43,7 @@ function SolutionPage({ solutionKey }) {
     },
     automation: {
       name: t('solutionsPage.automation.name'),
-      icon: Bot,
+      icon: Wand2,
       tagline: t('solutionsPage.automation.tagline'),
       description: t('solutionsPage.automation.description'),
       features: t('solutionsPage.automation.features'),
@@ -54,7 +54,7 @@ function SolutionPage({ solutionKey }) {
     },
     optimization: {
       name: t('solutionsPage.optimization.name'),
-      icon: Target,
+      icon: SlidersHorizontal,
       tagline: t('solutionsPage.optimization.tagline'),
       description: t('solutionsPage.optimization.description'),
       features: t('solutionsPage.optimization.features'),
@@ -87,7 +87,7 @@ function SolutionPage({ solutionKey }) {
     },
     feedback: {
       name: t('solutionsPage.feedback.name'),
-      icon: ClipboardCheck,
+      icon: Bot,
       tagline: t('solutionsPage.feedback.tagline'),
       description: t('solutionsPage.feedback.description'),
       features: t('solutionsPage.feedback.features'),
@@ -122,22 +122,31 @@ function SolutionPage({ solutionKey }) {
       {/* Hero */}
       <section className="py-20 bg-gradient-to-br from-neutral-950 to-neutral-900">
         <div className="container-custom">
+          <Link
+            to="/solutions"
+            className="inline-flex items-center gap-2 text-gray-300 hover:text-white mb-6 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            {t('solutionsPage.viewAll')}
+          </Link>
           <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-primary-500/20 flex items-center justify-center">
-                <solution.icon className="w-8 h-8 text-primary-500" />
+              <div className="
+                flex justify-center items-center w-16 h-16
+                rounded-2xl bg-white/30">
+                <solution.icon className="w-8 h-8 text-white" />
               </div>
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white">{solution.name}</h1>
-                <p className="text-primary-500 text-lg">{solution.tagline}</p>
+                <p className="text-neutral-400 text-base">{solution.tagline}</p>
               </div>
             </div>
-            <p className="text-xl text-gray-300 mb-8">{solution.description}</p>
-            <div className="flex gap-4">
+            <p className="mb-8 text-lg text-neutral-400">{solution.description}</p>
+            {/* <div className="flex gap-4">
               <Link to="/demo" className="btn-primary">
                 {t('solutionsPage.requestDemo')}
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -171,7 +180,7 @@ function SolutionPage({ solutionKey }) {
         <section className="py-20 bg-white">
           <div className="container-custom">
             <h2 className="section-title text-center mb-12">{t('solutionsPage.keyCapabilities')}</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {solution.features.map((feature, index) => {
                 const IconComponent = iconMap[feature.icon] || Check
                 return (

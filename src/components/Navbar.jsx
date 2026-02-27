@@ -179,7 +179,7 @@ function Navbar() {
                     <div className="bg-gray-50 p-4 border-t">
                       <Link
                         to="/products"
-                        className="text-sm text-aicons-primary font-medium hover:underline flex items-center gap-1"
+                        className="text-sm text-aicons-primary font-medium flex items-center gap-1"
                       >
                         {t('nav.viewAllProducts')} <ChevronRight className="w-4 h-4" />
                       </Link>
@@ -235,7 +235,7 @@ function Navbar() {
                     <div className="bg-gray-50 p-4 border-t">
                       <Link
                         to="/solutions"
-                        className="text-sm text-aicons-primary font-medium hover:underline flex items-center gap-1"
+                        className="text-sm text-aicons-primary font-medium flex items-center gap-1"
                       >
                         {t('solutionsPage.viewAll')} <ChevronRight className="w-4 h-4" />
                       </Link>

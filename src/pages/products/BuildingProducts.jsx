@@ -33,8 +33,8 @@ function BuildingProducts() {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center gap-6"
           >
-            <div className="w-20 h-20 rounded-2xl bg-primary-500/20 flex items-center justify-center">
-              <Building2 className="w-10 h-10 text-primary-500" />
+            <div className="w-20 h-20 rounded-2xl bg-white/30 flex items-center justify-center">
+              <Building2 className="w-10 h-10 text-white" />
             </div>
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
