@@ -44,31 +44,27 @@ function Company() {
       {/* Vision */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-neutral-950 mb-4">{t('companyPage.vision.title')}</h2>
+              <h2 className="text-3xl font-bold text-neutral-950 mb-8">{t('companyPage.vision.title')}</h2>
               <p className="text-xl font-semibold text-primary-500 mb-4">{t('companyPage.vision.description')}</p>
-              <p className="text-gray-600 mb-6">{t('companyPage.vision.detail')}</p>
+              <p className="text-neutral-700 leading-[160%]">{t('companyPage.vision.detail')}</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-primary-500/5 to-primary-600/10 rounded-2xl p-8"
+              className="space-y-4"
             >
-              <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">End-to-End Pipeline</p>
-              <div className="flex flex-wrap items-center gap-2 text-sm font-medium text-neutral-950">
-                {t('companyPage.vision.pipeline').split('→').map((step, i, arr) => (
-                  <span key={i} className="flex items-center gap-2">
-                    <span className="bg-white px-3 py-2 rounded-lg shadow-sm border border-gray-100">{step.trim()}</span>
-                    {i < arr.length - 1 && <ArrowRight className="w-4 h-4 text-primary-500 flex-shrink-0" />}
-                  </span>
-                ))}
-              </div>
+              <img
+                src="/images/vision-8.jpg"
+                alt="AICONS 미래 비전"
+                className="w-full object-cover rounded-2xl"
+              />
             </motion.div>
           </div>
         </div>
@@ -91,12 +87,12 @@ function Company() {
                 transition={{ delay: index * 0.1 }}
                 className="rounded-2xl overflow-hidden shadow-sm flex flex-col"
               >
-                <div className="bg-neutral-950 flex items-center justify-center py-12">
-                  <value.Icon className="w-16 h-16 text-white" strokeWidth={1.2} />
+                <div className="bg-neutral-950 flex items-center justify-center py-16">
+                  <value.Icon className="w-20 h-20 text-white" strokeWidth={1.2} />
                 </div>
                 <div className="bg-white p-6 flex-grow">
-                  <h3 className="text-xl font-bold text-neutral-950 mb-3">{t(`companyPage.values.${value.key}.title`)}</h3>
-                  <p className="text-sm text-gray-600">{t(`companyPage.values.${value.key}.description`)}</p>
+                  <h3 className="text-xl font-semibold text-neutral-950 mb-3">{t(`companyPage.values.${value.key}.title`)}</h3>
+                  <p className="text-neutral-700">{t(`companyPage.values.${value.key}.description`)}</p>
                 </div>
               </motion.div>
             ))}
