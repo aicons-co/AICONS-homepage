@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { motion } from 'framer-motion'
 import { Database, Box, ClipboardCheck, RefreshCw, ArrowRight, Rocket, Handshake, ShieldCheck, Trophy } from 'lucide-react'
 import useTranslation from '../hooks/useTranslation'
@@ -44,26 +45,27 @@ function Company() {
       {/* Vision */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="flex flex-col lg:flex-row gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="lg:w-3/5"
             >
               <h2 className="text-3xl font-bold text-neutral-950 mb-8">{t('companyPage.vision.title')}</h2>
               <p className="text-xl font-semibold text-primary-500 mb-4">{t('companyPage.vision.description')}</p>
-              <p className="text-neutral-700 leading-[160%]">{t('companyPage.vision.detail')}</p>
+              <p className="text-neutral-700 leading-[170%]">{t('companyPage.vision.detail')}</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-4"
+              className="lg:w-2/5"
             >
               <img
-                src="/images/vision-8.jpg"
+                src="/images/vision.png"
                 alt="AICONS 미래 비전"
-                className="w-full object-cover rounded-2xl"
+                className="w-full max-h-[32rem] object-cover rounded-2xl"
               />
             </motion.div>
           </div>
@@ -73,11 +75,11 @@ function Company() {
       {/* Values */}
       <section className="py-20 bg-gray-50">
         <div className="container-custom">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-neutral-950 mb-2">{t('companyPage.ourValues')}</h2>
-            <p className="text-lg text-gray-500">{t('companyPage.valuesSubtitle')}</p>
+          <div className='mb-8'>
+            <h2 className="text-3xl font-bold text-neutral-950">{t('companyPage.ourValues')}</h2>
+            {/* <p className="text-lg text-gray-500">{t('companyPage.valuesSubtitle')}</p> */}
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <motion.div
                 key={value.key}
