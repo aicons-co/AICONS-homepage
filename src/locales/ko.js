@@ -31,7 +31,7 @@ export default {
         name: '건축',
         description: '건축 분야 AI 관리 시스템',
         systemsTitle: '건축 AI 시스템',
-        longDescription: '설계부터 시공까지, 건축 프로젝트의 모든 단계를 AI로 자동화하고 최적화합니다.',
+        longDescription: '건축 프로젝트의 설계부터 시공까지 모든 단계를 AI로 자동화하고 최적화합니다.',
         icon: 'Building2',
         status: 'active',
         systemCount: 8,
@@ -734,7 +734,7 @@ export default {
 
   // Solutions Page
   solutionsPage: {
-    title: 'AICONS 기술',
+    title: '솔루션',
     subtitle: '구조 설계부터 시공까지, 6가지 핵심기술로 고객과 함께합니다.',
     techTitle: 'AICONS 핵심기술',
     viewAll: '모든 기술 보기',

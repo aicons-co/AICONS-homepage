@@ -26,7 +26,7 @@ function ProductsIndex() {
             animate={{ opacity: 1, y: 0 }}
           >
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {language === 'ko' ? 'AI 정보 관리 시스템' : 'AI Information Management Systems'}
+              {language === 'ko' ? '제품군' : 'Products'}
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               {language === 'ko'
