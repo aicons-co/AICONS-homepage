@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion'
 
 const clients = [
-  { name: 'Cranborne', color: '#1E40AF' },
-  { name: 'Align JV', color: '#7C3AED' },
-  { name: 'HS2', color: '#059669' },
+  { name: 'Parsing', color: '#1E40AF' },
+  { name: 'Automation', color: '#7C3AED' },
+  { name: 'Optimization', color: '#059669' },
   { name: 'Accenture', color: '#A855F7' },
-  { name: 'Turner', color: '#0891B2' },
-  { name: 'Skanska', color: '#DC2626' },
+  { name: 'Scheduling', color: '#0891B2' },
+  { name: 'Integration', color: '#DC2626' },
+  { name: 'I-Feedback', color: '#DC2626' },
 ]
 
 function LogoSlider() {

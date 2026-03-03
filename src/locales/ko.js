@@ -544,9 +544,9 @@ export default {
   features: {
     title: '왜',
     titleHighlight: 'AICONS',
-    titleEnd: '인가요?',
+    titleEnd: '가치',
     // subtitle: 'AI 기반 플랫폼으로 건설 계획과 프로젝트 과정을 혁신적으로 개선하세요.',
-    subtitle: 'AICONS는 불투명하고 파편화된 건설 데이터를 AI와 BIM 기술로 통합하여 비용 절감과 일정 단축, 자재 낭비를 최소화합니다. 건설 시나리오를 시뮬레이션하여 최적의 방법을 적용하세요.',
+    subtitle: 'AICONS는 분산된 건설 데이터를 AI와 BIM 기술을 활용해 통합하여 비용 절감과 일정 단축으로 자원을 최소화합니다.',
     automateOptimization: {
       title: '최적화 및 자동화',
       description: '실행 과정을 시뮬레이션하여 프로젝트에 가장 적합한 과정을 찾습니다.',
@@ -568,7 +568,7 @@ export default {
   // Products Section
   productsSection: {
     title: 'AICONS 제품군',
-    subtitle: '프로젝트 요구사항에 적합한 해결책을 선택하세요.',
+    subtitle: '프로젝트에 최적화된 건설 유형을 선택하세요.',
     learnMore: '자세히 보기',
     plan: {
       tagline: '일정 시각화 및 계획',
@@ -735,7 +735,7 @@ export default {
   // Solutions Page
   solutionsPage: {
     title: 'AICONS 기술',
-    subtitle: '구조 설계부터 시공까지, 6가지 핵심 기술로 건설 프로세스를 혁신합니다',
+    subtitle: '구조 설계부터 시공까지, 6가지 핵심기술로 고객과 함께합니다.',
     techTitle: 'AICONS 핵심기술',
     viewAll: '모든 기술 보기',
     learnMore: '자세히 보기',
@@ -1042,7 +1042,7 @@ export default {
   // Company Page
   companyPage: {
     title: 'AICONS 소개',
-    subtitle: 'AICONS는 건설 산업의 실행 과정을 자동화하는 AI 혁신을 목표로 합니다',
+    subtitle: 'AICONS는 AI 활용을 통한 건설 산업의 혁신을 목표로 합니다',
     vision: {
       title: '기업비전',
       description: "AI를 통한 건설 산업의 자동화",
@@ -1088,7 +1088,8 @@ export default {
         phase3: { period: '2029+', title: 'Platform & Horizontal Expansion', description: 'Digital Twin 플랫폼 라이선스. 토목(Civil) 및 플랜트(Plant) 분야로 수평 확장.' },
       },
     },
-    ourValues: '핵심가치',
+    // ourValues: '핵심가치',
+    ourValues: '핵심비전',
     valuesSubtitle: '4개의 가치로 고객과의 신뢰를 우선으로 합니다',
     values: {
       innovation: { title: '기술 혁신', description: '건설 기술 가능성의 영역을 확장합니다.' },

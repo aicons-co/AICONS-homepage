@@ -44,7 +44,13 @@
       "WebFetch(domain:aicons.co.kr)",
       "WebFetch(domain:www.aicons.co.kr)",
       "WebFetch(domain:aicons-home.vercel.app)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:pixabay.com)",
+      "Bash(ls:*)",
+      "Bash(echo === Photo 1: dA0-qxdbyyY ===:*)",
+      "WebFetch(domain:www.pexels.com)",
+      "WebFetch(domain:api.pexels.com)"
     ]
   }
 }

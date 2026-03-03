@@ -38,7 +38,9 @@ function FeaturesSection() {
           className="text-center mb-16"
         >
           <h2 className="section-title mb-4">
-            {t('features.title')} <span className="text-primary-500">{t('features.titleHighlight')}</span>{t('features.titleEnd')}
+            {/* {t('features.title')} <span className="text-primary-500">{t('features.titleHighlight')}</span>{t('features.titleEnd')} */}
+            {/* {t('features.title')}  */}
+            <span>{t('features.titleHighlight')}</span> {t('features.titleEnd')}
           </h2>
           <p className="section-subtitle max-w-2xl mx-auto">
             {t('features.subtitle')}
