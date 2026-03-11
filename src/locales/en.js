@@ -5,12 +5,12 @@ export default {
     solutions: 'Solutions',
     resources: 'Resources',
     company: 'Company',
-    viewAllProducts: 'View all products',
+    viewAllProducts: 'View All Products',
     byStakeholder: 'By Stakeholder',
     byProjectType: 'By Project Type',
     papers: 'Papers',
     patents: 'Patents',
-    downloads: 'Downloads',
+    downloads: 'PDF Downloads',
   },
 
   // Products menu
@@ -19,17 +19,17 @@ export default {
     comingSoon: 'Coming Soon',
     stats: {
       systems: 'Systems',
-      automation: 'Automation',
+      automation: 'Automation Rate',
       costSavings: 'Cost Savings',
       predictionAccuracy: 'Prediction Accuracy',
-      maintenanceSavings: 'Maintenance Savings',
+      maintenanceSavings: 'Cost Savings',
       uptimeRate: 'Uptime Rate',
       downtimeReduction: 'Downtime Reduction',
     },
     categories: {
       building: {
         name: 'Building',
-        description: 'AI Information Management for Building Construction',
+        description: 'AI Management Systems for Building Construction',
         systemsTitle: 'Building AI Systems',
         longDescription: 'Automate and optimize every stage of building projects from design to construction with AI.',
         icon: 'Building2',
@@ -296,7 +296,7 @@ export default {
       },
       civil: {
         name: 'Civil',
-        description: 'AI Information Management for Civil Infrastructure',
+        description: 'AI Management Systems for Civil Engineering',
         systemsTitle: 'Civil AI Systems',
         longDescription: 'Revolutionize maintenance and condition prediction for bridges, tunnels, roads, and civil infrastructure with AI.',
         icon: 'Landmark',
@@ -403,7 +403,7 @@ export default {
       },
       plant: {
         name: 'Plant',
-        description: 'AI Information Management for Plant Facilities',
+        description: 'AI Management Systems for Plant Facilities',
         systemsTitle: 'Plant AI Systems',
         longDescription: 'Provide AI-based optimization from design to operation for oil & gas, chemical, and industrial plants.',
         icon: 'Factory',
@@ -525,12 +525,14 @@ export default {
   hero: {
     badge: 'AI-Powered Construction Scheduling',
     words: ['Optimize', 'De-risk', 'Recover', 'Accelerate'],
-    projectWith: 'project with',
-    subtitle: 'Simulate millions of construction scenarios to find the optimal schedule. Reduce costs, mitigate risks, and deliver on time.',
-    watchVideo: 'Watch Video',
-    durationReduction: 'Duration Reduction',
-    laborCostSavings: 'Labor Cost Savings',
-    equipmentSavings: 'Equipment Savings',
+    projectWith: 'your projects',
+    // subtitle: `AICONS integrates fragmented and opaque construction data using AI and BIM technology to achieve cost reduction, schedule acceleration, and minimize material waste. Simulate construction scenarios to apply the optimal method.`,
+    // subtitle: `From design to construction, the complete digital transformation led by AI Agent`,
+    subtitle: `From architectural design to construction, the complete digital transformation led by AICONS`,
+    watchVideo: 'Watch Demo',
+    durationReduction: 'Manpower Reduction',
+    laborCostSavings: 'RCW  Reduction',
+    equipmentSavings: 'Cost Saving',
   },
 
   // Trust Section
@@ -540,46 +542,47 @@ export default {
 
   // Features Section
   features: {
-    title: 'Why Choose',
+    title: 'Why',
     titleHighlight: 'AICONS',
-    titleEnd: '?',
-    subtitle: 'Our AI-powered platform transforms how construction projects are planned and executed.',
+    titleEnd: 'Matters',
+    // subtitle: 'Revolutionize construction planning and project execution with our AI-powered platform.',
+    subtitle: 'AICONS integrates fragmented construction data using AI and BIM technology to minimize resources through cost reduction and schedule acceleration.',
     automateOptimization: {
-      title: 'Automate Optimization',
-      description: 'Simulate millions of possibilities to find the optimal schedule for your project.',
+      title: 'Optimization & Automation',
+      description: 'Simulate execution processes to find the best approach for your project.',
     },
     identifyRisks: {
-      title: 'Identify and Mitigate Risks',
+      title: 'Risk Management',
       description: 'Proactively identify potential risks and develop mitigation strategies.',
     },
     recoverAccelerate: {
-      title: 'Recover or Accelerate',
-      description: 'Find ways to recover delayed projects or accelerate on-track ones.',
+      title: 'Schedule Acceleration',
+      description: 'Find and resolve project bottlenecks to build efficient schedules and shorten execution timelines.',
     },
     integrateControls: {
-      title: 'Integrate Project Controls',
-      description: 'Seamlessly integrate with your existing project management tools.',
+      title: 'Integrated Project Management',
+      description: 'Leverage AI systems to unify and manage existing projects in one place.',
     },
   },
 
   // Products Section
   productsSection: {
-    title: 'Our Products',
-    subtitle: 'Choose the right solution for your project needs',
+    title: 'AICONS Products',
+    subtitle: 'Choose the construction type optimized for your project.',
     learnMore: 'Learn More',
     plan: {
       tagline: 'Schedule Visualization & Planning',
-      description: 'Transform your project timeline with intelligent scheduling visualization.',
+      description: 'Visualize schedules to manage your project progress.',
       steps: {
-        import: { title: 'Import', description: 'Import your existing schedules from P6 or MSP' },
-        visualize: { title: 'Visualize', description: 'See your schedule in an interactive 4D view' },
+        import: { title: 'Import', description: 'Import existing schedules from P6 or MSP' },
+        visualize: { title: 'Visualize', description: 'View schedules in an interactive 4D view' },
         analyze: { title: 'Analyze', description: 'Identify bottlenecks and optimization opportunities' },
-        export: { title: 'Export', description: 'Export optimized schedules back to your tools' },
+        export: { title: 'Export', description: 'Export optimized schedules to your tools' },
       },
     },
     optimize: {
       tagline: 'P6/MSP-based Optimization',
-      description: 'Leverage AI to optimize your construction schedules automatically.',
+      description: 'Leverage AI to automatically optimize construction schedules.',
       steps: {
         connect: { title: 'Connect', description: 'Connect to your P6 or Microsoft Project files' },
         simulate: { title: 'Simulate', description: 'Run millions of schedule simulations' },
@@ -589,7 +592,7 @@ export default {
     },
     model: {
       tagline: 'BIM-based Modeling',
-      description: 'Generate optimized schedules directly from your BIM models.',
+      description: 'Generate optimized schedules directly from BIM models.',
       steps: {
         upload: { title: 'Upload', description: 'Upload your BIM model (Revit, IFC, etc.)' },
         extract: { title: 'Extract', description: 'Automatically extract work packages' },
@@ -601,12 +604,12 @@ export default {
 
   // Testimonials Section
   testimonials: {
-    title: 'Customer Stories',
+    title: 'AICONS Services',
     subtitle: 'See how industry leaders are transforming their projects with AICONS',
     quotes: {
       alignJV: 'AICONS helped us reduce project duration by 17% while optimizing resource allocation across complex construction sequences.',
-      reta: 'The AI-powered scheduling gave us insights we never had before. We saved millions in labor costs alone.',
-      scs: 'AICONS transformed our approach to schedule optimization. The simulation capabilities are game-changing.',
+      reta: 'The AI-powered scheduling gave us insights we never had before. We saved billions in labor costs alone.',
+      scs: 'AICONS completely changed our approach to schedule optimization. The simulation capabilities are game-changing.',
       parsons: 'We integrated AICONS into our workflow and immediately saw improvements in how we plan and execute projects.',
       hdcc: 'The ability to simulate millions of scenarios and find the optimal path forward is invaluable.',
     },
@@ -620,14 +623,14 @@ export default {
   // Metrics Section
   metrics: {
     title: 'Proven Results',
-    subtitle: 'Our customers consistently achieve measurable improvements',
+    subtitle: 'Achieve verified outcomes with measurable metrics and improvements.',
     durationReduction: {
-      label: 'Project Duration Reduction',
-      description: 'Average reduction in overall project timeline',
+      label: 'Schedule Acceleration',
+      description: 'Overall project duration reduction',
     },
     laborSavings: {
       label: 'Labor Cost Savings',
-      description: 'Reduced labor costs through optimization',
+      description: 'Labor cost reduction through optimization',
     },
     equipmentSavings: {
       label: 'Equipment Cost Savings',
@@ -638,7 +641,7 @@ export default {
   // CTA Section
   cta: {
     title: 'Ready to Transform Your Projects?',
-    subtitle: 'Join hundreds of construction teams already using AISIMS to optimize their schedules and reduce costs.',
+    subtitle: 'Optimize your construction schedules and reduce costs with AISIMS.',
     contactSales: 'Contact Sales',
   },
 
@@ -656,7 +659,7 @@ export default {
     products: 'Products',
     solutions: 'Solutions',
     resources: 'Resources',
-    caseStudies: 'Case Studies',
+    caseStudies: 'Projects',
     blog: 'Blog',
     webinars: 'Webinars',
     copyright: 'AICONS Technologies. All rights reserved.',
@@ -666,8 +669,8 @@ export default {
 
   // Products Page
   productsPage: {
-    title: 'Our Products',
-    subtitle: 'Choose the right AICONS solution for your construction project needs',
+    title: 'Products',
+    subtitle: 'Choose the right AICONS solution for your construction project',
     requestDemo: 'Request Demo',
     downloadBrochure: 'Download Brochure',
     keyFeatures: 'Key Features',
@@ -678,7 +681,7 @@ export default {
     viewPlan: 'View AICONS Plan',
     plan: {
       tagline: 'Schedule Visualization & Planning',
-      description: 'Transform your project timeline with intelligent scheduling visualization. AICONS Plan provides powerful 4D visualization tools that bring your construction schedule to life.',
+      description: 'Transform your project timeline with intelligent scheduling automation and visualization. AICONS Plan provides powerful 4D visualization tools that bring your construction schedule to life.',
       features: [
         'Interactive 4D schedule visualization',
         'Real-time schedule updates',
@@ -705,14 +708,14 @@ export default {
         'Risk-adjusted scheduling',
       ],
       benefits: {
-        durationReduction: { title: '17% Duration Reduction', description: 'Average project timeline improvement' },
+        durationReduction: { title: '17% Schedule Acceleration', description: 'Average project timeline improvement' },
         laborSavings: { title: '14% Labor Savings', description: 'Optimized resource allocation' },
         riskManagement: { title: 'Better Risk Management', description: 'Identify risks before they occur' },
       },
     },
     model: {
       tagline: 'BIM-Based Schedule Generation',
-      description: 'Generate optimized schedules directly from your BIM models. AICONS Model extracts work packages and creates intelligent construction sequences automatically.',
+      description: 'Generate optimized schedules directly from BIM models. AICONS Model extracts work packages and creates intelligent construction sequences automatically.',
       features: [
         'Automatic BIM model analysis',
         'Work package extraction',
@@ -731,9 +734,9 @@ export default {
 
   // Solutions Page
   solutionsPage: {
-    title: 'AISIMS Technology',
-    subtitle: 'From structural design to construction, revolutionize the construction process with 6 core technologies',
-    techTitle: 'AISIMS Core Technologies',
+    title: 'Solutions',
+    subtitle: 'From structural design to construction, we partner with customers through 6 core technologies.',
+    techTitle: 'AICONS Core Technologies',
     viewAll: 'View All Technologies',
     learnMore: 'Learn More',
     requestDemo: 'Request Demo',
@@ -741,7 +744,7 @@ export default {
     keyMetrics: 'Key Performance Metrics',
     useCases: 'Use Cases',
     workflow: 'Workflow',
-    recommendedProducts: 'Applicable Products',
+    recommendedProducts: 'Recommended Products',
     readyToTransform: 'Ready to Transform Your Projects?',
     scheduleDemo: 'Schedule a Demo',
     solutionNotFound: 'Technology not found',
@@ -751,10 +754,10 @@ export default {
     parsing: {
       name: 'Parsing',
       tagline: 'Automatic Structural Drawing Interpretation',
-      description: 'AI automatically analyzes structural drawings (PDF, CAD) and extracts structural and rebar data. Achieve over 90% time savings compared to manual work and over 99% accuracy.',
+      description: 'AI automatically analyzes structural drawings and extracts structural and rebar data. Achieve over 90% time savings compared to manual work and over 99% accuracy.',
       features: [
-        { title: 'Automatic Drawing Recognition', description: 'AI automatically recognizes and analyzes structural drawings in various formats including PDF, DWG.', icon: 'FileText' },
-        { title: 'Member Info Extraction', description: 'Automatically extract dimensions, positions, and property information of structural members like columns, beams, slabs, and walls.', icon: 'Database' },
+        { title: 'Automatic Drawing Recognition', description: 'AI automatically recognizes and analyzes structural drawings in various formats including PDF and DWG.', icon: 'FileText' },
+        { title: 'Member Info Extraction', description: 'Automatically extract dimensions, positions, and property information of structural members such as columns, beams, slabs, and walls.', icon: 'Database' },
         { title: 'Rebar Data Extraction', description: 'Accurately extract rebar specifications, spacing, cover thickness, and other placement information.', icon: 'Layers' },
         { title: 'General Notes Parsing', description: 'Automatically parse general notes including design loads, concrete strength, and rebar grades.', icon: 'FileSearch' },
         { title: 'Data Validation System', description: 'Automatically validate extracted data consistency and detect errors.', icon: 'Check' },
@@ -798,14 +801,14 @@ export default {
     // Automation
     automation: {
       name: 'Automation',
-      tagline: 'Auto-generate BIM, Quantities, 2D Drawings, BBS',
-      description: 'Based on data extracted through Parsing, automatically generate BIM models, quantity takeoffs, 2D construction drawings, and Bar Bending Schedules (BBS). Eliminate repetitive tasks and maximize productivity.',
+      tagline: 'Auto-generate BIM, Quantities, 2D Drawings & BBS',
+      description: 'Based on data extracted through Parsing, automatically generate BIM models, quantity takeoffs, 2D construction drawings, and Bar Bending Schedules (BBS). Minimize repetitive tasks and maximize productivity.',
       features: [
         { title: 'BIM Model Auto-Generation', description: 'Automatically generate Revit and IFC-compatible BIM models based on structural data.', icon: 'Box' },
         { title: 'Quantity Takeoff Automation', description: 'Automatically calculate concrete, rebar, formwork quantities and generate bills of quantities.', icon: 'Calculator' },
         { title: '2D Construction Drawing Generation', description: 'Automatically generate 2D drawings including rebar placement, structural plans, and sections.', icon: 'FileText' },
         { title: 'BBS Generation', description: 'Automatically generate detailed bar bending schedules for rebar cutting and fabrication.', icon: 'Layers' },
-        { title: 'Multi-format Output', description: 'Export deliverables in various formats including Excel, PDF, DWG, IFC.', icon: 'Settings' },
+        { title: 'Multi-format Output', description: 'Export deliverables in various formats including Excel, PDF, DWG, and IFC.', icon: 'Settings' },
       ],
       metrics: {
         bimSpeed: { value: '95%', label: 'BIM Generation Time Reduction' },
@@ -835,7 +838,7 @@ export default {
       ],
       workflow: [
         { step: 1, title: 'Parsing Data Integration', description: 'Automatically integrate structural data extracted from Parsing.' },
-        { step: 2, title: 'Set Generation Options', description: 'Select required deliverables: BIM, quantities, drawings, BBS.' },
+        { step: 2, title: 'Set Generation Options', description: 'Select required deliverables: BIM, quantities, drawings, or BBS.' },
         { step: 3, title: 'Auto-Generation', description: 'AI automatically generates selected deliverables.' },
         { step: 4, title: 'Quality Review', description: 'Review generated deliverables quality and adjust as needed.' },
         { step: 5, title: 'Deliverable Output', description: 'Output and distribute deliverables in various formats.' },
@@ -846,7 +849,7 @@ export default {
     // Optimization
     optimization: {
       name: 'Optimization',
-      tagline: 'SLP-based Rebar Cutting Loss/Usage Optimization',
+      tagline: 'SLP-based Rebar Cutting Loss & Usage Optimization',
       description: 'Apply SLP (Stock Length Problem) algorithm to optimize rebar cutting patterns. Minimize cutting waste and reduce rebar usage for cost savings.',
       features: [
         { title: 'SLP Algorithm Application', description: 'Derive optimal rebar cutting combinations through mathematical optimization algorithm.', icon: 'Scissors' },
@@ -864,13 +867,13 @@ export default {
       useCases: [
         {
           title: 'High-rise Mixed-use Rebar Optimization',
-          scenario: 'Rebar requirements for 50-story mixed-use building exceed budget.',
+          scenario: 'Rebar requirements for a 50-story mixed-use building exceed budget.',
           solution: 'Optimize entire rebar cutting pattern using Optimization.',
           result: 'Achieved under 3% rebar loss rate, 18% rebar cost reduction.',
         },
         {
           title: 'Underground Parking Large-scale Rebar Work',
-          scenario: 'Need slab rebar optimization for 500,000 sq ft underground parking.',
+          scenario: 'Need slab rebar optimization for a 50,000 m\u00B2 underground parking structure.',
           solution: 'Optimize slab rebar pattern and cutting plan using SLP algorithm.',
           result: '12% rebar usage reduction, 20% construction efficiency improvement.',
         },
@@ -883,7 +886,7 @@ export default {
       ],
       workflow: [
         { step: 1, title: 'Rebar Data Input', description: 'Input BBS data or rebar requirements information.' },
-        { step: 2, title: 'Constraint Setup', description: 'Set stock lengths, splice codes, construction conditions.' },
+        { step: 2, title: 'Constraint Setup', description: 'Set stock lengths, splice codes, and construction conditions.' },
         { step: 3, title: 'SLP Optimization Run', description: 'AI analyzes millions of combinations to derive optimal solution.' },
         { step: 4, title: 'Result Analysis', description: 'Analyze optimization results and compare multiple scenarios.' },
         { step: 5, title: 'Cutting Plan Output', description: 'Output optimized cutting plan and BBS.' },
@@ -912,7 +915,7 @@ export default {
       useCases: [
         {
           title: 'Large Mixed-use Master Schedule',
-          scenario: 'Need master schedule for 3-building, 24-month mixed-use development.',
+          scenario: 'Need master schedule for a 3-building, 24-month mixed-use development.',
           solution: 'Auto-generate integrated master schedule based on BIM data using Scheduling.',
           result: 'Completed detailed schedule with 5,000+ activities in 2 weeks.',
         },
@@ -924,13 +927,13 @@ export default {
         },
         {
           title: 'Resource Constraint Reflection',
-          scenario: 'Must simultaneously construct 5 buildings with 2 tower cranes.',
+          scenario: 'Must simultaneously construct 5 buildings with only 2 tower cranes.',
           solution: 'Optimize building construction sequence reflecting crane availability using Scheduling.',
           result: 'Zero resource conflicts, achieved 95% crane utilization.',
         },
       ],
       workflow: [
-        { step: 1, title: 'BIM/Quantity Data Integration', description: 'Integrate BIM model and quantity data to system.' },
+        { step: 1, title: 'BIM/Quantity Data Integration', description: 'Integrate BIM model and quantity data into the system.' },
         { step: 2, title: 'Work Package Generation', description: 'AI analyzes BIM objects to auto-generate work packages.' },
         { step: 3, title: 'Duration Auto-Calculation', description: 'Calculate required duration based on quantity and productivity data.' },
         { step: 4, title: 'Resource Leveling', description: 'Optimize schedule reflecting resource constraints.' },
@@ -943,7 +946,7 @@ export default {
     integration: {
       name: 'Integration',
       tagline: 'Auto-update All Deliverables on Design Change',
-      description: 'When design changes occur, automatically update all deliverables from Parsing to Scheduling. Maintain data consistency and maximize change management efficiency.',
+      description: 'When design changes occur, automatically update all deliverables from Parsing to Scheduling. Maintain data consistency and maximize management efficiency.',
       features: [
         { title: 'Auto Change Detection', description: 'Automatically detect design document changes and analyze impact scope.', icon: 'RefreshCw' },
         { title: 'Cascading Updates', description: 'Automatically cascade updates to BIM, quantities, drawings, BBS, and schedules.', icon: 'Link2' },
@@ -955,7 +958,7 @@ export default {
         updateTime: { value: '95%', label: 'Update Time Reduction' },
         consistency: { value: '100%', label: 'Data Consistency' },
         tracking: { value: '100%', label: 'Change Tracking Rate' },
-        errorReduction: { value: '90%', label: 'Error Reduction' },
+        errorReduction: { value: '90%', label: 'Error Reduction Rate' },
       },
       useCases: [
         {
@@ -972,15 +975,15 @@ export default {
         },
         {
           title: 'Multiple Design Change Integrated Management',
-          scenario: 'Multiple design changes accumulated, making management difficult.',
+          scenario: 'Multiple rounds of design changes accumulated, making management difficult.',
           solution: 'Systematically manage all change history and maintain current status using Integration.',
           result: '90% reduction in design change errors, zero supervision findings.',
         },
       ],
       workflow: [
-        { step: 1, title: 'Upload Changed Documents', description: 'Upload changed design documents to system.' },
+        { step: 1, title: 'Upload Changed Documents', description: 'Upload changed design documents to the system.' },
         { step: 2, title: 'Change Detection', description: 'AI auto-detects changes by comparing with previous version.' },
-        { step: 3, title: 'Impact Scope Analysis', description: 'Analyze impact scope and cost/schedule impacts from change.' },
+        { step: 3, title: 'Impact Scope Analysis', description: 'Analyze impact scope and cost/schedule effects from the change.' },
         { step: 4, title: 'Auto Update', description: 'After approval, automatically update all related deliverables.' },
         { step: 5, title: 'Change History Recording', description: 'Record change history and send notifications to stakeholders.' },
       ],
@@ -1001,7 +1004,7 @@ export default {
       ],
       metrics: {
         reviewTime: { value: '85%', label: 'Review Time Reduction' },
-        errorDetection: { value: '95%', label: 'Error Detection Rate' },
+        errorDetection: { value: '95%', label: 'Design Error Detection Rate' },
         compliance: { value: '99%', label: 'Compliance Verification Rate' },
         quality: { value: '40%', label: 'Design Quality Improvement' },
       },
@@ -1039,15 +1042,15 @@ export default {
   // Company Page
   companyPage: {
     title: 'About AICONS',
-    subtitle: 'AI-powered Structural Execution Automation Platform',
+    subtitle: 'AICONS aims to innovate the construction industry through AI',
     vision: {
-      title: 'Vision',
-      description: 'An AI platform company automating the Execution phase of the construction industry',
-      detail: 'We build an Information Backbone that parses structural design data (PDF) and connects it to construction, procurement, and scheduling. By integrating Auto-BIM generation, quantity takeoff, and scheduling into a single pipeline, we eliminate the information gap between design and construction. Even when designs change, every downstream process updates automatically — fundamentally removing repetitive manual work and schedule delays.',
+      title: 'Corporate Vision',
+      description: "Automation of the Construction Industry through AI",
+      detail: 'AICONS is a company providing AI services that automate the construction industry. We build an automation pipeline that parses structural design data and connects it to construction, procurement, and scheduling. By integrating Auto-BIM generation, quantity takeoff, and scheduling into a single pipeline, we eliminate the disconnect between design and construction. When designs change, all downstream processes update automatically, preventing repetitive manual work and schedule delays.',
       pipeline: 'Structural Design → Structural DB → Auto-BIM → QTO/Scheduling/Procurement Automation',
     },
     problem: {
-      title: 'The Structural Disconnect',
+      title: 'The Structural Disconnect in Construction',
       subtitle: 'BIM has been adopted, but on-site Execution remains unautomated.',
       items: {
         isolation: { title: 'Data Isolation', description: 'Structural designs exist as PDF/reports, and data is disconnected at the construction stage.' },
@@ -1072,7 +1075,7 @@ export default {
       stages: {
         stage1: { title: 'Input', description: 'Structural design PDF auto-parsing' },
         stage2: { title: 'Structural DB', description: 'Node, member, section, rebar info standardization' },
-        stage3: { title: 'Optimization', description: 'SLP-based rebar optimization (CO₂ reduction)' },
+        stage3: { title: 'Optimization', description: 'SLP-based rebar optimization (CO\u2082 reduction)' },
         stage4: { title: 'Outputs', description: '2D Shop Drawing, BBS, BOQ auto-generation' },
         stage5: { title: 'Integration', description: 'Auto scheduling (ASS) & procurement linkage' },
       },
@@ -1085,20 +1088,21 @@ export default {
         phase3: { period: '2029+', title: 'Platform & Horizontal Expansion', description: 'Digital Twin platform licensing. Horizontal expansion into Civil and Plant sectors.' },
       },
     },
-    ourValues: 'Our Values',
-    valuesSubtitle: "We're Professionals",
+    // ourValues: 'Core Values',
+    ourValues: 'Core Vision',
+    valuesSubtitle: 'We prioritize trust with customers through 4 core values',
     values: {
-      innovation: { title: 'Innovation', description: "Pushing the boundaries of what's possible in construction technology" },
-      customerSuccess: { title: 'Customer Success', description: 'Your success is our success' },
-      integrity: { title: 'Integrity', description: 'Honest, transparent, and trustworthy in everything we do' },
-      excellence: { title: 'Excellence', description: 'Delivering the highest quality solutions and support' },
+      innovation: { title: 'Innovation', description: 'Expanding the boundaries of construction technology.' },
+      customerSuccess: { title: 'Customer Trust', description: 'Our customers\' success is our success.' },
+      integrity: { title: 'Transparency', description: 'Every process is honest and transparent.' },
+      excellence: { title: 'Excellence', description: 'Delivering the highest quality solutions and support.' },
     },
   },
 
   // Resources Page
   resourcesPage: {
     title: 'Resources',
-    subtitle: 'Explore our research papers, patents, and downloadable resources',
+    subtitle: 'Explore AICONS research papers, patents, and service materials',
     downloadPDF: 'Download PDF',
     papers: {
       title: 'Papers',
@@ -1183,130 +1187,130 @@ export default {
         patent1: {
           title: 'Improved Formwork Structure for Column-Beam Connections',
           number: 'Patent No. 10-2831238',
-          date: 'Registered Jul 3, 2025',
+          date: '2025.07.03',
           country: 'KR',
         },
         patent2: {
           title: 'Improved Formwork Structure for Thick Column-Beam Connections',
           number: 'Patent No. 10-2831236',
-          date: 'Registered Jul 3, 2025',
+          date: '2025.07.03',
           country: 'KR',
         },
         patent3: {
           title: 'Improved Formwork Structure for Equal-Width Column-Beam Connections',
           number: 'Patent No. 10-2831237',
-          date: 'Registered Jul 3, 2025',
+          date: '2025.07.03',
           country: 'KR',
         },
         patent4: {
           title: 'Apparatus for Producing Amorphous Molded Bodies, Mold and Rod-Shaped Mold Using the Same',
           number: 'Patent ZL 2015 8 0044454.1 (CN 106660226 B)',
-          date: 'Registered Jun 11, 2019',
+          date: '2019.06.11',
           country: 'CN',
         },
         patent5: {
           title: 'Apparatus for Manufacturing Amorphous Molded Bodies, and Formwork and Rod-Type Mold Using the Same',
           number: 'Patent No. 10-1691798',
-          date: 'Registered Dec 27, 2016',
+          date: '2016.12.27',
           country: 'KR',
         },
         patent6: {
           title: 'Hanger-Type Bridge Slab Formwork Device and Construction Method Using the Same',
           number: 'Patent No. 10-1691634',
-          date: 'Registered Dec 26, 2016',
+          date: '2016.12.26',
           country: 'KR',
         },
         patent7: {
           title: 'Semi-Automatic Formwork Panel Surface Cleaning Device',
           number: 'Patent No. 10-1247598',
-          date: 'Registered Mar 20, 2013',
+          date: '2013.03.20',
           country: 'KR',
         },
         patent8: {
           title: 'Prefabricated Structure of PC Columns and Beam Units Connected at Ramp Zones',
           number: 'Patent No. 10-1260392',
-          date: 'Registered Apr 26, 2013',
+          date: '2013.04.26',
           country: 'KR',
         },
         patent9: {
           title: 'PC Column Joint Structure Using Ramp Zones',
           number: 'Patent No. 10-1308053',
-          date: 'Registered Sep 6, 2013',
+          date: '2013.09.06',
           country: 'KR',
         },
         patent10: {
           title: 'PC Column Joint Structure Using Ramp Zones',
           number: 'Patent No. 10-1308055',
-          date: 'Registered Sep 6, 2013',
+          date: '2013.09.06',
           country: 'KR',
         },
         patent11: {
           title: 'External Dry Wall Unit Structure for PC Rahmen and Its Construction Method',
           number: 'Patent No. 10-1285189',
-          date: 'Registered Jun 28, 2013',
+          date: '2013.06.28',
           country: 'KR',
         },
         patent12: {
           title: 'Rebar Guide for Inserting Rebars into Steel Plates or Panels, and Rebar Arrangement Method',
           number: 'Patent No. 10-1249922',
-          date: 'Registered Mar 27, 2013',
+          date: '2013.03.27',
           country: 'KR',
         },
         patent13: {
           title: 'Detachable Back Reinforcement Device and PC Structure Construction Method Using the Same',
           number: 'Patent No. 10-1249921',
-          date: 'Registered Mar 27, 2013',
+          date: '2013.03.27',
           country: 'KR',
         },
         patent14: {
           title: 'PC Column Joint Structure',
           number: 'Patent No. 10-1228012',
-          date: 'Registered Jan 24, 2013',
+          date: '2013.01.24',
           country: 'KR',
         },
         patent15: {
           title: 'PC Column Formwork Device and PC Column Production Method Using the Same',
           number: 'Patent No. 10-1217683',
-          date: 'Registered Dec 21, 2012',
+          date: '2012.12.21',
           country: 'KR',
         },
         patent16: {
           title: 'PC Beam Formwork Device and PC Beam Production Method Using the Same',
           number: 'Patent No. 10-1216557',
-          date: 'Registered Dec 21, 2012',
+          date: '2012.12.21',
           country: 'KR',
         },
         patent17: {
           title: 'Atypical Molded Body Manufacturing Device, Molding Material Casting Form Using Same, and Rod-Type Mold',
           number: 'US 10,828,799 B2',
-          date: 'Registered Nov 10, 2020',
+          date: '2020.11.10',
           country: 'US',
         },
       },
     },
     downloads: {
-      title: 'PDF Downloads',
+      title: 'Downloads',
       items: {
         dl1: {
           title: 'AICONS Company Profile',
-          description: 'An overview of AICONS Technologies vision, technology, and key achievements.',
+          description: 'An overview of AICONS vision, technology, and key achievements.',
           pages: '16 pages',
         },
         dl2: {
           title: 'AISIMS Service Brochure',
-          description: 'Features and benefits of the AI Structural Information Management System (AISIMS).',
+          description: 'Features and benefits of AISIMS and its improvement effects.',
           pages: '12 pages',
         },
         dl3: {
-          title: 'BIM & AI Integration Solution Guide',
-          description: 'Guide on integrating BIM data with AI technology for construction workflows.',
+          title: 'AI Program User Guide',
+          description: 'Guide on AI technology integration methods and utilization.',
           pages: '18 pages',
         },
       },
     },
     cta: {
       title: 'Want to Learn More?',
-      subtitle: 'Have questions about our technology and services? Feel free to reach out anytime.',
+      subtitle: 'Have questions about AICONS technology and services? Feel free to reach out anytime.',
     },
   },
 

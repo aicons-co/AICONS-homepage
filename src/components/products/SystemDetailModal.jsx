@@ -158,9 +158,6 @@ function SystemDetailModal({ system, isOpen, onClose }) {
                 >
                   {t('common.close')}
                 </button>
-                <button className="btn-primary">
-                  {t('common.requestDemo')}
-                </button>
               </div>
             </div>
           </motion.div>

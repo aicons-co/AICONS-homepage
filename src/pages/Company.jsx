@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import { motion } from 'framer-motion'
 import { Database, Box, ClipboardCheck, RefreshCw, ArrowRight, Rocket, Handshake, ShieldCheck, Trophy } from 'lucide-react'
 import useTranslation from '../hooks/useTranslation'
 
@@ -46,20 +45,14 @@ function Company() {
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="flex flex-col lg:flex-row gap-16 items-start">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+            <div
               className="lg:w-3/5"
             >
               <h2 className="text-3xl font-bold text-neutral-950 mb-8">{t('companyPage.vision.title')}</h2>
               <p className="text-xl font-semibold text-primary-500 mb-4">{t('companyPage.vision.description')}</p>
               <p className="text-neutral-700 leading-[170%]">{t('companyPage.vision.detail')}</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+            </div>
+            <div
               className="lg:w-2/5"
             >
               <img
@@ -67,7 +60,7 @@ function Company() {
                 alt="AICONS 미래 비전"
                 className="w-full max-h-[32rem] object-cover rounded-2xl"
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -81,12 +74,8 @@ function Company() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <motion.div
+              <div
                 key={value.key}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="rounded-2xl overflow-hidden shadow-sm flex flex-col"
               >
                 <div className="bg-neutral-950 flex items-center justify-center py-16">
@@ -96,7 +85,7 @@ function Company() {
                   <h3 className="text-xl font-semibold text-neutral-950 mb-3">{t(`companyPage.values.${value.key}.title`)}</h3>
                   <p className="text-neutral-700">{t(`companyPage.values.${value.key}.description`)}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

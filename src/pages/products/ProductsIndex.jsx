@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+
 import { Building2, Landmark, Factory, ArrowRight, Clock } from 'lucide-react'
 import useTranslation from '../../hooks/useTranslation'
 
@@ -21,10 +21,7 @@ function ProductsIndex() {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-neutral-950 to-neutral-900">
         <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
+          <div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               {language === 'ko' ? '제품군' : 'Products'}
             </h1>
@@ -34,7 +31,7 @@ function ProductsIndex() {
                 : 'Discover AI-powered information management solutions for Building, Civil, and Plant sectors.'
               }
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -50,12 +47,8 @@ function ProductsIndex() {
               const isComingSoon = category.status === 'coming_soon'
 
               return (
-                <motion.div
+                <div
                   key={categoryKey}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.15 }}
                 >
                   {isComingSoon ? (
                     <div className="block bg-white rounded-2xl p-8 shadow-lg h-full relative overflow-hidden opacity-60 cursor-default">
@@ -115,7 +108,7 @@ function ProductsIndex() {
                       </div>
                     </Link>
                   )}
-                </motion.div>
+                </div>
               )
             })}
           </div>
@@ -126,53 +119,38 @@ function ProductsIndex() {
       <section className="py-16 bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            <div
               className="text-center"
             >
               <div className="text-4xl font-bold text-primary-500 mb-2">14+</div>
               <div className="text-gray-600">
                 {language === 'ko' ? 'AI 시스템' : 'AI Systems'}
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+            </div>
+            <div
               className="text-center"
             >
               <div className="text-4xl font-bold text-primary-500 mb-2">90%+</div>
               <div className="text-gray-600">
                 {language === 'ko' ? '업무 자동화율' : 'Automation Rate'}
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+            </div>
+            <div
               className="text-center"
             >
               <div className="text-4xl font-bold text-primary-500 mb-2">40%</div>
               <div className="text-gray-600">
                 {language === 'ko' ? '비용 절감' : 'Cost Reduction'}
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+            </div>
+            <div
               className="text-center"
             >
               <div className="text-4xl font-bold text-primary-500 mb-2">3</div>
               <div className="text-gray-600">
                 {language === 'ko' ? '산업 분야' : 'Industries'}
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+
 import { Landmark, ArrowLeft, ArrowRight, Clock } from 'lucide-react'
 import { SystemCard, SystemDetailModal } from '../../components/products'
 import useTranslation from '../../hooks/useTranslation'
@@ -29,9 +29,7 @@ function CivilProducts() {
             {t('products.viewAll')}
           </Link>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
             className="flex items-center gap-6"
           >
             <div className="w-20 h-20 rounded-2xl bg-white/30 flex items-center justify-center">
@@ -49,22 +47,16 @@ function CivilProducts() {
               </h1>
               <p className="text-xl text-gray-300">{category.description}</p>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+          <p
             className="mt-6 text-gray-400 max-w-3xl"
           >
             {category.longDescription}
-          </motion.p>
+          </p>
 
           {/* Quick Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+          <div
             className="mt-8 flex flex-wrap gap-6"
           >
             <div className="bg-white/10 rounded-lg px-6 py-3 flex justify-center items-center">
@@ -79,7 +71,7 @@ function CivilProducts() {
               <span className="text-2xl font-bold text-green-400">35%</span>
               <span className="text-gray-300 ml-2">{t('products.stats.maintenanceSavings')}</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

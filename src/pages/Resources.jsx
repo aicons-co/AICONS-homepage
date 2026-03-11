@@ -216,12 +216,8 @@ function Resources() {
                 <span>Date</span>
               </div>
               {patents.map((patent, index) => (
-                <motion.div
+                <div
                   key={`t-${index}`}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.03 }}
                   onClick={() => setSelectedPatent(patent)}
                   className="grid grid-cols-1 sm:grid-cols-[2rem_3.5rem_1fr_12rem_7rem] gap-2 sm:gap-4 px-6 py-4 border-b border-gray-100 last:border-b-0 hover:bg-white transition-colors items-center cursor-pointer"
                 >
@@ -230,7 +226,7 @@ function Resources() {
                   <h4 className="text-sm font-bold text-neutral-950 leading-snug">{patent.title}</h4>
                   <span className="text-xs text-gray-500 text-center">{patent.number}</span>
                   <span className="text-xs text-gray-400 text-center">{patent.date}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
 
@@ -246,12 +242,8 @@ function Resources() {
           </div>
           <ol className="space-y-4">
               {papers.map((paper, index) => (
-                <motion.li
+                <li
                   key={`text-${paper.title}`}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
                   onClick={() => setSelectedPaper(paper)}
                   className="flex gap-4 p-4 bg-white rounded-xl hover:shadow-md transition-shadow cursor-pointer"
                 >
@@ -266,7 +258,7 @@ function Resources() {
                     </h4>
                     <p className="text-xs text-gray-500">{paper.authors}</p>
                   </div>
-                </motion.li>
+                </li>
               ))}
             </ol>
         </div>
@@ -281,12 +273,8 @@ function Resources() {
           </div>
           <div className="space-y-4">
             {downloads.map((dl, index) => (
-              <motion.div
+              <div
                 key={dl.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
                 className="flex items-center gap-5 bg-gray-50 rounded-2xl p-5 hover:shadow-lg transition-shadow"
               >
                 <div className="flex-shrink-0 w-14 h-14 bg-primary-500/10 rounded-xl flex items-center justify-center">
@@ -303,7 +291,7 @@ function Resources() {
                     {t('resourcesPage.downloadPDF')}
                   </button>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

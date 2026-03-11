@@ -28,11 +28,7 @@ function BuildingProducts() {
             {t('products.viewAll')}
           </Link>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-6"
-          >
+          <div className="flex items-center gap-6">
             <div className="w-20 h-20 rounded-2xl bg-white/30 flex items-center justify-center">
               <Building2 className="w-10 h-10 text-white" />
             </div>
@@ -42,24 +38,14 @@ function BuildingProducts() {
               </h1>
               <p className="text-xl text-gray-300">{category.description}</p>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="mt-6 text-gray-400 max-w-3xl"
-          >
+          <p className="mt-6 text-gray-400 max-w-3xl">
             {category.longDescription}
-          </motion.p>
+          </p>
 
           {/* Quick Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mt-8 flex flex-wrap gap-6"
-          >
+          <div className="mt-8 flex flex-wrap gap-6">
             <div className="bg-white/10 rounded-lg px-6 py-3 flex justify-center items-center">
               <span className="text-2xl font-bold text-white">{category.systemCount}</span>
               <span className="text-gray-300 ml-2">{t('products.stats.systems')}</span>
@@ -72,7 +58,7 @@ function BuildingProducts() {
               <span className="text-2xl font-bold text-green-400">40%</span>
               <span className="text-gray-300 ml-2">{t('products.stats.costSavings')}</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

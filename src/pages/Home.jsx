@@ -1,5 +1,4 @@
 import HeroSection from '../components/home/HeroSection'
-import LogoSlider from '../components/home/LogoSlider'
 import FeaturesSection from '../components/home/FeaturesSection'
 import ProductsSection from '../components/home/ProductsSection'
 import SolutionsSection from '../components/home/SolutionsSection'
@@ -10,7 +9,6 @@ function Home() {
   return (
     <div>
       <HeroSection />
-      <LogoSlider />
       <FeaturesSection />
       <ProductsSection />
       <SolutionsSection />

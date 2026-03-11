@@ -20,9 +20,9 @@ export default {
     stats: {
       systems: '시스템',
       automation: '자동화율',
-      costSavings: '비용 감소',
+      costSavings: '비용 절감',
       predictionAccuracy: '예측 정확도',
-      maintenanceSavings: '비용 감소',
+      maintenanceSavings: '비용 절감',
       uptimeRate: '설비 가동률',
       downtimeReduction: '다운타임 감소',
     },
@@ -752,7 +752,7 @@ export default {
 
     // Parsing
     parsing: {
-      name: 'Parsing',
+      name: '파싱',
       tagline: '구조설계서 자동 해석',
       description: 'AI가 구조설계서를 자동으로 분석해 구조·철근 데이터를 추출합니다. 수작업 대비 90% 이상의 시간을 절감하고 99% 이상의 정확도를 달성합니다.',
       features: [
@@ -800,7 +800,7 @@ export default {
 
     // Automation
     automation: {
-      name: 'Automation',
+      name: '자동화',
       tagline: 'BIM·물량·2D 도면·BBS 자동 생성',
       description: '파싱으로 추출된 데이터를 기반으로 BIM 모델·물량 산출서·2D 시공도면·철근 가공표(BBS)를 자동 생성합니다. 반복 작업을 최소화하고 생산성을 극대화합니다.',
       features: [
@@ -848,7 +848,7 @@ export default {
 
     // Optimization
     optimization: {
-      name: 'Optimization',
+      name: '최적화',
       tagline: 'SLP 기반 철근 절단 손실 및 사용량 최적화',
       description: 'SLP(Stock Length Problem) 알고리즘을 적용하여 철근 절단 패턴을 최적화합니다. 절단 손실을 최소화하고 철근 사용량을 줄여 비용을 절감합니다.',
       features: [
@@ -896,7 +896,7 @@ export default {
 
     // Scheduling
     scheduling: {
-      name: 'Scheduling',
+      name: '스케줄링',
       tagline: 'BIM·물량·조달 연계 공정표 자동 생성',
       description: 'BIM 모델·물량 데이터·조달 정보를 연계하여 최적화된 공정표를 자동 생성합니다. 현실적인 자원 상황을 반영해 실행 가능한 일정을 수립합니다.',
       features: [
@@ -944,7 +944,7 @@ export default {
 
     // Integration
     integration: {
-      name: 'Integration',
+      name: '통합',
       tagline: '설계 변경시 모든 결과물 자동 업데이트',
       description: '설계 변경시 파싱부터 스케줄링까지 전 과정에서의 결과물을 자동으로 업데이트합니다. 데이터 일관성을 유지해 관리 효율을 극대화합니다.',
       features: [
@@ -992,7 +992,7 @@ export default {
 
     // Feedback
     feedback: {
-      name: 'I-Feedback',
+      name: '피드백',
       tagline: 'AI 기반 설계 자동 피드백',
       description: 'AI가 건축 설계 도서를 자동으로 검토하고 법규 적합성·구조적 안전성·시공성 등을 종합적으로 분석해 실시간 피드백을 제공합니다. 설계 오류를 조기에 발견해 품질을 향상시킵니다.',
       features: [

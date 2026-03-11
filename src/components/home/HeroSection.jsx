@@ -152,10 +152,9 @@ function HeroSection() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
 
+            {/* 시현 영상 버튼 - 영상 완성 후 주석 해제
             <motion.button
               whileHover={{ backgroundColor: 'rgba(255,255,255,0.15)' }}
-              // whileHover={{ scale: 1.02, backgroundColor: 'rgba(255,255,255,0.15)' }}
-              // whileTap={{ scale: 0.98 }}
               className="
                 group flex items-center justify-center gap-3 px-6 py-2.5
                 border-2 border-white/50 text-white font-semibold rounded-xl
@@ -166,6 +165,7 @@ function HeroSection() {
               </div>
               {t('hero.watchVideo')}
             </motion.button>
+            */}
           </motion.div>
 
           {/* Stats 가로선 */}
